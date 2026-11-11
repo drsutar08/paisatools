@@ -1,6 +1,6 @@
 /* Shared layout for calculator pages built after the first set (loaded before theme.css). */
 :root{--mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark}}:root[data-theme="dark"]{color-scheme:dark}
+@media (prefers-color-scheme:none){:root:not([data-theme="light"]){color-scheme:dark}}:root[data-theme="dark"]{color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}

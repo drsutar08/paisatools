@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CTC to In-Hand Salary: Why Take-Home Is Lower | PaisaTools</title>
+<meta name="description" content="See how CTC becomes in-hand salary: basic, HRA, employer PF, deductions and tax, with a worked example of a ₹12 lakh CTC.">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/guide-ctc-to-in-hand-salary">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="CTC to In-Hand Salary: Why Take-Home Is Lower | PaisaTools">
+<meta property="og:description" content="See how CTC becomes in-hand salary: basic, HRA, employer PF, deductions and tax, with a worked example of a ₹12 lakh CTC.">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/guide-ctc-to-in-hand-salary">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CTC to In-Hand Salary: Why Your Take-Home Is Lower","description":"See how CTC becomes in-hand salary: basic, HRA, employer PF, deductions and tax, with a worked example of a ₹12 lakh CTC.","datePublished":"2026-11-11","dateModified":"2026-11-11","mainEntityOfPage":"https://drsutar08.github.io/paisatools/guide-ctc-to-in-hand-salary","inLanguage":"en-IN","publisher":{"@type":"Organization","name":"PaisaTools","url":"https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:locale" content="en_IN">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/guide-ctc-to-in-hand-salary">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/guide-ctc-to-in-hand-salary.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CTC to In-Hand Salary: Why Take-Home Is Lower | PaisaTools">
+<meta name="twitter:description" content="See how CTC becomes in-hand salary: basic, HRA, employer PF, deductions and tax, with a worked example of a ₹12 lakh CTC.">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/guide-ctc-to-in-hand-salary.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"CTC to In-Hand Salary: Why Your Take-Home Is Lower","item":"https://drsutar08.github.io/paisatools/guide-ctc-to-in-hand-salary"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is in-hand salary the same as net salary?","acceptedAnswer":{"@type":"Answer","text":"Yes. In-hand, take-home and net salary all mean what is credited to your bank account after deductions."}},{"@type":"Question","name":"Which regime is used by default?","acceptedAnswer":{"@type":"Answer","text":"The new regime, which is the default for salaried employees. You can switch to the old regime and add your deductions to compare."}},{"@type":"Question","name":"Does the standard deduction apply?","acceptedAnswer":{"@type":"Answer","text":"Yes. ₹75,000 is deducted under the new regime and ₹50,000 under the old regime before tax is worked out."}},{"@type":"Question","name":"Why does my in-hand differ from the calculator?","acceptedAnswer":{"@type":"Answer","text":"Your employer may include other components, a different PF base or variable pay in CTC. Check your salary slip and offer letter."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same passbook system as the calculators. Header, one content column, shared footer. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --accent:#111827; --accent-ink:#ffffff; --tint:#e6f0eb; --warm:#c8791c;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:none){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --warm:#e7a24a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --warm:#e7a24a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.4rem}
+h3{font-size:1.1rem}
+a{color:var(--accent)}
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.page{padding-block:32px 0;display:grid;gap:14px;max-width:68ch}
+.page p,.page li{margin:0}
+.page ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.page h2{margin-top:14px}
+.meta{color:var(--muted);font-size:.88rem}
+.hero{padding-block:44px 28px;display:grid;gap:12px}
+.hero p{margin:0;color:var(--muted);max-width:58ch;font-size:1.08rem}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cat{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:8px}
+.tool-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.tool-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tool-card .fig{font-family:var(--mono);font-size:.82rem;color:var(--muted);background:var(--tint);border-radius:8px;padding:10px 12px;display:grid;gap:2px}
+.tool-card .fig b{font-size:1.25rem;color:var(--ink);font-weight:500}
+.tool-card p{margin:0;color:var(--muted);font-size:.94rem}
+.tool-card .go{color:var(--accent);font-weight:600;font-size:.92rem}
+.soon{display:flex;flex-wrap:wrap;gap:8px}
+.soon span{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.85rem;color:var(--muted);background:var(--surface)}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.why div{display:grid;gap:6px;align-content:start}
+.why p{margin:0;color:var(--muted);font-size:.94rem}
+section.block{margin-top:40px;display:grid;gap:14px}
+.mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;width:fit-content;max-width:100%}
+.mail code{font-family:var(--mono);font-size:1rem;user-select:all;overflow-wrap:anywhere}
+.mail button{font:600 .85rem var(--body);background:var(--accent);color:var(--accent-ink);border:0;border-radius:7px;padding:7px 12px;cursor:pointer}
+.big404{font-family:var(--display);font-size:clamp(4rem,14vw,7rem);font-weight:700;line-height:1;color:var(--accent)}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:6px 16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.tool-card{transition:none}.tool-card:hover{transform:none}}
+@media (max-width:820px){.tools,.why{grid-template-columns:1fr}}
+.guide-meta{color:var(--muted);font-size:.88rem}
+.page details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.page summary{cursor:pointer;font-weight:600}
+.page details p{margin-top:8px;color:var(--muted)}
+.calc-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+.page .note{background:var(--tint);border-radius:10px;padding:14px 16px}
+.tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:99px;padding:3px 10px;width:fit-content;color:#14121a}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="content">
+
+  <div class="page">
+    <h1>CTC to In-Hand Salary: Why Your Take-Home Is Lower</h1>
+    <p class="guide-meta">Updated November 2026</p>
+    <p>An offer letter says "₹12 lakh CTC", but your bank account receives much less each month. The gap is not a mistake. This guide shows where the money goes. You can test your own offer in the <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>.</p>
+    <h2>Key takeaways</h2>
+    <ul>
+      <li>CTC (cost to company) is what your employer spends on you in a year, including items that never reach your bank account.</li>
+      <li>In-hand = CTC − employer PF − employee PF − professional tax − income tax.</li>
+      <li>Variable pay arrives once a year, so monthly pay looks lower than CTC ÷ 12.</li>
+    </ul>
+    <h2>What is inside CTC</h2>
+    <ul>
+      <li><strong>Basic salary:</strong> the core fixed pay. PF and gratuity are worked out on it.</li>
+      <li><strong>HRA:</strong> house rent allowance, partly tax-free in the old regime if you pay rent.</li>
+      <li><strong>Special allowance:</strong> the balance of fixed pay after other components.</li>
+      <li><strong>Employer PF:</strong> your employer's 12% contribution to your provident fund. It is part of CTC but is not paid to you monthly.</li>
+      <li><strong>Gratuity:</strong> some employers include a provision for it in CTC. Check your offer letter.</li>
+      <li><strong>Variable pay or bonus:</strong> often paid yearly and may depend on performance.</li>
+    </ul>
+    <h2>What gets deducted</h2>
+    <ul>
+      <li><strong>Employee PF:</strong> 12% of basic salary, which is your own savings, not a loss.</li>
+      <li><strong>Professional tax:</strong> a small state tax, deducted monthly where it applies.</li>
+      <li><strong>Income tax (TDS):</strong> worked out on your gross salary after the standard deduction (₹75,000 in the new regime, ₹50,000 in the old), and deducted evenly across the year.</li>
+    </ul>
+    <h2>Worked example</h2>
+    <p>Assume an annual CTC of ₹12,00,000, with basic at 40% of CTC, the new tax regime, and professional tax of ₹200 a month. All fixed pay is assumed to be paid monthly.</p>
+    <ul>
+      <li>Basic: 40% × ₹12,00,000 = ₹4,80,000 a year (₹40,000 a month).</li>
+      <li>Employer PF: 12% × ₹4,80,000 = ₹57,600.</li>
+      <li>Employee PF: 12% × ₹4,80,000 = ₹57,600.</li>
+      <li>Professional tax: ₹200 × 12 = ₹2,400.</li>
+      <li>Gross salary: ₹12,00,000 − ₹57,600 = ₹11,42,400. After the ₹75,000 standard deduction, taxable income is ₹10,67,400.</li>
+      <li>Income tax: taxable income is under ₹12 lakh, so the new regime rebate leaves tax at nil.</li>
+    </ul>
+    <p>In-hand per year = 12,00,000 − 57,600 − 57,600 − 2,400 = ₹10,82,400. That is ₹90,200 a month, against ₹1,00,000 a month if you simply divided CTC by 12. The rebate depends on current rules, so check the latest rules.</p>
+    <h2>Why in-hand is lower than you expect</h2>
+    <ul>
+      <li><strong>PF is on basic.</strong> A higher basic share means a larger PF cut and a smaller monthly credit, but more retirement savings.</li>
+      <li><strong>Variable pay is not monthly.</strong> If part of CTC is a bonus, it comes once a year.</li>
+      <li><strong>Tax is spread over the year.</strong> The monthly cut may look large.</li>
+    </ul>
+    <h2>Which regime should you pick?</h2>
+    <p>The new regime is the default for salaried employees. The old regime allows deductions such as 80C, 80D and home loan interest, and HRA exemption. Compare both for your numbers in the <a href="income-tax-calculator">Income Tax Calculator</a>. For the tax-free part of rent allowance, see our guide to <a href="guide-hra-exemption-explained">HRA exemption</a>.</p>
+    <h2>Try the calculator</h2>
+    <p class="calc-links"><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="income-tax-calculator">Income Tax Calculator</a></p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is in-hand salary the same as net salary?</summary><p>Yes. In-hand, take-home and net salary all mean what is credited to your bank account after deductions.</p></details>
+    <details><summary>Which regime is used by default?</summary><p>The new regime, which is the default for salaried employees. You can switch to the old regime and add your deductions to compare.</p></details>
+    <details><summary>Does the standard deduction apply?</summary><p>Yes. ₹75,000 is deducted under the new regime and ₹50,000 under the old regime before tax is worked out.</p></details>
+    <details><summary>Why does my in-hand differ from the calculator?</summary><p>Your employer may include other components, a different PF base or variable pay in CTC. Check your salary slip and offer letter.</p></details>
+    <p class="meta">Estimates for planning only; not financial or tax advice.</p>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 PaisaTools. Results are estimates for planning only and are not financial, tax or investment advice.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+<script src="site.js" defer></script>
+</body>
+</html>

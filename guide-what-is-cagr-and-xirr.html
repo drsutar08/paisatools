@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAGR vs Absolute Return vs XIRR Explained | PaisaTools</title>
+<meta name="description" content="Understand absolute return, CAGR and XIRR in plain English, when to use each for lump sum or SIP investments, and the common mistakes to avoid.">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/guide-what-is-cagr-and-xirr">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="CAGR vs Absolute Return vs XIRR Explained | PaisaTools">
+<meta property="og:description" content="Understand absolute return, CAGR and XIRR in plain English, when to use each for lump sum or SIP investments, and the common mistakes to avoid.">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/guide-what-is-cagr-and-xirr">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Is CAGR and XIRR? Which One Should You Use?","description":"Understand absolute return, CAGR and XIRR in plain English, when to use each for lump sum or SIP investments, and the common mistakes to avoid.","datePublished":"2026-11-11","dateModified":"2026-11-11","mainEntityOfPage":"https://drsutar08.github.io/paisatools/guide-what-is-cagr-and-xirr","inLanguage":"en-IN","publisher":{"@type":"Organization","name":"PaisaTools","url":"https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:locale" content="en_IN">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/guide-what-is-cagr-and-xirr">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/guide-what-is-cagr-and-xirr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAGR vs Absolute Return vs XIRR Explained | PaisaTools">
+<meta name="twitter:description" content="Understand absolute return, CAGR and XIRR in plain English, when to use each for lump sum or SIP investments, and the common mistakes to avoid.">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/guide-what-is-cagr-and-xirr.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"What Is CAGR and XIRR? Which One Should You Use?","item":"https://drsutar08.github.io/paisatools/guide-what-is-cagr-and-xirr"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between CAGR and absolute return?","acceptedAnswer":{"@type":"Answer","text":"Absolute return is the total growth over the whole period, such as 60%. CAGR converts that into a yearly rate, so you can compare investments held for different lengths of time."}},{"@type":"Question","name":"Is CAGR the same as XIRR?","acceptedAnswer":{"@type":"Answer","text":"No. CAGR works for one starting amount and one ending amount. XIRR handles several deposits or withdrawals on different dates, such as a monthly SIP."}},{"@type":"Question","name":"Can CAGR be negative?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the final value is lower than the starting value, CAGR is negative and shows the average yearly loss."}},{"@type":"Question","name":"Does a high CAGR mean the investment is good?","acceptedAnswer":{"@type":"Answer","text":"Not by itself. Check the period, the risk taken and how the figure compares with inflation and with similar options."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same passbook system as the calculators. Header, one content column, shared footer. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --accent:#111827; --accent-ink:#ffffff; --tint:#e6f0eb; --warm:#c8791c;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:none){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --warm:#e7a24a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --warm:#e7a24a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.4rem}
+h3{font-size:1.1rem}
+a{color:var(--accent)}
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.page{padding-block:32px 0;display:grid;gap:14px;max-width:68ch}
+.page p,.page li{margin:0}
+.page ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.page h2{margin-top:14px}
+.meta{color:var(--muted);font-size:.88rem}
+.hero{padding-block:44px 28px;display:grid;gap:12px}
+.hero p{margin:0;color:var(--muted);max-width:58ch;font-size:1.08rem}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cat{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:8px}
+.tool-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.tool-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tool-card .fig{font-family:var(--mono);font-size:.82rem;color:var(--muted);background:var(--tint);border-radius:8px;padding:10px 12px;display:grid;gap:2px}
+.tool-card .fig b{font-size:1.25rem;color:var(--ink);font-weight:500}
+.tool-card p{margin:0;color:var(--muted);font-size:.94rem}
+.tool-card .go{color:var(--accent);font-weight:600;font-size:.92rem}
+.soon{display:flex;flex-wrap:wrap;gap:8px}
+.soon span{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.85rem;color:var(--muted);background:var(--surface)}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.why div{display:grid;gap:6px;align-content:start}
+.why p{margin:0;color:var(--muted);font-size:.94rem}
+section.block{margin-top:40px;display:grid;gap:14px}
+.mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;width:fit-content;max-width:100%}
+.mail code{font-family:var(--mono);font-size:1rem;user-select:all;overflow-wrap:anywhere}
+.mail button{font:600 .85rem var(--body);background:var(--accent);color:var(--accent-ink);border:0;border-radius:7px;padding:7px 12px;cursor:pointer}
+.big404{font-family:var(--display);font-size:clamp(4rem,14vw,7rem);font-weight:700;line-height:1;color:var(--accent)}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:6px 16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.tool-card{transition:none}.tool-card:hover{transform:none}}
+@media (max-width:820px){.tools,.why{grid-template-columns:1fr}}
+.guide-meta{color:var(--muted);font-size:.88rem}
+.page details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.page summary{cursor:pointer;font-weight:600}
+.page details p{margin-top:8px;color:var(--muted)}
+.calc-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+.page .note{background:var(--tint);border-radius:10px;padding:14px 16px}
+.tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:99px;padding:3px 10px;width:fit-content;color:#14121a}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="content">
+
+  <div class="page">
+    <h1>What Is CAGR and XIRR? Which One Should You Use?</h1>
+    <p class="guide-meta">Updated November 2026</p>
+    <p>Saying an investment grew by 60% sounds good, until you learn it took eight years. Different return measures answer different questions, and using the wrong one can mislead you. This guide explains absolute return, CAGR and XIRR, and when each one fits. You can try the first on our <a href="cagr-calculator">CAGR calculator</a>.</p>
+    <h2>Key takeaways</h2>
+    <ul>
+      <li>Absolute return is the total growth. It ignores how long the money was invested.</li>
+      <li>CAGR turns that growth into a steady yearly rate, so investments held for different periods can be compared.</li>
+      <li>CAGR suits one starting amount and one ending amount. XIRR suits SIPs and any investment with several deposits or withdrawals on different dates.</li>
+    </ul>
+    <h2>Absolute return</h2>
+    <p>Absolute return is the total gain as a percentage of what you put in: (final value − starting value) ÷ starting value. It is simple, but it says nothing about time. A 50% gain in two years is very different from a 50% gain in ten years.</p>
+    <h2>CAGR: the yearly rate for a lump sum</h2>
+    <p>CAGR stands for compound annual growth rate. It is the single yearly rate that would take you from the starting value to the final value if growth had been smooth. The formula is:</p>
+    <p class="note">CAGR = (Final value ÷ Starting value)^(1 ÷ years) − 1</p>
+    <p>Because it converts growth into a per-year figure, CAGR lets you compare a fund, a stock, gold or property held for different lengths of time. It is the right tool when you invested once and are looking at the value today.</p>
+    <h2>Worked example (illustrative)</h2>
+    <p>You invest ₹5,00,000 in a fund and it is worth ₹8,00,000 after 4 years.</p>
+    <ul>
+      <li><strong>Absolute return:</strong> (8,00,000 − 5,00,000) ÷ 5,00,000 = 60%.</li>
+      <li><strong>CAGR:</strong> (8,00,000 ÷ 5,00,000)^(1/4) − 1 = 1.6^0.25 − 1, which is about 12.47% a year.</li>
+    </ul>
+    <p>Check it: ₹5,00,000 growing at 12.47% for 4 years gives about ₹8,00,000. The 60% figure alone would not tell you whether that was a good result for four years. The 12.47% does, and you can set it against a fixed deposit or an index fund on the same footing.</p>
+    <h2>XIRR: when money goes in at different times</h2>
+    <p>A monthly SIP is not one investment. Each instalment has been invested for a different length of time, so one starting value and one ending value cannot describe it. XIRR (extended internal rate of return) handles this. It takes every cash flow with its date, including deposits, withdrawals and the final value, and finds the single annual rate that fits them all. Spreadsheets have an XIRR function, and mutual fund statements often report it.</p>
+    <p>If you want to see what a regular investment could grow to, use the <a href="sip-calculator">SIP calculator</a> for monthly instalments or the <a href="lumpsum-calculator">lumpsum calculator</a> for a single amount.</p>
+    <h2>Which one should you use?</h2>
+    <ul>
+      <li><strong>One investment, one exit value:</strong> use CAGR.</li>
+      <li><strong>SIPs, top-ups or partial withdrawals:</strong> use XIRR.</li>
+      <li><strong>A quick sense of total gain:</strong> absolute return is fine, but do not compare it across different time periods.</li>
+    </ul>
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Using CAGR for a SIP. It treats the whole amount as invested on day one and gives a misleading answer.</li>
+      <li>Comparing absolute returns of investments held for different periods.</li>
+      <li>Forgetting that CAGR hides the ups and downs along the way. Two funds with the same CAGR can feel very different to hold.</li>
+      <li>Ignoring inflation. Real growth is roughly CAGR minus inflation.</li>
+      <li>Treating a past CAGR as a promise. Market returns are not guaranteed and can be negative.</li>
+    </ul>
+    <p>Whichever measure you use, look at a long enough period. A one-year figure says little about how an investment behaves across market cycles.</p>
+    <h2>Try the calculator</h2>
+    <p class="calc-links"><a href="cagr-calculator">CAGR Calculator</a><a href="sip-calculator">SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a></p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>What is the difference between CAGR and absolute return?</summary><p>Absolute return is the total growth over the whole period, such as 60%. CAGR converts that into a yearly rate, so you can compare investments held for different lengths of time.</p></details>
+    <details><summary>Is CAGR the same as XIRR?</summary><p>No. CAGR works for one starting amount and one ending amount. XIRR handles several deposits or withdrawals on different dates, such as a monthly SIP.</p></details>
+    <details><summary>Can CAGR be negative?</summary><p>Yes. If the final value is lower than the starting value, CAGR is negative and shows the average yearly loss.</p></details>
+    <details><summary>Does a high CAGR mean the investment is good?</summary><p>Not by itself. Check the period, the risk taken and how the figure compares with inflation and with similar options.</p></details>
+    <p class="meta">Estimates for planning only; not financial or tax advice.</p>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 PaisaTools. Results are estimates for planning only and are not financial, tax or investment advice.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+<script src="site.js" defer></script>
+</body>
+</html>

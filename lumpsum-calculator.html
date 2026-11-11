@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lumpsum Calculator: One-time Investment Returns | PaisaTools</title>
+<meta name="description" content="Free lumpsum calculator. See what a one-time investment grows to at your expected return, with inflation-adjusted value and a year-wise table.">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/lumpsum-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Lumpsum Calculator: One-time Investment Returns | PaisaTools">
+<meta property="og:description" content="Free lumpsum calculator. See what a one-time investment grows to at your expected return, with inflation-adjusted value and a year-wise table.">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/lumpsum-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lumpsum Calculator", "url": "https://drsutar08.github.io/paisatools/lumpsum-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/lumpsum-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lumpsum Calculator: One-time Investment Returns | PaisaTools">
+<meta name="twitter:description" content="Free lumpsum calculator. See what a one-time investment grows to at your expected return, with inflation-adjusted value and a year-wise table.">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/lumpsum-calculator.png">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/lumpsum-calculator">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"Lumpsum Calculator","item":"https://drsutar08.github.io/paisatools/lumpsum-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is lumpsum riskier than SIP?","acceptedAnswer":{"@type":"Answer","text":"In volatile markets a lumpsum can be more exposed to the entry price. A SIP averages your cost over time. Over long periods the difference narrows."}},{"@type":"Question","name":"Why show the value in today’s money?","acceptedAnswer":{"@type":"Answer","text":"Because prices rise. A ₹10 lakh corpus after 20 years buys much less than ₹10 lakh does today. The inflation-adjusted figure shows what it is really worth."}},{"@type":"Question","name":"What return should I assume?","acceptedAnswer":{"@type":"Answer","text":"Be conservative. Equity may give 10% to 12% over very long periods, but not every year. Debt funds and FDs give lower and steadier returns."}},{"@type":"Question","name":"Does this include tax?","acceptedAnswer":{"@type":"Answer","text":"No. Tax on gains depends on the type of investment and how long you hold it."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="main">
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>Lumpsum Calculator</h1>
+    <p>Invest a single amount today and see what it could be worth later. The calculator also shows the value after inflation, so you know your real gain.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      
+      <div class="field" id="f-amt">
+        <div class="field-top"><label for="amt">Investment amount</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="1000" max="50000000" step="5000" aria-label="Investment amount slider">
+        <div class="scale"><span>₹1K</span><span>₹5 Cr</span></div>
+      </div>
+      
+      <div class="field" id="f-rate">
+        <div class="field-top"><label for="rate">Expected return (per year)</label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="1" max="30" step="0.1" aria-label="Expected return (per year) slider">
+        <div class="scale"><span>1%</span><span>30%</span></div>
+      </div>
+      
+      <div class="field" id="f-yrs">
+        <div class="field-top"><label for="yrs">Time period</label>
+          <div class="box"><input id="yrs" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="yrsR" min="1" max="40" step="1" aria-label="Time period slider">
+        <div class="scale"><span>1 yr</span><span>40 yrs</span></div>
+      </div>
+      
+      <div class="field" id="f-inf">
+        <div class="field-top"><label for="inf">Inflation (per year)</label>
+          <div class="box"><input id="inf" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="infR" min="0" max="12" step="0.1" aria-label="Inflation (per year) slider">
+        <div class="scale"><span>0%</span><span>12%</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Value at maturity</div>
+        <div class="emi" id="mat">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of gains">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Gains</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Amount invested</span><b id="inv">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>Estimated gains</span><b id="gain">₹0</b></div>
+          <div><span>Value in today’s money</span><b id="real">₹0</b></div>
+          <div><span>Money doubles in</span><b id="dbl">0 yrs</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-y">
+    <h2 id="h-y">Year-by-year growth</h2>
+    <div class="table-wrap"><table><thead><tr><th>Year</th><th>Value</th><th>Gain in the year</th><th>In today’s money</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How does a lumpsum investment grow?</h2>
+      <p>A lumpsum is a single, one-time investment. It earns returns on the full amount from day one, and each year’s gains also earn returns. That is compounding, and it works harder the longer you stay invested.</p>
+      <div class="formula">Maturity = P × (1 + r)<sup>n</sup>
+        <small>P is the amount invested, r is the yearly return as a decimal and n is the number of years. Value in today’s money = maturity ÷ (1 + inflation)<sup>n</sup>.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>Lumpsum or SIP?</h3>
+      <ul>
+        <li><strong>Lumpsum</strong> suits a bonus, maturity amount or inheritance, especially in debt or hybrid funds.</li>
+        <li><strong>SIP</strong> spreads your entry over time and suits regular income, especially in equity.</li>
+        <li>You can mix both: invest part now and spread the rest over several months.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>Is lumpsum riskier than SIP?</summary>
+        <p>In volatile markets a lumpsum can be more exposed to the entry price. A SIP averages your cost over time. Over long periods the difference narrows.</p></details>
+      <details><summary>Why show the value in today’s money?</summary>
+        <p>Because prices rise. A ₹10 lakh corpus after 20 years buys much less than ₹10 lakh does today. The inflation-adjusted figure shows what it is really worth.</p></details>
+      <details><summary>What return should I assume?</summary>
+        <p>Be conservative. Equity may give 10% to 12% over very long periods, but not every year. Debt funds and FDs give lower and steadier returns.</p></details>
+      <details><summary>Does this include tax?</summary>
+        <p>No. Tax on gains depends on the type of investment and how long you hold it.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <a class="rel-guide" href="guide-sip-vs-lumpsum">Read the guide: SIP vs Lumpsum: Which Way Should You Invest?</a>
+        <h3>More calculators</h3>
+        <a href="emi-calculator">EMI Calculator</a>
+        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
+        <a href="car-loan-calculator">Car Loan Calculator</a>
+        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
+        <a href="loan-comparison-calculator">Compare Two Loans</a>
+        <a href="income-tax-calculator">Income Tax Calculator</a>
+        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
+        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
+        <a href="hra-calculator">HRA Exemption Calculator</a>
+        <a href="gst-calculator">GST Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Returns are assumptions, not guarantees. Tax is not included.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,num,bind}=PT;
+  function calc(){
+    const P=num($('amt').value),R=num($('rate').value),Y=Math.round(num($('yrs').value)),I=num($('inf').value)||0;
+    let e='';
+    if(!(P>=100)) e='Enter an amount of at least ₹100.';
+    else if(!(R>0&&R<=60)) e='Enter a return between 0% and 60%.';
+    else if(!(Y>=1&&Y<=60)) e='Enter a time period between 1 and 60 years.';
+    $('err').textContent=e; if(e) return;
+    const A=P*Math.pow(1+R/100,Y),real=A/Math.pow(1+I/100,Y);
+    $('mat').textContent=inr(A); $('inv').textContent=inr(P); $('gain').textContent=inr(A-P); $('real').textContent=inr(real);
+    $('dbl').textContent=(Math.log(2)/Math.log(1+R/100)).toFixed(1)+' yrs';
+    $('insight').textContent='Your money grows '+(A/P).toFixed(2)+' times. After '+I+'% inflation, it is worth about '+inr(real)+' in today’s money.';
+    let prev=P;const rows=[];for(let y=1;y<=Y;y++){const v=P*Math.pow(1+R/100,y);rows.push('<tr><td>'+y+'</td><td>'+inr(v)+'</td><td>'+inr(v-prev)+'</td><td>'+inr(v/Math.pow(1+I/100,y))+'</td></tr>');prev=v;}
+    $('rows').innerHTML=rows.join('');
+  }
+  (function(){const A=500000*Math.pow(1.12,10);
+    $('example').textContent='Invest ₹5,00,000 at 12% a year for 10 years. It grows to 5,00,000 × 1.12^10, which is about '+inr(A)+'. Your gain is '+inr(A-500000)+'.';})();
+  bind([{id:'amt',val:500000},{id:'rate',val:12,fmt:PT.fDec},{id:'yrs',val:10,fmt:v=>String(v)},{id:'inf',val:6,fmt:PT.fDec}],calc);
+  calc();
+})();
+</script>
+
+<script>PT.donut(["inv","gain"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>

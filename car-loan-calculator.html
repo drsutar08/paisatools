@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Car Loan EMI Calculator: Down Payment, EMI and Total Cost | PaisaTools</title>
+<meta name="description" content="Free car loan EMI calculator for India. Enter the car price, down payment, rate and tenure to see your EMI, total interest and full cost of buying.">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/car-loan-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Car Loan EMI Calculator: Down Payment, EMI and Total Cost | PaisaTools">
+<meta property="og:description" content="Free car loan EMI calculator for India. Enter the car price, down payment, rate and tenure to see your EMI, total interest and full cost of buying.">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/car-loan-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Car Loan Calculator", "url": "https://drsutar08.github.io/paisatools/car-loan-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/car-loan-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Loan EMI Calculator: Down Payment, EMI and Total Cost | PaisaTools">
+<meta name="twitter:description" content="Free car loan EMI calculator for India. Enter the car price, down payment, rate and tenure to see your EMI, total interest and full cost of buying.">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/car-loan-calculator.png">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/car-loan-calculator">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"Car Loan EMI Calculator","item":"https://drsutar08.github.io/paisatools/car-loan-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much down payment should I pay?","acceptedAnswer":{"@type":"Answer","text":"At least 15% to 20% of the on-road price is a good target. A larger down payment lowers your EMI and total interest."}},{"@type":"Question","name":"What is the best tenure for a car loan?","acceptedAnswer":{"@type":"Answer","text":"Three to five years is common. Longer tenures lower the EMI but you pay more interest, and the car may be worth less than the loan for longer."}},{"@type":"Question","name":"Are there tax benefits on a car loan?","acceptedAnswer":{"@type":"Answer","text":"Not for personal use. Self-employed people and businesses may claim interest and depreciation if the car is used for work. Ask a tax advisor."}},{"@type":"Question","name":"Does my credit score affect the rate?","acceptedAnswer":{"@type":"Answer","text":"Yes. A score above 750 usually gets the best rates."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="main">
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>Car Loan EMI Calculator</h1>
+    <p>Plan your car purchase. See your monthly EMI, the interest you will pay and the real total cost, including down payment and fees.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      
+      <div class="field" id="f-price">
+        <div class="field-top"><label for="price">On-road price of the car</label>
+          <div class="box"><span>₹</span><input id="price" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="priceR" min="200000" max="5000000" step="25000" aria-label="On-road price of the car slider">
+        <div class="scale"><span>₹2 L</span><span>₹50 L</span></div>
+      </div>
+      
+      <div class="field" id="f-down">
+        <div class="field-top"><label for="down">Down payment</label>
+          <div class="box"><input id="down" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="downR" min="0" max="60" step="1" aria-label="Down payment slider">
+        <div class="scale"><span>0%</span><span>60%</span></div>
+      </div>
+      
+      <div class="field" id="f-rate">
+        <div class="field-top"><label for="rate">Interest rate (per year)</label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="6" max="20" step="0.05" aria-label="Interest rate (per year) slider">
+        <div class="scale"><span>6%</span><span>20%</span></div>
+      </div>
+      
+      <div class="field" id="f-ten">
+        <div class="field-top"><label for="ten">Loan tenure</label>
+          <div class="box"><input id="ten" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="tenR" min="1" max="8" step="1" aria-label="Loan tenure slider">
+        <div class="scale"><span>1 yr</span><span>8 yrs</span></div>
+      </div>
+      
+      <div class="field" id="f-fee">
+        <div class="field-top"><label for="fee">Processing fee</label>
+          <div class="box"><input id="fee" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="feeR" min="0" max="3" step="0.1" aria-label="Processing fee slider">
+        <div class="scale"><span>0%</span><span>3%</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Your monthly EMI</div>
+        <div class="emi" id="emi">₹0 <small>/month</small></div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of interest">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Interest</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Loan amount</span><b id="loan">₹0</b></div>
+          <div><span>Down payment</span><b id="dp">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>Total interest</span><b id="int">₹0</b></div>
+          <div><span>Total cost of the car</span><b id="cost">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-t">
+    <h2 id="h-t">How tenure changes the EMI</h2>
+    <div class="table-wrap"><table><thead><tr><th>Tenure</th><th>EMI</th><th>Total interest</th><th>Total cost</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How car loan EMI is calculated</h2>
+      <p>Car loans use the same reducing-balance method as other loans. Your loan is the car price minus your down payment. Most banks finance up to 80% to 90% of the on-road price, and rates are usually a little higher than home loans.</p>
+      <div class="formula">EMI = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1)
+        <small>P is the loan amount, r is the monthly rate and n is the number of months.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>The 20/4/10 rule of thumb</h3>
+      <ul>
+        <li><strong>20%</strong> or more as down payment.</li>
+        <li><strong>4 years</strong> or less as the loan tenure.</li>
+        <li><strong>10%</strong> of monthly income or less on the EMI (and under 15% with insurance and fuel).</li>
+      </ul>
+      <p>It is not a rule, but a car loses value quickly, so a shorter loan and larger down payment lower your risk.</p>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>How much down payment should I pay?</summary>
+        <p>At least 15% to 20% of the on-road price is a good target. A larger down payment lowers your EMI and total interest.</p></details>
+      <details><summary>What is the best tenure for a car loan?</summary>
+        <p>Three to five years is common. Longer tenures lower the EMI but you pay more interest, and the car may be worth less than the loan for longer.</p></details>
+      <details><summary>Are there tax benefits on a car loan?</summary>
+        <p>Not for personal use. Self-employed people and businesses may claim interest and depreciation if the car is used for work. Ask a tax advisor.</p></details>
+      <details><summary>Does my credit score affect the rate?</summary>
+        <p>Yes. A score above 750 usually gets the best rates.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <a class="rel-guide" href="guide-how-to-choose-a-car-loan">Read the guide: How to Choose a Car Loan</a>
+        <h3>More calculators</h3>
+        <a href="emi-calculator">EMI Calculator</a>
+        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
+        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
+        <a href="loan-comparison-calculator">Compare Two Loans</a>
+        <a href="income-tax-calculator">Income Tax Calculator</a>
+        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
+        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
+        <a href="hra-calculator">HRA Exemption Calculator</a>
+        <a href="gst-calculator">GST Calculator</a>
+        <a href="gratuity-calculator">Gratuity Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Rates differ by lender and credit score. On-road price includes registration, insurance and other costs.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,num,bind}=PT;
+  function emiOf(P,R,n){const r=R/1200;return r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);}
+  function figs(price,dp,R,Y,F){const loan=price*(1-dp/100),n=Math.round(Y*12),emi=emiOf(loan,R,n),pay=emi*n,fee=loan*F/100;return {loan,down:price*dp/100,emi,int:pay-loan,cost:price*dp/100+pay+fee,fee};}
+  function calc(){
+    const price=num($('price').value),dp=num($('down').value)||0,R=num($('rate').value),Y=num($('ten').value),F=num($('fee').value)||0;
+    let e='';
+    if(!(price>=50000)) e='Enter a car price of at least ₹50,000.';
+    else if(!(dp>=0&&dp<100)) e='Enter a down payment between 0% and 99%.';
+    else if(!(R>=0&&R<=50)) e='Enter an interest rate between 0% and 50%.';
+    else if(!(Y>=1&&Y<=10)) e='Enter a tenure between 1 and 10 years.';
+    $('err').textContent=e; if(e) return;
+    const f=figs(price,dp,R,Y,F);
+    $('emi').innerHTML=inr(f.emi)+' <small>/month</small>'; $('loan').textContent=inr(f.loan); $('dp').textContent=inr(f.down); $('int').textContent=inr(f.int); $('cost').textContent=inr(f.cost);
+    $('insight').textContent='You pay '+inr(f.int+f.fee)+' extra on top of the car’s price in interest and fees. Keep your EMI below about 10% of your monthly income.';
+    $('rows').innerHTML=[3,4,5,7].map(t=>{const g=figs(price,dp,R,t,F);return '<tr'+(t===Math.round(Y)?' class="hl"':'')+'><td>'+t+' years</td><td>'+inr(g.emi)+'</td><td>'+inr(g.int)+'</td><td>'+inr(g.cost)+'</td></tr>';}).join('');
+  }
+  (function(){const f=figs(1000000,20,9.5,5,0);
+    $('example').textContent='A ₹10,00,000 car with 20% down payment needs a loan of '+inr(f.loan)+'. At 9.5% for 5 years, the EMI is about '+inr(f.emi)+', total interest is '+inr(f.int)+' and the total cost of the car is '+inr(f.cost)+'.';})();
+  bind([{id:'price',val:1000000},{id:'down',val:20,fmt:v=>String(v)},{id:'rate',val:9.5,fmt:PT.fDec},{id:'ten',val:5,fmt:v=>String(v)},{id:'fee',val:0.5,fmt:PT.fDec}],calc);
+  calc();
+})();
+</script>
+
+<script>PT.donut(["loan","int"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Compare Two Loans: EMI and Total Cost Side by Side | PaisaTools</title>
+<meta name="description" content="Free loan comparison calculator. Put two loan offers side by side and see which has the lower EMI, total interest and true cost including fees.">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/loan-comparison-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Compare Two Loans: EMI and Total Cost Side by Side | PaisaTools">
+<meta property="og:description" content="Free loan comparison calculator. Put two loan offers side by side and see which has the lower EMI, total interest and true cost including fees.">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/loan-comparison-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Compare Two Loans Calculator", "url": "https://drsutar08.github.io/paisatools/loan-comparison-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/loan-comparison-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compare Two Loans: EMI and Total Cost Side by Side | PaisaTools">
+<meta name="twitter:description" content="Free loan comparison calculator. Put two loan offers side by side and see which has the lower EMI, total interest and true cost including fees.">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/loan-comparison-calculator.png">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/loan-comparison-calculator">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"Compare Two Loans","item":"https://drsutar08.github.io/paisatools/loan-comparison-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I compare using the same tenure?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you can. Comparing the same tenure shows the effect of the rate and fee alone."}},{"@type":"Question","name":"Does a lower rate always win?","acceptedAnswer":{"@type":"Answer","text":"Not if the other fee is much higher. Compare the total cost, which includes the processing fee."}},{"@type":"Question","name":"Is processing fee refundable?","acceptedAnswer":{"@type":"Answer","text":"Usually not. It is paid once when the loan is sanctioned, so include it in your comparison."}},{"@type":"Question","name":"Can I switch lenders later?","acceptedAnswer":{"@type":"Answer","text":"Yes, through a balance transfer, but check the new lender’s fees against the interest you would save."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="main">
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>Compare Two Loans</h1>
+    <p>Got two loan offers? Enter the rate, tenure and processing fee for each and see which one really costs less.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      
+      <div class="field" id="f-amt">
+        <div class="field-top"><label for="amt">Loan amount (same for both)</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="100000" max="50000000" step="50000" aria-label="Loan amount (same for both) slider">
+        <div class="scale"><span>₹1 L</span><span>₹5 Cr</span></div>
+      </div>
+      <h2 style="font-size:1rem">Loan A</h2>
+      
+      <div class="field" id="f-ra">
+        <div class="field-top"><label for="ra">Interest rate</label>
+          <div class="box"><input id="ra" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="raR" min="5" max="24" step="0.05" aria-label="Interest rate slider">
+        <div class="scale"><span>5%</span><span>24%</span></div>
+      </div>
+      
+      <div class="field" id="f-ta">
+        <div class="field-top"><label for="ta">Tenure</label>
+          <div class="box"><input id="ta" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="taR" min="1" max="30" step="1" aria-label="Tenure slider">
+        <div class="scale"><span>1</span><span>30</span></div>
+      </div>
+      
+      <div class="field" id="f-fa">
+        <div class="field-top"><label for="fa">Processing fee</label>
+          <div class="box"><input id="fa" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="faR" min="0" max="5" step="0.1" aria-label="Processing fee slider">
+        <div class="scale"><span>0%</span><span>5%</span></div>
+      </div>
+      <h2 style="font-size:1rem">Loan B</h2>
+      
+      <div class="field" id="f-rb">
+        <div class="field-top"><label for="rb">Interest rate</label>
+          <div class="box"><input id="rb" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rbR" min="5" max="24" step="0.05" aria-label="Interest rate slider">
+        <div class="scale"><span>5%</span><span>24%</span></div>
+      </div>
+      
+      <div class="field" id="f-tb">
+        <div class="field-top"><label for="tb">Tenure</label>
+          <div class="box"><input id="tb" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="tbR" min="1" max="30" step="1" aria-label="Tenure slider">
+        <div class="scale"><span>1</span><span>30</span></div>
+      </div>
+      
+      <div class="field" id="f-fb">
+        <div class="field-top"><label for="fb">Processing fee</label>
+          <div class="box"><input id="fb" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="fbR" min="0" max="5" step="0.1" aria-label="Processing fee slider">
+        <div class="scale"><span>0%</span><span>5%</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label" id="winLabel">Cheaper loan</div>
+        <div class="emi" id="win">–</div>
+      </div>
+      <p class="note" id="insight"></p>
+      <div class="table-wrap"><table><thead><tr><th></th><th>Loan A</th><th>Loan B</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <div class="guide">
+    <article>
+      <h2>How to compare two loans properly</h2>
+      <p>The lowest EMI is not always the cheapest loan. A longer tenure lowers the EMI but raises the total interest. A small difference in rate, or a high processing fee, can change which offer is better. Compare the total cost: all your EMIs plus the fees.</p>
+      <div class="formula">Total cost = EMI × months + processing fee
+        <small>EMI = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1), with r the monthly rate and n the number of months.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>What else to check</h3>
+      <ul>
+        <li><strong>Floating or fixed rate.</strong> Floating rates can move with the market.</li>
+        <li><strong>Prepayment charges.</strong> Some lenders charge to close the loan early.</li>
+        <li><strong>Insurance and other add-ons.</strong> These raise your real cost.</li>
+        <li><strong>Equal tenure.</strong> For a fair comparison, set the same tenure for both loans.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>Should I compare using the same tenure?</summary>
+        <p>Yes, if you can. Comparing the same tenure shows the effect of the rate and fee alone.</p></details>
+      <details><summary>Does a lower rate always win?</summary>
+        <p>Not if the other fee is much higher. Compare the total cost, which includes the processing fee.</p></details>
+      <details><summary>Is processing fee refundable?</summary>
+        <p>Usually not. It is paid once when the loan is sanctioned, so include it in your comparison.</p></details>
+      <details><summary>Can I switch lenders later?</summary>
+        <p>Yes, through a balance transfer, but check the new lender’s fees against the interest you would save.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <a class="rel-guide" href="guide-how-to-choose-a-car-loan">Read the guide: How to Choose a Car Loan</a>
+        <h3>More calculators</h3>
+        <a href="emi-calculator">EMI Calculator</a>
+        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
+        <a href="car-loan-calculator">Car Loan Calculator</a>
+        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
+        <a href="income-tax-calculator">Income Tax Calculator</a>
+        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
+        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
+        <a href="hra-calculator">HRA Exemption Calculator</a>
+        <a href="gst-calculator">GST Calculator</a>
+        <a href="gratuity-calculator">Gratuity Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Results are estimates. Lenders may add insurance, GST on fees and other charges. Check the final offer letter.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,short,num,bind}=PT;
+  function loan(P,R,Y,F){const n=Math.round(Y*12),r=R/1200,emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),pay=emi*n,fee=P*F/100;return {emi,n,int:pay-P,fee,cost:pay+fee};}
+  function calc(){
+    const P=num($('amt').value),ra=num($('ra').value),ta=num($('ta').value),fa=num($('fa').value)||0,rb=num($('rb').value),tb=num($('tb').value),fb=num($('fb').value)||0;
+    let e='';
+    if(!(P>=10000)) e='Enter a loan amount of at least ₹10,000.';
+    else if(!(ra>=0&&rb>=0&&ra<=50&&rb<=50)) e='Enter interest rates between 0% and 50%.';
+    else if(!(ta>=1&&tb>=1&&ta<=40&&tb<=40)) e='Enter tenures between 1 and 40 years.';
+    $('err').textContent=e; if(e) return;
+    const a=loan(P,ra,ta,fa),b=loan(P,rb,tb,fb),d=Math.abs(a.cost-b.cost);
+    $('win').textContent=d<1?'Same cost':(a.cost<b.cost?'Loan A':'Loan B');
+    $('winLabel').textContent=d<1?'Both cost the same':'Cheaper loan, saves '+inr(d);
+    $('insight').textContent=a.emi<b.emi?'Loan A has the lower EMI by '+inr(b.emi-a.emi)+' a month.':b.emi<a.emi?'Loan B has the lower EMI by '+inr(a.emi-b.emi)+' a month.':'Both have the same EMI.';
+    const r=(n,x,y)=>'<tr><td>'+n+'</td><td>'+x+'</td><td>'+y+'</td></tr>';
+    $('rows').innerHTML=r('Monthly EMI',inr(a.emi),inr(b.emi))+r('Total interest',inr(a.int),inr(b.int))+r('Processing fee',inr(a.fee),inr(b.fee))+r('Total cost',inr(a.cost),inr(b.cost));
+  }
+  (function(){const a=loan(3000000,8.5,20,0.5),b=loan(3000000,8.75,20,0);
+    $('example').textContent='For a ₹30,00,000 loan over 20 years, Loan A at 8.5% with a 0.5% fee costs '+inr(a.cost)+' in total. Loan B at 8.75% with no fee costs '+inr(b.cost)+'. '+(a.cost<b.cost?'Loan A':'Loan B')+' is cheaper by '+inr(Math.abs(a.cost-b.cost))+'.';})();
+  bind([{id:'amt',val:3000000},{id:'ra',val:8.5,fmt:PT.fDec},{id:'ta',val:20,fmt:v=>String(v)},{id:'fa',val:0.5,fmt:PT.fDec},{id:'rb',val:8.75,fmt:PT.fDec},{id:'tb',val:20,fmt:v=>String(v)},{id:'fb',val:0,fmt:PT.fDec}],calc);
+  calc();
+})();
+</script>
+
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -17,9 +17,9 @@ Step 1: Choose your name and domain
 Buy a domain (a .in or .com costs about Rs 800-1,000 a year from GoDaddy,
 Hostinger, Namecheap or Cloudflare).
 
-Then open every file in a text editor (Notepad, or VS Code which is free) and
-use Find and Replace across all files:
-  https://www.yourdomain.in   ->  your real address, e.g. https://www.mysite.in
+Your site address (https://drsutar08.github.io/paisatools/) is already set in every file.
+If you ever move to your own domain, use Find and Replace across all files:
+  https://drsutar08.github.io/paisatools   ->  your new address
 If you want a different brand name, also replace "PaisaTools", "paisatools"
 and "paisa<span>tools</span>" (the logo in the header).
 
@@ -70,3 +70,32 @@ deposit rates every quarter. If they change, update the default rate and
 the rate shown in the text on ppf-calculator.html,
 sukanya-samriddhi-calculator.html, rd-calculator.html and fd-calculator.html
 (search for "October–December 2026").
+
+
+New files and what they do
+--------------------------
+  theme.css, calc-base.css, calc-common.js   shared look and calculator helpers
+  site.js          dark/light switch, share link, print, cookie notice, offline support
+  sw.js, manifest.webmanifest, icon-*.png   install-on-phone and offline support
+                   (change CACHE name in sw.js each time you publish big updates)
+  guides.html, guide-*.html                  money guides
+  hi/index.html    Hindi home page
+  tests/run.js     run:  node tests/run.js   (checks calculator formulas)
+
+Adding or changing pages
+------------------------
+  node tools/sync.js     rebuilds the menu, footer, "More calculators" box, skip link and sitemap
+                         on every page (English and Hindi). Add new calculators to
+                         tools/site.config.js first.
+  node tests/run.js      checks the calculator formulas.
+  hi/                    Hindi versions of all 24 calculators and the home page.
+  tools/make-og.js       makes the sharing images in og/ (needs Edge or Chrome installed)
+  tests/                 cd tests, npm install (once), then npm test: checks every calculator,
+                         English and Hindi, in a browser-like environment
+
+Clean web addresses
+-------------------
+Pages are linked without ".html" (for example /paisatools/emi-calculator). GitHub Pages serves these
+automatically. If you open the files straight from your computer, the links will not work, so preview
+with a small web server instead:   npx serve .   (it understands clean addresses).
+Running  node tools/sync.js  keeps every link in this style.

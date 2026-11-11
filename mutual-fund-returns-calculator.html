@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mutual Fund Returns Calculator: SIP or Lumpsum with Tax | PaisaTools</title>
+<meta name="description" content="Free mutual fund returns calculator. Estimate SIP or lumpsum returns after expense ratio and equity capital gains tax (12.5% LTCG).">
+<link rel="canonical" href="https://drsutar08.github.io/paisatools/mutual-fund-returns-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Mutual Fund Returns Calculator: SIP or Lumpsum with Tax | PaisaTools">
+<meta property="og:description" content="Free mutual fund returns calculator. Estimate SIP or lumpsum returns after expense ratio and equity capital gains tax (12.5% LTCG).">
+<meta property="og:url" content="https://drsutar08.github.io/paisatools/mutual-fund-returns-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mutual Fund Returns Calculator", "url": "https://drsutar08.github.io/paisatools/mutual-fund-returns-calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://drsutar08.github.io/paisatools/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://drsutar08.github.io/paisatools/og/mutual-fund-returns-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mutual Fund Returns Calculator: SIP or Lumpsum with Tax | PaisaTools">
+<meta name="twitter:description" content="Free mutual fund returns calculator. Estimate SIP or lumpsum returns after expense ratio and equity capital gains tax (12.5% LTCG).">
+<meta name="twitter:image" content="https://drsutar08.github.io/paisatools/og/mutual-fund-returns-calculator.png">
+<link rel="alternate" hreflang="en-IN" href="https://drsutar08.github.io/paisatools/mutual-fund-returns-calculator">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drsutar08.github.io/paisatools/"},{"@type":"ListItem","position":2,"name":"Mutual Fund Returns Calculator","item":"https://drsutar08.github.io/paisatools/mutual-fund-returns-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an expense ratio?","acceptedAnswer":{"@type":"Answer","text":"It is the yearly fee a mutual fund charges, as a percentage of your investment. It is already deducted from the fund’s NAV."}},{"@type":"Question","name":"How is equity mutual fund tax calculated?","acceptedAnswer":{"@type":"Answer","text":"Gains on units held for over a year are taxed at 12.5% on the amount above ₹1.25 lakh a year. Units sold within a year are taxed at 20%. Rules can change, so check the current law."}},{"@type":"Question","name":"Does this work for debt funds?","acceptedAnswer":{"@type":"Answer","text":"No. Debt fund taxation is different. This calculator assumes an equity fund."}},{"@type":"Question","name":"Can returns be guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. Mutual funds carry market risk. Use a conservative return assumption for planning."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav>
+  </header>
+<main id="main">
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>Mutual Fund Returns Calculator</h1>
+    <p>See what your mutual fund investment could be worth after the fund’s expense ratio and long-term capital gains tax. Choose SIP or lumpsum.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      
+      <div class="tabs" id="mode" role="group" aria-label="Investment type"><button type="button" data-v="sip" aria-pressed="true">Monthly SIP</button><button type="button" data-v="lump" aria-pressed="false">Lumpsum</button></div>
+      
+      <div class="field" id="f-amt">
+        <div class="field-top"><label for="amt">Monthly investment</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="500" max="200000" step="500" aria-label="Monthly investment slider">
+        <div class="scale"><span>₹500</span><span>₹2 L</span></div>
+      </div>
+      
+      <div class="field" id="f-ret">
+        <div class="field-top"><label for="ret">Expected return before expenses</label>
+          <div class="box"><input id="ret" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="retR" min="1" max="30" step="0.1" aria-label="Expected return before expenses slider">
+        <div class="scale"><span>1%</span><span>30%</span></div>
+      </div>
+      
+      <div class="field" id="f-exp">
+        <div class="field-top"><label for="exp">Expense ratio</label>
+          <div class="box"><input id="exp" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="expR" min="0" max="3" step="0.05" aria-label="Expense ratio slider">
+        <div class="scale"><span>0%</span><span>3%</span></div>
+      </div>
+      
+      <div class="field" id="f-yrs">
+        <div class="field-top"><label for="yrs">Time period</label>
+          <div class="box"><input id="yrs" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="yrsR" min="1" max="40" step="1" aria-label="Time period slider">
+        <div class="scale"><span>1 yr</span><span>40 yrs</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Value after tax</div>
+        <div class="emi" id="net">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of gains">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Gains</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Amount invested</span><b id="inv">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>Estimated gains</span><b id="gain">₹0</b></div>
+          <div><span>Value before tax</span><b id="gross">₹0</b></div>
+          <div><span>Estimated tax</span><b id="tax">₹0</b></div>
+          <div><span>Lost to expense ratio</span><b id="lost">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <div class="guide">
+    <article>
+      <h2>How mutual fund returns are worked out</h2>
+      <p>A fund’s returns are reduced by its expense ratio, the yearly fee it charges. The return you actually earn is roughly the gross return minus the expense ratio. When you sell, equity gains over ₹1.25 lakh in a year are taxed at 12.5% if you held the units for more than a year.</p>
+      <div class="formula">Net return = gross return − expense ratio
+        <small>SIP value = SIP × ((1 + i)<sup>n</sup> − 1) ÷ i × (1 + i), with i the monthly net return. Lumpsum = P × (1 + net return)<sup>years</sup>.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>Direct or regular plans?</h3>
+      <ul>
+        <li><strong>Direct plans</strong> have lower expense ratios because there is no distributor commission.</li>
+        <li><strong>Regular plans</strong> pay a commission, so the ratio is usually 0.5% to 1% higher.</li>
+        <li>Over 20 years, even a 1% difference can reduce your final value by a noticeable amount. Try changing the expense ratio above to see.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is an expense ratio?</summary>
+        <p>It is the yearly fee a mutual fund charges, as a percentage of your investment. It is already deducted from the fund’s NAV.</p></details>
+      <details><summary>How is equity mutual fund tax calculated?</summary>
+        <p>Gains on units held for over a year are taxed at 12.5% on the amount above ₹1.25 lakh a year. Units sold within a year are taxed at 20%. Rules can change, so check the current law.</p></details>
+      <details><summary>Does this work for debt funds?</summary>
+        <p>No. Debt fund taxation is different. This calculator assumes an equity fund.</p></details>
+      <details><summary>Can returns be guaranteed?</summary>
+        <p>No. Mutual funds carry market risk. Use a conservative return assumption for planning.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <a class="rel-guide" href="guide-sip-vs-lumpsum">Read the guide: SIP vs Lumpsum: Which Way Should You Invest?</a>
+        <h3>More calculators</h3>
+        <a href="emi-calculator">EMI Calculator</a>
+        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
+        <a href="car-loan-calculator">Car Loan Calculator</a>
+        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
+        <a href="loan-comparison-calculator">Compare Two Loans</a>
+        <a href="income-tax-calculator">Income Tax Calculator</a>
+        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
+        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
+        <a href="hra-calculator">HRA Exemption Calculator</a>
+        <a href="gst-calculator">GST Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Assumes an equity mutual fund. LTCG of 12.5% above ₹1.25 lakh a year is applied at redemption. Short-term and debt fund rules differ. Returns are not guaranteed.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,short,num,bind,tabs}=PT;
+  let mode='sip';
+  function value(amt,R,Y){
+    if(mode==='lump') return amt*Math.pow(1+R/100,Y);
+    const i=R/1200,n=Y*12; return i===0?amt*n:amt*((Math.pow(1+i,n)-1)/i)*(1+i);
+  }
+  function calc(){
+    const A=num($('amt').value),r=num($('ret').value),x=num($('exp').value)||0,Y=Math.round(num($('yrs').value));
+    let e='';
+    if(!(A>=100)) e='Enter an amount of at least ₹100.';
+    else if(!(r>0&&r<=60&&r>x)) e='Enter a return that is higher than the expense ratio.';
+    else if(!(Y>=1&&Y<=60)) e='Enter a time period between 1 and 60 years.';
+    $('err').textContent=e; if(e) return;
+    const inv=mode==='lump'?A:A*Y*12,g=value(A,r-x,Y),g0=value(A,r,Y),gain=g-inv;
+    const tax=Y>=1?Math.max(0,gain-125000)*0.125:gain*0.2;
+    $('net').textContent=inr(g-tax); $('inv').textContent=inr(inv); $('gross').textContent=inr(g); $('gain').textContent=inr(g-inv); $('tax').textContent=inr(tax); $('lost').textContent=inr(g0-g);
+    $('insight').textContent='After a '+x+'% expense ratio and about '+inr(tax)+' of tax, your '+short(inv)+' becomes '+short(g-tax)+'. A lower expense ratio would keep more of it.';
+  }
+  (function(){mode='sip';const g=value(10000,12-1,10),inv=1200000,tax=Math.max(0,g-inv-125000)*0.125;
+    $('example').textContent='A ₹10,000 monthly SIP for 10 years at 12% gross return and a 1% expense ratio invests '+inr(inv)+' and grows to about '+inr(g)+'. Estimated tax is '+inr(tax)+', leaving '+inr(g-tax)+'.';})();
+  bind([{id:'amt',val:10000},{id:'ret',val:12,fmt:PT.fDec},{id:'exp',val:1,fmt:PT.fDec},{id:'yrs',val:10,fmt:v=>String(v)}],calc);
+  tabs('#mode',v=>{mode=v;document.querySelector('label[for=amt]').textContent=v==='sip'?'Monthly investment':'Lumpsum amount';
+    const R=$('amtR');if(v==='sip'){R.min=500;R.max=200000;R.step=500;PT.$('amt').value=PT.fInt(10000);R.value=10000;}else{R.min=10000;R.max=50000000;R.step=10000;PT.$('amt').value=PT.fInt(500000);R.value=500000;}calc();});
+  calc();
+})();
+</script>
+
+<script>PT.donut(["inv","gain"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>

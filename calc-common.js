@@ -20,5 +20,13 @@ window.PT=(function(){
     const bs=document.querySelectorAll(sel+' button');
     bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria-pressed',x===b)); cb(b.dataset.v);}));
   }
-  return {$,inr,short,num,fInt,fDec,bind,tabs};
+  function parse(t){const m=String(t).replace(/,/g,'').match(/([0-9.]+)s*(Cr|L|K)?/);if(!m)return 0;let v=parseFloat(m[1]);if(m[2]==='Cr')v*=1e7;else if(m[2]==='L')v*=1e5;else if(m[2]==='K')v*=1e3;return v;}
+  /* Keep the donut in step with result boxes: fn gets the numbers shown in ids and returns the share (0 to 1) of the second colour. */
+  function donut(ids,fn){
+    const arc=$('arc'),pct=$('pct');if(!arc||!pct)return;
+    const run=()=>{const s=fn(ids.map(i=>parse($(i).textContent)));if(!isFinite(s))return;const C=2*Math.PI*52;arc.setAttribute('stroke-dasharray',((1-s)*C).toFixed(2)+' '+C.toFixed(2));pct.textContent=Math.round(s*100)+'%';};
+    if(typeof MutationObserver!=='undefined'){const mo=new MutationObserver(run);ids.forEach(i=>mo.observe($(i),{childList:true,characterData:true,subtree:true}));}
+    run();
+  }
+  return {$,inr,short,num,fInt,fDec,bind,tabs,donut};
 })();
