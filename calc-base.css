@@ -111,3 +111,6 @@ body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 .pt-banner[hidden]{display:none!important}
 aside .pt-banner[data-ok]{margin-block:0}
 @media print{.pt-banner{display:none!important}}
+.pt-rail{position:fixed;top:96px;width:160px;margin:0!important;z-index:5}
+.pt-rail:not([data-ok]){height:0}
+@media (max-width:1379px){.pt-rail{display:none!important}}
