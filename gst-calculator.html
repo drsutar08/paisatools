@@ -215,6 +215,7 @@ footer a{color:var(--muted)}
     <div class="table-wrap"><table><thead><tr><th>GST rate</th><th>Price before GST</th><th>GST amount</th><th>CGST</th><th>SGST</th><th>Total price</th></tr></thead><tbody id="rows"></tbody></table></div>
   </section>
 
+  <div class="pt-banner" data-slot="mid"></div>
   <div class="guide">
     <article>
       <h2>How to calculate GST</h2>
@@ -234,7 +235,7 @@ footer a{color:var(--muted)}
       </tbody></table></div>
       <p>Rates depend on the exact HSN or SAC code of a product or service. Always check the official rate for your item on the CBIC GST portal before you invoice.</p>
       <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
-  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+  <div class="pt-banner" data-slot="article"></div>
       <h2>Frequently asked questions</h2>
       <details><summary>What is the difference between CGST, SGST and IGST?</summary><p>CGST and SGST are charged together on sales within one state, each at half the GST rate. IGST is charged on sales from one state to another, at the full rate. The total tax is the same.</p></details>
       <details><summary>How do I remove 18% GST from a price?</summary><p>Divide the GST-inclusive amount by 1.18. For example, ₹1,180 ÷ 1.18 = ₹1,000, so the GST inside it is ₹180. Choose 'Remove GST' above to do this automatically.</p></details>
@@ -243,8 +244,10 @@ footer a{color:var(--muted)}
       
     </article>
     <aside>
-      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
-  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="8670690217" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
       <div class="related">
         <a class="rel-guide" href="guide-gst-cgst-sgst-igst-explained">Read the guide: GST Explained: CGST, SGST and IGST in Simple Terms</a>
         <h3>More calculators</h3>
@@ -260,8 +263,10 @@ footer a{color:var(--muted)}
         <a href="gratuity-calculator">Gratuity Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
+      <div class="pt-banner" data-slot="side"></div>
     </aside>
   </div>
+  <div class="pt-banner" data-slot="bottom"></div>
 </main>
 
   <footer class="site-footer">

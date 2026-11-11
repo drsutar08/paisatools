@@ -104,3 +104,9 @@ body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 .ad-slot{margin-block:20px;text-align:center;overflow:hidden}
 .ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
 @media print{.ad-slot{display:none!important}}
+
+.pt-banner{margin-block:20px;text-align:center;overflow:hidden;max-width:100%;min-height:60px}
+.pt-banner::before{content:"Advertisement";display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#6b7280);opacity:.7;margin-bottom:4px}
+.pt-banner[hidden]{display:none!important}
+aside .pt-banner{margin-block:0}
+@media print{.pt-banner{display:none!important}}
