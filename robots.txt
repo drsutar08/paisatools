@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drsutar08.github.io/paisatools/sitemap.xml
+Sitemap: https://paisatools.pages.dev/sitemap.xml

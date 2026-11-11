@@ -17,9 +17,9 @@ Step 1: Choose your name and domain
 Buy a domain (a .in or .com costs about Rs 800-1,000 a year from GoDaddy,
 Hostinger, Namecheap or Cloudflare).
 
-Your site address (https://drsutar08.github.io/paisatools/) is already set in every file.
+Your site address (https://paisatools.pages.dev/) is already set in every file.
 If you ever move to your own domain, use Find and Replace across all files:
-  https://drsutar08.github.io/paisatools   ->  your new address
+  https://paisatools.pages.dev   ->  your new address
 If you want a different brand name, also replace "PaisaTools", "paisatools"
 and "paisa<span>tools</span>" (the logo in the header).
 

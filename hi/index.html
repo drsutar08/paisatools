@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PaisaTools: भारत के लिए मुफ़्त EMI, टैक्स, SIP, FD और PPF कैलकुलेटर</title>
+<meta name="description" content="भारत के लिए मुफ़्त वित्तीय कैलकुलेटर: EMI, इनकम टैक्स, सैलरी इन-हैंड, होम लोन, SIP, FD, PPF, रिटायरमेंट प्लानर और बहुत कुछ। साइन-अप की ज़रूरत नहीं।">
+<link rel="canonical" href="https://paisatools.pages.dev/hi/">
+<link rel="alternate" hreflang="hi" href="https://paisatools.pages.dev/hi/">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="PaisaTools: भारत के लिए मुफ़्त EMI, टैक्स, SIP, FD और PPF कैलकुलेटर">
+<meta property="og:description" content="भारत के लिए मुफ़्त वित्तीय कैलकुलेटर: EMI, इनकम टैक्स, सैलरी इन-हैंड, होम लोन, SIP, FD, PPF, रिटायरमेंट प्लानर और बहुत कुछ। साइन-अप की ज़रूरत नहीं।">
+<meta property="og:url" content="https://paisatools.pages.dev/hi/">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:image" content="https://paisatools.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="../icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/hi/","inLanguage":"hi"}</script>
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>:root{color-scheme:light}body{margin:0}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../theme.css">
+<style>
+
+:root{--mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace}
+@media (prefers-color-scheme:none){:root:not([data-theme="light"]){color-scheme:dark}}
+:root[data-theme="dark"]{color-scheme:dark}
+*{box-sizing:border-box}
+body{color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+nav.site{display:flex;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.12;margin:0}
+h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+a{color:var(--ink)}
+p{margin:0}
+.ad{border:1px dashed var(--line);color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;display:grid;place-items:center;min-height:90px;margin-block:36px;
+  background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center;padding-block:52px 36px}
+.hero-copy{display:grid;gap:22px}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.4rem);font-weight:500;letter-spacing:-.04em;line-height:1.02}
+.hero .lead{color:var(--muted);font-size:1.12rem;max-width:44ch}
+.find{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:6px 6px 6px 20px;box-shadow:var(--shadow-sm);max-width:480px}
+.find:focus-within{border-color:var(--ink)}
+.find input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:400 1rem var(--body);padding:10px 0}
+.find input:focus{outline:none}
+.find button{border:0;border-radius:99px;background:var(--accent);color:var(--accent-ink);font:600 .92rem var(--body);padding:11px 22px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--tint);border-radius:99px;padding:5px 14px 5px 5px;font-size:.88rem;font-weight:500}
+.chips a i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--surface);font-size:.85rem}
+.chips a:hover{background:var(--accent);color:var(--accent-ink)}
+
+/* Quick EMI panel */
+.qcalc{background:var(--tint);border-radius:32px;padding:22px;display:grid;gap:16px}
+.qhead{display:flex;justify-content:space-between;align-items:center}
+.qhead b{font-size:1.05rem}
+.qhead a{font-size:.85rem;font-weight:600}
+.qin{background:var(--surface);border-radius:22px;padding:18px;display:grid;gap:16px}
+.qf{display:grid;gap:6px}
+.qf div{display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)}
+.qf output{font-family:var(--mono);font-weight:500;color:var(--ink)}
+.qf input{width:100%;accent-color:var(--ink);margin:0}
+.qout{background:var(--mint);color:var(--on-pastel);border-radius:22px;padding:18px 20px;display:grid;gap:4px}
+.qout small{opacity:.75;font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.qout strong{font-size:clamp(2rem,5vw,2.7rem);line-height:1.05;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.qout span{font-size:.85rem;opacity:.8}
+
+section.block{margin-top:60px;display:grid;gap:20px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.sec-head p{color:var(--muted);max-width:50ch}
+
+/* Pastel cards */
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pcard{border-radius:28px;padding:20px 22px;display:grid;gap:26px;align-content:space-between;min-height:190px;text-decoration:none;color:var(--on-pastel);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.pcard.pink{background:var(--pink)}.pcard.peach{background:var(--peach)}.pcard.lav{background:var(--lav)}.pcard.mint{background:var(--mint)}
+.ptop{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:500}
+.ptop .ico{width:38px;height:38px;border-radius:50%;background:#fff;color:#111827;display:grid;place-items:center;font-weight:700;font-size:1rem}
+.ptop .badge{margin-left:auto;background:#fff;color:#111827;border-radius:99px;padding:3px 10px;font-weight:600;font-size:.76rem}
+.pcard h3{font-size:clamp(1.25rem,2.4vw,1.55rem);font-weight:500;letter-spacing:-.02em;line-height:1.2;max-width:22ch}
+.pfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.82rem}
+.pfoot b{font-family:var(--mono);font-weight:500;font-size:.88rem}
+.pfoot .go{font-weight:600}
+
+/* Category chips + grid */
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats button{display:inline-flex;align-items:center;gap:10px;flex:none;border:0;cursor:pointer;background:var(--tint);color:var(--ink);font:500 .9rem var(--body);padding:5px 18px 5px 5px;border-radius:99px}
+.cats button i{font-style:normal;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--surface);font-size:.95rem}
+.cats button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.cats button[aria-pressed="true"] i{background:var(--accent-ink);color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px;display:grid;grid-template-columns:44px 1fr;gap:2px 14px;align-items:center;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--ink);transform:translateY(-2px)}
+.tile .ico{grid-row:span 2;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 1.1rem var(--display);color:#111827;background:var(--lav)}
+.tile[data-c="Loans"] .ico{background:var(--pink)}
+.tile[data-c="Tax"] .ico{background:var(--peach)}
+.tile[data-c="Save"] .ico{background:var(--mint)}
+.tile h3{font-size:1rem}
+.tile small{color:var(--muted);font-size:.82rem;line-height:1.35}
+.tile .eg{grid-column:1/-1;font-family:var(--mono);font-size:.76rem;color:var(--muted);border-top:1px dashed var(--line);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;gap:8px}
+.tile .eg b{color:var(--ink);font-weight:500}
+.nores{display:none;padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:24px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
+.steps div{border-radius:28px;padding:22px;display:grid;gap:10px;align-content:start;counter-increment:s;color:var(--on-pastel)}
+.steps div:nth-child(1){background:var(--pink)}.steps div:nth-child(2){background:var(--peach)}.steps div:nth-child(3){background:var(--lav)}
+.steps div::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:#fff;color:#111827;display:grid;place-items:center;font-weight:700}
+.steps p{font-size:.94rem;opacity:.85}
+
+/* Trust band */
+.band{border-radius:32px;padding:36px;background:var(--accent);color:var(--accent-ink);display:grid;gap:26px}
+.band h2{color:inherit}
+.band .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.band .cols div{display:grid;gap:8px;align-content:start}
+.band .cols p{opacity:.75;font-size:.94rem}
+.band .dot{width:12px;height:12px;border-radius:50%;display:block}
+.soon{display:flex;flex-wrap:wrap;gap:8px}
+.soon span{border:1px dashed var(--line);border-radius:99px;padding:5px 14px;font-size:.88rem;color:var(--muted);background:var(--surface)}
+footer{margin-top:56px;color:var(--muted);font-size:.84rem;display:grid;gap:10px}
+footer a{color:var(--muted)}
+footer nav{display:flex;gap:6px 16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.pcard,.tile{transition:none}.pcard:hover,.tile:hover{transform:none}}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}
+  .feat,.steps,.band .cols{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.band{padding:26px 20px}.find button{padding:11px 16px}.qcalc{padding:14px;border-radius:26px}}
+
+:root{--display:"DM Sans","Noto Sans Devanagari",system-ui,sans-serif;--body:"DM Sans","Noto Sans Devanagari",system-ui,sans-serif}
+.hero h1{line-height:1.2;letter-spacing:-.01em}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.langnote{font-size:.9rem;color:var(--muted)}
+h1,h2,h3{letter-spacing:0!important}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">मुख्य सामग्री पर जाएं</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="../">paisa<span>tools</span></a>
+    <nav class="site" aria-label="मुख्य"><a href="./" aria-current="page">होम</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">इनकम टैक्स</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="../guides">गाइड</a><a href="../" lang="en" hreflang="en-IN">English</a></nav><a class="coffee-btn coffee-sm" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer" title="मुझे एक कॉफ़ी पिलाएं"><span aria-hidden="true">☕</span><span class="coffee-text">मुझे एक कॉफ़ी पिलाएं</span></a>
+  </header>
+<main id="content">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-copy">
+      <span class="eyebrow">FY 2026-27 के नियमों के अनुसार</span>
+      <h1 id="h1">फ़ैसले से पहले अपने पैसों का हिसाब जानें</h1>
+      <p class="lead">लोन, टैक्स और बचत के लिए मुफ़्त कैलकुलेटर, भारतीय नियमों के अनुसार। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।</p>
+      <p class="langnote">ध्यान दें: कैलकुलेटर के पेज अभी अंग्रेज़ी में हैं, लेकिन हर आंकड़ा रुपये और लाख/करोड़ में दिखता है।</p>
+      <div class="chips"><a href="emi-calculator"><i>₹</i>EMI</a><a href="income-tax-calculator"><i>%</i>इनकम टैक्स</a><a href="sip-calculator"><i>↗</i>SIP</a><a href="gst-calculator"><i>G</i>GST</a></div>
+    </div>
+    <div class="qcalc" aria-label="त्वरित EMI कैलकुलेटर">
+      <div class="qhead"><b>तुरंत EMI जांचें</b><a href="emi-calculator">पूरा कैलकुलेटर →</a></div>
+      <div class="qin">
+        <div class="qf"><div><label for="qa">लोन राशि</label><output id="qav"></output></div><input id="qa" type="range" min="100000" max="20000000" step="50000" value="3000000"></div>
+        <div class="qf"><div><label for="qr">ब्याज दर</label><output id="qrv"></output></div><input id="qr" type="range" min="5" max="20" step="0.1" value="8.5"></div>
+        <div class="qf"><div><label for="qt">अवधि</label><output id="qtv"></output></div><input id="qt" type="range" min="1" max="30" step="1" value="20"></div>
+      </div>
+      <div class="qout" aria-live="polite"><small>आपकी मासिक EMI</small><strong id="qe">₹0</strong><span id="qs"></span></div>
+    </div>
+  </section>
+
+  <h2 style="margin-bottom:14px">सभी कैलकुलेटर</h2>
+  <section class="block" aria-label="लोन"><h2>लोन</h2><div class="grid"><a class="tile" data-c="Loans" href="emi-calculator"><span class="ico">₹</span><h3>EMI कैलकुलेटर</h3><small>होम, कार और पर्सनल लोन की EMI</small></a><a class="tile" data-c="Loans" href="home-loan-eligibility-calculator"><span class="ico">🏠</span><h3>होम लोन एलिजिबिलिटी</h3><small>आपकी आय पर कितना लोन मिल सकता है</small></a><a class="tile" data-c="Loans" href="car-loan-calculator"><span class="ico">🚗</span><h3>कार लोन EMI</h3><small>EMI, डाउन पेमेंट और कुल लागत</small></a><a class="tile" data-c="Loans" href="loan-prepayment-calculator"><span class="ico">⏩</span><h3>लोन प्रीपेमेंट</h3><small>पार्ट-पेमेंट से बचा ब्याज और समय</small></a><a class="tile" data-c="Loans" href="loan-comparison-calculator"><span class="ico">⚖</span><h3>दो लोन की तुलना</h3><small>दो ऑफ़र आमने-सामने, फ़ीस सहित</small></a></div></section>
+  <section class="block" aria-label="टैक्स और सैलरी"><h2>टैक्स और सैलरी</h2><div class="grid"><a class="tile" data-c="Tax" href="income-tax-calculator"><span class="ico">%</span><h3>इनकम टैक्स</h3><small>पुराना बनाम नया टैक्स रिजीम, FY 2026-27</small></a><a class="tile" data-c="Tax" href="senior-citizen-tax-calculator"><span class="ico">🧓</span><h3>सीनियर सिटिज़न टैक्स</h3><small>60+ और 80+ के लिए टैक्स</small></a><a class="tile" data-c="Tax" href="salary-in-hand-calculator"><span class="ico">💼</span><h3>सैलरी इन-हैंड</h3><small>CTC से हर महीने हाथ में आने वाली सैलरी</small></a><a class="tile" data-c="Tax" href="hra-calculator"><span class="ico">⌂</span><h3>HRA छूट</h3><small>किराये पर टैक्स-फ्री HRA</small></a><a class="tile" data-c="Tax" href="gst-calculator"><span class="ico">G</span><h3>GST कैलकुलेटर</h3><small>GST जोड़ें या हटाएं</small></a><a class="tile" data-c="Tax" href="gratuity-calculator"><span class="ico">★</span><h3>ग्रेच्युटी</h3><small>नौकरी छोड़ने पर ग्रेच्युटी</small></a></div></section>
+  <section class="block" aria-label="बचत और निवेश"><h2>बचत और निवेश</h2><div class="grid"><a class="tile" data-c="Save" href="sip-calculator"><span class="ico">↗</span><h3>SIP कैलकुलेटर</h3><small>SIP या एकमुश्त निवेश की ग्रोथ</small></a><a class="tile" data-c="Save" href="step-up-sip-calculator"><span class="ico">📶</span><h3>स्टेप-अप SIP</h3><small>सैलरी के साथ बढ़ने वाली SIP</small></a><a class="tile" data-c="Save" href="lumpsum-calculator"><span class="ico">💰</span><h3>एकमुश्त निवेश</h3><small>एक बार का निवेश, महंगाई के बाद वैल्यू</small></a><a class="tile" data-c="Save" href="mutual-fund-returns-calculator"><span class="ico">📊</span><h3>म्यूचुअल फंड रिटर्न</h3><small>खर्च और टैक्स के बाद रिटर्न</small></a><a class="tile" data-c="Save" href="fd-calculator"><span class="ico">🏦</span><h3>FD कैलकुलेटर</h3><small>फिक्स्ड डिपॉज़िट की मैच्योरिटी</small></a><a class="tile" data-c="Save" href="rd-calculator"><span class="ico">↻</span><h3>RD कैलकुलेटर</h3><small>रेकरिंग डिपॉज़िट की मैच्योरिटी</small></a><a class="tile" data-c="Save" href="ppf-calculator"><span class="ico">P</span><h3>PPF कैलकुलेटर</h3><small>PPF की मैच्योरिटी, 7.1% पर</small></a><a class="tile" data-c="Save" href="sukanya-samriddhi-calculator"><span class="ico">S</span><h3>सुकन्या समृद्धि</h3><small>बेटी के भविष्य के लिए SSY</small></a><a class="tile" data-c="Save" href="nps-calculator"><span class="ico">N</span><h3>NPS कैलकुलेटर</h3><small>रिटायरमेंट कॉर्पस और पेंशन</small></a><a class="tile" data-c="Save" href="epf-calculator"><span class="ico">🏢</span><h3>EPF कैलकुलेटर</h3><small>रिटायरमेंट पर पीएफ कॉर्पस</small></a><a class="tile" data-c="Save" href="retirement-planner"><span class="ico">🌅</span><h3>रिटायरमेंट प्लानर</h3><small>कितना कॉर्पस चाहिए और कितनी SIP</small></a><a class="tile" data-c="Save" href="cagr-calculator"><span class="ico">📈</span><h3>CAGR कैलकुलेटर</h3><small>निवेश की सालाना ग्रोथ दर</small></a><a class="tile" data-c="Save" href="simple-compound-interest-calculator"><span class="ico">∑</span><h3>सिंपल और कंपाउंड ब्याज</h3><small>दोनों की तुलना</small></a></div></section>
+
+  <section class="block" aria-labelledby="h-g">
+    <h2 id="h-g">मनी गाइड</h2>
+    <div class="feat">
+      <a class="pcard peach" href="../guide-old-vs-new-tax-regime"><div class="ptop">टैक्स</div><h3>पुराना बनाम नया टैक्स रिजीम: कौन सा चुनें?</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard pink" href="../guide-lower-home-loan-emi"><div class="ptop">लोन</div><h3>होम लोन की EMI और ब्याज कैसे घटाएं</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard lav" href="../guide-sip-vs-lumpsum"><div class="ptop">निवेश</div><h3>SIP बनाम एकमुश्त निवेश</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard mint" href="../guide-fd-vs-ppf-vs-nps"><div class="ptop">बचत</div><h3>FD, PPF या NPS: पैसा कहां लगाएं</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-why">
+    <div class="band">
+      <h2 id="h-why">PaisaTools क्यों</h2>
+      <div class="cols">
+        <div><h3>आपके आंकड़े आपके पास रहते हैं</h3><p>सारी गणना आपके अपने डिवाइस पर होती है। आप जो रकम डालते हैं, उसे हम न देखते हैं, न सहेजते हैं।</p></div>
+        <div><h3>भारतीय नियमों के हिसाब से</h3><p>लाख-करोड़ में राशि, मौजूदा टैक्स स्लैब, और बैंक व म्यूचुअल फंड जिस तरह गणना करते हैं, वैसा ही हिसाब।</p></div>
+        <div><h3>आसान भाषा में समझाया गया</h3><p>हर कैलकुलेटर में फ़ॉर्मूला, एक उदाहरण और आम सवालों के जवाब मिलते हैं।</p></div>
+      </div>
+    </div>
+  </section>
+  <div class="support-card">
+    <p><strong>PaisaTools काम आया?</strong>PaisaTools मुफ़्त है और एक व्यक्ति इसे चलाता है। अगर किसी कैलकुलेटर से आपका समय या पैसा बचा, तो एक कॉफ़ी पिलाकर इसे जारी रखने में मदद कर सकते हैं।</p>
+    <a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> मुझे एक कॉफ़ी पिलाएं</a>
+  </div>
+</main>
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>भारत के लिए मुफ़्त कैलकुलेटर। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> मुझे एक कॉफ़ी पिलाएं</a></div>
+      <div class="f-cols">
+      <nav aria-label="लोन"><h2 class="f-h">लोन</h2><a href="emi-calculator">EMI कैलकुलेटर</a><a href="home-loan-eligibility-calculator">होम लोन एलिजिबिलिटी</a><a href="car-loan-calculator">कार लोन EMI</a><a href="loan-prepayment-calculator">लोन प्रीपेमेंट</a><a href="loan-comparison-calculator">दो लोन की तुलना</a></nav>
+      <nav aria-label="टैक्स और सैलरी"><h2 class="f-h">टैक्स और सैलरी</h2><a href="income-tax-calculator">इनकम टैक्स कैलकुलेटर</a><a href="senior-citizen-tax-calculator">सीनियर सिटिज़न टैक्स</a><a href="salary-in-hand-calculator">सैलरी इन-हैंड</a><a href="hra-calculator">HRA छूट</a><a href="gst-calculator">GST कैलकुलेटर</a><a href="gratuity-calculator">ग्रेच्युटी</a></nav>
+      <nav aria-label="बचत और निवेश"><h2 class="f-h">बचत और निवेश</h2><a href="sip-calculator">SIP कैलकुलेटर</a><a href="step-up-sip-calculator">स्टेप-अप SIP</a><a href="lumpsum-calculator">एकमुश्त निवेश</a><a href="mutual-fund-returns-calculator">म्यूचुअल फंड रिटर्न</a><a href="fd-calculator">FD कैलकुलेटर</a><a href="rd-calculator">RD कैलकुलेटर</a><a href="ppf-calculator">PPF कैलकुलेटर</a></nav>
+      <nav aria-label="योजना और तुलना"><h2 class="f-h">योजना और तुलना</h2><a href="sukanya-samriddhi-calculator">सुकन्या समृद्धि</a><a href="nps-calculator">NPS कैलकुलेटर</a><a href="epf-calculator">EPF कैलकुलेटर</a><a href="retirement-planner">रिटायरमेंट प्लानर</a><a href="cagr-calculator">CAGR कैलकुलेटर</a><a href="simple-compound-interest-calculator">सिंपल और कंपाउंड ब्याज</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 PaisaTools. परिणाम केवल योजना बनाने के लिए अनुमान हैं और वित्तीय, टैक्स या निवेश सलाह नहीं हैं।</p>
+      <nav aria-label="साइट"><a href="../guides">गाइड</a><a href="../about">हमारे बारे में</a><a href="../contact">संपर्क</a><a href="../privacy-policy">गोपनीयता नीति</a><a href="../disclaimer">अस्वीकरण</a><a href="../" lang="en">English</a></nav>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+  const short=n=>n>=1e7?'₹'+(n/1e7).toFixed(2).replace(/\.?0+$/,'')+' करोड़':n>=1e5?'₹'+(n/1e5).toFixed(1).replace(/\.0$/,'')+' लाख':inr(n);
+  function quick(){
+    const P=+$('qa').value,R=+$('qr').value,Y=+$('qt').value,n=Y*12,r=R/1200,f=Math.pow(1+r,n),e=P*r*f/(f-1),tot=e*n;
+    $('qav').textContent=short(P);$('qrv').textContent=R.toFixed(1)+'%';$('qtv').textContent=Y+' साल';
+    $('qe').textContent=inr(e);$('qs').textContent='कुल ब्याज '+short(tot-P)+' · कुल भुगतान '+short(tot);
+  }
+  ['qa','qr','qt'].forEach(i=>$(i).addEventListener('input',quick));quick();
+})();
+</script>
+<script src="../site.js" defer></script>
+</body>
+</html>
