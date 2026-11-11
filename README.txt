@@ -20,9 +20,13 @@ Hostinger, Namecheap or Cloudflare).
 Then open every file in a text editor (Notepad, or VS Code which is free) and
 use Find and Replace across all files:
   https://www.yourdomain.in   ->  your real address, e.g. https://www.mysite.in
-  contact@yourdomain.in       ->  your real email address
 If you want a different brand name, also replace "PaisaTools", "paisatools"
 and "paisa<span>tools</span>" (the logo in the header).
+
+Visitor count (optional, free):
+  1. Sign up at https://www.goatcounter.com and choose a site code.
+  2. Find and replace YOURCODE with that code in all files.
+  3. See your visitors at https://YOURCODE.goatcounter.com (your own code).
 
 Step 2: Put it online for free (Netlify, easiest)
 -------------------------------------------------

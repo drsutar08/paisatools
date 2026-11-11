@@ -11,10 +11,24 @@
 <meta property="og:title" content="SIP Calculator: Mutual Fund SIP & Lumpsum Returns | PaisaTools">
 <meta property="og:description" content="Free SIP calculator for mutual funds. See how your monthly SIP or lumpsum investment grows, with yearly step-up and inflation-adjusted value.">
 <meta property="og:url" content="https://www.yourdomain.in/sip-calculator.html">
-<meta name="theme-color" content="#0f6b4f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SIP Calculator", "url": "https://www.yourdomain.in/sip-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://www.yourdomain.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIP Calculator: Mutual Fund SIP & Lumpsum Returns | PaisaTools">
+<meta name="twitter:description" content="Free SIP calculator for mutual funds. See how your monthly SIP or lumpsum investment grows, with yearly step-up and inflation-adjusted value.">
+<meta name="twitter:image" content="https://www.yourdomain.in/og-image.png">
+<link rel="alternate" hreflang="en-IN" href="https://www.yourdomain.in/sip-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yourdomain.in/"},{"@type":"ListItem","position":2,"name":"SIP Calculator for Mutual Fund Investments","item":"https://www.yourdomain.in/sip-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good expected return to use for a SIP?","acceptedAnswer":{"@type":"Answer","text":"Equity funds in India have historically returned around 10–14% a year over long periods, but this varies a lot by fund and time period. Using 10–12% gives a more cautious estimate."}},{"@type":"Question","name":"Is SIP better than a lumpsum investment?","acceptedAnswer":{"@type":"Answer","text":"If you already have a large amount, a lumpsum invested early has more time to grow. A SIP spreads your purchases over time, which reduces the risk of investing everything just before a market fall, and it suits a monthly salary."}},{"@type":"Question","name":"What is the minimum amount for a SIP?","acceptedAnswer":{"@type":"Answer","text":"Many mutual funds allow SIPs from ₹500 a month, and some from ₹100. Check the scheme's details on the fund house or platform you use."}},{"@type":"Question","name":"Why does the calculator show a \"today's money\" value?","acceptedAnswer":{"@type":"Answer","text":"Prices rise every year, so ₹1 crore in 20 years will buy much less than ₹1 crore today. The inflation-adjusted figure shows what your final amount is worth at today's prices, which helps when planning goals like retirement."}},{"@type":"Question","name":"Can I stop or pause my SIP?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most funds let you pause or stop a SIP at any time without a penalty. Your units stay invested. Some funds charge an exit load if you withdraw within a year of investing."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -22,7 +36,7 @@
 /* Layout: same passbook system as the EMI and tax pages. Tool card, growth chart, yearly ledger, then the guide column with sidebar. */
 :root{
   --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
-  --invested:#9db5aa; --gain:#0f6b4f; --real:#c8791c; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb;
+  --invested:#9db5aa; --gain:#111827; --real:#c8791c; --accent:#111827; --accent-ink:#ffffff; --tint:#e6f0eb;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -127,14 +141,18 @@ footer a{color:var(--muted)}
 }
 @media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}.field-top{flex-wrap:wrap}}
 </style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
 
 <div class="wrap">
   <header class="site">
     <a class="brand" href="index.html">paisa<span>tools</span></a>
-    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html" aria-current="page">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html" aria-current="page">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a></nav>
   </header>
+<main>
 
   <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
   <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
@@ -282,10 +300,11 @@ footer a{color:var(--muted)}
       </div>
     </aside>
   </div>
+</main>
 
   <footer>
     <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
-    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a><a href="home-loan-eligibility-calculator.html">Home Loan Eligibility Calculator</a><a href="salary-in-hand-calculator.html">Salary In-Hand Calculator</a><a href="simple-compound-interest-calculator.html">Simple and Compound Interest Calculator</a><a href="retirement-planner.html">Retirement Planner</a><a href="cagr-calculator.html">CAGR Calculator</a></nav>
     <p style="margin:0">Mutual fund investments are subject to market risks. This calculator gives estimates for planning only and is not investment advice. Read all scheme documents carefully before investing.</p>
   </footer>
 </div>

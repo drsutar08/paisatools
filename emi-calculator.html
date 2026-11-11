@@ -11,10 +11,24 @@
 <meta property="og:title" content="EMI Calculator: Home, Car & Personal Loan EMI | PaisaTools">
 <meta property="og:description" content="Free EMI calculator for home, car and personal loans in India. See your monthly EMI, total interest and year-wise repayment schedule.">
 <meta property="og:url" content="https://www.yourdomain.in/emi-calculator.html">
-<meta name="theme-color" content="#0f6b4f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "EMI Calculator", "url": "https://www.yourdomain.in/emi-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://www.yourdomain.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMI Calculator: Home, Car & Personal Loan EMI | PaisaTools">
+<meta name="twitter:description" content="Free EMI calculator for home, car and personal loans in India. See your monthly EMI, total interest and year-wise repayment schedule.">
+<meta name="twitter:image" content="https://www.yourdomain.in/og-image.png">
+<link rel="alternate" hreflang="en-IN" href="https://www.yourdomain.in/emi-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yourdomain.in/"},{"@type":"ListItem","position":2,"name":"EMI Calculator for Home, Car and Personal Loans","item":"https://www.yourdomain.in/emi-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a longer tenure reduce my EMI?","acceptedAnswer":{"@type":"Answer","text":"Yes, a longer tenure lowers the monthly EMI, but you pay interest for more months, so the total interest goes up. Move the tenure slider above to see the difference."}},{"@type":"Question","name":"What happens to my EMI if the interest rate changes?","acceptedAnswer":{"@type":"Answer","text":"On a floating-rate loan, your bank usually keeps the EMI the same and extends the tenure when rates rise. You can often ask to raise the EMI instead, which keeps the tenure unchanged and saves interest."}},{"@type":"Question","name":"Is the EMI shown here exactly what my bank will charge?","acceptedAnswer":{"@type":"Answer","text":"It will be very close. Your bank's figure may differ slightly because of rounding, the date your loan is disbursed, processing fees or insurance added to the loan."}},{"@type":"Question","name":"Can I claim tax benefits on my home loan EMI?","acceptedAnswer":{"@type":"Answer","text":"Under the old tax regime, you can claim up to ₹2 lakh a year on interest for a self-occupied home under Section 24(b), and up to ₹1.5 lakh on principal under Section 80C. The new tax regime does not allow these deductions for a self-occupied home. Check with a tax advisor for your situation."}},{"@type":"Question","name":"What is a good EMI-to-income ratio?","acceptedAnswer":{"@type":"Answer","text":"Many lenders prefer that all your EMIs together stay below 40–50% of your monthly take-home pay. Keeping it lower leaves room for savings and emergencies."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -22,7 +36,7 @@
 /* Layout: passbook-inspired tool card up top, ledger-style schedule, then a single reading column for the guide. */
 :root{
   --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
-  --principal:#0f6b4f; --interest:#c8791c; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb;
+  --principal:#111827; --interest:#c8791c; --accent:#111827; --accent-ink:#ffffff; --tint:#e6f0eb;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -123,14 +137,18 @@ footer a{color:var(--muted)}
 }
 @media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}}
 </style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
 
 <div class="wrap">
   <header class="site">
     <a class="brand" href="index.html">paisa<span>tools</span></a>
-    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html" aria-current="page">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html" aria-current="page">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a></nav>
   </header>
+<main>
 
   <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
   <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
@@ -256,10 +274,11 @@ footer a{color:var(--muted)}
       </div>
     </aside>
   </div>
+</main>
 
   <footer>
     <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
-    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a><a href="home-loan-eligibility-calculator.html">Home Loan Eligibility Calculator</a><a href="salary-in-hand-calculator.html">Salary In-Hand Calculator</a><a href="simple-compound-interest-calculator.html">Simple and Compound Interest Calculator</a><a href="retirement-planner.html">Retirement Planner</a><a href="cagr-calculator.html">CAGR Calculator</a></nav>
     <p style="margin:0">Results are estimates for planning only and do not represent an offer from any lender. Confirm final figures with your bank.</p>
   </footer>
 </div>

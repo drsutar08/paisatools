@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAGR Calculator: Compound Annual Growth Rate | PaisaTools</title>
+<meta name="description" content="Free CAGR calculator. Find the compound annual growth rate of an investment, or its final or starting value, with a year-by-year growth table.">
+<link rel="canonical" href="https://www.yourdomain.in/cagr-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="CAGR Calculator: Compound Annual Growth Rate | PaisaTools">
+<meta property="og:description" content="Free CAGR calculator. Find the compound annual growth rate of an investment, or its final or starting value, with a year-by-year growth table.">
+<meta property="og:url" content="https://www.yourdomain.in/cagr-calculator.html">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CAGR Calculator", "url": "https://www.yourdomain.in/cagr-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://www.yourdomain.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAGR Calculator: Compound Annual Growth Rate | PaisaTools">
+<meta name="twitter:description" content="Free CAGR calculator. Find the compound annual growth rate of an investment, or its final or starting value, with a year-by-year growth table.">
+<meta name="twitter:image" content="https://www.yourdomain.in/og-image.png">
+<link rel="alternate" hreflang="en-IN" href="https://www.yourdomain.in/cagr-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.yourdomain.in/"},{"@type":"ListItem","position":2,"name":"CAGR Calculator","item":"https://www.yourdomain.in/cagr-calculator.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good CAGR?","acceptedAnswer":{"@type":"Answer","text":"It depends on the asset. Over long periods, Indian equity indices have given roughly 10% to 12%, gold about 8% to 10%, and fixed deposits about 6% to 7%. Compare with inflation too, since real growth is CAGR minus inflation."}},{"@type":"Question","name":"What is the difference between CAGR and absolute return?","acceptedAnswer":{"@type":"Answer","text":"Absolute return is the total growth over the whole period, such as 150%. CAGR converts that into a yearly rate, so you can compare investments held for different lengths of time."}},{"@type":"Question","name":"Can CAGR be negative?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the final value is lower than the starting value, CAGR is negative and shows the average yearly loss."}},{"@type":"Question","name":"Is CAGR the same as XIRR?","acceptedAnswer":{"@type":"Answer","text":"No. CAGR works for one starting amount and one ending amount. XIRR handles several deposits or withdrawals on different dates, such as a monthly SIP."}},{"@type":"Question","name":"How do I use this for a mutual fund?","acceptedAnswer":{"@type":"Answer","text":"Enter the fund’s NAV (or your investment) at the start as the starting value, today’s value as the final value, and the number of years between them."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a></nav>
+  </header>
+<main>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>CAGR Calculator</h1>
+    <p>CAGR is the steady yearly rate at which an investment would have grown from its starting value to its ending value. Use it to compare funds, stocks, property or a business.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      
+      <div class="tabs" id="mode" role="group" aria-label="What do you want to find?"><button type="button" data-v="cagr" aria-pressed="true">Find CAGR</button><button type="button" data-v="final" aria-pressed="false">Find final value</button><button type="button" data-v="start" aria-pressed="false">Find starting value</button></div>
+      
+      <div class="field" id="f-ini">
+        <div class="field-top"><label for="ini">Starting value</label>
+          <div class="box"><span>₹</span><input id="ini" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="iniR" min="1000" max="10000000" step="1000" aria-label="Starting value slider">
+        <div class="scale"><span>₹1K</span><span>₹1 Cr</span></div>
+      </div>
+      
+      <div class="field" id="f-fin">
+        <div class="field-top"><label for="fin">Final value</label>
+          <div class="box"><span>₹</span><input id="fin" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="finR" min="1000" max="50000000" step="1000" aria-label="Final value slider">
+        <div class="scale"><span>₹1K</span><span>₹5 Cr</span></div>
+      </div>
+      
+      <div class="field" id="f-crate" hidden>
+        <div class="field-top"><label for="crate">CAGR (per year)</label>
+          <div class="box"><input id="crate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="crateR" min="1" max="40" step="0.1" aria-label="CAGR (per year) slider">
+        <div class="scale"><span>1%</span><span>40%</span></div>
+      </div>
+      
+      <div class="field" id="f-yrs">
+        <div class="field-top"><label for="yrs">Time period</label>
+          <div class="box"><input id="yrs" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="yrsR" min="1" max="50" step="0.5" aria-label="Time period slider">
+        <div class="scale"><span>1 yr</span><span>50 yrs</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label" id="mainLabel">Your CAGR</div>
+        <div class="emi" id="main">0%</div>
+      </div>
+      <div class="pair">
+        <div><small>Absolute return</small><b id="abs">0%</b></div>
+        <div><small>Growth multiple</small><b id="mult">0x</b></div>
+        <div><small>Total gain</small><b id="gain">₹0</b></div>
+        <div><small>Money doubles in</small><b id="dbl">0 yrs</b></div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-g">
+    <h2 id="h-g">Year-by-year growth at this CAGR</h2>
+    <div class="table-wrap"><table><thead><tr><th>Year</th><th>Value</th><th>Gain in the year</th><th>Total return</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>What is CAGR?</h2>
+      <p>CAGR stands for compound annual growth rate. If an investment grew from ₹1 lakh to ₹2.5 lakh over 5 years, it did not grow by the same amount each year. CAGR tells you the single yearly rate that would take you from the starting value to the ending value, as if growth had been smooth.</p>
+      <div class="formula">CAGR = (Final ÷ Start)<sup>1 ÷ years</sup> − 1
+        <small>Final value = Start × (1 + CAGR)<sup>years</sup>. Start value = Final ÷ (1 + CAGR)<sup>years</sup>.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>When to use CAGR, and when not to</h3>
+      <ul>
+        <li><strong>Good for:</strong> comparing a lump sum investment across funds, stocks, gold or property over the same period.</li>
+        <li><strong>Not for:</strong> SIPs or investments with many deposits and withdrawals. Use XIRR for those.</li>
+        <li><strong>Remember:</strong> CAGR hides the ups and downs along the way. Two funds with the same CAGR can feel very different to hold.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is a good CAGR?</summary>
+        <p>It depends on the asset. Over long periods, Indian equity indices have given roughly 10% to 12%, gold about 8% to 10%, and fixed deposits about 6% to 7%. Compare with inflation too, since real growth is CAGR minus inflation.</p></details>
+      <details><summary>What is the difference between CAGR and absolute return?</summary>
+        <p>Absolute return is the total growth over the whole period, such as 150%. CAGR converts that into a yearly rate, so you can compare investments held for different lengths of time.</p></details>
+      <details><summary>Can CAGR be negative?</summary>
+        <p>Yes. If the final value is lower than the starting value, CAGR is negative and shows the average yearly loss.</p></details>
+      <details><summary>Is CAGR the same as XIRR?</summary>
+        <p>No. CAGR works for one starting amount and one ending amount. XIRR handles several deposits or withdrawals on different dates, such as a monthly SIP.</p></details>
+      <details><summary>How do I use this for a mutual fund?</summary>
+        <p>Enter the fund’s NAV (or your investment) at the start as the starting value, today’s value as the final value, and the number of years between them.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <h3>More calculators</h3>
+        <a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a>
+        <a href="index.html#all">All calculators</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <footer>
+    <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a><a href="home-loan-eligibility-calculator.html">Home Loan Eligibility Calculator</a><a href="salary-in-hand-calculator.html">Salary In-Hand Calculator</a><a href="simple-compound-interest-calculator.html">Simple and Compound Interest Calculator</a><a href="retirement-planner.html">Retirement Planner</a><a href="cagr-calculator.html">CAGR Calculator</a></nav>
+    <p style="margin:0">CAGR smooths out ups and downs and does not show risk. For investments with several deposits, use XIRR instead. Past returns do not guarantee future returns.</p>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,short,num,bind,tabs}=PT;
+  let mode='cagr';
+  function show(){
+    $('f-ini').hidden=mode==='start'; $('f-fin').hidden=mode==='final'; $('f-crate').hidden=mode==='cagr';
+    $('mainLabel').textContent=mode==='cagr'?'Your CAGR':mode==='final'?'Your final value':'You need to start with';
+  }
+  function calc(){
+    let ini=num($('ini').value),fin=num($('fin').value),cr=num($('crate').value),T=num($('yrs').value),e='';
+    if(!(T>0&&T<=100)) e='Enter a time period between 0 and 100 years.';
+    else if(mode==='cagr'&&!(ini>0&&fin>0)) e='Enter a starting and final value above zero.';
+    else if(mode==='final'&&!(ini>0&&cr>-100)) e='Enter a starting value and a valid CAGR.';
+    else if(mode==='start'&&!(fin>0&&cr>-100)) e='Enter a final value and a valid CAGR.';
+    $('err').textContent=e; if(e) return;
+    if(mode==='cagr') cr=(Math.pow(fin/ini,1/T)-1)*100;
+    else if(mode==='final') fin=ini*Math.pow(1+cr/100,T);
+    else ini=fin/Math.pow(1+cr/100,T);
+    $('main').textContent=mode==='cagr'?cr.toFixed(2)+'%':inr(mode==='final'?fin:ini);
+    $('abs').textContent=((fin/ini-1)*100).toFixed(1)+'%'; $('mult').textContent=(fin/ini).toFixed(2)+'x'; $('gain').textContent=inr(fin-ini);
+    $('dbl').textContent=cr>0?(Math.log(2)/Math.log(1+cr/100)).toFixed(1)+' yrs':'Never';
+    $('insight').textContent = mode==='cagr' ? 'An investment of '+inr(ini)+' growing to '+inr(fin)+' in '+T+' years grew at an average of '+cr.toFixed(2)+'% a year.'
+      : 'At '+cr+'% a year for '+T+' years, '+inr(ini)+' becomes '+inr(fin)+'.';
+    const rows=[];let prev=ini;for(let y=1;y<=Math.ceil(T)&&y<=60;y++){const t=Math.min(y,T),v=ini*Math.pow(1+cr/100,t);
+      rows.push('<tr><td>'+(y>T?T:y)+'</td><td>'+inr(v)+'</td><td>'+inr(v-prev)+'</td><td>'+((v/ini-1)*100).toFixed(1)+'%</td></tr>');prev=v;}
+    $('rows').innerHTML=rows.join('');
+  }
+  (function(){const i=100000,f=250000,T=5,c=(Math.pow(f/i,1/T)-1)*100;
+    $('example').textContent='A fund grows from ₹1,00,000 to ₹2,50,000 in 5 years. Divide final by start to get 2.5, raise it to the power 1 ÷ 5 to get '+Math.pow(f/i,1/T).toFixed(4)+', and subtract 1. The CAGR is '+c.toFixed(2)+'% a year. The total return is 150%, but the yearly rate is the number you can compare with other investments.';})();
+  bind([{id:'ini',val:100000},{id:'fin',val:250000},{id:'crate',val:12,fmt:PT.fDec},{id:'yrs',val:5,fmt:PT.fDec}],calc);
+  tabs('#mode',v=>{mode=v;show();calc();});
+  show(); calc();
+})();
+</script>
+
+</body>
+</html>
