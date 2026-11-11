@@ -93,6 +93,39 @@
     document.body.appendChild(box);
   }
 
+  /* ---------- Banner ads (Adsterra) ----------
+     <div class="pt-banner" data-slot="top|mid|article|side|bottom"></div> picks a size that fits and loads it when scrolled near. */
+  var KEYS={'728x90':'c21b2281a71f55029ba36b623ca772b4','300x250':'a7c44b77be1ac5ba5952e40ca8a94cbf','468x60':'7a856240dfa34dfe9995fc32cfa195fb','160x300':'e3860ad5e234ee3037eb419b667dcb4b'};
+  function pickSize(slot,w){
+    if(slot==='side')return window.innerWidth>820?'160x300':(w>=300?'300x250':null);
+    if(slot==='article')return w>=468?'468x60':(w>=300?'300x250':null);
+    if(w>=728)return '728x90';
+    if(w>=468)return '468x60';
+    return slot==='top'?null:(w>=300?'300x250':null);
+  }
+  function loadBanner(el){
+    var size=pickSize(el.getAttribute('data-slot'),el.clientWidth);
+    if(!size){el.hidden=true;return;}
+    var p=size.split('x'),k=KEYS[size];
+    var f=document.createElement('iframe');
+    f.width=p[0];f.height=p[1];f.title='Advertisement';f.setAttribute('scrolling','no');f.setAttribute('frameborder','0');
+    f.style.cssText='border:0;display:block;margin:0 auto;max-width:100%';
+    f.src=base+'ad-frame.html?s='+size;
+    el.appendChild(f);el.setAttribute('data-loaded',size);
+    /* Stay collapsed until the ad frame reports it drew something; give up after 10s. */
+    var done=false;
+    function onMsg(e){if(e.source===f.contentWindow&&e.data&&e.data.ptAdOk){done=true;el.setAttribute('data-ok','');window.removeEventListener('message',onMsg);}}
+    window.addEventListener('message',onMsg);
+    setTimeout(function(){if(!done){window.removeEventListener('message',onMsg);el.hidden=true;f.remove();}},10000);
+  }
+  var banners=document.querySelectorAll('.pt-banner');
+  if(banners.length){
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);loadBanner(e.target);}});},{rootMargin:'300px'});
+      banners.forEach(function(b){io.observe(b);});
+    }else banners.forEach(loadBanner);
+  }
+
   /* ---------- Offline support ---------- */
   if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
     window.addEventListener('load',function(){navigator.serviceWorker.register(base+'sw.js').catch(function(){});});
