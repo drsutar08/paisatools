@@ -100,3 +100,7 @@ body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 .pair b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink)}
 .hl td{background:var(--tint);font-weight:600}
 .lines{display:block;width:100%;height:auto;min-width:520px}
+
+.ad-slot{margin-block:20px;text-align:center;overflow:hidden}
+.ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
+@media print{.ad-slot{display:none!important}}
