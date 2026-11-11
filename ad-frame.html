@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Ad</title>
+<style>html,body{margin:0;padding:0;background:transparent;overflow:hidden}</style></head>
+<body><script>
+(function(){
+  var K={'728x90':'c21b2281a71f55029ba36b623ca772b4','300x250':'a7c44b77be1ac5ba5952e40ca8a94cbf','468x60':'7a856240dfa34dfe9995fc32cfa195fb','160x300':'e3860ad5e234ee3037eb419b667dcb4b'};
+  var s=(location.search.match(/[?&]s=(\d+x\d+)/)||[])[1],k=K[s];if(!k)return;
+  var p=s.split('x');
+  window.atOptions={key:k,format:'iframe',height:+p[1],width:+p[0],params:{}};
+  document.write('<scr'+'ipt src="https://bauval.org/22/'+k+'"></scr'+'ipt>');
+})();
+</script><script>
+/* Tell the page once something visible has been drawn, so empty slots can stay collapsed. */
+(function(){
+  var sent=false,n=0;
+  function has(){var e=document.body.querySelectorAll('iframe,img,ins,a,video,canvas,embed,object,div');
+    for(var i=0;i<e.length;i++){var r=e[i].getBoundingClientRect();if(r.width>20&&r.height>20)return true;}return false;}
+  function tick(){if(sent)return;if(has()){sent=true;try{parent.postMessage({ptAdOk:true},location.origin);}catch(e){}return;}
+    if(++n<40)setTimeout(tick,250);}
+  tick();
+})();
+</script></body></html>
