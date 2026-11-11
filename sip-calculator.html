@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIP Calculator: Mutual Fund SIP & Lumpsum Returns | PaisaTools</title>
+<meta name="description" content="Free SIP calculator for mutual funds. See how your monthly SIP or lumpsum investment grows, with yearly step-up and inflation-adjusted value.">
+<link rel="canonical" href="https://www.yourdomain.in/sip-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="SIP Calculator: Mutual Fund SIP & Lumpsum Returns | PaisaTools">
+<meta property="og:description" content="Free SIP calculator for mutual funds. See how your monthly SIP or lumpsum investment grows, with yearly step-up and inflation-adjusted value.">
+<meta property="og:url" content="https://www.yourdomain.in/sip-calculator.html">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SIP Calculator", "url": "https://www.yourdomain.in/sip-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same passbook system as the EMI and tax pages. Tool card, growth chart, yearly ledger, then the guide column with sidebar. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --invested:#9db5aa; --gain:#0f6b4f; --real:#c8791c; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --invested:#4d6359; --gain:#3fb98b; --real:#e7a24a; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --invested:#4d6359; --gain:#3fb98b; --real:#e7a24a; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.5rem}
+h3{font-size:1.1rem}
+.intro{padding-block:28px 20px;display:grid;gap:8px}
+.intro p{margin:0;color:var(--muted);max-width:62ch}
+
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.ad.tall{min-height:250px}
+
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.inputs{padding:24px;display:grid;gap:20px;border-right:1px solid var(--line);align-content:start}
+.results{padding:24px;display:grid;gap:18px;align-content:start}
+.tabs{display:flex;gap:6px;background:var(--tint);padding:4px;border-radius:10px;width:fit-content;flex-wrap:wrap}
+.tabs button{font:500 .9rem var(--body);border:0;background:transparent;color:var(--muted);padding:8px 14px;border-radius:7px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0/.08)}
+.field{display:grid;gap:8px}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.field label{font-weight:500;font-size:.95rem}
+.field .hint{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+.box{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow:hidden;flex:none}
+.box span{padding:0 10px;color:var(--muted);font-size:.9rem}
+.box input{width:9.5ch;border:0;background:transparent;color:var(--ink);font:500 1rem var(--mono);padding:8px 6px;text-align:right;font-variant-numeric:tabular-nums}
+.box input:focus{outline:none}
+.box:focus-within{border-color:var(--accent)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.scale{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);font-family:var(--mono)}
+.extras{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:18px}
+.err{color:var(--real);font-size:.82rem;min-height:1em;margin:0}
+
+.k{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.fv{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,6vw,3rem);line-height:1;font-variant-numeric:tabular-nums}
+.split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:center}
+.donut{width:132px;height:132px;max-width:100%}
+.legend{display:grid;gap:10px;font-size:.92rem}
+.legend div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.legend div:last-child{border:0;font-weight:600}
+.legend b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px}
+.real{background:var(--tint);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.real span{font-size:.88rem;color:var(--muted)}
+.real b{font-family:var(--mono);font-weight:500;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.note{font-size:.82rem;color:var(--muted);margin:0}
+
+section.block{margin-top:36px;display:grid;gap:14px}
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
+#growth{display:block;width:100%;min-width:560px;height:auto}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:600px}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th{font-weight:600;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;background:var(--tint)}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--mono);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+
+.guide{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;margin-top:40px}
+article{max-width:68ch;display:grid;gap:14px}
+article p,article li{margin:0}
+article ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.formula{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;font-family:var(--mono);font-size:1.05rem;overflow-x:auto}
+.formula small{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:8px;line-height:1.6}
+.slabs{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.slabs table{min-width:420px}
+details{border-bottom:1px solid var(--line);padding-block:12px}
+details summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px;color:var(--muted)}
+aside{display:grid;gap:16px;align-content:start}
+.related{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px}
+.related h3{font-size:1rem}
+.related a{color:var(--accent);text-decoration:none;font-size:.95rem}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+@media (max-width:820px){
+  .tool{grid-template-columns:1fr}
+  .inputs{border-right:0;border-bottom:1px solid var(--line)}
+  .guide{grid-template-columns:1fr}
+}
+@media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}.field-top{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html" aria-current="page">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+  </header>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>SIP Calculator for Mutual Fund Investments</h1>
+    <p>See how much your monthly SIP or one-time investment could grow to. Add a yearly step-up to match salary hikes, and check what the final amount is worth in today's money.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="tabs" role="group" aria-label="Investment type">
+        <button type="button" data-mode="sip" aria-pressed="true">Monthly SIP</button>
+        <button type="button" data-mode="lump" aria-pressed="false">Lumpsum</button>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="amt" id="amtLbl">Monthly investment</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="numeric" autocomplete="off"></div></div>
+        <input type="range" id="amtR" aria-label="Investment amount slider">
+        <div class="scale"><span id="amtMin"></span><span id="amtMax"></span></div>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="rate">Expected return (per year)</label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="1" max="30" step="0.5" aria-label="Expected return slider">
+        <div class="scale"><span>1%</span><span>30%</span></div>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="yrs">Time period</label>
+          <div class="box"><input id="yrs" inputmode="numeric" autocomplete="off"><span>years</span></div></div>
+        <input type="range" id="yrsR" min="1" max="40" step="1" aria-label="Time period slider">
+        <div class="scale"><span>1 yr</span><span>40 yrs</span></div>
+      </div>
+
+      <div class="extras">
+        <div class="field" id="stepField">
+          <div class="field-top"><label for="step">Yearly step-up<span class="hint">Raise your SIP by this much every year</span></label>
+            <div class="box"><input id="step" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="infl">Inflation<span class="hint">Used to show today's value of the final amount</span></label>
+            <div class="box"><input id="infl" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        </div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+
+    <div class="results" aria-live="polite">
+      <div><div class="k">Estimated value at the end</div><div class="fv" id="fv">₹0</div></div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of amount invested and returns">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--gain)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--invested)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="var(--muted)" font-size="10" font-family="IBM Plex Sans, sans-serif">Growth</text>
+          <text id="mult" x="66" y="80" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">1.0×</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--invested)"></i>Amount invested</span><b id="inv">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--gain)"></i>Estimated returns</span><b id="ret">₹0</b></div>
+          <div><span>Total value</span><b id="tot">₹0</b></div>
+        </div>
+      </div>
+      <div class="real"><span id="realLbl">Worth in today's money</span><b id="realV">₹0</b></div>
+      <p class="note" id="insight"></p>
+      <p class="note">Returns from mutual funds are not guaranteed. These figures assume a steady return every year, before tax and fund expenses.</p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-chart">
+    <h2 id="h-chart">How your money grows</h2>
+    <p class="note">The grey area is what you put in. The green area above it is the growth from compounding, which speeds up in the later years.</p>
+    <div class="chart-wrap"><svg id="growth" role="img" aria-label="Investment value over time"></svg></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-sched">
+    <h2 id="h-sched">Year-by-year growth</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th id="thMonthly">Monthly SIP</th><th>Invested so far</th><th>Returns so far</th><th>Value at year end</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How is SIP return calculated?</h2>
+      <p>A Systematic Investment Plan (SIP) invests a fixed amount in a mutual fund every month. Each instalment earns returns for the months it stays invested, so early instalments grow the most. Most SIP calculators, including this one, assume the money is invested at the start of each month.</p>
+      <div class="formula">FV = P × ((1 + i)<sup>n</sup> − 1) ÷ i × (1 + i)
+        <small>FV is the future value, P is the monthly SIP, i is the monthly return (annual return ÷ 12 ÷ 100) and n is the number of months. With a step-up, the calculator works month by month instead of using a single formula.</small></div>
+
+      <h3>Worked example</h3>
+      <p id="example"></p>
+
+      <h3>Why a step-up makes a big difference</h3>
+      <p id="stepExample"></p>
+
+      <h3>Tips for getting more from your SIP</h3>
+      <ul>
+        <li><strong>Start early.</strong> Ten extra years of compounding often matters more than a bigger monthly amount.</li>
+        <li><strong>Don't stop during a market fall.</strong> Your SIP buys more units when prices are low, which helps your average cost.</li>
+        <li><strong>Choose direct plans where you can.</strong> They have lower expense ratios than regular plans, which adds up over many years.</li>
+        <li><strong>Be realistic about returns.</strong> Try 10–12% for equity funds and 6–8% for debt funds rather than recent best-case figures.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>How SIP gains are taxed (FY 2026-27)</h2>
+      <p>Each SIP instalment is treated as a separate purchase, so the holding period is counted from the date of each instalment. For equity mutual funds:</p>
+      <div class="slabs"><table>
+        <thead><tr><th>Equity fund, held for</th><th>Tax on gains</th></tr></thead>
+        <tbody>
+          <tr><td>Up to 12 months (short term)</td><td>20%</td></tr>
+          <tr><td>More than 12 months (long term)</td><td>12.5% on gains above ₹1.25 lakh a year</td></tr>
+        </tbody></table></div>
+      <p>Gains from debt funds bought after 1 April 2023 are added to your income and taxed at your slab rate. Cess is added on top in all cases.</p>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is a good expected return to use for a SIP?</summary>
+        <p>Equity funds in India have historically returned around 10–14% a year over long periods, but this varies a lot by fund and time period. Using 10–12% gives a more cautious estimate.</p></details>
+      <details><summary>Is SIP better than a lumpsum investment?</summary>
+        <p>If you already have a large amount, a lumpsum invested early has more time to grow. A SIP spreads your purchases over time, which reduces the risk of investing everything just before a market fall, and it suits a monthly salary.</p></details>
+      <details><summary>What is the minimum amount for a SIP?</summary>
+        <p>Many mutual funds allow SIPs from ₹500 a month, and some from ₹100. Check the scheme's details on the fund house or platform you use.</p></details>
+      <details><summary>Why does the calculator show a "today's money" value?</summary>
+        <p>Prices rise every year, so ₹1 crore in 20 years will buy much less than ₹1 crore today. The inflation-adjusted figure shows what your final amount is worth at today's prices, which helps when planning goals like retirement.</p></details>
+      <details><summary>Can I stop or pause my SIP?</summary>
+        <p>Yes. Most funds let you pause or stop a SIP at any time without a penalty. Your units stay invested. Some funds charge an exit load if you withdraw within a year of investing.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <h3>More calculators</h3>
+        <a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a><a href="emi-calculator.html">EMI Calculator</a>
+        <a href="index.html">All calculators</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <p style="margin:0">Mutual fund investments are subject to market risks. This calculator gives estimates for planning only and is not investment advice. Read all scheme documents carefully before investing.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+  const short=n=>n>=1e7?'₹'+(n/1e7).toFixed(n>=1e9?0:2).replace(/\.?0+$/,'')+' Cr'
+                :n>=1e5?'₹'+(n/1e5).toFixed(1).replace(/\.0$/,'')+' L'
+                :n>=1e3?'₹'+Math.round(n/1e3)+'K':'₹'+Math.round(n);
+  const num=v=>parseFloat(String(v).replace(/[^0-9.]/g,''));
+  let mode='sip';
+  const cfg={sip:{min:500,max:200000,step:500,def:10000,lbl:'Monthly investment'},
+             lump:{min:5000,max:10000000,step:5000,def:500000,lbl:'Total investment'}};
+
+  // simulate month by month; SIP invested at start of each month
+  function simulate(mode,P,R,Y,step){
+    const i=R/12/100, years=[]; let val=0, inv=0, sip=P;
+    if(mode==='lump'){ val=P; inv=P; }
+    for(let y=1;y<=Y;y++){
+      if(mode==='lump'){ val*=1+R/100; years.push({y,sip:0,inv,val}); continue; }
+      for(let m=0;m<12;m++){
+        if(mode==='sip'){ val+=sip; inv+=sip; }
+        val*=1+i;
+      }
+      years.push({y,sip:mode==='sip'?sip:0,inv,val});
+      if(mode==='sip') sip=sip*(1+step/100);
+    }
+    return years;
+  }
+
+  function setMode(m){
+    mode=m; const c=cfg[m];
+    document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));
+    const r=$('amtR'); r.min=c.min; r.max=c.max; r.step=c.step; r.value=c.def;
+    $('amt').value=c.def.toLocaleString('en-IN'); $('amtLbl').textContent=c.lbl;
+    $('amtMin').textContent=short(c.min); $('amtMax').textContent=short(c.max);
+    $('stepField').hidden=m!=='sip';
+    $('thMonthly').hidden=m!=='sip';
+    calc();
+  }
+
+  function calc(){
+    const P=num($('amt').value),R=num($('rate').value),Y=Math.round(num($('yrs').value));
+    const step=mode==='sip'?(num($('step').value)||0):0, inf=num($('infl').value)||0;
+    let e='';
+    if(!(P>=100)) e='Enter an amount of at least ₹100.';
+    else if(!(R>0&&R<=50)) e='Enter an expected return between 0.1% and 50%.';
+    else if(!(Y>=1&&Y<=50)) e='Enter a time period between 1 and 50 years.';
+    else if(step<0||step>50) e='Enter a step-up between 0% and 50%.';
+    $('err').textContent=e; if(e) return;
+
+    const years=simulate(mode,P,R,Y,step), last=years[years.length-1];
+    const gain=last.val-last.inv;
+    $('fv').textContent=inr(last.val);
+    $('inv').textContent=inr(last.inv); $('ret').textContent=inr(gain); $('tot').textContent=inr(last.val);
+    const C=2*Math.PI*52; $('arc').setAttribute('stroke-dasharray',(last.inv/last.val*C).toFixed(2)+' '+C.toFixed(2));
+    $('mult').textContent=(last.val/last.inv).toFixed(1)+'×';
+    const real=last.val/Math.pow(1+inf/100,Y);
+    $('realLbl').textContent="Worth in today's money at "+inf+'% inflation';
+    $('realV').textContent=inr(real);
+    // insight: when do returns overtake investment
+    const cross=years.find(o=>o.val-o.inv>=o.inv);
+    $('insight').textContent = cross
+      ? 'By year '+cross.y+', your returns are larger than everything you have put in.'
+      : 'Your returns will equal '+Math.round(gain/last.inv*100)+'% of what you invest. A longer period makes compounding work harder.';
+
+    $('rows').innerHTML=years.map(o=>`<tr><td>Year ${o.y}</td>${mode==='sip'?`<td>${inr(o.sip)}</td>`:''}<td>${inr(o.inv)}</td><td>${inr(o.val-o.inv)}</td><td>${inr(o.val)}</td></tr>`).join('');
+    draw(years);
+  }
+
+  function draw(years){
+    const svg=$('growth'),W=880,H=300,L=70,R=16,T=16,B=44;
+    const data=[{y:0,inv:mode==='lump'?years[0].inv:0,val:mode==='lump'?years[0].inv:0}].concat(years);
+    const maxRaw=data[data.length-1].val;
+    const p=Math.pow(10,Math.floor(Math.log10(maxRaw))),stp=[1,2,2.5,5,10].find(k=>k*p>=maxRaw/4)*p,ymax=Math.ceil(maxRaw/stp)*stp;
+    const n=data.length-1, x=i=>L+(i/n)*(W-L-R), y=v=>T+(H-T-B)*(1-v/ymax), base=y(0);
+    let g='';
+    for(let v=0;v<=ymax+1;v+=stp) g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${v===0?'₹0':short(v)}</text>`;
+    const every=n>24?5:n>12?2:1;
+    data.forEach((o,i)=>{ if(i>0&&(i%every===0||i===n)) g+=`<text x="${x(i)}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="IBM Plex Sans, sans-serif">Y${o.y}</text>`; });
+    const line=k=>data.map((o,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(o[k]).toFixed(1)).join(' ');
+    g+=`<path d="${line('val')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--gain)" opacity=".85"/>`;
+    g+=`<path d="${line('inv')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--invested)"/>`;
+    g+=`<path d="${line('val')}" fill="none" stroke="var(--gain)" stroke-width="2.5"/>`;
+    const lv=data[n];
+    g+=`<circle cx="${x(n)}" cy="${y(lv.val)}" r="5" fill="var(--gain)" stroke="var(--surface)" stroke-width="2"/>`;
+    g+=`<text x="${x(n)-10}" y="${y(lv.val)+4}" text-anchor="end" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Mono, monospace">${short(lv.val)}</text>`;
+    g+=`<rect x="${L}" y="${H-12}" width="10" height="10" fill="var(--invested)"/><text x="${L+16}" y="${H-3}" font-size="12" fill="var(--ink)" font-family="IBM Plex Sans, sans-serif">Amount invested</text>`;
+    g+=`<rect x="${L+140}" y="${H-12}" width="10" height="10" fill="var(--gain)"/><text x="${L+156}" y="${H-3}" font-size="12" fill="var(--ink)" font-family="IBM Plex Sans, sans-serif">Returns</text>`;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.innerHTML=g;
+  }
+
+  // worked examples
+  (function(){
+    const a=simulate('sip',10000,12,10,0).pop();
+    $('example').textContent=`Say you invest ₹10,000 a month for 10 years and earn 12% a year. The monthly return is 12 ÷ 12 ÷ 100 = 0.01, and n is 120 months. The formula gives a final value of about ${inr(a.val)}. You invest ${inr(a.inv)} in total, so your estimated returns are ${inr(a.val-a.inv)}.`;
+    const f=simulate('sip',10000,12,20,0).pop(), s=simulate('sip',10000,12,20,10).pop();
+    $('stepExample').textContent=`A ₹10,000 monthly SIP at 12% for 20 years grows to about ${inr(f.val)}. If you raise it by 10% every year, it grows to about ${inr(s.val)}, which is ${(s.val/f.val).toFixed(1)} times as much. You invest more, but most of the extra comes from compounding.`;
+  })();
+
+  // wiring
+  const link=(box,range,fmt)=>{
+    box.addEventListener('input',()=>{const v=num(box.value); if(!isNaN(v)) range.value=v; calc();});
+    box.addEventListener('blur',()=>{if(fmt){const v=num(box.value); if(!isNaN(v)) box.value=fmt(v);}});
+    range.addEventListener('input',()=>{box.value=fmt?fmt(+range.value):range.value; calc();});
+  };
+  $('rate').value=12; $('rateR').value=12; $('yrs').value=15; $('yrsR').value=15; $('step').value=0; $('infl').value=6;
+  link($('amt'),$('amtR'),v=>Math.round(v).toLocaleString('en-IN'));
+  link($('rate'),$('rateR'),v=>String(+v.toFixed(2)));
+  link($('yrs'),$('yrsR'),null);
+  $('step').addEventListener('input',calc); $('infl').addEventListener('input',calc);
+  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+  setMode('sip');
+})();
+</script>
+
+</body>
+</html>

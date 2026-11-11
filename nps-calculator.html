@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NPS Calculator: Pension & Retirement Corpus | PaisaTools</title>
+<meta name="description" content="Free NPS calculator. Estimate your retirement corpus, lump sum withdrawal and monthly pension under the 2026 NPS exit rules.">
+<link rel="canonical" href="https://www.yourdomain.in/nps-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="NPS Calculator: Pension & Retirement Corpus | PaisaTools">
+<meta property="og:description" content="Free NPS calculator. Estimate your retirement corpus, lump sum withdrawal and monthly pension under the 2026 NPS exit rules.">
+<meta property="og:url" content="https://www.yourdomain.in/nps-calculator.html">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "NPS Calculator", "url": "https://www.yourdomain.in/nps-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same passbook system as the other calculators. Inputs left, result right, then chart/ledger, then the guide column with sidebar. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --a:#0f6b4f; --b:#c8791c; --c:#9db5aa; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb; --win:#e2f2ea;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --a:#3fb98b; --b:#e7a24a; --c:#4d6359; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --win:#183a2c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --a:#3fb98b; --b:#e7a24a; --c:#4d6359; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --win:#183a2c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.5rem}
+h3{font-size:1.1rem}
+.intro{padding-block:28px 20px;display:grid;gap:8px}
+.intro p{margin:0;color:var(--muted);max-width:62ch}
+.fy{display:inline-block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.ad.tall{min-height:250px}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.inputs{padding:24px;display:grid;gap:20px;border-right:1px solid var(--line);align-content:start}
+.results{padding:24px;display:grid;gap:18px;align-content:start}
+.seg{display:flex;gap:4px;background:var(--tint);padding:4px;border-radius:10px;flex-wrap:wrap}
+.seg button{flex:1;font:500 .85rem var(--body);border:0;background:transparent;color:var(--muted);padding:7px 10px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0/.08)}
+.lbl{font-weight:500;font-size:.95rem;display:block;margin-bottom:6px}
+.field{display:grid;gap:8px}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.field label{font-weight:500;font-size:.95rem}
+.hint{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+.box{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow:hidden;flex:none}
+.box span{padding:0 10px;color:var(--muted);font-size:.9rem}
+.box input{width:9.5ch;border:0;background:transparent;color:var(--ink);font:500 1rem var(--mono);padding:8px 6px;text-align:right;font-variant-numeric:tabular-nums}
+.box input:focus{outline:none}
+.box:focus-within{border-color:var(--accent)}
+.box select{border:0;border-left:1px solid var(--line);background:transparent;color:var(--ink);font:500 .85rem var(--body);padding:8px}
+select.plain{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 .9rem var(--body);padding:8px 10px}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.scale{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);font-family:var(--mono)}
+.check{display:flex;gap:10px;align-items:center;font-size:.92rem}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.err{color:var(--b);font-size:.82rem;min-height:1em;margin:0}
+.k{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,6vw,2.9rem);line-height:1.05;font-variant-numeric:tabular-nums}
+.big small{font:500 1rem var(--body);color:var(--muted)}
+.split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:center}
+.donut{width:132px;height:132px;max-width:100%}
+.legend{display:grid;gap:10px;font-size:.92rem}
+.legend div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.legend div:last-child{border:0;font-weight:600}
+.legend b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px}
+.callout{background:var(--tint);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.callout span{font-size:.88rem;color:var(--muted)}
+.callout b{font-family:var(--mono);font-weight:500;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.limbs{display:grid;gap:10px}
+.limb{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;position:relative}
+.limb span{font-size:.88rem;color:var(--muted)}
+.limb b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+.limb[data-min="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--win)}
+.limb[data-min="true"] span{color:var(--ink)}
+.pill{font:600 .66rem var(--body);letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.note{font-size:.82rem;color:var(--muted);margin:0}
+section.block{margin-top:36px;display:grid;gap:14px}
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
+.chart-wrap svg{display:block;width:100%;min-width:560px;height:auto}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th{font-weight:600;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;background:var(--tint)}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--mono);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--win)}
+.guide{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;margin-top:40px}
+article{max-width:68ch;display:grid;gap:14px}
+article p,article li{margin:0}
+article ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.formula{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;font-family:var(--mono);font-size:1.05rem;overflow-x:auto}
+.formula small{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:8px;line-height:1.6}
+.slabs{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.slabs table{min-width:420px}
+details{border-bottom:1px solid var(--line);padding-block:12px}
+details summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px;color:var(--muted)}
+aside{display:grid;gap:16px;align-content:start}
+.related{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px}
+.related h3{font-size:1rem}
+.related a{color:var(--accent);text-decoration:none;font-size:.95rem}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:820px){.tool{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--line)}.guide{grid-template-columns:1fr}}
+@media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}.field-top{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+  </header>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <span class="fy">Updated for 2026 NPS exit rules</span>
+    <h1>NPS Calculator: Pension and Retirement Corpus</h1>
+    <p>Estimate your National Pension System corpus at retirement, how much you can take as a lump sum and the monthly pension you could get.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field">
+        <div class="field-top"><label for="amt">Monthly contribution</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="500" max="100000" step="500" aria-label="Monthly contribution slider">
+        <div class="scale"><span>₹500</span><span>₹1 L</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="age">Your age now</label>
+          <div class="box"><input id="age" inputmode="decimal" autocomplete="off"><span>years</span></div></div>
+        <input type="range" id="ageR" min="18" max="59" step="1" aria-label="Your age now slider">
+        <div class="scale"><span>18</span><span>59</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="ret">Age you'll retire</label>
+          <div class="box"><input id="ret" inputmode="decimal" autocomplete="off"><span>years</span></div></div>
+        <input type="range" id="retR" min="60" max="75" step="1" aria-label="Age you'll retire slider">
+        <div class="scale"><span>60</span><span>75</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="rate">Expected return (per year)<span class="hint">Mix of equity and debt; 8–10% is a common estimate</span></label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="5" max="14" step="0.5" aria-label="Expected return (per year) slider">
+        <div class="scale"><span>5%</span><span>14%</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="lump">Lump sum you'll withdraw<span class="hint">Up to 80% for most subscribers</span></label>
+          <div class="box"><input id="lump" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="lumpR" min="0" max="80" step="5" aria-label="Lump sum you'll withdraw slider">
+        <div class="scale"><span>0%</span><span>80%</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="ann">Expected annuity rate<span class="hint">Yearly pension rate offered by insurers</span></label>
+          <div class="box"><input id="ann" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="annR" min="4" max="9" step="0.25" aria-label="Expected annuity rate slider">
+        <div class="scale"><span>4%</span><span>9%</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div><div class="k">Estimated monthly pension</div><div class="big" id="big">₹0</div></div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Breakdown of the result">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--a)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--c)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="var(--muted)" font-size="10" font-family="IBM Plex Sans, sans-serif">Lump sum</text>
+          <text id="ctr" x="66" y="80" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0</text>
+        </svg>
+        <div class="legend"><div><span><i class="dot" style="background:var(--c)"></i>Used to buy a pension</span><b id="l1">₹0</b></div><div><span><i class="dot" style="background:var(--a)"></i>Lump sum at retirement</span><b id="l2">₹0</b></div><div><span>Total corpus</span><b id="l3">₹0</b></div></div>
+      </div>
+      <div class="callout"><span>Total you'll contribute</span><b id="inv">₹0</b></div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-growth">
+    <h2 id="h-growth">How your NPS corpus grows</h2>
+    <p class="note">The grey area is what you contribute. The green area above it is investment growth.</p>
+    <div class="chart-wrap"><svg id="growth" role="img" aria-label="NPS corpus over time"></svg></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-rows">
+    <h2 id="h-rows">Year-by-year corpus</h2>
+    <div class="table-wrap"><table><thead><tr><th>Age</th><th>Contributed so far</th><th>Growth so far</th><th>Corpus at year end</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How the NPS calculator works</h2>
+      <p>The National Pension System (NPS) is a government-backed retirement scheme. You contribute regularly while you work, the money is invested in a mix of equity, corporate bonds and government bonds, and at retirement you take part of the corpus as a lump sum and use the rest to buy an annuity, which pays you a monthly pension.</p>
+      <div class="formula">Corpus = Σ monthly contribution × (1 + r ÷ 12)<sup>months left</sup><br>Monthly pension = Annuity amount × annuity rate ÷ 12
+        <small>The corpus figure assumes a steady return each year. NPS returns depend on the funds you choose and the market.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>NPS exit rules (non-government subscribers)</h3>
+      <ul>
+        <li>At normal exit (age 60 or later), you can now withdraw up to 80% of your corpus as a lump sum. At least 20% must be used to buy an annuity.</li>
+        <li>If your total corpus is ₹8 lakh or less, you can withdraw all of it with no annuity.</li>
+        <li>You can stay invested beyond 60, up to 75, and contributions can continue.</li>
+      </ul>
+      <p>Tax rules for the larger lump sum may differ from the earlier 60% tax-free limit. Check the latest rules with your NPS provider or a tax advisor before you withdraw.</p>
+      <h3>Tax benefits while you invest</h3>
+      <ul>
+        <li><strong>Old regime:</strong> your own contribution qualifies under 80C (up to ₹1.5 lakh) and an extra ₹50,000 under 80CCD(1B).</li>
+        <li><strong>Both regimes:</strong> your employer's contribution is deductible under 80CCD(2), up to 14% of basic salary in the new regime and 10% in the old regime.</li>
+      </ul>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>What return should I expect from NPS?</summary><p>It depends on your asset mix. Equity-heavy NPS funds have historically returned around 9–12% a year over long periods, and bond funds around 7–9%. Using 9–10% gives a balanced estimate.</p></details>
+      <details><summary>What is an annuity and why is it required?</summary><p>An annuity is a plan you buy from an insurance company with part of your corpus. It pays you a fixed pension every month for life. NPS requires part of the corpus to be used this way so you have a regular income in retirement.</p></details>
+      <details><summary>Can I withdraw from NPS before 60?</summary><p>Partial withdrawals are allowed for specific needs such as children's education, marriage, buying a house or medical treatment, after a minimum period. Leaving NPS completely before 60 usually means a larger share must go into an annuity.</p></details>
+      <details><summary>NPS or PPF for retirement?</summary><p>PPF is fully guaranteed and tax-free but limited to ₹1.5 lakh a year at 7.1%. NPS can earn more because part of it is in equity, and it offers extra tax deductions, but returns are not guaranteed and part of the corpus must buy an annuity.</p></details>
+      
+    </article>
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <h3>More calculators</h3>
+        <a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="emi-calculator.html">EMI Calculator</a>
+        <a href="index.html">All calculators</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <p style="margin:0">Results are estimates for planning only. Confirm final figures with your bank, employer or a tax professional.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const inr=n=>(n<0?'−':'')+'₹'+Math.round(Math.abs(n)).toLocaleString('en-IN');
+const short=n=>n>=1e7?'₹'+(n/1e7).toFixed(2).replace(/\.?0+$/,'')+' Cr':n>=1e5?'₹'+(n/1e5).toFixed(1).replace(/\.0$/,'')+' L':n>=1e3?'₹'+Math.round(n/1e3)+'K':'₹'+Math.round(n);
+const num=v=>{const x=parseFloat(String(v).replace(/[^0-9.]/g,''));return isNaN(x)?NaN:x;};
+const fmtMoney=v=>Math.round(v).toLocaleString('en-IN');
+const fmtRate=v=>String(+(+v).toFixed(2));
+function link(id,fmt){const box=$(id),r=$(id+'R');
+  box.addEventListener('input',()=>{const v=num(box.value);if(r&&!isNaN(v))r.value=v;calc();});
+  if(fmt)box.addEventListener('blur',()=>{const v=num(box.value);if(!isNaN(v))box.value=fmt(v);});
+  if(r)r.addEventListener('input',()=>{box.value=fmt?fmt(+r.value):r.value;calc();});}
+function setVal(id,v,fmt){$(id).value=fmt?fmt(v):v;if($(id+'R'))$(id+'R').value=v;}
+function seg(name,cb){const bs=document.querySelectorAll('[data-'+name+']');bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria-pressed',x===b));cb(b.dataset[name]);calc();}));}
+function donut(frac){const C=2*Math.PI*52;$('arc').setAttribute('stroke-dasharray',(Math.max(0,Math.min(1,frac))*C).toFixed(2)+' '+C.toFixed(2));}
+function nice(v){v=Math.max(v,1);const p=Math.pow(10,Math.floor(Math.log10(v)));const s=[1,2,2.5,5,10].find(k=>k*p>=v/4)*p;return{max:Math.ceil(v/s)*s,step:s};}
+const F='font-family="IBM Plex Mono, monospace"',G='font-family="IBM Plex Sans, sans-serif"';
+function axes(W,H,L,R,T,B,ymax,step){let g='';const y=v=>T+(H-T-B)*(1-v/ymax);
+  for(let v=0;v<=ymax+1e-6;v+=step)g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" ${F}>${v===0?'₹0':short(v)}</text>`;
+  return g;}
+function legendRow(H,L,items){let g='',x=L;items.forEach(([c,t])=>{g+=`<rect x="${x}" y="${H-12}" width="10" height="10" fill="${c}"/><text x="${x+16}" y="${H-3}" font-size="12" fill="var(--ink)" ${G}>${t}</text>`;x+=t.length*7.2+40;});return g;}
+// area chart: pts=[{label,lo,hi}] lo drawn in --c, hi (total) in --a
+function area(svgId,pts,names){const svg=$(svgId),W=880,H=300,L=70,R=16,T=16,B=44;
+  const n=pts.length-1,{max,step}=nice(Math.max(...pts.map(p=>p.hi)));
+  const x=i=>L+(n?i/n:0)*(W-L-R),y=v=>T+(H-T-B)*(1-v/max),base=y(0);
+  let g=axes(W,H,L,R,T,B,max,step);const every=n>24?5:n>12?2:1;
+  pts.forEach((p,i)=>{if(i%every===0||i===n)g+=`<text x="${x(i)}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" ${G}>${p.label}</text>`;});
+  const line=k=>pts.map((p,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(p[k]).toFixed(1)).join(' ');
+  g+=`<path d="${line('hi')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--a)" opacity=".85"/>`;
+  g+=`<path d="${line('lo')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--c)"/>`;
+  g+=`<path d="${line('hi')}" fill="none" stroke="var(--a)" stroke-width="2.5"/>`;
+  const last=pts[n];g+=`<circle cx="${x(n)}" cy="${y(last.hi)}" r="5" fill="var(--a)" stroke="var(--surface)" stroke-width="2"/><text x="${x(n)-10}" y="${y(last.hi)+4}" text-anchor="end" font-size="12" font-weight="600" fill="var(--ink)" ${F}>${short(last.hi)}</text>`;
+  g+=legendRow(H,L,[['var(--c)',names[0]],['var(--a)',names[1]]]);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=g;}
+// grouped bars: pts=[{label,v,hl}]
+function bars(svgId,pts){const svg=$(svgId),W=880,H=280,L=70,R=16,T=16,B=36;
+  const {max,step}=nice(Math.max(...pts.map(p=>p.v)));const slot=(W-L-R)/pts.length,bw=Math.min(56,slot*.6);
+  const y=v=>T+(H-T-B)*(1-v/max);let g=axes(W,H,L,R,T,B,max,step);
+  pts.forEach((p,i)=>{const x=L+slot*i+(slot-bw)/2;
+    g+=`<rect x="${x}" y="${y(p.v)}" width="${bw}" height="${Math.max(0,y(0)-y(p.v))}" rx="3" fill="${p.hl?'var(--a)':'var(--c)'}"><title>${p.label}: ${inr(p.v)}</title></rect>`;
+    g+=`<text x="${x+bw/2}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" ${G}>${p.label}</text>`;
+    if(p.hl)g+=`<text x="${x+bw/2}" y="${y(p.v)-8}" text-anchor="middle" font-size="12" font-weight="600" fill="var(--ink)" ${F}>${short(p.v)}</text>`;});
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=g;}
+
+
+function grow(P,r,months){let v=0;const ys=[];for(let k=1;k<=months;k++){v=(v+P)*(1+r/1200);if(k%12===0)ys.push({m:k,v,inv:P*k});}return{v,ys};}
+function calc(){
+  const P=num($('amt').value),a=Math.round(num($('age').value)),ret=Math.round(num($('ret').value)),r=num($('rate').value);
+  let L=num($('lump').value),an=num($('ann').value);
+  let e='';if(!(P>=500))e='Enter a monthly contribution of at least ₹500.';else if(!(a>=18&&a<=70))e='Enter your age between 18 and 70.';else if(!(ret>a&&ret<=75))e='Retirement age must be after your current age and no later than 75.';else if(!(r>0&&r<=20))e='Enter an expected return between 0.1% and 20%.';else if(!(L>=0&&L<=100))e='Enter a lump sum share between 0% and 80%.';else if(!(an>0&&an<=15))e='Enter an annuity rate between 0.1% and 15%.';
+  $('err').textContent=e;if(e)return;
+  const n=(ret-a)*12,{v,ys}=grow(P,r,n),inv=P*n;
+  const full=v<=800000;if(!full)L=Math.min(L,80);
+  const lump=full?v*L/100:v*L/100,annAmt=v-lump,pension=annAmt*an/100/12;
+  $('big').innerHTML=inr(pension)+' <small>/month</small>';
+  $('l1').textContent=inr(annAmt);$('l2').textContent=inr(lump);$('l3').textContent=inr(v);
+  donut(v?annAmt/v:1);$('ctr').textContent=Math.round(L)+'%';$('inv').textContent=inr(inv);
+  $('insight').textContent=full?'Your corpus is ₹8 lakh or less, so you could withdraw all of it with no annuity.':`Your contributions of ${inr(inv)} could grow to ${inr(v)} by age ${ret}. ${num($('lump').value)>80?'The lump sum is capped at 80%. ':''}At ${an}% the annuity part pays about ${inr(pension)} a month.`;
+  $('rows').innerHTML=ys.map((o,i)=>`<tr><td>${a+i+1}</td><td>${inr(o.inv)}</td><td>${inr(o.v-o.inv)}</td><td>${inr(o.v)}</td></tr>`).join('');
+  area('growth',[{label:'Age '+a,lo:0,hi:0}].concat(ys.map((o,i)=>({label:''+(a+i+1),lo:o.inv,hi:o.v}))),['Contributed','Growth']);
+}
+const x=grow(5000,10,360).v;
+$('example').textContent=`Say you start at 30 and contribute ₹5,000 a month until 60, earning 10% a year. You put in ₹18,00,000 over 30 years, and your corpus grows to about ${inr(x)}. If you take 60% as a lump sum (${inr(x*0.6)}) and use 40% to buy an annuity at 6%, you'd get a pension of about ${inr(x*0.4*0.06/12)} a month.`;
+setVal('amt',5000,fmtMoney);setVal('age',30);setVal('ret',60);setVal('rate',10);setVal('lump',60);setVal('ann',6);
+['amt','age','ret','rate','lump','ann'].forEach(id=>link(id,id==='amt'?fmtMoney:null));calc();
+
+})();
+</script>
+
+</body>
+</html>

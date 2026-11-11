@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RD Calculator: Recurring Deposit Maturity Value | PaisaTools</title>
+<meta name="description" content="Free RD calculator for bank and post office recurring deposits. See your maturity value and interest with quarterly compounding.">
+<link rel="canonical" href="https://www.yourdomain.in/rd-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="RD Calculator: Recurring Deposit Maturity Value | PaisaTools">
+<meta property="og:description" content="Free RD calculator for bank and post office recurring deposits. See your maturity value and interest with quarterly compounding.">
+<meta property="og:url" content="https://www.yourdomain.in/rd-calculator.html">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "RD Calculator", "url": "https://www.yourdomain.in/rd-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: same passbook system as the other calculators. Inputs left, result right, then chart/ledger, then the guide column with sidebar. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --a:#0f6b4f; --b:#c8791c; --c:#9db5aa; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb; --win:#e2f2ea;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --a:#3fb98b; --b:#e7a24a; --c:#4d6359; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --win:#183a2c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --a:#3fb98b; --b:#e7a24a; --c:#4d6359; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; --win:#183a2c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.5rem}
+h3{font-size:1.1rem}
+.intro{padding-block:28px 20px;display:grid;gap:8px}
+.intro p{margin:0;color:var(--muted);max-width:62ch}
+.fy{display:inline-block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.ad.tall{min-height:250px}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.inputs{padding:24px;display:grid;gap:20px;border-right:1px solid var(--line);align-content:start}
+.results{padding:24px;display:grid;gap:18px;align-content:start}
+.seg{display:flex;gap:4px;background:var(--tint);padding:4px;border-radius:10px;flex-wrap:wrap}
+.seg button{flex:1;font:500 .85rem var(--body);border:0;background:transparent;color:var(--muted);padding:7px 10px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0/.08)}
+.lbl{font-weight:500;font-size:.95rem;display:block;margin-bottom:6px}
+.field{display:grid;gap:8px}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.field label{font-weight:500;font-size:.95rem}
+.hint{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+.box{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow:hidden;flex:none}
+.box span{padding:0 10px;color:var(--muted);font-size:.9rem}
+.box input{width:9.5ch;border:0;background:transparent;color:var(--ink);font:500 1rem var(--mono);padding:8px 6px;text-align:right;font-variant-numeric:tabular-nums}
+.box input:focus{outline:none}
+.box:focus-within{border-color:var(--accent)}
+.box select{border:0;border-left:1px solid var(--line);background:transparent;color:var(--ink);font:500 .85rem var(--body);padding:8px}
+select.plain{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 .9rem var(--body);padding:8px 10px}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.scale{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);font-family:var(--mono)}
+.check{display:flex;gap:10px;align-items:center;font-size:.92rem}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.err{color:var(--b);font-size:.82rem;min-height:1em;margin:0}
+.k{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,6vw,2.9rem);line-height:1.05;font-variant-numeric:tabular-nums}
+.big small{font:500 1rem var(--body);color:var(--muted)}
+.split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:center}
+.donut{width:132px;height:132px;max-width:100%}
+.legend{display:grid;gap:10px;font-size:.92rem}
+.legend div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.legend div:last-child{border:0;font-weight:600}
+.legend b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px}
+.callout{background:var(--tint);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.callout span{font-size:.88rem;color:var(--muted)}
+.callout b{font-family:var(--mono);font-weight:500;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.limbs{display:grid;gap:10px}
+.limb{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;position:relative}
+.limb span{font-size:.88rem;color:var(--muted)}
+.limb b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+.limb[data-min="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--win)}
+.limb[data-min="true"] span{color:var(--ink)}
+.pill{font:600 .66rem var(--body);letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:2px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.note{font-size:.82rem;color:var(--muted);margin:0}
+section.block{margin-top:36px;display:grid;gap:14px}
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
+.chart-wrap svg{display:block;width:100%;min-width:560px;height:auto}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th{font-weight:600;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;background:var(--tint)}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--mono);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--win)}
+.guide{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;margin-top:40px}
+article{max-width:68ch;display:grid;gap:14px}
+article p,article li{margin:0}
+article ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.formula{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;font-family:var(--mono);font-size:1.05rem;overflow-x:auto}
+.formula small{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:8px;line-height:1.6}
+.slabs{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.slabs table{min-width:420px}
+details{border-bottom:1px solid var(--line);padding-block:12px}
+details summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px;color:var(--muted)}
+aside{display:grid;gap:16px;align-content:start}
+.related{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px}
+.related h3{font-size:1rem}
+.related a{color:var(--accent);text-decoration:none;font-size:.95rem}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:820px){.tool{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--line)}.guide{grid-template-columns:1fr}}
+@media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}.field-top{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+  </header>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>RD Calculator for Recurring Deposits</h1>
+    <p>See what your monthly recurring deposit at a bank or post office will be worth at maturity, and how much interest it earns.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field">
+        <div class="field-top"><label for="amt">Monthly deposit</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="100" max="100000" step="100" aria-label="Monthly deposit slider">
+        <div class="scale"><span>₹100</span><span>₹1 L</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="rate">Interest rate (per year)<span class="hint">Post office 5-year RD: 6.7% (Oct–Dec 2026)</span></label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="3" max="10" step="0.05" aria-label="Interest rate (per year) slider">
+        <div class="scale"><span>3%</span><span>10%</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="ten">Tenure</label>
+          <div class="box"><input id="ten" inputmode="decimal" autocomplete="off"><span>months</span></div></div>
+        <input type="range" id="tenR" min="6" max="120" step="1" aria-label="Tenure slider">
+        <div class="scale"><span>6 mo</span><span>120 mo</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div><div class="k">Maturity value</div><div class="big" id="big">₹0</div></div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Breakdown of the result">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--a)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--c)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="var(--muted)" font-size="10" font-family="IBM Plex Sans, sans-serif">Interest</text>
+          <text id="ctr" x="66" y="80" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0</text>
+        </svg>
+        <div class="legend"><div><span><i class="dot" style="background:var(--c)"></i>Total deposited</span><b id="l1">₹0</b></div><div><span><i class="dot" style="background:var(--a)"></i>Interest earned</span><b id="l2">₹0</b></div><div><span>Maturity value</span><b id="l3">₹0</b></div></div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-growth">
+    <h2 id="h-growth">How your RD grows</h2>
+    <p class="note">The grey area is what you have deposited so far. The green area above it is the interest earned.</p>
+    <div class="chart-wrap"><svg id="growth" role="img" aria-label="RD value over time"></svg></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-rows">
+    <h2 id="h-rows">Year-by-year value</h2>
+    <div class="table-wrap"><table><thead><tr><th>Year</th><th>Deposited so far</th><th>Interest so far</th><th>Value at year end</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How is RD interest calculated?</h2>
+      <p>In a recurring deposit you put the same amount in every month. Banks and the post office compound RD interest every quarter. Each monthly instalment earns interest for the time it stays in the account, so the first instalment earns the most.</p>
+      <div class="formula">Each instalment grows to R × (1 + r ÷ 4)<sup>m ÷ 3</sup>
+        <small>R is the monthly deposit, r is the yearly rate (as a decimal) and m is the number of months that instalment stays invested. The maturity value is the total of all instalments.</small></div>
+      <h3>Worked example</h3>
+      <p id="example"></p>
+      <h3>Post office RD at a glance</h3>
+      <ul>
+        <li>The post office RD runs for 5 years, with the option to extend for another 5.</li>
+        <li>The rate for October to December 2026 is 6.7% a year, compounded quarterly. The rate you start with stays fixed for the whole term.</li>
+        <li>The minimum deposit is ₹100 a month, in multiples of ₹10, with no upper limit.</li>
+        <li>You can take a loan of up to 50% of the balance after 12 instalments.</li>
+      </ul>
+      <h3>Tax on RD interest</h3>
+      <p>RD interest is taxed at your slab rate, the same as FD interest. Banks deduct TDS if your total interest from that bank goes over ₹50,000 in a year, or ₹1,00,000 for senior citizens.</p>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>RD or SIP: which is better?</summary><p>An RD gives a fixed, guaranteed return, which suits short-term goals and people who don't want risk. A SIP in an equity mutual fund can grow much more over 5 years or longer, but its value goes up and down with the market.</p></details>
+      <details><summary>What happens if I miss an RD instalment?</summary><p>Most banks charge a small penalty for a late instalment. At the post office, the default fee is ₹1 for every ₹100 per month missed. If you miss several in a row, the account may be closed.</p></details>
+      <details><summary>Can I close an RD early?</summary><p>Yes, but you usually get a lower rate, and banks may charge a penalty. A post office RD can be closed early after 3 years, with interest at the savings account rate.</p></details>
+      <details><summary>Why does my bank show a slightly different maturity amount?</summary><p>Banks round interest at each quarter and may count days slightly differently. The difference is usually only a few rupees.</p></details>
+      
+    </article>
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <h3>More calculators</h3>
+        <a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a><a href="emi-calculator.html">EMI Calculator</a>
+        <a href="index.html">All calculators</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <p style="margin:0">Results are estimates for planning only. Confirm final figures with your bank, employer or a tax professional.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+
+const $=id=>document.getElementById(id);
+const inr=n=>(n<0?'−':'')+'₹'+Math.round(Math.abs(n)).toLocaleString('en-IN');
+const short=n=>n>=1e7?'₹'+(n/1e7).toFixed(2).replace(/\.?0+$/,'')+' Cr':n>=1e5?'₹'+(n/1e5).toFixed(1).replace(/\.0$/,'')+' L':n>=1e3?'₹'+Math.round(n/1e3)+'K':'₹'+Math.round(n);
+const num=v=>{const x=parseFloat(String(v).replace(/[^0-9.]/g,''));return isNaN(x)?NaN:x;};
+const fmtMoney=v=>Math.round(v).toLocaleString('en-IN');
+const fmtRate=v=>String(+(+v).toFixed(2));
+function link(id,fmt){const box=$(id),r=$(id+'R');
+  box.addEventListener('input',()=>{const v=num(box.value);if(r&&!isNaN(v))r.value=v;calc();});
+  if(fmt)box.addEventListener('blur',()=>{const v=num(box.value);if(!isNaN(v))box.value=fmt(v);});
+  if(r)r.addEventListener('input',()=>{box.value=fmt?fmt(+r.value):r.value;calc();});}
+function setVal(id,v,fmt){$(id).value=fmt?fmt(v):v;if($(id+'R'))$(id+'R').value=v;}
+function seg(name,cb){const bs=document.querySelectorAll('[data-'+name+']');bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria-pressed',x===b));cb(b.dataset[name]);calc();}));}
+function donut(frac){const C=2*Math.PI*52;$('arc').setAttribute('stroke-dasharray',(Math.max(0,Math.min(1,frac))*C).toFixed(2)+' '+C.toFixed(2));}
+function nice(v){v=Math.max(v,1);const p=Math.pow(10,Math.floor(Math.log10(v)));const s=[1,2,2.5,5,10].find(k=>k*p>=v/4)*p;return{max:Math.ceil(v/s)*s,step:s};}
+const F='font-family="IBM Plex Mono, monospace"',G='font-family="IBM Plex Sans, sans-serif"';
+function axes(W,H,L,R,T,B,ymax,step){let g='';const y=v=>T+(H-T-B)*(1-v/ymax);
+  for(let v=0;v<=ymax+1e-6;v+=step)g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" ${F}>${v===0?'₹0':short(v)}</text>`;
+  return g;}
+function legendRow(H,L,items){let g='',x=L;items.forEach(([c,t])=>{g+=`<rect x="${x}" y="${H-12}" width="10" height="10" fill="${c}"/><text x="${x+16}" y="${H-3}" font-size="12" fill="var(--ink)" ${G}>${t}</text>`;x+=t.length*7.2+40;});return g;}
+// area chart: pts=[{label,lo,hi}] lo drawn in --c, hi (total) in --a
+function area(svgId,pts,names){const svg=$(svgId),W=880,H=300,L=70,R=16,T=16,B=44;
+  const n=pts.length-1,{max,step}=nice(Math.max(...pts.map(p=>p.hi)));
+  const x=i=>L+(n?i/n:0)*(W-L-R),y=v=>T+(H-T-B)*(1-v/max),base=y(0);
+  let g=axes(W,H,L,R,T,B,max,step);const every=n>24?5:n>12?2:1;
+  pts.forEach((p,i)=>{if(i%every===0||i===n)g+=`<text x="${x(i)}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" ${G}>${p.label}</text>`;});
+  const line=k=>pts.map((p,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(p[k]).toFixed(1)).join(' ');
+  g+=`<path d="${line('hi')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--a)" opacity=".85"/>`;
+  g+=`<path d="${line('lo')} L${x(n)} ${base} L${x(0)} ${base} Z" fill="var(--c)"/>`;
+  g+=`<path d="${line('hi')}" fill="none" stroke="var(--a)" stroke-width="2.5"/>`;
+  const last=pts[n];g+=`<circle cx="${x(n)}" cy="${y(last.hi)}" r="5" fill="var(--a)" stroke="var(--surface)" stroke-width="2"/><text x="${x(n)-10}" y="${y(last.hi)+4}" text-anchor="end" font-size="12" font-weight="600" fill="var(--ink)" ${F}>${short(last.hi)}</text>`;
+  g+=legendRow(H,L,[['var(--c)',names[0]],['var(--a)',names[1]]]);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=g;}
+// grouped bars: pts=[{label,v,hl}]
+function bars(svgId,pts){const svg=$(svgId),W=880,H=280,L=70,R=16,T=16,B=36;
+  const {max,step}=nice(Math.max(...pts.map(p=>p.v)));const slot=(W-L-R)/pts.length,bw=Math.min(56,slot*.6);
+  const y=v=>T+(H-T-B)*(1-v/max);let g=axes(W,H,L,R,T,B,max,step);
+  pts.forEach((p,i)=>{const x=L+slot*i+(slot-bw)/2;
+    g+=`<rect x="${x}" y="${y(p.v)}" width="${bw}" height="${Math.max(0,y(0)-y(p.v))}" rx="3" fill="${p.hl?'var(--a)':'var(--c)'}"><title>${p.label}: ${inr(p.v)}</title></rect>`;
+    g+=`<text x="${x+bw/2}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" ${G}>${p.label}</text>`;
+    if(p.hl)g+=`<text x="${x+bw/2}" y="${y(p.v)-8}" text-anchor="middle" font-size="12" font-weight="600" fill="var(--ink)" ${F}>${short(p.v)}</text>`;});
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=g;}
+
+
+function rd(R,r,n){let v=0;for(let k=n;k>=1;k--)v+=R*Math.pow(1+r/400,k/3);return v;}
+function calc(){
+  const R=num($('amt').value),r=num($('rate').value),n=Math.round(num($('ten').value));
+  let e='';if(!(R>=10))e='Enter a monthly deposit of at least ₹10.';else if(!(r>0&&r<=20))e='Enter an interest rate between 0.1% and 20%.';else if(!(n>=3&&n<=240))e='Enter a tenure between 3 and 240 months.';
+  $('err').textContent=e;if(e)return;
+  const A=rd(R,r,n),D=R*n;
+  $('big').textContent=inr(A);$('l1').textContent=inr(D);$('l2').textContent=inr(A-D);$('l3').textContent=inr(A);
+  donut(D/A);$('ctr').textContent=Math.round((A-D)/A*100)+'%';
+  $('insight').textContent=`You deposit ${inr(R)} for ${n} months. Interest adds ${((A-D)/D*100).toFixed(1)}% to what you put in.`;
+  // value at each year end: deposits so far compounded to that point
+  const rows=[],pts=[{label:'Start',lo:0,hi:0}];
+  for(let y=1;y<=Math.ceil(n/12);y++){const m=Math.min(y*12,n),v=rd(R,r,m),d=R*m;
+    rows.push(`<tr><td>${m<y*12?'Month '+m:'Year '+y}</td><td>${inr(d)}</td><td>${inr(v-d)}</td><td>${inr(v)}</td></tr>`);pts.push({label:'Y'+y,lo:d,hi:v});}
+  $('rows').innerHTML=rows.join('');area('growth',pts,['Deposited','Interest']);
+}
+const ex=rd(5000,6.7,60);
+$('example').textContent=`Say you open a 5-year post office RD of ₹5,000 a month at 6.7%. You deposit ₹3,00,000 over 60 months. At maturity you receive about ${inr(ex)}, so you earn ${inr(ex-300000)} in interest.`;
+setVal('amt',5000,fmtMoney);setVal('rate',6.7);setVal('ten',60);
+link('amt',fmtMoney);link('rate',fmtRate);link('ten');calc();
+
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EMI Calculator: Home, Car & Personal Loan EMI | PaisaTools</title>
+<meta name="description" content="Free EMI calculator for home, car and personal loans in India. See your monthly EMI, total interest and year-wise repayment schedule.">
+<link rel="canonical" href="https://www.yourdomain.in/emi-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="EMI Calculator: Home, Car & Personal Loan EMI | PaisaTools">
+<meta property="og:description" content="Free EMI calculator for home, car and personal loans in India. See your monthly EMI, total interest and year-wise repayment schedule.">
+<meta property="og:url" content="https://www.yourdomain.in/emi-calculator.html">
+<meta name="theme-color" content="#0f6b4f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6b4f'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "EMI Calculator", "url": "https://www.yourdomain.in/emi-calculator.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "isPartOf": {"@type": "WebSite", "name": "PaisaTools", "url": "https://www.yourdomain.in/"}}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: passbook-inspired tool card up top, ledger-style schedule, then a single reading column for the guide. */
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --ink:#14211c; --muted:#5b6b64; --line:#d9e2dd;
+  --principal:#0f6b4f; --interest:#c8791c; --accent:#0f6b4f; --accent-ink:#ffffff; --tint:#e6f0eb;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --principal:#3fb98b; --interest:#e7a24a; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1512; --surface:#16201c; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3832;
+  --principal:#3fb98b; --interest:#e7a24a; --accent:#3fb98b; --accent-ink:#06140e; --tint:#1c2b25; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1040px;margin:0 auto}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav.site{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+nav.site a{color:var(--muted);text-decoration:none}
+nav.site a[aria-current]{color:var(--ink);font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:-.015em;line-height:1.2;margin:0}
+h1{font-size:clamp(1.8rem,4vw,2.5rem)}
+h2{font-size:1.5rem}
+h3{font-size:1.1rem}
+.intro{padding-block:28px 20px;display:grid;gap:8px}
+.intro p{margin:0;color:var(--muted);max-width:62ch}
+
+.ad{border:1px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  display:grid;place-items:center;min-height:90px;margin-block:20px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--tint) 10px 11px)}
+.ad.tall{min-height:250px}
+
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.inputs{padding:24px;display:grid;gap:22px;border-right:1px solid var(--line)}
+.results{padding:24px;display:grid;gap:20px;align-content:start}
+.tabs{display:flex;gap:6px;background:var(--tint);padding:4px;border-radius:10px;width:fit-content;flex-wrap:wrap}
+.tabs button{font:500 .9rem var(--body);border:0;background:transparent;color:var(--muted);padding:8px 14px;border-radius:7px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0/.08)}
+.field{display:grid;gap:8px}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.field label{font-weight:500;font-size:.95rem}
+.box{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow:hidden}
+.box span{padding:0 10px;color:var(--muted);font-size:.9rem}
+.box input{width:9.5ch;border:0;background:transparent;color:var(--ink);font:500 1rem var(--mono);padding:8px 6px;text-align:right;font-variant-numeric:tabular-nums}
+.box input:focus{outline:none}
+.box:focus-within{border-color:var(--accent)}
+.box select{border:0;border-left:1px solid var(--line);background:transparent;color:var(--ink);font:500 .85rem var(--body);padding:8px}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.scale{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);font-family:var(--mono)}
+.err{color:var(--interest);font-size:.82rem;min-height:1em}
+
+.emi-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.emi{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,6vw,3rem);line-height:1;font-variant-numeric:tabular-nums}
+.emi small{font:500 1rem var(--body);color:var(--muted)}
+.split{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:center}
+.donut{width:132px;height:132px;max-width:100%}
+.legend{display:grid;gap:10px;font-size:.92rem}
+.legend div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.legend div:last-child{border:0;font-weight:600}
+.legend b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px;vertical-align:baseline}
+.note{font-size:.82rem;color:var(--muted);margin:0}
+
+section.block{margin-top:36px;display:grid;gap:14px}
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto}
+#bars{display:block;width:100%;min-width:560px;height:auto}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{font-weight:600;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;background:var(--tint)}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--mono);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+.bar{display:inline-block;height:6px;border-radius:3px;background:var(--principal);vertical-align:middle;margin-left:8px}
+
+.guide{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;margin-top:40px}
+article{max-width:68ch;display:grid;gap:14px}
+article p,article li{margin:0}
+article ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.formula{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;font-family:var(--mono);font-size:1.05rem;overflow-x:auto}
+.formula small{display:block;font-family:var(--body);font-size:.85rem;color:var(--muted);margin-top:8px;line-height:1.6}
+details{border-bottom:1px solid var(--line);padding-block:12px}
+details summary{cursor:pointer;font-weight:600;list-style-position:outside}
+details p{margin-top:8px;color:var(--muted)}
+aside{display:grid;gap:16px;align-content:start}
+.related{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px}
+.related h3{font-size:1rem}
+.related a{color:var(--accent);text-decoration:none;font-size:.95rem}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;display:grid;gap:8px}
+footer nav{display:flex;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+@media (max-width:820px){
+  .tool{grid-template-columns:1fr}
+  .inputs{border-right:0;border-bottom:1px solid var(--line)}
+  .guide{grid-template-columns:1fr}
+}
+@media (max-width:420px){.split{grid-template-columns:1fr;justify-items:center}.legend{width:100%}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="index.html">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="index.html">Home</a><a href="emi-calculator.html" aria-current="page">EMI</a><a href="income-tax-calculator.html">Income Tax</a><a href="gst-calculator.html">GST</a><a href="sip-calculator.html">SIP</a><a href="fd-calculator.html">FD</a><a href="ppf-calculator.html">PPF</a><a href="index.html#all">All calculators</a></nav>
+  </header>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · 728 × 90</div>
+
+  <div class="intro">
+    <h1>EMI Calculator for Home, Car and Personal Loans</h1>
+    <p>Enter your loan amount, interest rate and tenure to see your monthly EMI, the total interest you'll pay and how your loan balance falls each year.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="tabs" role="group" aria-label="Loan type">
+        <button type="button" data-type="home" aria-pressed="true">Home loan</button>
+        <button type="button" data-type="car" aria-pressed="false">Car loan</button>
+        <button type="button" data-type="personal" aria-pressed="false">Personal loan</button>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="amt">Loan amount</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="numeric" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="50000" max="20000000" step="50000" aria-label="Loan amount slider">
+        <div class="scale"><span>₹50K</span><span>₹2 Cr</span></div>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="rate">Interest rate (per year)</label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="5" max="24" step="0.05" aria-label="Interest rate slider">
+        <div class="scale"><span>5%</span><span>24%</span></div>
+      </div>
+
+      <div class="field">
+        <div class="field-top"><label for="ten">Loan tenure</label>
+          <div class="box"><input id="ten" inputmode="numeric" autocomplete="off">
+            <select id="unit" aria-label="Tenure unit"><option value="y">Years</option><option value="m">Months</option></select></div></div>
+        <input type="range" id="tenR" min="1" max="30" step="1" aria-label="Tenure slider">
+        <div class="scale"><span id="tenMin">1 yr</span><span id="tenMax">30 yrs</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Your monthly EMI</div>
+        <div class="emi" id="emi">₹0 <small>/month</small></div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of principal and interest">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="var(--muted)" font-size="10" font-family="IBM Plex Sans, sans-serif">Interest</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="var(--ink)" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Principal</span><b id="lp">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>Total interest</span><b id="li">₹0</b></div>
+          <div><span>Total amount payable</span><b id="lt">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad" role="complementary" aria-label="Advertisement">Advertisement · responsive</div>
+
+  <section class="block" aria-labelledby="h-chart">
+    <h2 id="h-chart">What you pay each year</h2>
+    <p class="note">In the early years most of your EMI goes to interest. The principal share grows every year as your balance falls.</p>
+    <div class="chart-wrap"><svg id="bars" role="img" aria-label="Yearly principal and interest paid"></svg></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-sched">
+    <h2 id="h-sched">Year-wise repayment schedule</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th>Principal paid</th><th>Interest paid</th><th>Total paid</th><th>Balance left</th><th>Loan repaid</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="guide">
+    <article>
+      <h2>How is EMI calculated?</h2>
+      <p>EMI stands for Equated Monthly Instalment. It is the fixed amount you pay your bank every month until the loan is closed. Each EMI has two parts: interest on the balance still outstanding, and a repayment of principal. Banks in India use the reducing-balance method, so interest is charged only on what you still owe.</p>
+      <div class="formula">EMI = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1)
+        <small>P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the number of monthly instalments.</small></div>
+
+      <h3>Worked example</h3>
+      <p id="example"></p>
+
+      <h3>Three ways to lower your EMI or total interest</h3>
+      <ul>
+        <li><strong>Make part-prepayments.</strong> Paying extra towards principal, especially in the first few years, cuts total interest sharply. Most banks allow this without charges on floating-rate home loans taken by individuals.</li>
+        <li><strong>Choose a shorter tenure if you can afford it.</strong> A higher EMI over fewer years means far less interest overall.</li>
+        <li><strong>Compare lenders and negotiate.</strong> A difference of even 0.5% in the rate adds up to lakhs over a 20-year home loan. Your credit score strongly affects the rate you are offered.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · in-article</div>
+
+      <h2>Frequently asked questions</h2>
+      <details><summary>Does a longer tenure reduce my EMI?</summary>
+        <p>Yes, a longer tenure lowers the monthly EMI, but you pay interest for more months, so the total interest goes up. Move the tenure slider above to see the difference.</p></details>
+      <details><summary>What happens to my EMI if the interest rate changes?</summary>
+        <p>On a floating-rate loan, your bank usually keeps the EMI the same and extends the tenure when rates rise. You can often ask to raise the EMI instead, which keeps the tenure unchanged and saves interest.</p></details>
+      <details><summary>Is the EMI shown here exactly what my bank will charge?</summary>
+        <p>It will be very close. Your bank's figure may differ slightly because of rounding, the date your loan is disbursed, processing fees or insurance added to the loan.</p></details>
+      <details><summary>Can I claim tax benefits on my home loan EMI?</summary>
+        <p>Under the old tax regime, you can claim up to ₹2 lakh a year on interest for a self-occupied home under Section 24(b), and up to ₹1.5 lakh on principal under Section 80C. The new tax regime does not allow these deductions for a self-occupied home. Check with a tax advisor for your situation.</p></details>
+      <details><summary>What is a good EMI-to-income ratio?</summary>
+        <p>Many lenders prefer that all your EMIs together stay below 40–50% of your monthly take-home pay. Keeping it lower leaves room for savings and emergencies.</p></details>
+    </article>
+
+    <aside>
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="ad tall" role="complementary" aria-label="Advertisement">Advertisement · 300 × 250</div>
+      <div class="related">
+        <h3>More calculators</h3>
+        <a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a>
+        <a href="index.html">All calculators</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <nav aria-label="Site"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy policy</a><a href="disclaimer.html">Disclaimer</a></nav>
+    <nav aria-label="All calculators"><a href="emi-calculator.html">EMI Calculator</a><a href="income-tax-calculator.html">Income Tax Calculator</a><a href="hra-calculator.html">HRA Exemption Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="gratuity-calculator.html">Gratuity Calculator</a><a href="sip-calculator.html">SIP Calculator</a><a href="fd-calculator.html">FD Calculator</a><a href="rd-calculator.html">RD Calculator</a><a href="ppf-calculator.html">PPF Calculator</a><a href="sukanya-samriddhi-calculator.html">Sukanya Samriddhi Calculator</a><a href="nps-calculator.html">NPS Calculator</a></nav>
+    <p style="margin:0">Results are estimates for planning only and do not represent an offer from any lender. Confirm final figures with your bank.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
+  const short = n => n >= 1e7 ? '₹' + (n/1e7).toFixed(n>=1e8?0:2).replace(/\.?0+$/,'') + ' Cr'
+                   : n >= 1e5 ? '₹' + (n/1e5).toFixed(1).replace(/\.0$/,'') + ' L'
+                   : n >= 1e3 ? '₹' + Math.round(n/1e3) + 'K' : '₹' + Math.round(n);
+  const presets = {
+    home:{amt:3000000,rate:8.5,ten:20,maxY:30,maxA:20000000},
+    car:{amt:800000,rate:9.5,ten:5,maxY:8,maxA:5000000},
+    personal:{amt:300000,rate:12,ten:3,maxY:7,maxA:4000000}
+  };
+  let type='home', unit='y', maxY=30;
+
+  function emiOf(P, annual, n){
+    const r = annual/12/100;
+    if (r === 0) return P/n;
+    const f = Math.pow(1+r, n);
+    return P*r*f/(f-1);
+  }
+  const num = v => parseFloat(String(v).replace(/[^0-9.]/g,''));
+
+  function months(){ const t = num($('ten').value); return unit==='y' ? Math.round(t*12) : Math.round(t); }
+
+  function setTenureRange(){
+    const r=$('tenR');
+    if(unit==='y'){ r.min=1; r.max=maxY; r.step=1; $('tenMin').textContent='1 yr'; $('tenMax').textContent=maxY+' yrs'; }
+    else { r.min=6; r.max=maxY*12; r.step=6; $('tenMin').textContent='6 mo'; $('tenMax').textContent=(maxY*12)+' mo'; }
+  }
+
+  function applyPreset(t){
+    type=t; const p=presets[t]; maxY=p.maxY;
+    document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.type===t));
+    $('amtR').max=p.maxA; $('amtR').nextElementSibling.lastElementChild.textContent=short(p.maxA);
+    unit='y'; $('unit').value='y'; setTenureRange();
+    $('amt').value=p.amt.toLocaleString('en-IN'); $('amtR').value=p.amt;
+    $('rate').value=p.rate; $('rateR').value=p.rate;
+    $('ten').value=p.ten; $('tenR').value=p.ten;
+    calc();
+  }
+
+  function calc(){
+    const P=num($('amt').value), R=num($('rate').value), n=months();
+    let e='';
+    if(!(P>=1000)) e='Enter a loan amount of at least ₹1,000.';
+    else if(!(R>=0 && R<=50)) e='Enter an interest rate between 0% and 50%.';
+    else if(!(n>=1 && n<=600)) e='Enter a tenure between 1 month and 50 years.';
+    $('err').textContent=e; if(e) return;
+
+    const emi=emiOf(P,R,n), total=emi*n, interest=total-P;
+    $('emi').innerHTML=inr(emi)+' <small>/month</small>';
+    $('lp').textContent=inr(P); $('li').textContent=inr(interest); $('lt').textContent=inr(total);
+    const ip=interest/total, C=2*Math.PI*52;
+    $('arc').setAttribute('stroke-dasharray',((1-ip)*C).toFixed(2)+' '+C.toFixed(2));
+    $('pct').textContent=Math.round(ip*100)+'%';
+    $('insight').textContent = interest>P
+      ? 'You will pay more in interest than the amount you borrow. Prepaying early or picking a shorter tenure would cut this a lot.'
+      : 'For every ₹100 you repay, about ₹'+Math.round(ip*100)+' goes to interest.';
+
+    // yearly schedule
+    const r=R/12/100; let bal=P; const years=[];
+    for(let m=1;m<=n;m++){
+      const int=bal*r; let pr=emi-int; if(m===n) pr=bal;
+      bal=Math.max(0,bal-pr);
+      const y=Math.ceil(m/12);
+      if(!years[y-1]) years[y-1]={y,pr:0,int:0,bal:0};
+      years[y-1].pr+=pr; years[y-1].int+=int; years[y-1].bal=bal;
+    }
+    $('rows').innerHTML=years.map(o=>{
+      const done=(1-o.bal/P)*100;
+      return `<tr><td>Year ${o.y}</td><td>${inr(o.pr)}</td><td>${inr(o.int)}</td><td>${inr(o.pr+o.int)}</td><td>${inr(o.bal)}</td><td>${done.toFixed(1)}%<span class="bar" style="width:${Math.max(2,done*0.4)}px"></span></td></tr>`;
+    }).join('');
+    drawBars(years);
+  }
+
+  function drawBars(years){
+    const svg=$('bars'), W=880, H=280, L=64, Rm=12, T=16, B=40;
+    const max=Math.max(...years.map(o=>o.pr+o.int));
+    const nice=(()=>{const p=Math.pow(10,Math.floor(Math.log10(max)));const s=[1,2,2.5,5,10].find(k=>k*p>=max/4);return s*p;})();
+    const top=Math.ceil(max/nice)*nice, ticks=Math.round(top/nice);
+    const pw=W-L-Rm, ph=H-T-B, slot=pw/years.length, bw=Math.min(28,slot*0.7);
+    const y=v=>T+ph-(v/top)*ph;
+    let g='';
+    for(let i=0;i<=ticks;i++){const v=i*nice, yy=y(v);
+      g+=`<line x1="${L}" x2="${W-Rm}" y1="${yy}" y2="${yy}" stroke="var(--line)" stroke-width="1"/>`;
+      g+=`<text x="${L-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${short(v)}</text>`;}
+    const every=years.length>20?5:years.length>10?2:1;
+    years.forEach((o,i)=>{
+      const x=L+slot*i+(slot-bw)/2;
+      g+=`<rect x="${x}" y="${y(o.pr)}" width="${bw}" height="${ph-(y(o.pr)-T)}" fill="var(--principal)" rx="2"><title>Year ${o.y}: principal ${inr(o.pr)}</title></rect>`;
+      g+=`<rect x="${x}" y="${y(o.pr+o.int)}" width="${bw}" height="${y(o.pr)-y(o.pr+o.int)}" fill="var(--interest)" rx="2"><title>Year ${o.y}: interest ${inr(o.int)}</title></rect>`;
+      if((i+1)%every===0||i===0) g+=`<text x="${x+bw/2}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="IBM Plex Sans, sans-serif">Y${o.y}</text>`;
+    });
+    g+=`<rect x="${L}" y="${H-12}" width="10" height="10" fill="var(--principal)"/><text x="${L+16}" y="${H-3}" font-size="12" fill="var(--ink)" font-family="IBM Plex Sans, sans-serif">Principal</text>`;
+    g+=`<rect x="${L+96}" y="${H-12}" width="10" height="10" fill="var(--interest)"/><text x="${L+112}" y="${H-3}" font-size="12" fill="var(--ink)" font-family="IBM Plex Sans, sans-serif">Interest</text>`;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    svg.innerHTML=g;
+  }
+
+  // worked example (fixed, independent of inputs)
+  (function(){const P=3000000,R=8.5,n=240,e=emiOf(P,R,n),t=e*n;
+    $('example').textContent=`Say you take a home loan of ₹30,00,000 at 8.5% a year for 20 years. The monthly rate is 8.5 ÷ 12 ÷ 100 = 0.00708, and n is 240 months. Putting these into the formula gives an EMI of about ${inr(e)}. Over 20 years you would pay ${inr(t)} in total, of which ${inr(t-P)} is interest.`;})();
+
+  // wiring
+  const link=(box,range,fmt)=>{
+    box.addEventListener('input',()=>{const v=num(box.value); if(!isNaN(v)) range.value=v; calc();});
+    box.addEventListener('blur',()=>{if(fmt){const v=num(box.value); if(!isNaN(v)) box.value=fmt(v);}});
+    range.addEventListener('input',()=>{box.value=fmt?fmt(+range.value):range.value; calc();});
+  };
+  link($('amt'),$('amtR'),v=>Math.round(v).toLocaleString('en-IN'));
+  link($('rate'),$('rateR'),v=>String(+v.toFixed(2)));
+  link($('ten'),$('tenR'),null);
+  $('unit').addEventListener('change',e=>{
+    const n=months(); unit=e.target.value; setTenureRange();
+    const v = unit==='y' ? +(n/12).toFixed(1) : n;
+    $('ten').value=v; $('tenR').value=v; calc();
+  });
+  document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>applyPreset(b.dataset.type)));
+  applyPreset('home');
+})();
+</script>
+
+</body>
+</html>
