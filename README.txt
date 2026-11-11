@@ -95,7 +95,8 @@ Adding or changing pages
 
 Clean web addresses
 -------------------
-Pages are linked without ".html" (for example /paisatools/emi-calculator). GitHub Pages serves these
-automatically. If you open the files straight from your computer, the links will not work, so preview
-with a small web server instead:   npx serve .   (it understands clean addresses).
+Pages are linked without ".html" (for example /emi-calculator), the same way GitHub Pages serves them.
+Opening the files by double-clicking will not follow those links, so preview locally with:
+   double-click  start-local.bat        (Windows), or run   node tools/serve.js
+Then open http://localhost:8080/ (the script tells you if it had to use another port).
 Running  node tools/sync.js  keeps every link in this style.

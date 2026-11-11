@@ -220,3 +220,21 @@ footer.site-footer .f-bottom nav a{font-weight:600}
 
 .related a.rel-guide{display:block;background:var(--surface);color:var(--ink);border-radius:14px;padding:10px 12px;font-weight:600;line-height:1.35;margin-bottom:6px}
 .related a.rel-guide:hover{padding-left:12px;text-decoration:underline}
+
+/* ---------- Buy me a coffee ---------- */
+.coffee-btn{display:inline-flex;align-items:center;gap:8px;width:fit-content;background:#ffdd00;color:#111827!important;font-weight:700;font-size:.92rem;text-decoration:none!important;padding:10px 18px;border-radius:99px;box-shadow:0 1px 2px rgb(0 0 0/.12);transition:transform .15s,box-shadow .15s}
+.coffee-btn:hover{transform:translateY(-2px);box-shadow:0 6px 14px -6px rgb(0 0 0/.35)}
+.support-card{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--peach);color:var(--on-pastel);border-radius:24px;padding:20px 24px;margin-top:40px}
+.support-card p{margin:0;max-width:56ch;line-height:1.5}
+.support-card strong{display:block;font-size:1.05rem;margin-bottom:2px}
+@media (prefers-reduced-motion:reduce){.coffee-btn{transition:none}.coffee-btn:hover{transform:none}}
+
+/* Coffee button in the top menu */
+.coffee-sm{flex:none;padding:8px 14px;font-size:.85rem;margin-left:10px}
+.coffee-sm:hover{transform:none}
+header.site nav.site{margin-left:auto}
+@media (max-width:1000px){.coffee-sm .coffee-text{display:none}.coffee-sm{width:38px;height:38px;padding:0;justify-content:center;font-size:1.05rem}}
+@media (max-width:640px){
+  header.site .coffee-sm{order:2;margin-left:auto}
+  header.site .theme-btn{margin-left:8px}
+}

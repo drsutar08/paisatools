@@ -1,0 +1,1 @@
+{ "name": "paisatools", "private": true, "scripts": { "start": "node tools/serve.js", "sync": "node tools/sync.js", "test": "cd tests && npm test" } }
