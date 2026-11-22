@@ -77,7 +77,7 @@ for (const rel of list) {
 
   // 1. Top menu
   const items = cfg.nav.map(n => `<a href="${link(n[0])}"${n[0] === name ? ' aria-current="page"' : ''}>${label(n[1], n[2])}</a>`);
-  if (isHi) items.push(`<a href="../${name}" lang="en" hreflang="en-IN">English</a>`);
+  if (isHi) items.push(`<a href="../${name === '404.html' ? 'index.html' : name}" lang="en" hreflang="en-IN">English</a>`);
   const coffee = `<a class="coffee-btn coffee-sm" href="${cfg.support[0]}" target="_blank" rel="noopener noreferrer" title="${label(cfg.support[1], cfg.support[2])}"><span aria-hidden="true">☕</span><span class="coffee-text">${label(cfg.support[1], cfg.support[2])}</span></a>`;
   h = h.replace(/<a class="coffee-btn coffee-sm"[\s\S]*?<\/a>/, '');
   h = h.replace(/<nav class="site"[^>]*>[\s\S]*?<\/nav>/, `<nav class="site" aria-label="${isHi ? 'मुख्य' : 'Main'}">${items.join('')}</nav>${coffee}`);
@@ -278,6 +278,15 @@ for (const rel of list) {
   h = h.replace(/<main(?![^>]*id=)([^>]*)>/, '<main id="content"$1>');
 
   h = cleanUrls(h);
+  // 404 pages are served at whatever address was requested (e.g. /foo/bar or /hi/x/y), so relative links and
+  // stylesheets would resolve against that address. Make them start from the site root instead.
+  if (name === '404.html') {
+    const base = 'https://x' + (isHi ? '/hi/' : '/');
+    h = h.replace(/\b(href|src)="(?!https?:|\/|#|mailto:|data:|javascript:)([^"]*)"/g, (m, a, u) => {
+      const r = new URL(u, base);
+      return `${a}="${r.pathname}${r.hash}"`;
+    });
+  }
   if (h !== before) { fs.writeFileSync(file, h); changed++; }
 }
 

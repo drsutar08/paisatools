@@ -1,6 +1,6 @@
 /* PaisaTools service worker: pages work offline after the first visit. */
-const CACHE='paisatools-v9';
-const CORE=['./','index.html','theme.css','calc-base.css','calc-common.js','site.js','manifest.webmanifest','offline.html'];
+const CACHE='paisatools-v10';
+const CORE=['./','index.html','theme.css','calc-base.css','calc-common.js','site.js','manifest.webmanifest','offline.html','hi/offline.html'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()));
 });
@@ -13,7 +13,7 @@ self.addEventListener('fetch',e=>{
   // Pages: try the network first so updates show up, fall back to the cache offline.
   if(req.mode==='navigate'){
     e.respondWith(fetch(req).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(req,copy));return r;})
-      .catch(()=>caches.match(req).then(r=>r||caches.match('offline.html'))));
+      .catch(()=>caches.match(req).then(r=>r||caches.match(new URL(req.url).pathname.startsWith('/hi/')?'hi/offline.html':'offline.html'))));
     return;
   }
   // Static files: cache first.
