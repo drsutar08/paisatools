@@ -56,13 +56,15 @@ module.exports = {
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
-  // Footer columns: key, English title, Hindi title
+  // Categories (footer columns and homepage groups): key, English title, Hindi title, homepage description
   groups: [
-    ['loans', 'Loans', 'लोन'],
-    ['tax', 'Tax and salary', 'टैक्स और सैलरी'],
-    ['save', 'Save and invest', 'बचत और निवेश'],
-    ['plan', 'Plan and compare', 'योजना और तुलना']
+    ['loans', 'Loans', 'लोन', 'EMIs, how much you can borrow, prepaying early and comparing loan offers.'],
+    ['tax', 'Tax and salary', 'टैक्स और सैलरी', 'Income tax under both regimes, take-home salary, HRA, GST and gratuity.'],
+    ['save', 'Save and invest', 'बचत और निवेश', 'SIPs, lumpsums and mutual funds, fixed and recurring deposits, and PPF.'],
+    ['plan', 'Plan and compare', 'योजना और तुलना', 'Long-term goals: Sukanya Samriddhi, NPS, EPF, retirement and growth rates.']
   ],
+  // How many guides the homepage shows under "Latest money guides" (newest datePublished first).
+  homeGuides: 6,
   blurb: ['Free money calculators for India. No sign-up, and your numbers never leave your device.', 'भारत के लिए मुफ़्त कैलकुलेटर। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।'],
 
   // Guides (shown on guides.html in this order): file, tag, colour. Title and summary are read from each guide page.

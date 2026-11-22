@@ -190,6 +190,45 @@ for (const rel of list) {
       : s.replace(/(\n\s*)(<\/article>)/, `$1  ${b}$1$2`));
   }
 
+  // 3h. Homepage: author link, every calculator grouped by category, latest guides, ItemList data.
+  if (isHome && !isHi) {
+    h = block(h, 'home-author', `<a href="about.html#author">${esc(cfg.author.name)}</a>`, s => s);
+    // Reuse each calculator's existing tile (hand-written description and example); make a plain one if missing.
+    const tiles = {};
+    for (const m of h.matchAll(/<a class="tile"[^>]*href="([^"#]*)"[^>]*>[\s\S]*?<\/a>/g)) tiles[m[1].replace(/\.html$/, '')] = m[0];
+    const tileFor = (c, key) => {
+      const slug = c[0].replace(/\.html$/, '');
+      let t = tiles[slug] || `<a class="tile" href="${c[0]}"><span class="ico">₹</span><h4>${esc(c[1])}</h4><small></small></a>`;
+      t = t.replace(/<a class="tile"[^>]*?href="[^"]*"/, `<a class="tile" data-c="${key}" href="${c[0]}"`);
+      return t.replace(/<h3>([\s\S]*?)<\/h3>/, '<h4>$1</h4>');
+    };
+    const groupsHtml = cfg.groups.map(g => {
+      const list = cfg.calculators.filter(c => c[3] === g[0]);
+      return `      <section class="catgroup" aria-labelledby="c-${g[0]}">
+        <div class="cat-head"><h3 id="c-${g[0]}">${esc(g[1])} <small>(${list.length})</small></h3><p>${esc(g[3] || '')}</p></div>
+        <div class="grid">
+          ${list.map(c => tileFor(c, g[0])).join('\n          ')}
+        </div>
+      </section>`;
+    }).join('\n');
+    h = block(h, 'home-calcs', `\n    <div class="catgroups">\n${groupsHtml}\n    </div>\n    `, s => s);
+
+    // Latest guides: newest datePublished first. Guides published on the same day alternate between topics
+    // (Tax, Loans, Investing...) so the homepage shows a mix, otherwise they keep the config order.
+    const pub = f => { const m = readPage(f).match(/"datePublished":"([^"]+)"/); return m ? m[1] : cfg.published; };
+    const all = cfg.guides.map((g, i) => ({ g, i, d: pub(g[0]) }));
+    const seen = {};
+    all.forEach(x => { x.round = seen[x.d + '|' + x.g[1]] = (seen[x.d + '|' + x.g[1]] ?? -1) + 1; });
+    const latest = all.sort((a, b) => b.d.localeCompare(a.d) || a.round - b.round || a.i - b.i).slice(0, cfg.homeGuides || 6);
+    const cards = latest.map(({ g, d }) => `      <a class="pcard ${g[2]}" href="${g[0]}"><div class="ptop">${esc(g[1])}</div><h3>${esc(guideTitle(g[0]))}</h3><p class="gdesc">${esc(guideDesc(g[0]))}</p><div class="pfoot"><span>Published <time datetime="${d}">${fmtDate(d, false)}</time></span><span class="go">Read →</span></div></a>`).join('\n');
+    h = block(h, 'home-guides', `\n    <div class="sec-head"><h2 id="h-guides">Latest money guides</h2><a href="guides.html">All ${cfg.guides.length} guides →</a></div>\n    <div class="feat">\n${cards}\n    </div>\n    `, s => s);
+
+    // ItemList structured data mirrors the calculator list.
+    const items = cfg.calculators.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c[1], url: urlOf(c[0]) }));
+    h = h.replace(/<script type="application\/ld\+json">\{"@context":"https:\/\/schema\.org","@type":"ItemList"[\s\S]*?<\/script>/,
+      () => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'PaisaTools calculators', itemListElement: items })}</script>`);
+  }
+
   // 3g. Author box on the About page.
   if (name === 'about.html' && !isHi) {
     const bio = cfg.author.bio ? `<p>${esc(cfg.author.bio)}</p>` : '';
