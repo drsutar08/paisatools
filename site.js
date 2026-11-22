@@ -83,7 +83,7 @@
   if(consent==='essential'){window.adsbygoogle=window.adsbygoogle||[];window.adsbygoogle.requestNonPersonalizedAds=1;}
   if(!consent){
     var box=document.createElement('div');box.className='cookie-note';box.setAttribute('role','dialog');box.setAttribute('aria-label','Cookie notice');
-    box.innerHTML='<p>'+T.note+' <a href="'+base+'privacy-policy">'+T.more+'</a></p><div><button type="button" data-c="all">'+T.all+'</button><button type="button" data-c="essential" class="alt">'+T.ess+'</button></div>';
+    box.innerHTML='<p>'+T.note+' <a href="'+base+(hi?'hi/':'')+'privacy-policy">'+T.more+'</a></p><div><button type="button" data-c="all">'+T.all+'</button><button type="button" data-c="essential" class="alt">'+T.ess+'</button></div>';
     box.addEventListener('click',function(e){
       var c=e.target.getAttribute&&e.target.getAttribute('data-c');if(!c)return;
       store.set('pt-consent',c);
