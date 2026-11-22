@@ -23,8 +23,9 @@ module.exports = {
   author: {
     name: 'Diptiranjan Sutar',
     nameHi: 'Diptiranjan Sutar',    // the name as it should appear on Hindi pages (often the same)
-    bio: '',                        // 1–3 sentences: who you are and why you can be trusted on money topics (left out while empty)
-    bioHi: '',
+    bio: 'Diptiranjan Sutar built PaisaTools and looks after every calculator and guide on the site. Each tool is checked against a hand-worked example and the official rules from the Income Tax Department, India Post, EPFO and PFRDA, and is updated when those rules change. PaisaTools is independent: it sells no financial products and earns no commissions.',
+    // Not shown on any page yet (the author box is only on the English About page); kept for a future Hindi About page.
+    bioHi: 'PaisaTools को Diptiranjan Sutar ने बनाया है, और साइट के हर कैलकुलेटर और गाइड की देखरेख भी उन्हीं के ज़िम्मे है। हर टूल को हाथ से निकाले गए उदाहरण और आयकर विभाग, इंडिया पोस्ट, EPFO और PFRDA के आधिकारिक नियमों से जांचा जाता है, और नियम बदलने पर अपडेट किया जाता है। PaisaTools स्वतंत्र है: यह कोई वित्तीय उत्पाद नहीं बेचता और कोई कमीशन नहीं कमाता।',
   },
 
   // file, English name, Hindi name, footer column
