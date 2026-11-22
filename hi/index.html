@@ -149,9 +149,25 @@ footer nav{display:flex;gap:6px 16px;flex-wrap:wrap}
 .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.grid{grid-template-columns:1fr}}
+.intro-sec{gap:18px}
+.intro-text{display:grid;gap:12px;max-width:72ch}
+.intro-text p{margin:0}
+.catgroups{display:grid;gap:28px}
+.catgroup{display:grid;gap:12px}
+.cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.cat-head h3{font-size:1.2rem}
+.cat-head p{margin:0;color:var(--muted);font-size:.9rem}
+.tile h4{font-size:1rem;margin:0;font-family:var(--display);letter-spacing:-.01em;line-height:1.25}
+.tile[data-c="loans"] .ico{background:var(--pink)}
+.tile[data-c="tax"] .ico{background:var(--peach)}
+.tile[data-c="save"] .ico{background:var(--mint)}
+.tile[data-c="plan"] .ico{background:var(--lav)}
+.pcard.tint{background:var(--tint)}
+.sec-note{margin:-4px 0 0;color:var(--muted);font-size:.9rem}
 .langnote{font-size:.9rem;color:var(--muted)}
 h1,h2,h3{letter-spacing:0!important}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"PaisaTools कैलकुलेटर","itemListElement":[{"@type":"ListItem","position":1,"name":"EMI कैलकुलेटर","url":"https://paisatools.pages.dev/hi/emi-calculator"},{"@type":"ListItem","position":2,"name":"होम लोन एलिजिबिलिटी","url":"https://paisatools.pages.dev/hi/home-loan-eligibility-calculator"},{"@type":"ListItem","position":3,"name":"कार लोन EMI","url":"https://paisatools.pages.dev/hi/car-loan-calculator"},{"@type":"ListItem","position":4,"name":"लोन प्रीपेमेंट","url":"https://paisatools.pages.dev/hi/loan-prepayment-calculator"},{"@type":"ListItem","position":5,"name":"दो लोन की तुलना","url":"https://paisatools.pages.dev/hi/loan-comparison-calculator"},{"@type":"ListItem","position":6,"name":"इनकम टैक्स कैलकुलेटर","url":"https://paisatools.pages.dev/hi/income-tax-calculator"},{"@type":"ListItem","position":7,"name":"सीनियर सिटिज़न टैक्स","url":"https://paisatools.pages.dev/hi/senior-citizen-tax-calculator"},{"@type":"ListItem","position":8,"name":"सैलरी इन-हैंड","url":"https://paisatools.pages.dev/hi/salary-in-hand-calculator"},{"@type":"ListItem","position":9,"name":"HRA छूट","url":"https://paisatools.pages.dev/hi/hra-calculator"},{"@type":"ListItem","position":10,"name":"GST कैलकुलेटर","url":"https://paisatools.pages.dev/hi/gst-calculator"},{"@type":"ListItem","position":11,"name":"ग्रेच्युटी","url":"https://paisatools.pages.dev/hi/gratuity-calculator"},{"@type":"ListItem","position":12,"name":"SIP कैलकुलेटर","url":"https://paisatools.pages.dev/hi/sip-calculator"},{"@type":"ListItem","position":13,"name":"स्टेप-अप SIP","url":"https://paisatools.pages.dev/hi/step-up-sip-calculator"},{"@type":"ListItem","position":14,"name":"एकमुश्त निवेश","url":"https://paisatools.pages.dev/hi/lumpsum-calculator"},{"@type":"ListItem","position":15,"name":"म्यूचुअल फंड रिटर्न","url":"https://paisatools.pages.dev/hi/mutual-fund-returns-calculator"},{"@type":"ListItem","position":16,"name":"FD कैलकुलेटर","url":"https://paisatools.pages.dev/hi/fd-calculator"},{"@type":"ListItem","position":17,"name":"RD कैलकुलेटर","url":"https://paisatools.pages.dev/hi/rd-calculator"},{"@type":"ListItem","position":18,"name":"PPF कैलकुलेटर","url":"https://paisatools.pages.dev/hi/ppf-calculator"},{"@type":"ListItem","position":19,"name":"सुकन्या समृद्धि","url":"https://paisatools.pages.dev/hi/sukanya-samriddhi-calculator"},{"@type":"ListItem","position":20,"name":"NPS कैलकुलेटर","url":"https://paisatools.pages.dev/hi/nps-calculator"},{"@type":"ListItem","position":21,"name":"EPF कैलकुलेटर","url":"https://paisatools.pages.dev/hi/epf-calculator"},{"@type":"ListItem","position":22,"name":"रिटायरमेंट प्लानर","url":"https://paisatools.pages.dev/hi/retirement-planner"},{"@type":"ListItem","position":23,"name":"CAGR कैलकुलेटर","url":"https://paisatools.pages.dev/hi/cagr-calculator"},{"@type":"ListItem","position":24,"name":"सिंपल और कंपाउंड ब्याज","url":"https://paisatools.pages.dev/hi/simple-compound-interest-calculator"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#content">मुख्य सामग्री पर जाएं</a>
@@ -164,9 +180,9 @@ h1,h2,h3{letter-spacing:0!important}
   <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
       <span class="eyebrow">FY 2026-27 के नियमों के अनुसार</span>
-      <h1 id="h1">फ़ैसले से पहले अपने पैसों का हिसाब जानें</h1>
-      <p class="lead">लोन, टैक्स और बचत के लिए मुफ़्त कैलकुलेटर, भारतीय नियमों के अनुसार। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।</p>
-      <p class="langnote">ध्यान दें: कैलकुलेटर के पेज अभी अंग्रेज़ी में हैं, लेकिन हर आंकड़ा रुपये और लाख/करोड़ में दिखता है।</p>
+      <h1 id="h1">भारत के लिए मुफ़्त पैसों के कैलकुलेटर और गाइड</h1>
+      <p class="lead">PaisaTools से आप लोन, टैक्स, सैलरी और बचत का हिसाब फ़ैसला लेने से पहले, भारतीय नियमों के अनुसार निकाल सकते हैं। हर टूल मुफ़्त है, साइन-अप की ज़रूरत नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।</p>
+      <p class="langnote">सभी कैलकुलेटर हिंदी में हैं। मनी गाइड अभी अंग्रेज़ी में हैं।</p>
       <div class="chips"><a href="emi-calculator"><i>₹</i>EMI</a><a href="income-tax-calculator"><i>%</i>इनकम टैक्स</a><a href="sip-calculator"><i>↗</i>SIP</a><a href="gst-calculator"><i>G</i>GST</a></div>
     </div>
     <div class="qcalc" aria-label="त्वरित EMI कैलकुलेटर">
@@ -180,28 +196,13 @@ h1,h2,h3{letter-spacing:0!important}
     </div>
   </section>
 
-  <h2 style="margin-bottom:14px">सभी कैलकुलेटर</h2>
-  <section class="block" aria-label="लोन"><h2>लोन</h2><div class="grid"><a class="tile" data-c="Loans" href="emi-calculator"><span class="ico">₹</span><h3>EMI कैलकुलेटर</h3><small>होम, कार और पर्सनल लोन की EMI</small></a><a class="tile" data-c="Loans" href="home-loan-eligibility-calculator"><span class="ico">🏠</span><h3>होम लोन एलिजिबिलिटी</h3><small>आपकी आय पर कितना लोन मिल सकता है</small></a><a class="tile" data-c="Loans" href="car-loan-calculator"><span class="ico">🚗</span><h3>कार लोन EMI</h3><small>EMI, डाउन पेमेंट और कुल लागत</small></a><a class="tile" data-c="Loans" href="loan-prepayment-calculator"><span class="ico">⏩</span><h3>लोन प्रीपेमेंट</h3><small>पार्ट-पेमेंट से बचा ब्याज और समय</small></a><a class="tile" data-c="Loans" href="loan-comparison-calculator"><span class="ico">⚖</span><h3>दो लोन की तुलना</h3><small>दो ऑफ़र आमने-सामने, फ़ीस सहित</small></a></div></section>
-  <section class="block" aria-label="टैक्स और सैलरी"><h2>टैक्स और सैलरी</h2><div class="grid"><a class="tile" data-c="Tax" href="income-tax-calculator"><span class="ico">%</span><h3>इनकम टैक्स</h3><small>पुराना बनाम नया टैक्स रिजीम, FY 2026-27</small></a><a class="tile" data-c="Tax" href="senior-citizen-tax-calculator"><span class="ico">🧓</span><h3>सीनियर सिटिज़न टैक्स</h3><small>60+ और 80+ के लिए टैक्स</small></a><a class="tile" data-c="Tax" href="salary-in-hand-calculator"><span class="ico">💼</span><h3>सैलरी इन-हैंड</h3><small>CTC से हर महीने हाथ में आने वाली सैलरी</small></a><a class="tile" data-c="Tax" href="hra-calculator"><span class="ico">⌂</span><h3>HRA छूट</h3><small>किराये पर टैक्स-फ्री HRA</small></a><a class="tile" data-c="Tax" href="gst-calculator"><span class="ico">G</span><h3>GST कैलकुलेटर</h3><small>GST जोड़ें या हटाएं</small></a><a class="tile" data-c="Tax" href="gratuity-calculator"><span class="ico">★</span><h3>ग्रेच्युटी</h3><small>नौकरी छोड़ने पर ग्रेच्युटी</small></a></div></section>
-  <section class="block" aria-label="बचत और निवेश"><h2>बचत और निवेश</h2><div class="grid"><a class="tile" data-c="Save" href="sip-calculator"><span class="ico">↗</span><h3>SIP कैलकुलेटर</h3><small>SIP या एकमुश्त निवेश की ग्रोथ</small></a><a class="tile" data-c="Save" href="step-up-sip-calculator"><span class="ico">📶</span><h3>स्टेप-अप SIP</h3><small>सैलरी के साथ बढ़ने वाली SIP</small></a><a class="tile" data-c="Save" href="lumpsum-calculator"><span class="ico">💰</span><h3>एकमुश्त निवेश</h3><small>एक बार का निवेश, महंगाई के बाद वैल्यू</small></a><a class="tile" data-c="Save" href="mutual-fund-returns-calculator"><span class="ico">📊</span><h3>म्यूचुअल फंड रिटर्न</h3><small>खर्च और टैक्स के बाद रिटर्न</small></a><a class="tile" data-c="Save" href="fd-calculator"><span class="ico">🏦</span><h3>FD कैलकुलेटर</h3><small>फिक्स्ड डिपॉज़िट की मैच्योरिटी</small></a><a class="tile" data-c="Save" href="rd-calculator"><span class="ico">↻</span><h3>RD कैलकुलेटर</h3><small>रेकरिंग डिपॉज़िट की मैच्योरिटी</small></a><a class="tile" data-c="Save" href="ppf-calculator"><span class="ico">P</span><h3>PPF कैलकुलेटर</h3><small>PPF की मैच्योरिटी, 7.1% पर</small></a><a class="tile" data-c="Save" href="sukanya-samriddhi-calculator"><span class="ico">S</span><h3>सुकन्या समृद्धि</h3><small>बेटी के भविष्य के लिए SSY</small></a><a class="tile" data-c="Save" href="nps-calculator"><span class="ico">N</span><h3>NPS कैलकुलेटर</h3><small>रिटायरमेंट कॉर्पस और पेंशन</small></a><a class="tile" data-c="Save" href="epf-calculator"><span class="ico">🏢</span><h3>EPF कैलकुलेटर</h3><small>रिटायरमेंट पर पीएफ कॉर्पस</small></a><a class="tile" data-c="Save" href="retirement-planner"><span class="ico">🌅</span><h3>रिटायरमेंट प्लानर</h3><small>कितना कॉर्पस चाहिए और कितनी SIP</small></a><a class="tile" data-c="Save" href="cagr-calculator"><span class="ico">📈</span><h3>CAGR कैलकुलेटर</h3><small>निवेश की सालाना ग्रोथ दर</small></a><a class="tile" data-c="Save" href="simple-compound-interest-calculator"><span class="ico">∑</span><h3>सिंपल और कंपाउंड ब्याज</h3><small>दोनों की तुलना</small></a></div></section>
-
-  <div class="pt-banner" data-slot="mid"></div>
-
-  <section class="block" aria-labelledby="h-g">
-    <h2 id="h-g">मनी गाइड</h2>
-    <div class="feat">
-      <a class="pcard peach" href="../guide-old-vs-new-tax-regime"><div class="ptop">टैक्स</div><h3>पुराना बनाम नया टैक्स रिजीम: कौन सा चुनें?</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
-      <a class="pcard pink" href="../guide-lower-home-loan-emi"><div class="ptop">लोन</div><h3>होम लोन की EMI और ब्याज कैसे घटाएं</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
-      <a class="pcard lav" href="../guide-sip-vs-lumpsum"><div class="ptop">निवेश</div><h3>SIP बनाम एकमुश्त निवेश</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
-      <a class="pcard mint" href="../guide-fd-vs-ppf-vs-nps"><div class="ptop">बचत</div><h3>FD, PPF या NPS: पैसा कहां लगाएं</h3><div class="pfoot"><span>अंग्रेज़ी में</span><span class="go">पढ़ें →</span></div></a>
+  <section class="block intro-sec" aria-labelledby="h-intro">
+    <h2 id="h-intro">PaisaTools क्या है?</h2>
+    <div class="intro-text">
+      <p>PaisaTools भारत के लोगों के लिए वित्तीय कैलकुलेटर और आसान भाषा में मनी गाइड की एक मुफ़्त और स्वतंत्र वेबसाइट है। यह रोज़मर्रा के पैसों के फ़ैसलों के पीछे का हिसाब समझने में मदद करती है: होम लोन असल में कितना महंगा पड़ेगा, किस टैक्स रीजिम में ज़्यादा पैसा बचेगा, हर महीने हाथ में कितनी सैलरी आएगी, या किसी लक्ष्य के लिए कितनी SIP चाहिए।</p>
+      <p>इसे <!--home-author--><a href="../about#author">Diptiranjan Sutar</a><!--/home-author--> ने बनाया है, और इसकी देखरेख भी उन्हीं के ज़िम्मे है। हर कैलकुलेटर में इस्तेमाल किया गया फ़ॉर्मूला, एक उदाहरण और आम सवालों के जवाब दिए गए हैं, और उसे आयकर विभाग, इंडिया पोस्ट, EPFO और PFRDA के आधिकारिक नियमों से जांचा जाता है। PaisaTools कोई वित्तीय उत्पाद नहीं बेचता और कोई कमीशन नहीं कमाता। <a href="../about" hreflang="en-IN">PaisaTools के बारे में और जानें</a> (अंग्रेज़ी में)</p>
     </div>
-  </section>
-
-  <div class="pt-banner" data-slot="box"></div>
-
-  <section class="block" aria-labelledby="h-why">
     <div class="band">
-      <h2 id="h-why">PaisaTools क्यों</h2>
       <div class="cols">
         <div><h3>आपके आंकड़े आपके पास रहते हैं</h3><p>सारी गणना आपके अपने डिवाइस पर होती है। आप जो रकम डालते हैं, उसे हम न देखते हैं, न सहेजते हैं।</p></div>
         <div><h3>भारतीय नियमों के हिसाब से</h3><p>लाख-करोड़ में राशि, मौजूदा टैक्स स्लैब, और बैंक व म्यूचुअल फंड जिस तरह गणना करते हैं, वैसा ही हिसाब।</p></div>
@@ -209,6 +210,77 @@ h1,h2,h3{letter-spacing:0!important}
       </div>
     </div>
   </section>
+
+  <section class="block" id="all" aria-labelledby="h-all">
+    <div class="sec-head"><h2 id="h-all">सभी कैलकुलेटर, श्रेणी के अनुसार</h2><p>PaisaTools के सभी कैलकुलेटर, मेन्यू की तरह श्रेणियों में बंटे हुए। हर कैलकुलेटर एक असली उदाहरण के साथ खुलता है।</p></div>
+    <!--home-calcs-->
+    <div class="catgroups">
+      <section class="catgroup" aria-labelledby="c-loans">
+        <div class="cat-head"><h3 id="c-loans">लोन <small>(5)</small></h3><p>EMI, कितना लोन मिल सकता है, जल्दी चुकाने का फ़ायदा और लोन ऑफ़र की तुलना।</p></div>
+        <div class="grid">
+          <a class="tile" data-c="loans" href="emi-calculator"><span class="ico">₹</span><h4>EMI कैलकुलेटर</h4><small>होम, कार और पर्सनल लोन की EMI</small></a>
+          <a class="tile" data-c="loans" href="home-loan-eligibility-calculator"><span class="ico">🏠</span><h4>होम लोन एलिजिबिलिटी</h4><small>आपकी आय पर कितना लोन मिल सकता है</small></a>
+          <a class="tile" data-c="loans" href="car-loan-calculator"><span class="ico">🚗</span><h4>कार लोन EMI</h4><small>EMI, डाउन पेमेंट और कुल लागत</small></a>
+          <a class="tile" data-c="loans" href="loan-prepayment-calculator"><span class="ico">⏩</span><h4>लोन प्रीपेमेंट</h4><small>पार्ट-पेमेंट से बचा ब्याज और समय</small></a>
+          <a class="tile" data-c="loans" href="loan-comparison-calculator"><span class="ico">⚖</span><h4>दो लोन की तुलना</h4><small>दो ऑफ़र आमने-सामने, फ़ीस सहित</small></a>
+        </div>
+      </section>
+      <section class="catgroup" aria-labelledby="c-tax">
+        <div class="cat-head"><h3 id="c-tax">टैक्स और सैलरी <small>(6)</small></h3><p>दोनों रीजिम में इनकम टैक्स, हाथ में आने वाली सैलरी, HRA, GST और ग्रेच्युटी।</p></div>
+        <div class="grid">
+          <a class="tile" data-c="tax" href="income-tax-calculator"><span class="ico">%</span><h4>इनकम टैक्स</h4><small>पुराना बनाम नया टैक्स रिजीम, FY 2026-27</small></a>
+          <a class="tile" data-c="tax" href="senior-citizen-tax-calculator"><span class="ico">🧓</span><h4>सीनियर सिटिज़न टैक्स</h4><small>60+ और 80+ के लिए टैक्स</small></a>
+          <a class="tile" data-c="tax" href="salary-in-hand-calculator"><span class="ico">💼</span><h4>सैलरी इन-हैंड</h4><small>CTC से हर महीने हाथ में आने वाली सैलरी</small></a>
+          <a class="tile" data-c="tax" href="hra-calculator"><span class="ico">⌂</span><h4>HRA छूट</h4><small>किराये पर टैक्स-फ्री HRA</small></a>
+          <a class="tile" data-c="tax" href="gst-calculator"><span class="ico">G</span><h4>GST कैलकुलेटर</h4><small>GST जोड़ें या हटाएं</small></a>
+          <a class="tile" data-c="tax" href="gratuity-calculator"><span class="ico">★</span><h4>ग्रेच्युटी</h4><small>नौकरी छोड़ने पर ग्रेच्युटी</small></a>
+        </div>
+      </section>
+      <section class="catgroup" aria-labelledby="c-save">
+        <div class="cat-head"><h3 id="c-save">बचत और निवेश <small>(7)</small></h3><p>SIP, एकमुश्त निवेश और म्यूचुअल फंड, FD, RD और PPF।</p></div>
+        <div class="grid">
+          <a class="tile" data-c="save" href="sip-calculator"><span class="ico">↗</span><h4>SIP कैलकुलेटर</h4><small>SIP या एकमुश्त निवेश की ग्रोथ</small></a>
+          <a class="tile" data-c="save" href="step-up-sip-calculator"><span class="ico">📶</span><h4>स्टेप-अप SIP</h4><small>सैलरी के साथ बढ़ने वाली SIP</small></a>
+          <a class="tile" data-c="save" href="lumpsum-calculator"><span class="ico">💰</span><h4>एकमुश्त निवेश</h4><small>एक बार का निवेश, महंगाई के बाद वैल्यू</small></a>
+          <a class="tile" data-c="save" href="mutual-fund-returns-calculator"><span class="ico">📊</span><h4>म्यूचुअल फंड रिटर्न</h4><small>खर्च और टैक्स के बाद रिटर्न</small></a>
+          <a class="tile" data-c="save" href="fd-calculator"><span class="ico">🏦</span><h4>FD कैलकुलेटर</h4><small>फिक्स्ड डिपॉज़िट की मैच्योरिटी</small></a>
+          <a class="tile" data-c="save" href="rd-calculator"><span class="ico">↻</span><h4>RD कैलकुलेटर</h4><small>रेकरिंग डिपॉज़िट की मैच्योरिटी</small></a>
+          <a class="tile" data-c="save" href="ppf-calculator"><span class="ico">P</span><h4>PPF कैलकुलेटर</h4><small>PPF की मैच्योरिटी, 7.1% पर</small></a>
+        </div>
+      </section>
+      <section class="catgroup" aria-labelledby="c-plan">
+        <div class="cat-head"><h3 id="c-plan">योजना और तुलना <small>(6)</small></h3><p>लंबे लक्ष्य: सुकन्या समृद्धि, NPS, EPF, रिटायरमेंट और ग्रोथ रेट।</p></div>
+        <div class="grid">
+          <a class="tile" data-c="plan" href="sukanya-samriddhi-calculator"><span class="ico">S</span><h4>सुकन्या समृद्धि</h4><small>बेटी के भविष्य के लिए SSY</small></a>
+          <a class="tile" data-c="plan" href="nps-calculator"><span class="ico">N</span><h4>NPS कैलकुलेटर</h4><small>रिटायरमेंट कॉर्पस और पेंशन</small></a>
+          <a class="tile" data-c="plan" href="epf-calculator"><span class="ico">🏢</span><h4>EPF कैलकुलेटर</h4><small>रिटायरमेंट पर पीएफ कॉर्पस</small></a>
+          <a class="tile" data-c="plan" href="retirement-planner"><span class="ico">🌅</span><h4>रिटायरमेंट प्लानर</h4><small>कितना कॉर्पस चाहिए और कितनी SIP</small></a>
+          <a class="tile" data-c="plan" href="cagr-calculator"><span class="ico">📈</span><h4>CAGR कैलकुलेटर</h4><small>निवेश की सालाना ग्रोथ दर</small></a>
+          <a class="tile" data-c="plan" href="simple-compound-interest-calculator"><span class="ico">∑</span><h4>सिंपल और कंपाउंड ब्याज</h4><small>दोनों की तुलना</small></a>
+        </div>
+      </section>
+    </div>
+    <!--/home-calcs-->
+  </section>
+
+  <div class="pt-banner" data-slot="mid"></div>
+
+  <section class="block" aria-labelledby="h-guides">
+    <!--home-guides-->
+    <div class="sec-head"><h2 id="h-guides">नई मनी गाइड</h2><a href="../guides">सभी 15 गाइड →</a></div>
+    <p class="sec-note">गाइड अभी अंग्रेज़ी में हैं। हर गाइड में एक उदाहरण और उससे जुड़े कैलकुलेटर के लिंक हैं।</p>
+    <div class="feat">
+      <a class="pcard pink" href="../guide-old-vs-new-tax-regime" hreflang="en-IN"><div class="ptop">टैक्स</div><h3>पुराना बनाम नया टैक्स रीजिम (FY 2026-27): कौन सा चुनें?</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard peach" href="../guide-ctc-to-in-hand-salary" hreflang="en-IN"><div class="ptop">सैलरी</div><h3>CTC से इन-हैंड सैलरी: हाथ में कम पैसा क्यों आता है</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard lav" href="../guide-lower-home-loan-emi" hreflang="en-IN"><div class="ptop">लोन</div><h3>होम लोन की EMI और कुल ब्याज कैसे घटाएं</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard mint" href="../guide-sip-vs-lumpsum" hreflang="en-IN"><div class="ptop">निवेश</div><h3>SIP बनाम एकमुश्त: किस तरह निवेश करें?</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard mint" href="../guide-fd-vs-ppf-vs-nps" hreflang="en-IN"><div class="ptop">बचत</div><h3>FD, RD, PPF, SSY या NPS: आपके लिए कौन सा सही है?</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+      <a class="pcard tint" href="../guide-retirement-planning-basics" hreflang="en-IN"><div class="ptop">रिटायरमेंट</div><h3>रिटायरमेंट प्लानिंग की बुनियादी बातें: कितना पैसा चाहिए?</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="2026-11-11">11 नवंबर 2026</time></span><span class="go">पढ़ें →</span></div></a>
+    </div>
+    <!--/home-guides-->
+  </section>
+
+  <div class="pt-banner" data-slot="box"></div>
   <div class="support-card">
     <p><strong>PaisaTools काम आया?</strong>PaisaTools मुफ़्त है और एक व्यक्ति इसे चलाता है। अगर किसी कैलकुलेटर से आपका समय या पैसा बचा, तो एक कॉफ़ी पिलाकर इसे जारी रखने में मदद कर सकते हैं।</p>
     <a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> मुझे एक कॉफ़ी पिलाएं</a>

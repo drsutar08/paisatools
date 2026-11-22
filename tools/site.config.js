@@ -56,13 +56,32 @@ module.exports = {
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
-  // Categories (footer columns and homepage groups): key, English title, Hindi title, homepage description
+  // Categories (footer columns and homepage groups): key, English title, Hindi title, English and Hindi homepage descriptions
   groups: [
-    ['loans', 'Loans', 'लोन', 'EMIs, how much you can borrow, prepaying early and comparing loan offers.'],
-    ['tax', 'Tax and salary', 'टैक्स और सैलरी', 'Income tax under both regimes, take-home salary, HRA, GST and gratuity.'],
-    ['save', 'Save and invest', 'बचत और निवेश', 'SIPs, lumpsums and mutual funds, fixed and recurring deposits, and PPF.'],
-    ['plan', 'Plan and compare', 'योजना और तुलना', 'Long-term goals: Sukanya Samriddhi, NPS, EPF, retirement and growth rates.']
+    ['loans', 'Loans', 'लोन', 'EMIs, how much you can borrow, prepaying early and comparing loan offers.', 'EMI, कितना लोन मिल सकता है, जल्दी चुकाने का फ़ायदा और लोन ऑफ़र की तुलना।'],
+    ['tax', 'Tax and salary', 'टैक्स और सैलरी', 'Income tax under both regimes, take-home salary, HRA, GST and gratuity.', 'दोनों रीजिम में इनकम टैक्स, हाथ में आने वाली सैलरी, HRA, GST और ग्रेच्युटी।'],
+    ['save', 'Save and invest', 'बचत और निवेश', 'SIPs, lumpsums and mutual funds, fixed and recurring deposits, and PPF.', 'SIP, एकमुश्त निवेश और म्यूचुअल फंड, FD, RD और PPF।'],
+    ['plan', 'Plan and compare', 'योजना और तुलना', 'Long-term goals: Sukanya Samriddhi, NPS, EPF, retirement and growth rates.', 'लंबे लक्ष्य: सुकन्या समृद्धि, NPS, EPF, रिटायरमेंट और ग्रोथ रेट।']
   ],
+  // Hindi names for the guide topics and titles, used on the Hindi homepage (the guides themselves are in English).
+  guideTagsHi: { Tax: 'टैक्स', Salary: 'सैलरी', Loans: 'लोन', Investing: 'निवेश', Savings: 'बचत', Retirement: 'रिटायरमेंट' },
+  guideTitlesHi: {
+    'guide-old-vs-new-tax-regime.html': 'पुराना बनाम नया टैक्स रीजिम (FY 2026-27): कौन सा चुनें?',
+    'guide-ctc-to-in-hand-salary.html': 'CTC से इन-हैंड सैलरी: हाथ में कम पैसा क्यों आता है',
+    'guide-hra-exemption-explained.html': 'HRA छूट: आपके HRA का कितना हिस्सा टैक्स-फ्री है',
+    'guide-senior-citizen-tax-saving.html': 'सीनियर सिटिज़न के लिए टैक्स बचत',
+    'guide-gst-cgst-sgst-igst-explained.html': 'GST आसान भाषा में: CGST, SGST और IGST',
+    'guide-how-gratuity-is-calculated.html': 'ग्रेच्युटी कैसे निकाली जाती है: फ़ॉर्मूला और पात्रता',
+    'guide-lower-home-loan-emi.html': 'होम लोन की EMI और कुल ब्याज कैसे घटाएं',
+    'guide-home-loan-eligibility-factors.html': 'कितना होम लोन मिलेगा, यह किन बातों से तय होता है',
+    'guide-how-to-choose-a-car-loan.html': 'सही कार लोन कैसे चुनें',
+    'guide-prepay-loan-or-invest.html': 'लोन पहले चुकाएं या पैसा निवेश करें?',
+    'guide-sip-vs-lumpsum.html': 'SIP बनाम एकमुश्त: किस तरह निवेश करें?',
+    'guide-what-is-cagr-and-xirr.html': 'CAGR और XIRR क्या हैं? कौन सा इस्तेमाल करें?',
+    'guide-fd-vs-ppf-vs-nps.html': 'FD, RD, PPF, SSY या NPS: आपके लिए कौन सा सही है?',
+    'guide-epf-and-vpf-explained.html': 'EPF और VPF: ब्याज और निकासी',
+    'guide-retirement-planning-basics.html': 'रिटायरमेंट प्लानिंग की बुनियादी बातें: कितना पैसा चाहिए?'
+  },
   // How many guides the homepage shows under "Latest money guides" (newest datePublished first).
   homeGuides: 6,
   blurb: ['Free money calculators for India. No sign-up, and your numbers never leave your device.', 'भारत के लिए मुफ़्त कैलकुलेटर। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।'],
