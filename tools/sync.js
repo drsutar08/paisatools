@@ -84,7 +84,8 @@ for (const rel of list) {
     // keep the page's own disclaimer sentence (always the last paragraph in the footer)
     const paras = [...inner.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)];
     const disclaimer = paras.length ? paras[paras.length - 1][1].trim() : '';
-    const site = cfg.footerSite.map(s => `<a href="${isHi ? '../' + s[0] : s[0]}">${label(s[1], s[2])}</a>`);
+    // From a Hindi page, link to the Hindi version of a site page (e.g. hi/about.html) if there is one.
+    const site = cfg.footerSite.map(s => `<a href="${isHi ? (hindiExists(s[0]) ? s[0] : '../' + s[0]) : s[0]}">${label(s[1], s[2])}</a>`);
     if (isHi) site.push('<a href="../index.html" lang="en">English</a>');
     else site.push(`<a href="${cfg.hindiHome}" lang="hi" hreflang="hi-IN">हिन्दी</a>`);
     const cols = cfg.groups.map(g => {
@@ -154,7 +155,7 @@ for (const rel of list) {
   if (calcFiles.has(name) || isGuide) {
     const aName = isHi ? cfg.author.nameHi : cfg.author.name;
     const by = isHi
-      ? `<p class="byline">लेखक: <a href="../about.html#author" rel="author">${esc(aName)}</a> <span aria-hidden="true">·</span> अंतिम अपडेट: <time datetime="${date}">${fmtDate(date, true)}</time></p>`
+      ? `<p class="byline">लेखक: <a href="${hindiExists('about.html') ? '' : '../'}about.html#author" rel="author">${esc(aName)}</a> <span aria-hidden="true">·</span> अंतिम अपडेट: <time datetime="${date}">${fmtDate(date, true)}</time></p>`
       : `<p class="byline">By <a href="about.html#author" rel="author">${esc(aName)}</a> <span aria-hidden="true">·</span> Last updated: <time datetime="${date}">${fmtDate(date, false)}</time></p>`;
     h = block(h, 'byline', by, (s, b) => /<p class="guide-meta">[^<]*<\/p>/.test(s)
       ? s.replace(/<p class="guide-meta">[^<]*<\/p>/, () => b)
@@ -243,10 +244,11 @@ for (const rel of list) {
     h = itemRe.test(h) ? h.replace(itemRe, () => tag) : h.replace('</head>', tag + '\n</head>');
   }
 
-  // 3g. Author box on the About page.
-  if (name === 'about.html' && !isHi) {
-    const bio = cfg.author.bio ? `<p>${esc(cfg.author.bio)}</p>` : '';
-    h = block(h, 'author', `<p class="author-name"><strong>${esc(cfg.author.name)}</strong></p>${bio}`, s => s);
+  // 3g. Author box on the About page (English and Hindi).
+  if (name === 'about.html') {
+    const b = isHi ? cfg.author.bioHi : cfg.author.bio;
+    const bio = b ? `<p>${esc(b)}</p>` : '';
+    h = block(h, 'author', `<p class="author-name"><strong>${esc(isHi ? cfg.author.nameHi : cfg.author.name)}</strong></p>${bio}`, s => s);
   }
 
   // The guides index is built from the list in the config
@@ -274,6 +276,7 @@ list.filter(f => !f.startsWith('hi/') && /^guide/.test(f)).forEach(f => add(f, '
 if (list.includes('hi/index.html')) add('hi/index.html', '0.8');
 cfg.calculators.forEach(c => { if (fs.existsSync(path.join(root, 'hi', c[0]))) add('hi/' + c[0], '0.7'); });
 cfg.legalPages.forEach(f => add(f, '0.3'));
+cfg.legalPages.forEach(f => { if (fs.existsSync(path.join(root, 'hi', f))) add('hi/' + f, '0.3'); });
 fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${rows.join('\n')}\n</urlset>\n`);
 
 console.log(`synced ${list.length} pages (${changed} changed), sitemap has ${rows.length} URLs`);
