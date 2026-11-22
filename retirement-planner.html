@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
-<title>Retirement Planner: How Much Do You Need to Retire? | PaisaTools</title>
+<title>Retirement Planner: Corpus You Need to Retire | PaisaTools</title>
 <meta name="description" content="Free retirement planner for India. Find the corpus you need, adjusted for inflation, and the monthly SIP required to reach it by your retirement age.">
 <link rel="canonical" href="https://paisatools.pages.dev/retirement-planner">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/retirement-planner">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/retirement-planner">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/retirement-planner">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
-<meta property="og:title" content="Retirement Planner: How Much Do You Need to Retire? | PaisaTools">
+<meta property="og:title" content="Retirement Planner: Corpus You Need to Retire | PaisaTools">
 <meta property="og:description" content="Free retirement planner for India. Find the corpus you need, adjusted for inflation, and the monthly SIP required to reach it by your retirement age.">
 <meta property="og:url" content="https://paisatools.pages.dev/retirement-planner">
 <meta name="theme-color" content="#ffffff">
@@ -21,10 +24,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Retirement Planner: How Much Do You Need to Retire? | PaisaTools">
+<meta name="twitter:title" content="Retirement Planner: Corpus You Need to Retire | PaisaTools">
 <meta name="twitter:description" content="Free retirement planner for India. Find the corpus you need, adjusted for inflation, and the monthly SIP required to reach it by your retirement age.">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og/retirement-planner.png">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/retirement-planner">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"Retirement Planner","item":"https://paisatools.pages.dev/retirement-planner"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What inflation should I use?","acceptedAnswer":{"@type":"Answer","text":"India’s long-term inflation has averaged about 5% to 6%. Medical and education costs often rise faster. Using 6% is a reasonable default."}},{"@type":"Question","name":"What return can I expect?","acceptedAnswer":{"@type":"Answer","text":"Equity-heavy portfolios have historically given around 10% to 12% a year over long periods, but with ups and downs. After retirement most people shift to safer assets, so a lower return of 7% to 8% is more realistic."}},{"@type":"Question","name":"Why does the corpus look so large?","acceptedAnswer":{"@type":"Answer","text":"Because inflation makes today’s expenses much higher by the time you retire. ₹50,000 a month today becomes about ₹1.6 lakh a month after 20 years at 6% inflation."}},{"@type":"Question","name":"Does this include EPF, NPS or PPF?","acceptedAnswer":{"@type":"Answer","text":"Add whatever you have saved so far into the retirement savings box. For future contributions, add them to your monthly investment plan, or use the NPS and PPF calculators."}},{"@type":"Question","name":"Does this include tax on withdrawals?","acceptedAnswer":{"@type":"Answer","text":"No. Taxes depend on where you hold the money. Plan with a small buffer, or talk to a tax advisor."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
@@ -52,13 +54,10 @@
   </header>
 <main id="content">
 
-  <div class="ad-slot" role="complementary" aria-label="Advertisement">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
   <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">Retirement Planner</li></ol></nav><!--/crumbs-->
     <h1>Retirement Planner</h1>
+    <!--byline--><p class="byline">By <a href="about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> Last updated: <time datetime="2026-11-23">23 November 2026</time></p><!--/byline-->
     <p>Work out how big a retirement corpus you need to keep your lifestyle, after inflation, and how much to invest every month to get there.</p>
   </div>
 
@@ -157,6 +156,12 @@
     <div class="table-wrap"><table><thead><tr><th>Retire at age</th><th>Corpus needed</th><th>Monthly investment needed</th></tr></thead><tbody id="rows"></tbody></table></div>
   </section>
 
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+
   <div class="pt-banner" data-slot="mid"></div>
   <div class="guide">
     <article>
@@ -165,7 +170,7 @@
       <div class="formula">Expense at retirement = today’s expense × (1 + inflation)<sup>years</sup><br>Corpus = yearly expense × (1 − (1 + g)<sup>−m</sup>) ÷ g × (1 + g)
         <small>g is the real return after retirement, (1 + return) ÷ (1 + inflation) − 1, and m is the number of retired years. The monthly amount comes from the future value of a SIP.</small></div>
       <h3>Worked example</h3>
-      <p id="example"></p>
+      <p id="example">Say you are 30, plan to retire at 60 and live to 85, spend ₹50,000 a month today, and have no savings yet. With 6% inflation, your expense at 60 becomes about ₹2,87,175 a month. Assuming 8% returns after retirement, you need a corpus of about ₹6.95 Cr. At 12% returns before retirement, that takes a monthly investment of about ₹22,762.</p>
       <h3>Ways to close a gap</h3>
       <ul>
         <li><strong>Start earlier.</strong> Ten extra years of investing can cut the monthly amount by more than half.</li>
@@ -189,6 +194,7 @@
         <p>Add whatever you have saved so far into the retirement savings box. For future contributions, add them to your monthly investment plan, or use the NPS and PPF calculators.</p></details>
       <details><summary>Does this include tax on withdrawals?</summary>
         <p>No. Taxes depend on where you hold the money. Plan with a small buffer, or talk to a tax advisor.</p></details>
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.pfrda.org.in/">Pension Fund Regulatory and Development Authority (PFRDA)</a>: NPS rules, withdrawals and annuity</li><li><a href="https://www.epfo.gov.in/">Employees' Provident Fund Organisation (EPFO)</a>: EPF interest rate, contributions and withdrawals</li></ul></section><!--/sources-->
     </article>
 
     <aside>
@@ -198,17 +204,11 @@
   </div>
       <div class="related">
         <a class="rel-guide" href="guide-retirement-planning-basics">Read the guide: Retirement Planning Basics: How Much Do You Need?</a>
-        <h3>More calculators</h3>
-        <a href="emi-calculator">EMI Calculator</a>
-        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
-        <a href="car-loan-calculator">Car Loan Calculator</a>
-        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
-        <a href="loan-comparison-calculator">Compare Two Loans</a>
-        <a href="income-tax-calculator">Income Tax Calculator</a>
-        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
-        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
-        <a href="hra-calculator">HRA Exemption Calculator</a>
-        <a href="gst-calculator">GST Calculator</a>
+        <h3>Related calculators</h3>
+        <a href="nps-calculator">NPS Calculator</a>
+        <a href="epf-calculator">EPF Calculator</a>
+        <a href="sip-calculator">SIP Calculator</a>
+        <a href="step-up-sip-calculator">Step-up SIP Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
       <div class="pt-banner" data-slot="side"></div>
@@ -230,7 +230,7 @@
     </div>
     <div class="f-bottom">
       <p>Planning estimate only. Returns are not guaranteed and inflation may differ. This is not investment advice.</p>
-      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
     </div>
   </footer>
 </div>

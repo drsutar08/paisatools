@@ -4,27 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
-<title>About Us | PaisaTools</title>
-<meta name="description" content="About PaisaTools, a free collection of financial calculators for India.">
+<title>About PaisaTools: Who We Are and How We Check</title>
+<meta name="description" content="Who runs PaisaTools, why it exists, how every calculator is checked against official rules, how the site is funded, and how to contact us.">
 <link rel="canonical" href="https://paisatools.pages.dev/about">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/about">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/about">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
-<meta property="og:title" content="About Us | PaisaTools">
-<meta property="og:description" content="About PaisaTools, a free collection of financial calculators for India.">
+<meta property="og:title" content="About PaisaTools: Who We Are and How We Check">
+<meta property="og:description" content="Who runs PaisaTools, why it exists, how every calculator is checked against official rules, how the site is funded, and how to contact us.">
 <meta property="og:url" content="https://paisatools.pages.dev/about">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "PaisaTools", "url": "https://paisatools.pages.dev/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About PaisaTools","url":"https://paisatools.pages.dev/about","inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/"}}</script>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:image" content="https://paisatools.pages.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About Us | PaisaTools">
-<meta name="twitter:description" content="About PaisaTools, a free collection of financial calculators for India.">
+<meta name="twitter:title" content="About PaisaTools: Who We Are and How We Check">
+<meta name="twitter:description" content="Who runs PaisaTools, why it exists, how every calculator is checked against official rules, how the site is funded, and how to contact us.">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og-image.png">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/about">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"About PaisaTools","item":"https://paisatools.pages.dev/about"}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
 <!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
@@ -116,35 +117,48 @@ footer a{color:var(--muted)}
 <main id="content">
 
   <div class="page">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">About PaisaTools</li></ol></nav><!--/crumbs-->
     <h1>About PaisaTools</h1>
-    <p>PaisaTools is a free collection of financial calculators made for people in India. We built it because many calculators online are cluttered, hard to use on a phone, or don't explain how they reach their answer.</p>
-    <p>Each tool is designed to do one job well. You enter your numbers, see the result straight away, and can read exactly how it was worked out. We use Indian number formats, current tax rules and the methods banks and fund houses use.</p>
-    <h2>How we keep calculators accurate</h2>
+    <p>PaisaTools is a free collection of financial calculators and plain-English money guides for people in India. Every tool runs in your browser: you need no account, and the numbers you enter never leave your device.</p>
+
+    <h2 id="author">Who runs PaisaTools</h2>
+    <div class="author-box">
+      <!--author--><p class="author-name"><strong>Diptiranjan Sutar</strong></p><!--/author-->
+    </div>
+    <p>PaisaTools is an independent project run from India by one person. It is not owned by any bank, broker, insurer or fund house. We do not sell financial products and we do not earn commissions on loans, investments or insurance.</p>
+
+    <h2>Why this site exists</h2>
+    <p>Many calculators online are cluttered, hard to use on a phone, or don't explain how they reach their answer. PaisaTools was built so that anyone can check an EMI, a tax bill or a savings goal in a few seconds and see exactly how the figure was worked out.</p>
+    <p>Each tool does one job well. You enter your numbers, see the result straight away, and can read the formula, a worked example and the rules behind it. We use Indian number formats and the methods banks, fund houses and the government use.</p>
+
+    <h2>How the calculators are checked</h2>
     <ul>
-      <li>We check every calculator against standard formulas and worked examples.</li>
-      <li>We review tax-related tools after each Union Budget and update them when rules change.</li>
-      <li>Each page shows when its rules apply, such as FY 2026-27 for the income tax calculator.</li>
+      <li>Every calculator is checked against the standard formula and a worked example written out by hand. An automated test suite re-runs these checks on every calculator page, in English and Hindi.</li>
+      <li>Tax tools are reviewed after each Union Budget and updated when the rules change. Each tax page states the financial year it applies to, such as FY 2026-27.</li>
+      <li>Rates that change during the year (PPF, Sukanya Samriddhi, EPF) are shown on the page and can be edited in the calculator, so you can use the latest notified rate.</li>
+      <li>Each calculator and guide shows the date it was last updated.</li>
     </ul>
-    <h2>How the site is funded</h2>
-    <p>PaisaTools is free to use and is supported by advertising. Ads never change the results a calculator shows.</p>
-    <h2>Who runs PaisaTools</h2>
-    <p>PaisaTools is an independent project run from India. It is built and maintained by one person who cares about clear, honest money tools, and it is not owned by any bank, broker, insurer or fund house. We do not sell financial products and we do not earn commissions on loans, investments or insurance.</p>
-    <h2>What you will find here</h2>
-    <p>More than twenty free calculators cover loans (EMI, home loan eligibility, car loan, prepayment), tax and salary (income tax, senior citizen tax, in-hand salary, HRA, GST, gratuity), and savings and investments (SIP, step-up SIP, lumpsum, FD, RD, PPF, Sukanya Samriddhi, NPS, EPF, retirement planner, CAGR and mutual fund returns). Our <a href="guides">money guides</a> explain the ideas behind them in plain language.</p>
+
     <h2>Methods and sources</h2>
     <ul>
       <li>Loan tools use the standard reducing-balance EMI formula that Indian banks use.</li>
       <li>Investment tools use compound growth with the assumptions you enter. They never promise a return.</li>
-      <li>Tax tools follow the Income Tax Department's published slabs, deductions and rebates for the year shown on the page.</li>
-      <li>Small savings rates (PPF, Sukanya Samriddhi) follow the rates notified by the Government of India. These change quarterly, so always check the latest notification.</li>
-      <li>EPF interest follows the rate declared by the EPFO each year. You can change it in the calculator.</li>
+      <li>Tax tools follow the slabs, deductions and rebates published by the <a href="https://www.incometax.gov.in/iec/foportal/">Income Tax Department</a> for the year shown on the page.</li>
+      <li>Small savings rates (PPF, Sukanya Samriddhi, post office deposits) follow the rates notified by the Government of India and published by <a href="https://www.indiapost.gov.in/">India Post</a>. These change quarterly.</li>
+      <li>EPF interest follows the rate declared each year by the <a href="https://www.epfo.gov.in/">EPFO</a>, and NPS rules follow the <a href="https://www.pfrda.org.in/">PFRDA</a>.</li>
     </ul>
+
     <h2>Corrections policy</h2>
-    <p>If a figure, rate or rule on this site is wrong or out of date, tell us through the <a href="contact">contact page</a>. We check the report, fix confirmed errors quickly and update the date on the page.</p>
-    <h2>Independence and advertising</h2>
-    <p>The site is supported by Google AdSense advertising. Advertisers have no say over our calculators, results or guides. We do not accept paid placements inside the calculators.</p>
-    <h2>Get in touch</h2>
-    <p>Found a mistake or want a new calculator? <a href="contact">Contact us</a>. We read every message.</p>
+    <p>If a figure, rate or rule on this site is wrong or out of date, tell us through the <a href="contact">contact page</a>. We check every report, fix confirmed errors quickly and update the date on the page.</p>
+
+    <h2>How the site is funded</h2>
+    <p>PaisaTools is free to use and is supported by advertising. Advertisers have no say over our calculators, results or guides, ads never change the results a calculator shows, and we do not accept paid placements inside the calculators.</p>
+
+    <h2>What you will find here</h2>
+    <p>More than twenty free calculators cover loans (EMI, home loan eligibility, car loan, prepayment, loan comparison), tax and salary (income tax, senior citizen tax, in-hand salary, HRA, GST, gratuity), and savings and investments (SIP, step-up SIP, lumpsum, mutual fund returns, FD, RD, PPF, Sukanya Samriddhi, NPS, EPF, retirement planner, CAGR and interest). Our <a href="guides">money guides</a> explain the ideas behind them. Every calculator is also available <a href="hi/">in Hindi</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Found a mistake or want a new calculator? Email <a href="mailto:drsutar08@gmail.com">drsutar08@gmail.com</a> or use the <a href="contact">contact page</a>. We read every message and usually reply within two working days.</p>
   </div>
   <div class="pt-banner" data-slot="bottom"></div>
 </main>
@@ -161,7 +175,7 @@ footer a{color:var(--muted)}
     </div>
     <div class="f-bottom">
       <p>© 2026 PaisaTools. Results are estimates for planning only and are not financial, tax or investment advice.</p>
-      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
     </div>
   </footer>
 </div>

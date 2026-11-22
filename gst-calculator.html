@@ -7,6 +7,9 @@
 <title>GST Calculator: Add or Remove GST, CGST & SGST | PaisaTools</title>
 <meta name="description" content="Free GST calculator for India. Add or remove GST at the new GST 2.0 rates and see the CGST, SGST or IGST split.">
 <link rel="canonical" href="https://paisatools.pages.dev/gst-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/gst-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/gst-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/gst-calculator">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
 <meta property="og:title" content="GST Calculator: Add or Remove GST, CGST & SGST | PaisaTools">
@@ -24,8 +27,7 @@
 <meta name="twitter:title" content="GST Calculator: Add or Remove GST, CGST & SGST | PaisaTools">
 <meta name="twitter:description" content="Free GST calculator for India. Add or remove GST at the new GST 2.0 rates and see the CGST, SGST or IGST split.">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og/gst-calculator.png">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/gst-calculator">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"GST Calculator: Add or Remove GST","item":"https://paisatools.pages.dev/gst-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"GST Calculator","item":"https://paisatools.pages.dev/gst-calculator"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between CGST, SGST and IGST?","acceptedAnswer":{"@type":"Answer","text":"CGST and SGST are charged together on sales within one state, each at half the GST rate. IGST is charged on sales from one state to another, at the full rate. The total tax is the same."}},{"@type":"Question","name":"How do I remove 18% GST from a price?","acceptedAnswer":{"@type":"Answer","text":"Divide the GST-inclusive amount by 1.18. For example, ₹1,180 ÷ 1.18 = ₹1,000, so the GST inside it is ₹180. Choose 'Remove GST' above to do this automatically."}},{"@type":"Question","name":"What happened to the 12% and 28% GST slabs?","acceptedAnswer":{"@type":"Answer","text":"They were removed on 22 September 2025. Most items that were at 12% moved to 5%, and most items at 28% moved to 18%. Luxury and sin goods moved to the new 40% rate."}},{"@type":"Question","name":"Who needs to register for GST?","acceptedAnswer":{"@type":"Answer","text":"Businesses selling goods need to register if their yearly turnover is over ₹40 lakh (₹20 lakh in some states), and service providers over ₹20 lakh (₹10 lakh in some states). Some businesses, such as online sellers, must register whatever their turnover."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
 <!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
@@ -164,14 +166,11 @@ footer a{color:var(--muted)}
   </header>
 <main id="content">
 
-  <div class="ad-slot" role="complementary" aria-label="Advertisement">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
   <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">GST Calculator</li></ol></nav><!--/crumbs-->
     <span class="fy">GST 2.0 rates, in force since 22 September 2025</span>
     <h1>GST Calculator: Add or Remove GST</h1>
+    <!--byline--><p class="byline">By <a href="about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> Last updated: <time datetime="2026-11-23">23 November 2026</time></p><!--/byline-->
     <p>Add GST to a price or take it out of a GST-inclusive amount. See the CGST and SGST split, or IGST for sales to another state.</p>
   </div>
 
@@ -216,6 +215,12 @@ footer a{color:var(--muted)}
     <div class="table-wrap"><table><thead><tr><th>GST rate</th><th>Price before GST</th><th>GST amount</th><th>CGST</th><th>SGST</th><th>Total price</th></tr></thead><tbody id="rows"></tbody></table></div>
   </section>
 
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+
   <div class="pt-banner" data-slot="mid"></div>
   <div class="guide">
     <article>
@@ -224,7 +229,7 @@ footer a{color:var(--muted)}
       <div class="formula">Add GST: GST = Price × Rate ÷ 100<br>Remove GST: Price = Total × 100 ÷ (100 + Rate)
         <small>For a sale within the same state, GST is split equally into CGST (to the Centre) and SGST (to the state). For a sale to another state, the whole amount is IGST.</small></div>
       <h3>Worked example</h3>
-      <p id="example"></p>
+      <p id="example">Say you sell a service for ₹10,000 to a customer in your own state at 18% GST. The GST is 10,000 × 18 ÷ 100 = ₹1,800, split into ₹900 CGST and ₹900 SGST. Your invoice total is ₹11,800. If instead the bill is ₹11,800 including GST, dividing by 1.18 gives back the ₹10,000 price.</p>
       <h3>GST rates in India</h3>
       <p>The GST Council's reform, often called GST 2.0, came into force on 22 September 2025. It replaced the old 12% and 28% slabs with a simpler structure:</p>
       <div class="slabs"><table><thead><tr><th>Rate</th><th>Typically applies to</th></tr></thead><tbody>
@@ -244,6 +249,8 @@ footer a{color:var(--muted)}
       <details><summary>What happened to the 12% and 28% GST slabs?</summary><p>They were removed on 22 September 2025. Most items that were at 12% moved to 5%, and most items at 28% moved to 18%. Luxury and sin goods moved to the new 40% rate.</p></details>
       <details><summary>Who needs to register for GST?</summary><p>Businesses selling goods need to register if their yearly turnover is over ₹40 lakh (₹20 lakh in some states), and service providers over ₹20 lakh (₹10 lakh in some states). Some businesses, such as online sellers, must register whatever their turnover.</p></details>
       
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://cbic-gst.gov.in/">CBIC GST portal</a>: GST rates and notifications</li></ul></section><!--/sources-->
+      
     </article>
     <aside>
       <div class="ad-slot" role="complementary" aria-label="Advertisement">
@@ -252,17 +259,10 @@ footer a{color:var(--muted)}
   </div>
       <div class="related">
         <a class="rel-guide" href="guide-gst-cgst-sgst-igst-explained">Read the guide: GST Explained: CGST, SGST and IGST in Simple Terms</a>
-        <h3>More calculators</h3>
-        <a href="emi-calculator">EMI Calculator</a>
-        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
-        <a href="car-loan-calculator">Car Loan Calculator</a>
-        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
-        <a href="loan-comparison-calculator">Compare Two Loans</a>
+        <h3>Related calculators</h3>
         <a href="income-tax-calculator">Income Tax Calculator</a>
-        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
         <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
-        <a href="hra-calculator">HRA Exemption Calculator</a>
-        <a href="gratuity-calculator">Gratuity Calculator</a>
+        <a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
       <div class="pt-banner" data-slot="side"></div>
@@ -284,7 +284,7 @@ footer a{color:var(--muted)}
     </div>
     <div class="f-bottom">
       <p>Results are estimates for planning only. Confirm final figures with your bank, employer or a tax professional.</p>
-      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
     </div>
   </footer>
 </div>

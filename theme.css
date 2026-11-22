@@ -242,6 +242,28 @@ header.site nav.site{margin-left:auto}
 .ad-slot{margin-block:20px;text-align:center;overflow:hidden}
 .ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
 @media print{.ad-slot{display:none!important}}
+/* Reserve room for AdSense units so the page doesn't jump when an ad loads (Cumulative Layout Shift).
+   Responsive units are usually ~90-100px tall on wide screens and up to ~280px on phones. */
+.ad-slot{min-height:100px}
+aside .ad-slot{min-height:250px}
+@media (max-width:767px){.ad-slot{min-height:280px}}
+.ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]){min-height:0;margin-block:0}
+
+/* Breadcrumb trail, author / last-updated line, official sources, author box */
+.crumbs{font-size:.82rem;color:var(--muted,#6b7280);margin:0 0 6px}
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 0}
+.crumbs li{display:inline-flex;align-items:center}
+.crumbs li+li::before{content:"›";margin:0 8px;opacity:.7}
+.crumbs a{color:var(--muted,#6b7280);text-decoration:none}
+.crumbs a:hover{color:var(--ink,inherit);text-decoration:underline}
+.crumbs [aria-current]{color:var(--ink,inherit)}
+.byline{font-size:.86rem;color:var(--muted,#6b7280);margin:2px 0 0}
+.byline a{color:inherit;font-weight:600}
+.sources{display:grid;gap:8px;margin-top:8px}
+.sources p{margin:0}
+.sources ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.author-box{border:1px solid var(--line,#e5e7eb);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
+.author-box p{margin:0}
 
 .pt-banner{margin-block:20px;text-align:center;overflow:hidden;max-width:100%}
 .pt-banner:not([data-ok]){height:0;margin:0;opacity:0;pointer-events:none}

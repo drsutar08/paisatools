@@ -7,6 +7,9 @@
 <title>RD Calculator: Recurring Deposit Maturity Value | PaisaTools</title>
 <meta name="description" content="Free RD calculator for bank and post office recurring deposits. See your maturity value and interest with quarterly compounding.">
 <link rel="canonical" href="https://paisatools.pages.dev/rd-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/rd-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/rd-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/rd-calculator">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
 <meta property="og:title" content="RD Calculator: Recurring Deposit Maturity Value | PaisaTools">
@@ -24,8 +27,7 @@
 <meta name="twitter:title" content="RD Calculator: Recurring Deposit Maturity Value | PaisaTools">
 <meta name="twitter:description" content="Free RD calculator for bank and post office recurring deposits. See your maturity value and interest with quarterly compounding.">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og/rd-calculator.png">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/rd-calculator">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"RD Calculator for Recurring Deposits","item":"https://paisatools.pages.dev/rd-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"RD Calculator","item":"https://paisatools.pages.dev/rd-calculator"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"RD or SIP: which is better?","acceptedAnswer":{"@type":"Answer","text":"An RD gives a fixed, guaranteed return, which suits short-term goals and people who don't want risk. A SIP in an equity mutual fund can grow much more over 5 years or longer, but its value goes up and down with the market."}},{"@type":"Question","name":"What happens if I miss an RD instalment?","acceptedAnswer":{"@type":"Answer","text":"Most banks charge a small penalty for a late instalment. At the post office, the default fee is ₹1 for every ₹100 per month missed. If you miss several in a row, the account may be closed."}},{"@type":"Question","name":"Can I close an RD early?","acceptedAnswer":{"@type":"Answer","text":"Yes, but you usually get a lower rate, and banks may charge a penalty. A post office RD can be closed early after 3 years, with interest at the savings account rate."}},{"@type":"Question","name":"Why does my bank show a slightly different maturity amount?","acceptedAnswer":{"@type":"Answer","text":"Banks round interest at each quarter and may count days slightly differently. The difference is usually only a few rupees."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
 <!-- Visitor count: GoatCounter (free, no cookies). Replace YOURCODE with the code you pick at goatcounter.com, then view visits at https://YOURCODE.goatcounter.com -->
@@ -164,13 +166,10 @@ footer a{color:var(--muted)}
   </header>
 <main id="content">
 
-  <div class="ad-slot" role="complementary" aria-label="Advertisement">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
   <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">RD Calculator</li></ol></nav><!--/crumbs-->
     <h1>RD Calculator for Recurring Deposits</h1>
+    <!--byline--><p class="byline">By <a href="about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> Last updated: <time datetime="2026-11-23">23 November 2026</time></p><!--/byline-->
     <p>See what your monthly recurring deposit at a bank or post office will be worth at maturity, and how much interest it earns.</p>
   </div>
 
@@ -222,6 +221,12 @@ footer a{color:var(--muted)}
     <div class="chart-wrap"><svg id="growth" role="img" aria-label="RD value over time"></svg></div>
   </section>
 
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+
   <div class="pt-banner" data-slot="box"></div>
 
   <section class="block" aria-labelledby="h-rows">
@@ -237,7 +242,7 @@ footer a{color:var(--muted)}
       <div class="formula">Each instalment grows to R × (1 + r ÷ 4)<sup>m ÷ 3</sup>
         <small>R is the monthly deposit, r is the yearly rate (as a decimal) and m is the number of months that instalment stays invested. The maturity value is the total of all instalments.</small></div>
       <h3>Worked example</h3>
-      <p id="example"></p>
+      <p id="example">Say you open a 5-year post office RD of ₹5,000 a month at 6.7%. You deposit ₹3,00,000 over 60 months. At maturity you receive about ₹3,56,829, so you earn ₹56,829 in interest.</p>
       <h3>Post office RD at a glance</h3>
       <ul>
         <li>The post office RD runs for 5 years, with the option to extend for another 5.</li>
@@ -256,6 +261,8 @@ footer a{color:var(--muted)}
       <details><summary>Can I close an RD early?</summary><p>Yes, but you usually get a lower rate, and banks may charge a penalty. A post office RD can be closed early after 3 years, with interest at the savings account rate.</p></details>
       <details><summary>Why does my bank show a slightly different maturity amount?</summary><p>Banks round interest at each quarter and may count days slightly differently. The difference is usually only a few rupees.</p></details>
       
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.rbi.org.in/">Reserve Bank of India (RBI)</a>: policy rates and rules for bank deposits</li><li><a href="https://www.indiapost.gov.in/">India Post</a>: current interest rates on PPF, SSY, post office FD and RD</li></ul></section><!--/sources-->
+      
     </article>
     <aside>
       <div class="ad-slot" role="complementary" aria-label="Advertisement">
@@ -264,17 +271,11 @@ footer a{color:var(--muted)}
   </div>
       <div class="related">
         <a class="rel-guide" href="guide-fd-vs-ppf-vs-nps">Read the guide: FD vs RD vs PPF vs SSY vs NPS: Which One Suits You?</a>
-        <h3>More calculators</h3>
-        <a href="emi-calculator">EMI Calculator</a>
-        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
-        <a href="car-loan-calculator">Car Loan Calculator</a>
-        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
-        <a href="loan-comparison-calculator">Compare Two Loans</a>
-        <a href="income-tax-calculator">Income Tax Calculator</a>
-        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
-        <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
-        <a href="hra-calculator">HRA Exemption Calculator</a>
-        <a href="gst-calculator">GST Calculator</a>
+        <h3>Related calculators</h3>
+        <a href="fd-calculator">FD Calculator</a>
+        <a href="ppf-calculator">PPF Calculator</a>
+        <a href="sip-calculator">SIP Calculator</a>
+        <a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
       <div class="pt-banner" data-slot="side"></div>
@@ -296,7 +297,7 @@ footer a{color:var(--muted)}
     </div>
     <div class="f-bottom">
       <p>Results are estimates for planning only. Confirm final figures with your bank, employer or a tax professional.</p>
-      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
     </div>
   </footer>
 </div>

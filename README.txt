@@ -84,9 +84,13 @@ New files and what they do
 
 Adding or changing pages
 ------------------------
-  node tools/sync.js     rebuilds the menu, footer, "More calculators" box, skip link and sitemap
-                         on every page (English and Hindi). Add new calculators to
-                         tools/site.config.js first.
+  node tools/sync.js     rebuilds the menu, footer, "Related calculators" box, hreflang links,
+                         breadcrumbs, author / "Last updated" line, official sources, guide
+                         calculator links, skip link and sitemap on every page (English and Hindi).
+                         Add new calculators to tools/site.config.js first. The author name and bio,
+                         the "Last updated" date, related calculators and sources are all set there.
+  node tools/prerender.js  writes each calculator's worked example into the HTML so search engines
+                         see it without JavaScript (run after changing an example; needs tests/ npm install).
   node tests/run.js      checks the calculator formulas.
   hi/                    Hindi versions of all 24 calculators and the home page.
   tools/make-og.js       makes the sharing images in og/ (needs Edge or Chrome installed)

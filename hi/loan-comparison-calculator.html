@@ -7,6 +7,9 @@
 <title>दो लोन की तुलना: EMI और कुल लागत साथ-साथ | PaisaTools</title>
 <meta name="description" content="मुफ़्त लोन तुलना कैलकुलेटर। दो लोन ऑफ़र साथ-साथ रखें और देखें कि किसकी EMI, कुल ब्याज और फ़ीस समेत असली लागत कम है।">
 <link rel="canonical" href="https://paisatools.pages.dev/hi/loan-comparison-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/loan-comparison-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/loan-comparison-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/loan-comparison-calculator">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
 <meta property="og:title" content="दो लोन की तुलना: EMI और कुल लागत साथ-साथ | PaisaTools">
@@ -24,10 +27,7 @@
 <meta name="twitter:title" content="दो लोन की तुलना: EMI और कुल लागत साथ-साथ | PaisaTools">
 <meta name="twitter:description" content="मुफ़्त लोन तुलना कैलकुलेटर। दो लोन ऑफ़र साथ-साथ रखें और देखें कि किसकी EMI, कुल ब्याज और फ़ीस समेत असली लागत कम है।">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og/loan-comparison-calculator.png">
-<link rel="alternate" hreflang="hi" href="https://paisatools.pages.dev/hi/loan-comparison-calculator">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/loan-comparison-calculator">
-<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/loan-comparison-calculator">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://paisatools.pages.dev/hi/"},{"@type":"ListItem","position":2,"name":"दो लोन की तुलना","item":"https://paisatools.pages.dev/hi/loan-comparison-calculator"}],"inLanguage":"hi"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://paisatools.pages.dev/hi/"},{"@type":"ListItem","position":2,"name":"दो लोन की तुलना","item":"https://paisatools.pages.dev/hi/loan-comparison-calculator"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"क्या मुझे समान अवधि पर तुलना करनी चाहिए?","acceptedAnswer":{"@type":"Answer","text":"हां, अगर हो सके तो। समान अवधि पर तुलना करने से सिर्फ़ दर और फ़ीस का असर दिखता है।"}},{"@type":"Question","name":"क्या कम दर हमेशा जीतती है?","acceptedAnswer":{"@type":"Answer","text":"नहीं, अगर उसकी फ़ीस काफ़ी ज़्यादा हो। कुल लागत की तुलना करें, जिसमें प्रोसेसिंग फ़ीस शामिल है।"}},{"@type":"Question","name":"क्या प्रोसेसिंग फ़ीस वापस मिलती है?","acceptedAnswer":{"@type":"Answer","text":"आमतौर पर नहीं। यह लोन मंज़ूर होते समय एक बार दी जाती है, इसलिए इसे अपनी तुलना में शामिल करें।"}},{"@type":"Question","name":"क्या मैं बाद में कर्ज़दाता बदल सकता हूं?","acceptedAnswer":{"@type":"Answer","text":"हां, बैलेंस ट्रांसफ़र के ज़रिए, लेकिन नए कर्ज़दाता की फ़ीस को उस ब्याज से मिलाकर देखें जो आप बचाएंगे।"}}],"inLanguage":"hi"}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
 <style>:root{color-scheme:light}</style>
@@ -56,7 +56,9 @@
   <div class="pt-banner" data-slot="top"></div>
 
   <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="ब्रेडक्रंब"><ol><li><a href="./">होम</a></li><li aria-current="page">दो लोन की तुलना</li></ol></nav><!--/crumbs-->
     <h1>दो लोन की तुलना</h1>
+    <!--byline--><p class="byline">लेखक: <a href="../about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> अंतिम अपडेट: <time datetime="2026-11-23">23 नवंबर 2026</time></p><!--/byline-->
     <p>दो लोन ऑफ़र मिले हैं? हर एक की दर, अवधि और प्रोसेसिंग फ़ीस डालें और देखें कि असल में कौन सा सस्ता पड़ता है।</p>
   </div>
 
@@ -135,7 +137,7 @@
       <div class="formula">कुल लागत = EMI × महीने + प्रोसेसिंग फ़ीस
         <small>EMI = P × r × (1 + r)<sup>n</sup> ÷ ((1 + r)<sup>n</sup> − 1), जहां r मासिक दर है और n महीनों की संख्या है।</small></div>
       <h3>उदाहरण</h3>
-      <p id="example"></p>
+      <p id="example">₹30,00,000 के 20 साल के लोन पर 8.5% दर और 0.5% फ़ीस वाले लोन A की कुल लागत ₹62,63,327 है। 8.75% दर और बिना फ़ीस वाले लोन B की कुल लागत ₹63,62,717 है। लोन A ₹99,390 सस्ता है।</p>
       <h3>और क्या देखें</h3>
       <ul>
         <li><strong>फ्लोटिंग या फिक्स्ड दर।</strong> फ्लोटिंग दरें बाज़ार के साथ बदल सकती हैं।</li>
@@ -164,17 +166,11 @@
   <div class="pt-banner" data-slot="side"></div>
       <div class="related">
         <a class="rel-guide" href="../guide-how-to-choose-a-car-loan">गाइड (अंग्रेज़ी): How to Choose a Car Loan</a>
-        <h3>और कैलकुलेटर</h3>
+        <h3>संबंधित कैलकुलेटर</h3>
         <a href="emi-calculator">EMI कैलकुलेटर</a>
-        <a href="home-loan-eligibility-calculator">होम लोन एलिजिबिलिटी</a>
         <a href="car-loan-calculator">कार लोन EMI</a>
         <a href="loan-prepayment-calculator">लोन प्रीपेमेंट</a>
-        <a href="income-tax-calculator">इनकम टैक्स कैलकुलेटर</a>
-        <a href="senior-citizen-tax-calculator">सीनियर सिटिज़न टैक्स</a>
-        <a href="salary-in-hand-calculator">सैलरी इन-हैंड</a>
-        <a href="hra-calculator">HRA छूट</a>
-        <a href="gst-calculator">GST कैलकुलेटर</a>
-        <a href="gratuity-calculator">ग्रेच्युटी</a>
+        <a href="home-loan-eligibility-calculator">होम लोन एलिजिबिलिटी</a>
         <a href="./">सभी कैलकुलेटर</a>
       </div>
       <div class="pt-banner" data-slot="box"></div>

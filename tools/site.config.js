@@ -8,7 +8,24 @@
  */
 module.exports = {
   domain: 'https://paisatools.pages.dev/',
-  lastmod: '2026-11-11',
+
+  // "Last updated" date shown on calculator and guide pages, used as dateModified in structured data
+  // and as <lastmod> in the sitemap. Change it when you review the pages (format YYYY-MM-DD).
+  lastmod: '2026-11-23',
+  // Optional per-page dates that override lastmod, e.g. 'ppf-calculator.html': '2026-12-31'
+  // (applies to the Hindi twin too).
+  updatedFor: {},
+  // First publication date of the guides (Article datePublished).
+  published: '2026-11-11',
+
+  // Author shown on every calculator and guide page and in the "Who runs PaisaTools" box on the About page.
+  // Replace the placeholders with your real details. Sync prints a warning while they are still placeholders.
+  author: {
+    name: 'Diptiranjan Sutar',
+    nameHi: 'Diptiranjan Sutar',    // the name as it should appear on Hindi pages (often the same)
+    bio: '',                        // 1–3 sentences: who you are and why you can be trusted on money topics (left out while empty)
+    bioHi: '',
+  },
 
   // file, English name, Hindi name, footer column
   calculators: [
@@ -90,7 +107,91 @@ module.exports = {
     'nps-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
     'epf-calculator.html': 'guide-epf-and-vpf-explained.html',
     'retirement-planner.html': 'guide-retirement-planning-basics.html',
-    'cagr-calculator.html': 'guide-what-is-cagr-and-xirr.html'
+    'cagr-calculator.html': 'guide-what-is-cagr-and-xirr.html',
+    'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
+  },
+
+  // Related calculators shown in each calculator's sidebar (3–5 each, most useful first). Names omit "-calculator.html".
+  related: {
+    'emi': ['loan-prepayment', 'loan-comparison', 'home-loan-eligibility', 'car-loan'],
+    'home-loan-eligibility': ['emi', 'loan-prepayment', 'loan-comparison', 'salary-in-hand'],
+    'car-loan': ['emi', 'loan-comparison', 'loan-prepayment', 'simple-compound-interest'],
+    'loan-prepayment': ['emi', 'loan-comparison', 'home-loan-eligibility', 'sip'],
+    'loan-comparison': ['emi', 'car-loan', 'loan-prepayment', 'home-loan-eligibility'],
+    'income-tax': ['salary-in-hand', 'hra', 'senior-citizen-tax', 'nps'],
+    'senior-citizen-tax': ['income-tax', 'fd', 'rd', 'retirement-planner'],
+    'salary-in-hand': ['income-tax', 'hra', 'epf', 'gratuity'],
+    'hra': ['income-tax', 'salary-in-hand', 'gratuity'],
+    'gst': ['income-tax', 'salary-in-hand', 'simple-compound-interest'],
+    'gratuity': ['salary-in-hand', 'epf', 'retirement-planner', 'income-tax'],
+    'sip': ['step-up-sip', 'lumpsum', 'mutual-fund-returns', 'cagr', 'retirement-planner'],
+    'step-up-sip': ['sip', 'lumpsum', 'retirement-planner', 'mutual-fund-returns'],
+    'lumpsum': ['sip', 'mutual-fund-returns', 'cagr', 'fd'],
+    'mutual-fund-returns': ['sip', 'lumpsum', 'cagr', 'step-up-sip'],
+    'fd': ['rd', 'ppf', 'simple-compound-interest', 'senior-citizen-tax'],
+    'rd': ['fd', 'ppf', 'sip', 'simple-compound-interest'],
+    'ppf': ['sukanya-samriddhi', 'nps', 'epf', 'fd'],
+    'sukanya-samriddhi': ['ppf', 'fd', 'sip', 'rd'],
+    'nps': ['retirement-planner', 'epf', 'ppf', 'income-tax'],
+    'epf': ['ppf', 'nps', 'retirement-planner', 'salary-in-hand'],
+    'retirement-planner': ['nps', 'epf', 'sip', 'step-up-sip'],
+    'cagr': ['mutual-fund-returns', 'lumpsum', 'sip', 'simple-compound-interest'],
+    'simple-compound-interest': ['fd', 'rd', 'cagr', 'lumpsum']
+  },
+
+  // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
+  guideCalcs: {
+    'guide-old-vs-new-tax-regime.html': ['income-tax', 'hra', 'salary-in-hand'],
+    'guide-ctc-to-in-hand-salary.html': ['salary-in-hand', 'income-tax', 'hra', 'gratuity'],
+    'guide-hra-exemption-explained.html': ['hra', 'income-tax'],
+    'guide-senior-citizen-tax-saving.html': ['senior-citizen-tax', 'income-tax', 'fd', 'rd'],
+    'guide-gst-cgst-sgst-igst-explained.html': ['gst'],
+    'guide-how-gratuity-is-calculated.html': ['gratuity', 'salary-in-hand'],
+    'guide-lower-home-loan-emi.html': ['emi', 'loan-prepayment', 'loan-comparison', 'home-loan-eligibility'],
+    'guide-home-loan-eligibility-factors.html': ['home-loan-eligibility', 'emi'],
+    'guide-how-to-choose-a-car-loan.html': ['car-loan', 'emi', 'loan-comparison', 'loan-prepayment'],
+    'guide-prepay-loan-or-invest.html': ['loan-prepayment', 'emi', 'sip', 'lumpsum', 'step-up-sip'],
+    'guide-sip-vs-lumpsum.html': ['sip', 'lumpsum', 'step-up-sip', 'mutual-fund-returns'],
+    'guide-what-is-cagr-and-xirr.html': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum'],
+    'guide-fd-vs-ppf-vs-nps.html': ['fd', 'rd', 'ppf', 'sukanya-samriddhi', 'nps', 'retirement-planner'],
+    'guide-epf-and-vpf-explained.html': ['epf', 'retirement-planner'],
+    'guide-retirement-planning-basics.html': ['retirement-planner', 'sip', 'nps', 'epf', 'ppf']
+  },
+
+  // Official sources: key, English label, Hindi label, url, English note, Hindi note
+  officialSources: {
+    itd: ['Income Tax Department', 'आयकर विभाग', 'https://www.incometax.gov.in/iec/foportal/', 'tax slabs, deductions, rebates and TDS rules', 'टैक्स स्लैब, छूट, रिबेट और TDS नियम'],
+    rbi: ['Reserve Bank of India (RBI)', 'भारतीय रिज़र्व बैंक (RBI)', 'https://www.rbi.org.in/', 'policy rates and rules for bank deposits', 'पॉलिसी दरें और बैंक जमा के नियम'],
+    post: ['India Post', 'इंडिया पोस्ट', 'https://www.indiapost.gov.in/', 'current interest rates on PPF, SSY, post office FD and RD', 'PPF, SSY, डाकघर FD और RD की मौजूदा ब्याज दरें'],
+    epfo: ['Employees\' Provident Fund Organisation (EPFO)', 'कर्मचारी भविष्य निधि संगठन (EPFO)', 'https://www.epfo.gov.in/', 'EPF interest rate, contributions and withdrawals', 'EPF ब्याज दर, योगदान और निकासी'],
+    pfrda: ['Pension Fund Regulatory and Development Authority (PFRDA)', 'पेंशन फंड नियामक और विकास प्राधिकरण (PFRDA)', 'https://www.pfrda.org.in/', 'NPS rules, withdrawals and annuity', 'NPS नियम, निकासी और एन्युटी'],
+    gst: ['CBIC GST portal', 'CBIC GST पोर्टल', 'https://cbic-gst.gov.in/', 'GST rates and notifications', 'GST दरें और अधिसूचनाएं'],
+    labour: ['Ministry of Labour and Employment', 'श्रम और रोज़गार मंत्रालय', 'https://www.labour.gov.in/', 'Payment of Gratuity Act and Labour Codes', 'ग्रेच्युटी भुगतान अधिनियम और लेबर कोड']
+  },
+  // Which official sources each page lists in its "Sources" section (Hindi twins get the same list).
+  sourcesFor: {
+    'income-tax-calculator.html': ['itd'],
+    'senior-citizen-tax-calculator.html': ['itd', 'post'],
+    'salary-in-hand-calculator.html': ['itd', 'epfo'],
+    'hra-calculator.html': ['itd'],
+    'gratuity-calculator.html': ['labour', 'itd'],
+    'gst-calculator.html': ['gst'],
+    'fd-calculator.html': ['rbi', 'post', 'itd'],
+    'rd-calculator.html': ['rbi', 'post'],
+    'ppf-calculator.html': ['post', 'itd'],
+    'sukanya-samriddhi-calculator.html': ['post', 'itd'],
+    'epf-calculator.html': ['epfo', 'itd'],
+    'nps-calculator.html': ['pfrda', 'itd'],
+    'retirement-planner.html': ['pfrda', 'epfo'],
+    'guide-old-vs-new-tax-regime.html': ['itd'],
+    'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
+    'guide-hra-exemption-explained.html': ['itd'],
+    'guide-senior-citizen-tax-saving.html': ['itd', 'post'],
+    'guide-gst-cgst-sgst-igst-explained.html': ['gst'],
+    'guide-how-gratuity-is-calculated.html': ['labour', 'itd'],
+    'guide-fd-vs-ppf-vs-nps.html': ['post', 'rbi', 'pfrda', 'itd'],
+    'guide-epf-and-vpf-explained.html': ['epfo', 'itd'],
+    'guide-retirement-planning-basics.html': ['pfrda', 'epfo', 'post']
   },
 
   // Top menu: file, English label, Hindi label

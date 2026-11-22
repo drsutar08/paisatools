@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
-<title>EPF Calculator: Provident Fund Balance at Retirement | PaisaTools</title>
+<title>EPF Calculator: PF Balance at Retirement | PaisaTools</title>
 <meta name="description" content="Free EPF calculator for India. Estimate your provident fund corpus at retirement from your basic salary, yearly raise and EPF interest rate.">
 <link rel="canonical" href="https://paisatools.pages.dev/epf-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/epf-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/epf-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/epf-calculator">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PaisaTools">
-<meta property="og:title" content="EPF Calculator: Provident Fund Balance at Retirement | PaisaTools">
+<meta property="og:title" content="EPF Calculator: PF Balance at Retirement | PaisaTools">
 <meta property="og:description" content="Free EPF calculator for India. Estimate your provident fund corpus at retirement from your basic salary, yearly raise and EPF interest rate.">
 <meta property="og:url" content="https://paisatools.pages.dev/epf-calculator">
 <meta name="theme-color" content="#14121a">
@@ -21,10 +24,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EPF Calculator: Provident Fund Balance at Retirement | PaisaTools">
+<meta name="twitter:title" content="EPF Calculator: PF Balance at Retirement | PaisaTools">
 <meta name="twitter:description" content="Free EPF calculator for India. Estimate your provident fund corpus at retirement from your basic salary, yearly raise and EPF interest rate.">
 <meta name="twitter:image" content="https://paisatools.pages.dev/og/epf-calculator.png">
-<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/epf-calculator">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"EPF Calculator","item":"https://paisatools.pages.dev/epf-calculator"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the current EPF interest rate?","acceptedAnswer":{"@type":"Answer","text":"The EPFO declares the rate every year. Enter the latest declared rate above. The default of 8.25% was the declared rate for FY 2024-25."}},{"@type":"Question","name":"Does my employer’s full 12% go to EPF?","acceptedAnswer":{"@type":"Answer","text":"No. 8.33% of wages up to ₹15,000 goes to the pension scheme (EPS). The rest goes to your EPF account."}},{"@type":"Question","name":"Is EPF interest taxable?","acceptedAnswer":{"@type":"Answer","text":"Interest is tax-free on your contributions up to ₹2.5 lakh a year (₹5 lakh if there is no employer contribution). Interest above that is taxable."}},{"@type":"Question","name":"When can I withdraw my EPF?","acceptedAnswer":{"@type":"Answer","text":"On retirement at 58 or later, or when you are unemployed for a period. Partial withdrawals are allowed for certain needs such as a home, medical or marriage."}},{"@type":"Question","name":"What is VPF?","acceptedAnswer":{"@type":"Answer","text":"Voluntary Provident Fund lets you contribute more than 12% of your basic. It earns the same interest rate as EPF."}}]}</script>
 <!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
@@ -50,13 +52,11 @@
   </header>
 <main id="main">
 
-  <div class="ad-slot" role="complementary" aria-label="Advertisement">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
 
   <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">EPF Calculator</li></ol></nav><!--/crumbs-->
     <h1>EPF Calculator</h1>
+    <!--byline--><p class="byline">By <a href="about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> Last updated: <time datetime="2026-11-23">23 November 2026</time></p><!--/byline-->
     <p>Estimate how much your Employees’ Provident Fund could grow to by retirement. Your 12% and your employer’s share go into the fund and earn tax-free interest.</p>
   </div>
 
@@ -139,6 +139,12 @@
     <div class="table-wrap"><table><thead><tr><th>Year</th><th>Your age</th><th>Monthly basic</th><th>EPF balance</th></tr></thead><tbody id="rows"></tbody></table></div>
   </section>
 
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+
   <div class="pt-banner" data-slot="mid"></div>
   <div class="guide">
     <article>
@@ -147,7 +153,7 @@
       <div class="formula">Monthly EPF deposit = 12% of basic + (12% of basic − EPS share)
         <small>EPS share = 8.33% of basic, capped at wages of ₹15,000. Interest each month = balance × annual rate ÷ 12, credited at year end.</small></div>
       <h3>Worked example</h3>
-      <p id="example"></p>
+      <p id="example">Take a 30-year-old with a basic salary of ₹50,000 a month, a 6% yearly raise and no balance today. At 8.25% interest, the EPF corpus at age 58 comes to about ₹2,56,34,372, of which ₹1,61,86,156 is interest.</p>
       <h3>Good to know</h3>
       <ul>
         <li><strong>Interest is tax-free</strong> up to the limit on yearly contributions. Interest on very large contributions may be taxable.</li>
@@ -170,6 +176,7 @@
         <p>On retirement at 58 or later, or when you are unemployed for a period. Partial withdrawals are allowed for certain needs such as a home, medical or marriage.</p></details>
       <details><summary>What is VPF?</summary>
         <p>Voluntary Provident Fund lets you contribute more than 12% of your basic. It earns the same interest rate as EPF.</p></details>
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.epfo.gov.in/">Employees' Provident Fund Organisation (EPFO)</a>: EPF interest rate, contributions and withdrawals</li><li><a href="https://www.incometax.gov.in/iec/foportal/">Income Tax Department</a>: tax slabs, deductions, rebates and TDS rules</li></ul></section><!--/sources-->
     </article>
 
     <aside>
@@ -179,17 +186,11 @@
   </div>
       <div class="related">
         <a class="rel-guide" href="guide-epf-and-vpf-explained">Read the guide: EPF and VPF Explained: Interest and Withdrawal</a>
-        <h3>More calculators</h3>
-        <a href="emi-calculator">EMI Calculator</a>
-        <a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a>
-        <a href="car-loan-calculator">Car Loan Calculator</a>
-        <a href="loan-prepayment-calculator">Loan Prepayment Calculator</a>
-        <a href="loan-comparison-calculator">Compare Two Loans</a>
-        <a href="income-tax-calculator">Income Tax Calculator</a>
-        <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
+        <h3>Related calculators</h3>
+        <a href="ppf-calculator">PPF Calculator</a>
+        <a href="nps-calculator">NPS Calculator</a>
+        <a href="retirement-planner">Retirement Planner</a>
         <a href="salary-in-hand-calculator">Salary In-Hand Calculator</a>
-        <a href="hra-calculator">HRA Exemption Calculator</a>
-        <a href="gst-calculator">GST Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
       <div class="pt-banner" data-slot="side"></div>
@@ -211,7 +212,7 @@
     </div>
     <div class="f-bottom">
       <p>EPF interest rate is declared each year by the EPFO and can change. Enter the current rate. This is an estimate and not an EPFO statement.</p>
-      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi">हिन्दी</a></nav>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
     </div>
   </footer>
 </div>
