@@ -66,8 +66,11 @@ for (const rel of list) {
   const link = f => {
     if (!isHi) return f;
     if (f === 'index.html') return 'index.html';
-    return (calcFiles.has(f) && hindiExists(f)) ? f : '../' + f;
+    return hindiExists(f) ? f : '../' + f;
   };
+  // Guide title/summary in the page's language: the Hindi guide's own h1/description when it exists.
+  const gTitle = g => (isHi && hindiExists(g)) ? guideTitle('hi/' + g) : guideTitle(g);
+  const gDesc = g => (isHi && hindiExists(g)) ? guideDesc('hi/' + g) : guideDesc(g);
   const label = (en, hi) => (isHi ? hi : en);
   let h = fs.readFileSync(file, 'utf8');
   const before = h;
@@ -113,13 +116,15 @@ for (const rel of list) {
     const others = relCalcs.map(f => `<a href="${link(f)}">${calcName(f, isHi)}</a>`).join('\n        ');
     const home = isHi ? '<a href="index.html">सभी कैलकुलेटर</a>' : '<a href="index.html#all">All calculators</a>';
     const g = cfg.guideFor[name];
-    const guideLink = g ? `<a class="rel-guide" href="${isHi ? '../' : ''}${g}">${isHi ? 'गाइड (अंग्रेज़ी): ' : 'Read the guide: '}${guideTitle(g)}</a>\n        ` : '';
+    const guideLink = !g ? '' : (isHi && hindiExists(g))
+      ? `<a class="rel-guide" href="${g}">गाइड पढ़ें: ${esc(gTitle(g))}</a>\n        `
+      : `<a class="rel-guide" href="${isHi ? '../' : ''}${g}">${isHi ? 'गाइड (अंग्रेज़ी): ' : 'Read the guide: '}${guideTitle(g)}</a>\n        `;
     h = h.replace(/<div class="related">[\s\S]*?<\/div>/, `<div class="related">\n        ${guideLink}<h3>${isHi ? 'संबंधित कैलकुलेटर' : 'Related calculators'}</h3>\n        ${others}\n        ${home}\n      </div>`);
   }
 
   const head = h.split('</head>')[0];
   const indexable = !/<meta name="robots" content="[^"]*noindex/.test(head);
-  const isGuide = !isHi && /^guide-/.test(name);
+  const isGuide = /^guide-/.test(name);
   const isHome = name === 'index.html';
   const date = dateFor(name);
 
@@ -137,10 +142,12 @@ for (const rel of list) {
   // 3b. Breadcrumbs: visible trail at the top of the page plus matching BreadcrumbList structured data.
   if (indexable && !isHome) {
     const pageName = calcFiles.has(name) ? calcName(name, isHi)
-      : isGuide ? guideTitle(name)
+      : isGuide ? guideTitle(rel)
       : ((h.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || name).replace(/<[^>]+>/g, '').trim();
     const trail = [[isHi ? 'होम' : 'Home', 'index.html', urlOf(isHi ? 'hi/index.html' : 'index.html')]];
-    if (isGuide) trail.push(['Guides', 'guides.html', urlOf('guides.html')]);
+    if (isGuide) trail.push(isHi
+      ? ['गाइड', link('guides.html'), urlOf(hindiExists('guides.html') ? 'hi/guides.html' : 'guides.html')]
+      : ['Guides', 'guides.html', urlOf('guides.html')]);
     trail.push([pageName, null, urlOf(rel)]);
     const vis = `<nav class="crumbs" aria-label="${isHi ? 'ब्रेडक्रंब' : 'Breadcrumb'}"><ol>` +
       trail.map(t => t[1] ? `<li><a href="${t[1]}">${esc(t[0])}</a></li>` : `<li aria-current="page">${esc(t[0])}</li>`).join('') + '</ol></nav>';
@@ -166,7 +173,7 @@ for (const rel of list) {
   if (isGuide) {
     h = h.replace(/<script type="application\/ld\+json">(\{[^<]*"@type":"Article"[^<]*)<\/script>/, (m, json) => {
       const j = JSON.parse(json);
-      j.author = { '@type': 'Person', name: cfg.author.name, url: D + 'about#author' };
+      j.author = { '@type': 'Person', name: isHi ? cfg.author.nameHi : cfg.author.name, url: D + (isHi && hindiExists('about.html') ? 'hi/' : '') + 'about#author' };
       j.datePublished = j.datePublished || cfg.published;
       j.dateModified = date;
       return `<script type="application/ld+json">${JSON.stringify(j)}</script>`;
@@ -175,7 +182,7 @@ for (const rel of list) {
 
   // 3e. "Try the calculator" links on guides.
   if (isGuide && cfg.guideCalcs[name]) {
-    const links = cfg.guideCalcs[name].map(short2file).map(f => `<a href="${f}">${calcName(f, false)}</a>`).join('');
+    const links = cfg.guideCalcs[name].map(short2file).map(f => `<a href="${link(f)}">${calcName(f, isHi)}</a>`).join('');
     h = h.replace(/<p class="calc-links">[\s\S]*?<\/p>/, () => `<p class="calc-links">${links}</p>`);
   }
 
@@ -224,13 +231,16 @@ for (const rel of list) {
     const latest = all.sort((a, b) => b.d.localeCompare(a.d) || a.round - b.round || a.i - b.i).slice(0, cfg.homeGuides || 6);
     let cards, head;
     if (isHi) {
-      // The guides are in English: Hindi title and topic where we have one, and an "in English" note.
+      // Hindi guide when it exists; otherwise the English guide with a Hindi title (if we have one) and an "in English" note.
       cards = latest.map(({ g, d }) => {
+        if (hindiExists(g[0])) return `      <a class="pcard ${g[2]}" href="${g[0]}"><div class="ptop">${esc((cfg.guideTagsHi || {})[g[1]] || g[1])}</div><h3>${esc(gTitle(g[0]))}</h3><p class="gdesc">${esc(gDesc(g[0]))}</p><div class="pfoot"><span>प्रकाशित <time datetime="${d}">${fmtDate(d, true)}</time></span><span class="go">पढ़ें →</span></div></a>`;
         const tHi = (cfg.guideTitlesHi || {})[g[0]];
         const title = tHi ? esc(tHi) : `<span lang="en">${esc(guideTitle(g[0]))}</span>`;
         return `      <a class="pcard ${g[2]}" href="../${g[0]}" hreflang="en-IN"><div class="ptop">${esc((cfg.guideTagsHi || {})[g[1]] || g[1])}</div><h3>${title}</h3><div class="pfoot"><span>अंग्रेज़ी में · <time datetime="${d}">${fmtDate(d, true)}</time></span><span class="go">पढ़ें →</span></div></a>`;
       }).join('\n');
-      head = `<div class="sec-head"><h2 id="h-guides">नई मनी गाइड</h2><a href="../guides.html">सभी ${cfg.guides.length} गाइड →</a></div>\n    <p class="sec-note">गाइड अभी अंग्रेज़ी में हैं। हर गाइड में एक उदाहरण और उससे जुड़े कैलकुलेटर के लिंक हैं।</p>`;
+      const allHi = cfg.guides.every(g => hindiExists(g[0]));
+      head = `<div class="sec-head"><h2 id="h-guides">नई मनी गाइड</h2><a href="${link('guides.html')}">सभी ${cfg.guides.length} गाइड →</a></div>` +
+        (allHi ? '' : '\n    <p class="sec-note">कुछ गाइड अभी सिर्फ़ अंग्रेज़ी में हैं। हर गाइड में एक उदाहरण और उससे जुड़े कैलकुलेटर के लिंक हैं।</p>');
     } else {
       cards = latest.map(({ g, d }) => `      <a class="pcard ${g[2]}" href="${g[0]}"><div class="ptop">${esc(g[1])}</div><h3>${esc(guideTitle(g[0]))}</h3><p class="gdesc">${esc(guideDesc(g[0]))}</p><div class="pfoot"><span>Published <time datetime="${d}">${fmtDate(d, false)}</time></span><span class="go">Read →</span></div></a>`).join('\n');
       head = `<div class="sec-head"><h2 id="h-guides">Latest money guides</h2><a href="guides.html">All ${cfg.guides.length} guides →</a></div>`;
@@ -252,8 +262,12 @@ for (const rel of list) {
   }
 
   // The guides index is built from the list in the config
-  if (name === 'guides.html' && !isHi) {
-    const cards = cfg.guides.map(g => `    <a class="tool-card" href="${g[0]}"><span class="tag" style="background:var(--${g[2]})">${g[1]}</span><h2>${guideTitle(g[0])}</h2><p>${guideDesc(g[0])}</p><span class="go">Read the guide &rarr;</span></a>`).join('\n');
+  if (name === 'guides.html') {
+    const cards = cfg.guides.map(g => !isHi
+      ? `    <a class="tool-card" href="${g[0]}"><span class="tag" style="background:var(--${g[2]})">${g[1]}</span><h2>${guideTitle(g[0])}</h2><p>${guideDesc(g[0])}</p><span class="go">Read the guide &rarr;</span></a>`
+      : hindiExists(g[0])
+        ? `    <a class="tool-card" href="${g[0]}"><span class="tag" style="background:var(--${g[2]})">${esc((cfg.guideTagsHi || {})[g[1]] || g[1])}</span><h2>${esc(gTitle(g[0]))}</h2><p>${esc(gDesc(g[0]))}</p><span class="go">गाइड पढ़ें &rarr;</span></a>`
+        : `    <a class="tool-card" href="../${g[0]}" hreflang="en-IN"><span class="tag" style="background:var(--${g[2]})">${esc((cfg.guideTagsHi || {})[g[1]] || g[1])}</span><h2>${esc((cfg.guideTitlesHi || {})[g[0]] || guideTitle(g[0]))}</h2><p lang="en">${guideDesc(g[0])}</p><span class="go">गाइड पढ़ें (अंग्रेज़ी में) &rarr;</span></a>`).join('\n');
     h = h.replace(/<div class="tools" style="margin-top:8px">[\s\S]*?\n  <\/div>/, `<div class="tools" style="margin-top:8px">\n${cards}\n  </div>`);
   }
 
@@ -273,6 +287,7 @@ const add = (loc, pr) => rows.push(`  <url><loc>${urlOf(loc)}</loc><lastmod>${da
 add('', '1.0');
 cfg.calculators.forEach(c => add(c[0], '0.9'));
 list.filter(f => !f.startsWith('hi/') && /^guide/.test(f)).forEach(f => add(f, '0.8'));
+list.filter(f => /^hi\/guide/.test(f)).forEach(f => add(f, '0.7'));
 if (list.includes('hi/index.html')) add('hi/index.html', '0.8');
 cfg.calculators.forEach(c => { if (fs.existsSync(path.join(root, 'hi', c[0]))) add('hi/' + c[0], '0.7'); });
 cfg.legalPages.forEach(f => add(f, '0.3'));
