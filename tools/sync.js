@@ -9,7 +9,7 @@ const path = require('path');
 const cfg = require('./site.config.js');
 const root = path.join(__dirname, '..');
 const calcFiles = new Set(cfg.calculators.map(c => c[0]));
-const EXTRA = new Set(['offline.html']);   // pages we never touch
+const EXTRA = new Set(['offline.html', 'ad-frame.html']);   // pages we never touch
 
 function pages(dir, prefix) {
   return fs.readdirSync(dir).filter(f => f.endsWith('.html') && !EXTRA.has(f)).map(f => prefix + f);

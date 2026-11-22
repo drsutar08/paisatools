@@ -97,7 +97,9 @@
      <div class="pt-banner" data-slot="top|mid|article|side|bottom"></div> picks a size that fits and loads it when scrolled near. */
   var KEYS={'728x90':'c21b2281a71f55029ba36b623ca772b4','300x250':'a7c44b77be1ac5ba5952e40ca8a94cbf','468x60':'7a856240dfa34dfe9995fc32cfa195fb','160x300':'e3860ad5e234ee3037eb419b667dcb4b'};
   function pickSize(slot,w){
-    if(slot==='side')return window.innerWidth>820?'160x300':(w>=300?'300x250':null);
+    if(slot==='rail')return '160x300';
+    if(slot==='box')return w>=300?'300x250':null;
+    if(slot==='side'){var iw=window.innerWidth;return (iw>820&&iw<1380)?'160x300':(w>=300?'300x250':null);}
     if(slot==='article')return w>=468?'468x60':(w>=300?'300x250':null);
     if(w>=728)return '728x90';
     if(w>=468)return '468x60';
@@ -117,6 +119,18 @@
     function onMsg(e){if(e.source===f.contentWindow&&e.data&&e.data.ptAdOk){done=true;el.setAttribute('data-ok','');window.removeEventListener('message',onMsg);}}
     window.addEventListener('message',onMsg);
     setTimeout(function(){if(!done){window.removeEventListener('message',onMsg);el.hidden=true;f.remove();}},10000);
+  }
+  /* Vertical ads in the empty side margins of wide screens (needs room for 160px + gap on each side of the page). */
+  var pageEl=document.querySelector('.wrap');
+  if(pageEl&&!/^(offline)/.test(location.pathname)){
+    var pr=pageEl.getBoundingClientRect();
+    if(pr.left>=180&&window.innerWidth-pr.right>=180){
+      ['left','right'].forEach(function(side){
+        var r=document.createElement('div');r.className='pt-banner pt-rail';r.setAttribute('data-slot','rail');
+        r.style[side==='left'?'left':'right']=Math.max(8,Math.round((side==='left'?pr.left:window.innerWidth-pr.right)-176))+'px';
+        document.body.appendChild(r);
+      });
+    }
   }
   var banners=document.querySelectorAll('.pt-banner');
   if(banners.length){
