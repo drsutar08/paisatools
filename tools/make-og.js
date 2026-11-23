@@ -32,7 +32,8 @@ const PASTEL = { loans: '#f5c6c6', tax: '#fbdcb8', save: '#c1f0dc', plan: '#d6d2
 // Example inputs/results from the index.html tiles
 const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const tiles = {};
-for (const m of index.matchAll(/<a class="tile"[^>]*href="([^"]+)"><span class="ico">[^<]*<\/span><h3>([^<]*)<\/h3><small>[^<]*<\/small><span class="eg"><span>([^<]*)<\/span><b>([^<]*)<\/b>/g)) tiles[m[1]] = { input: m[3], result: m[4] };
+// Tiles link without ".html" and use <h4> since the homepage groups them by category (older pages used <h3>).
+for (const m of index.matchAll(/<a class="tile"[^>]*href="([^"]+)"><span class="ico">[^<]*<\/span><h[34]>([^<]*)<\/h[34]><small>[^<]*<\/small><span class="eg"><span>([^<]*)<\/span><b>([^<]*)<\/b>/g)) tiles[m[1].replace(/\.html$/, '') + '.html'] = { input: m[3], result: m[4] };
 
 const page = ({ kicker, title, sub, color, big, small }) => `<!doctype html><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">

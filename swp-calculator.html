@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
+<title>SWP Calculator: Monthly Income from Your Corpus | PaisaTools</title>
+<meta name="description" content="Free SWP calculator. See how long your corpus lasts with monthly withdrawals, what is left at the end, and a year-by-year balance table.">
+<link rel="canonical" href="https://paisatools.pages.dev/swp-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/swp-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/swp-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/swp-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="SWP Calculator: Monthly Income from Your Corpus | PaisaTools">
+<meta property="og:description" content="Free SWP calculator. See how long your corpus lasts with monthly withdrawals, what is left at the end, and a year-by-year balance table.">
+<meta property="og:url" content="https://paisatools.pages.dev/swp-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SWP Calculator","url":"https://paisatools.pages.dev/swp-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"en-IN","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"isPartOf":{"@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://paisatools.pages.dev/og/swp-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SWP Calculator: Monthly Income from Your Corpus | PaisaTools">
+<meta name="twitter:description" content="Free SWP calculator. See how long your corpus lasts with monthly withdrawals, what is left at the end, and a year-by-year balance table.">
+<meta name="twitter:image" content="https://paisatools.pages.dev/og/swp-calculator.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an SWP?","acceptedAnswer":{"@type":"Answer","text":"A systematic withdrawal plan lets you take out a fixed amount from a mutual fund at regular intervals, usually monthly. The rest of the money stays invested and keeps earning returns."}},{"@type":"Question","name":"How is an SWP taxed?","acceptedAnswer":{"@type":"Answer","text":"Each withdrawal is a sale of units, so only the gain in that withdrawal is taxed as capital gains, not the whole amount. For equity funds held for more than a year, long-term gains above ₹1.25 lakh a year are taxed at 12.5%. Short-term gains and debt funds are taxed differently."}},{"@type":"Question","name":"Is an SWP better than FD interest?","acceptedAnswer":{"@type":"Answer","text":"It can be more tax-efficient, because only the gain part of each withdrawal is taxed, and the remaining money may grow faster. But mutual fund returns are not guaranteed, while FD interest is fixed."}},{"@type":"Question","name":"What return should I assume?","acceptedAnswer":{"@type":"Answer","text":"Use a conservative figure that matches where the money is invested. Debt and hybrid funds usually earn less than equity funds, and no return is guaranteed. Try a lower return to see how the plan holds up."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}.box input#amt{width:12.5ch}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="google-adsense-account" content="ca-pub-6071081432967277">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071081432967277" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"SWP Calculator","item":"https://paisatools.pages.dev/swp-calculator"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav><a class="coffee-btn coffee-sm" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer" title="Buy me a coffee"><span aria-hidden="true">☕</span><span class="coffee-text">Buy me a coffee</span></a>
+  </header>
+<main id="content">
+
+  <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">SWP Calculator</li></ol></nav><!--/crumbs-->
+    <h1>SWP Calculator (Systematic Withdrawal Plan)</h1>
+    <!--byline--><p class="byline">By <a href="about#author" rel="author">Diptiranjan Sutar</a> <span aria-hidden="true">·</span> Last updated: <time datetime="2026-11-23">23 November 2026</time></p><!--/byline-->
+    <p>Withdraw a fixed amount every month from an investment and see how long the money lasts, how much you take out in total and what is left at the end.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field" id="f-amt">
+        <div class="field-top"><label for="amt">Total investment (corpus)</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="100000" max="100000000" step="10000" aria-label="Total investment (corpus) slider">
+        <div class="scale"><span>₹1 L</span><span>₹10 Cr</span></div>
+      </div>
+      <div class="field" id="f-wd">
+        <div class="field-top"><label for="wd">Monthly withdrawal</label>
+          <div class="box"><span>₹</span><input id="wd" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="wdR" min="1000" max="1000000" step="1000" aria-label="Monthly withdrawal slider">
+        <div class="scale"><span>₹1K</span><span>₹10 L</span></div>
+      </div>
+      <div class="field" id="f-rate">
+        <div class="field-top"><label for="rate">Expected return (per year)</label>
+          <div class="box"><input id="rate" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="rateR" min="1" max="20" step="0.1" aria-label="Expected return (per year) slider">
+        <div class="scale"><span>1%</span><span>20%</span></div>
+      </div>
+      <div class="field" id="f-yrs">
+        <div class="field-top"><label for="yrs">Time period</label>
+          <div class="box"><input id="yrs" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="yrsR" min="1" max="40" step="1" aria-label="Time period slider">
+        <div class="scale"><span>1 yr</span><span>40 yrs</span></div>
+      </div>
+      <div class="field" id="f-inc">
+        <div class="field-top"><label for="inc">Increase withdrawal each year</label>
+          <div class="box"><input id="inc" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="incR" min="0" max="15" step="0.5" aria-label="Increase withdrawal each year slider">
+        <div class="scale"><span>0%</span><span>15%</span></div>
+        <p class="note">Use your expected inflation to keep the same buying power. Leave at 0 for a fixed amount.</p>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label"><i class="dot" style="background:var(--interest)"></i>Value left at the end</div>
+        <div class="emi" id="left">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of value left at the end">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Left</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Total withdrawn</span><b id="tot">₹0</b></div>
+          <div><span>Returns earned</span><b id="ret">₹0</b></div>
+          <div><span>Money lasts</span><b id="last">₹0</b></div>
+          <div><span>Monthly withdrawal in the last year</span><b id="fin">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="block" aria-labelledby="h-y">
+    <h2 id="h-y">Year-by-year balance</h2>
+    <div class="table-wrap"><table><thead><tr><th>Year</th><th>Withdrawn in the year</th><th>Returns earned</th><th>Balance at year end</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="pt-banner" data-slot="mid"></div>
+  <div class="guide">
+    <article>
+      <h2>How does an SWP work?</h2>
+      <p>A systematic withdrawal plan (SWP) pays you a fixed amount from a mutual fund at regular intervals, usually every month. Each payment redeems some of your units, and the money that stays invested keeps earning returns. If the returns are higher than what you take out, the corpus can keep growing; if not, it slowly runs down.</p>
+      <div class="formula">Each month: balance = balance × (1 + r) − withdrawal
+        <small>r is the monthly return (yearly return ÷ 12 ÷ 100). The withdrawal is taken at the end of each month. If you raise the withdrawal each year, the new amount applies from the start of that year.</small></div>
+      <h3>Worked example</h3>
+      <p id="example">Say you invest ₹50,00,000, expect 8% a year and withdraw ₹40,000 every month. Over 20 years you take out ₹96,00,000, and about ₹10,73,197 is still invested. At this rate the money would last 22 yrs 6 mo in total.</p>
+      <h3>How much can you withdraw?</h3>
+      <ul>
+        <li><strong>Below the returns, the corpus grows.</strong> If your yearly withdrawal is less than what the corpus earns in a year, the balance keeps rising.</li>
+        <li><strong>Above the returns, it runs down.</strong> The higher the withdrawal rate (yearly withdrawal as a share of the corpus), the sooner the money runs out.</li>
+        <li><strong>Plan for inflation.</strong> A fixed withdrawal buys less every year. Raising it each year protects your spending power but uses up the corpus faster.</li>
+        <li><strong>Early falls hurt more.</strong> Returns from market-linked funds are not guaranteed. A fall in the first few years means selling more units at low prices, which leaves less to recover.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="article"></div>
+
+      <div class="pt-banner" data-slot="box"></div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is an SWP?</summary>
+        <p>A systematic withdrawal plan lets you take out a fixed amount from a mutual fund at regular intervals, usually monthly. The rest of the money stays invested and keeps earning returns.</p></details>
+      <details><summary>How is an SWP taxed?</summary>
+        <p>Each withdrawal is a sale of units, so only the gain in that withdrawal is taxed as capital gains, not the whole amount. For equity funds held for more than a year, long-term gains above ₹1.25 lakh a year are taxed at 12.5%. Short-term gains and debt funds are taxed differently.</p></details>
+      <details><summary>Is an SWP better than FD interest?</summary>
+        <p>It can be more tax-efficient, because only the gain part of each withdrawal is taxed, and the remaining money may grow faster. But mutual fund returns are not guaranteed, while FD interest is fixed.</p></details>
+      <details><summary>What return should I assume?</summary>
+        <p>Use a conservative figure that matches where the money is invested. Debt and hybrid funds usually earn less than equity funds, and no return is guaranteed. Try a lower return to see how the plan holds up.</p></details>
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.incometax.gov.in/iec/foportal/">Income Tax Department</a>: tax slabs, deductions, rebates and TDS rules</li></ul></section><!--/sources-->
+    </article>
+
+    <aside>
+      <div class="ad-slot" role="complementary" aria-label="Advertisement">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="8670690217" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="related">
+        <a class="rel-guide" href="guide-retirement-planning-basics">Read the guide: Retirement Planning Basics: How Much Do You Need?</a>
+        <h3>Related calculators</h3>
+        <a href="retirement-planner">Retirement Planner</a>
+        <a href="lumpsum-calculator">Lumpsum Calculator</a>
+        <a href="scss-calculator">SCSS Calculator</a>
+        <a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+      <div class="pt-banner" data-slot="side"></div>
+      <div class="pt-banner" data-slot="box"></div>
+    </aside>
+  </div>
+  <div class="pt-banner" data-slot="bottom"></div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> Buy me a coffee</a></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="goal-sip-calculator">Goal SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a><a href="scss-calculator">SCSS Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="swp-calculator">SWP Calculator</a><a href="cagr-calculator">CAGR Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Returns are assumptions, not guarantees. Tax is not included.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,short,num,bind}=PT;
+  const L={"yrs":"yrs","mo":"mo","over":"100+ yrs","eAmt":"Enter a corpus of at least ₹10,000.","eWd":"Enter a monthly withdrawal of at least ₹500.","eRate":"Enter a return between 0% and 30%.","eYrs":"Enter a time period between 1 and 60 years.","eInc":"Enter a yearly increase between 0% and 30%.","out":"At this rate your money runs out after {d}, before the end of the period. You are withdrawing {rate}% of the corpus a year. A lower withdrawal or a higher return would make it last longer.","grow":"Your withdrawals ({rate}% of the corpus a year) are smaller than the returns, so the corpus keeps growing. You would have about {left} after {Y} years.","last":"Your money lasts the full {Y} years and about {left} is left. At this rate it would last about {d} in total.","ex":"Say you invest ₹50,00,000, expect 8% a year and withdraw ₹40,000 every month. Over 20 years you take out {tot}, and about {left} is still invested. At this rate the money would last {d} in total."};
+  const dur=m=>{const y=Math.floor(m/12),mo=m%12;return y+' '+L.yrs+(mo?' '+mo+' '+L.mo:'');};
+  /* Each month the balance earns R/12 % and the withdrawal is taken at the end of the month.
+     The withdrawal rises by inc % at the start of every new year. Runs up to 100 years to find when the money runs out. */
+  function sim(P,W,R,Y,inc){
+    const i=R/1200;let b=P,w=W,tot=0,left=0,gone=0,lastW=W;const rows=[];
+    for(let y=1;y<=100&&!gone;y++){
+      let yw=0,yr=0;
+      for(let k=1;k<=12;k++){const g=b*i;b+=g;yr+=g;const take=Math.min(w,b);b-=take;yw+=take;if(b<0.5){b=0;gone=(y-1)*12+k;break;}}
+      if(y<=Y){tot+=yw;rows.push({y,w:yw,r:yr,b});left=b;lastW=w;}
+      w*=1+inc/100;
+    }
+    if(gone&&gone<=Y*12)left=0;
+    return {tot,left,gone,rows,lastW};
+  }
+  function calc(){
+    const P=num($('amt').value),W=num($('wd').value),R=num($('rate').value),Y=Math.round(num($('yrs').value)),inc=num($('inc').value)||0;
+    let e='';
+    if(!(P>=10000)) e=L.eAmt;
+    else if(!(W>=500)) e=L.eWd;
+    else if(!(R>=0&&R<=30)) e=L.eRate;
+    else if(!(Y>=1&&Y<=60)) e=L.eYrs;
+    else if(!(inc>=0&&inc<=30)) e=L.eInc;
+    $('err').textContent=e; if(e) return;
+    const a=sim(P,W,R,Y,inc);
+    $('left').textContent=inr(a.left); $('tot').textContent=inr(a.tot); $('ret').textContent=inr(a.tot+a.left-P);
+    $('last').textContent=a.gone?dur(a.gone):L.over; $('fin').textContent=inr(a.lastW);
+    const rate=(W*12/P*100).toFixed(1);
+    $('insight').textContent=a.gone&&a.gone<=Y*12?L.out.replace('{d}',dur(a.gone)).replace('{rate}',rate)
+      :a.left>=P?L.grow.replace('{Y}',Y).replace('{left}',inr(a.left)).replace('{rate}',rate)
+      :L.last.replace('{Y}',Y).replace('{left}',inr(a.left)).replace('{d}',a.gone?dur(a.gone):L.over).replace('{rate}',rate);
+    $('rows').innerHTML=a.rows.map(o=>'<tr><td>'+o.y+'</td><td>'+inr(o.w)+'</td><td>'+inr(o.r)+'</td><td>'+inr(o.b)+'</td></tr>').join('');
+  }
+  (function(){const a=sim(5000000,40000,8,20,0);
+    $('example').textContent=L.ex.replace('{tot}',inr(a.tot)).replace('{left}',inr(a.left)).replace('{d}',dur(a.gone));})();
+  bind([{id:'amt',val:5000000},{id:'wd',val:40000},{id:'rate',val:8,fmt:PT.fDec},{id:'yrs',val:20,fmt:v=>String(v)},{id:'inc',val:0,fmt:PT.fDec}],calc);
+  calc();
+})();
+</script>
+
+<script>PT.donut(["tot","left"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>

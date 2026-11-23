@@ -276,6 +276,7 @@ for (const rel of list) {
     h = h.replace(/<body([^>]*)>/, `<body$1>\n<a class="skip-link" href="#content">${isHi ? 'मुख्य सामग्री पर जाएं' : 'Skip to main content'}</a>`);
   }
   h = h.replace(/<main(?![^>]*id=)([^>]*)>/, '<main id="content"$1>');
+  h = h.replace('<main id="main">', '<main id="content">');   // the skip link points at #content
 
   h = cleanUrls(h);
   // 404 pages are served at whatever address was requested (e.g. /foo/bar or /hi/x/y), so relative links and
