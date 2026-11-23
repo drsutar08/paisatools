@@ -1,5 +1,5 @@
 /* PaisaTools service worker: pages work offline after the first visit. */
-const CACHE='paisatools-v10';
+const CACHE='paisatools-v11';
 const CORE=['./','index.html','theme.css','calc-base.css','calc-common.js','site.js','manifest.webmanifest','offline.html','hi/offline.html'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()));

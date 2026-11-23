@@ -44,7 +44,7 @@
 
     var collect=function(){
       var p=new URLSearchParams();
-      inputs.querySelectorAll('input[id],select[id]').forEach(function(el){if(el.type!=='range')p.set(el.id,el.value);});
+      inputs.querySelectorAll('input[id],select[id]').forEach(function(el){if(el.type==='checkbox')p.set(el.id,el.checked?'1':'0');else if(el.type!=='range')p.set(el.id,el.value);});
       inputs.querySelectorAll('.tabs').forEach(function(g,i){
         var bs=Array.prototype.slice.call(g.querySelectorAll('button'));
         var idx=bs.findIndex(function(x){return x.getAttribute('aria-pressed')==='true';});
@@ -71,6 +71,7 @@
       q.forEach(function(v,k){
         var el=document.getElementById(k);
         if(!el||el.type==='range'||!inputs.contains(el))return;
+        if(el.type==='checkbox'){el.checked=v==='1';el.dispatchEvent(new Event('change',{bubbles:true}));return;}
         el.value=v;
         el.dispatchEvent(new Event(el.tagName==='SELECT'?'change':'input',{bubbles:true}));
         if(el.tagName!=='SELECT')el.dispatchEvent(new Event('blur'));

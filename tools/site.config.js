@@ -39,6 +39,7 @@ module.exports = {
     ['car-loan-calculator.html', 'Car Loan Calculator', 'कार लोन EMI', 'loans'],
     ['loan-prepayment-calculator.html', 'Loan Prepayment Calculator', 'लोन प्रीपेमेंट', 'loans'],
     ['loan-comparison-calculator.html', 'Compare Two Loans', 'दो लोन की तुलना', 'loans'],
+    ['credit-card-interest-calculator.html', 'Credit Card Interest Calculator', 'क्रेडिट कार्ड ब्याज', 'loans'],
     ['income-tax-calculator.html', 'Income Tax Calculator', 'इनकम टैक्स कैलकुलेटर', 'tax'],
     ['senior-citizen-tax-calculator.html', 'Senior Citizen Income Tax Calculator', 'सीनियर सिटिज़न टैक्स', 'tax'],
     ['salary-in-hand-calculator.html', 'Salary In-Hand Calculator', 'सैलरी इन-हैंड', 'tax'],
@@ -55,6 +56,8 @@ module.exports = {
     ['ppf-calculator.html', 'PPF Calculator', 'PPF कैलकुलेटर', 'save'],
     ['scss-calculator.html', 'SCSS Calculator', 'SCSS कैलकुलेटर', 'save'],
     ['post-office-mis-calculator.html', 'Post Office MIS Calculator', 'पोस्ट ऑफ़िस MIS', 'save'],
+    ['nsc-calculator.html', 'NSC Calculator', 'NSC कैलकुलेटर', 'save'],
+    ['kvp-calculator.html', 'KVP Calculator', 'KVP कैलकुलेटर', 'save'],
     ['sukanya-samriddhi-calculator.html', 'Sukanya Samriddhi Calculator', 'सुकन्या समृद्धि', 'plan'],
     ['nps-calculator.html', 'NPS Calculator', 'NPS कैलकुलेटर', 'plan'],
     ['epf-calculator.html', 'EPF Calculator', 'EPF कैलकुलेटर', 'plan'],
@@ -146,12 +149,15 @@ module.exports = {
     'post-office-mis-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
     'inflation-calculator.html': 'guide-retirement-planning-basics.html',
     'xirr-calculator.html': 'guide-what-is-cagr-and-xirr.html',
+    'nsc-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
+    'kvp-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
+    'credit-card-interest-calculator.html': 'guide-prepay-loan-or-invest.html',
     'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
   },
 
   // Related calculators shown in each calculator's sidebar (3–5 each, most useful first). Names omit "-calculator.html".
   related: {
-    'emi': ['loan-prepayment', 'loan-comparison', 'home-loan-eligibility', 'car-loan'],
+    'emi': ['loan-prepayment', 'loan-comparison', 'home-loan-eligibility', 'car-loan', 'credit-card-interest'],
     'home-loan-eligibility': ['emi', 'loan-prepayment', 'loan-comparison', 'salary-in-hand'],
     'car-loan': ['emi', 'loan-comparison', 'loan-prepayment', 'simple-compound-interest'],
     'loan-prepayment': ['emi', 'loan-comparison', 'home-loan-eligibility', 'sip'],
@@ -168,7 +174,7 @@ module.exports = {
     'mutual-fund-returns': ['sip', 'lumpsum', 'xirr', 'cagr', 'step-up-sip'],
     'fd': ['rd', 'ppf', 'scss', 'simple-compound-interest', 'senior-citizen-tax'],
     'rd': ['fd', 'ppf', 'sip', 'simple-compound-interest'],
-    'ppf': ['sukanya-samriddhi', 'nps', 'epf', 'fd'],
+    'ppf': ['sukanya-samriddhi', 'nsc', 'nps', 'epf', 'fd'],
     'sukanya-samriddhi': ['ppf', 'fd', 'sip', 'rd'],
     'nps': ['retirement-planner', 'epf', 'ppf', 'income-tax'],
     'epf': ['ppf', 'nps', 'retirement-planner', 'salary-in-hand'],
@@ -178,9 +184,12 @@ module.exports = {
     'goal-sip': ['sip', 'step-up-sip', 'inflation', 'lumpsum', 'retirement-planner'],
     'swp': ['retirement-planner', 'lumpsum', 'scss', 'mutual-fund-returns'],
     'scss': ['senior-citizen-tax', 'post-office-mis', 'fd', 'swp', 'ppf'],
-    'post-office-mis': ['scss', 'fd', 'rd', 'swp'],
+    'post-office-mis': ['scss', 'nsc', 'fd', 'rd', 'swp'],
     'inflation': ['retirement-planner', 'goal-sip', 'cagr', 'simple-compound-interest'],
-    'xirr': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum']
+    'xirr': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum'],
+    'nsc': ['ppf', 'kvp', 'fd', 'post-office-mis'],
+    'kvp': ['nsc', 'fd', 'ppf', 'inflation'],
+    'credit-card-interest': ['emi', 'loan-prepayment', 'loan-comparison', 'simple-compound-interest']
   },
 
   // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
@@ -231,6 +240,9 @@ module.exports = {
     'swp-calculator.html': ['itd'],
     'post-office-mis-calculator.html': ['post', 'itd'],
     'inflation-calculator.html': ['rbi'],
+    'nsc-calculator.html': ['post', 'itd'],
+    'kvp-calculator.html': ['post', 'itd'],
+    'credit-card-interest-calculator.html': ['rbi'],
     'guide-old-vs-new-tax-regime.html': ['itd'],
     'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
     'guide-hra-exemption-explained.html': ['itd'],
