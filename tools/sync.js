@@ -158,8 +158,10 @@ for (const rel of list) {
     h = ldRe.test(h) ? h.replace(ldRe, () => tag) : h.replace('</head>', tag + '\n</head>');
   }
 
-  // 3c. Author and "Last updated" line on calculators and guides.
-  if (calcFiles.has(name) || isGuide) {
+  // 3c. Author and "Last updated" line on calculators and guides (turned off with showByline: false in the config).
+  if (cfg.showByline === false) {
+    h = h.replace(/\n?[ \t]*<!--byline-->[\s\S]*?<!--\/byline-->/, '');
+  } else if (calcFiles.has(name) || isGuide) {
     const aName = isHi ? cfg.author.nameHi : cfg.author.name;
     const by = isHi
       ? `<p class="byline">लेखक: <a href="${hindiExists('about.html') ? '' : '../'}about.html#author" rel="author">${esc(aName)}</a> <span aria-hidden="true">·</span> अंतिम अपडेट: <time datetime="${date}">${fmtDate(date, true)}</time></p>`

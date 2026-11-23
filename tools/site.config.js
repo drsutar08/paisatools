@@ -18,6 +18,10 @@ module.exports = {
   // First publication date of the guides (Article datePublished).
   published: '2026-11-11',
 
+  // Show the "By <author> · Last updated <date>" line under the heading of calculators and guides.
+  // Set to true to bring it back; run node tools/sync.js afterwards.
+  showByline: false,
+
   // Author shown on every calculator and guide page and in the "Who runs PaisaTools" box on the About page.
   // Replace the placeholders with your real details. Sync prints a warning while they are still placeholders.
   author: {
