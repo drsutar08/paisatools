@@ -40,12 +40,14 @@ module.exports = {
     ['loan-prepayment-calculator.html', 'Loan Prepayment Calculator', 'लोन प्रीपेमेंट', 'loans'],
     ['loan-comparison-calculator.html', 'Compare Two Loans', 'दो लोन की तुलना', 'loans'],
     ['credit-card-interest-calculator.html', 'Credit Card Interest Calculator', 'क्रेडिट कार्ड ब्याज', 'loans'],
+    ['education-loan-calculator.html', 'Education Loan EMI Calculator', 'एजुकेशन लोन EMI', 'loans'],
     ['income-tax-calculator.html', 'Income Tax Calculator', 'इनकम टैक्स कैलकुलेटर', 'tax'],
     ['senior-citizen-tax-calculator.html', 'Senior Citizen Income Tax Calculator', 'सीनियर सिटिज़न टैक्स', 'tax'],
     ['salary-in-hand-calculator.html', 'Salary In-Hand Calculator', 'सैलरी इन-हैंड', 'tax'],
     ['hra-calculator.html', 'HRA Exemption Calculator', 'HRA छूट', 'tax'],
     ['gst-calculator.html', 'GST Calculator', 'GST कैलकुलेटर', 'tax'],
     ['gratuity-calculator.html', 'Gratuity Calculator', 'ग्रेच्युटी', 'tax'],
+    ['capital-gains-tax-calculator.html', 'Capital Gains Tax Calculator', 'कैपिटल गेन टैक्स', 'tax'],
     ['sip-calculator.html', 'SIP Calculator', 'SIP कैलकुलेटर', 'save'],
     ['step-up-sip-calculator.html', 'Step-up SIP Calculator', 'स्टेप-अप SIP', 'save'],
     ['goal-sip-calculator.html', 'Goal SIP Calculator', 'लक्ष्य SIP', 'save'],
@@ -66,6 +68,7 @@ module.exports = {
     ['cagr-calculator.html', 'CAGR Calculator', 'CAGR कैलकुलेटर', 'plan'],
     ['xirr-calculator.html', 'XIRR Calculator', 'XIRR कैलकुलेटर', 'plan'],
     ['inflation-calculator.html', 'Inflation Calculator', 'महंगाई कैलकुलेटर', 'plan'],
+    ['rent-vs-buy-calculator.html', 'Rent vs Buy Calculator', 'किराया या ख़रीदें', 'plan'],
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
@@ -152,17 +155,20 @@ module.exports = {
     'nsc-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
     'kvp-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
     'credit-card-interest-calculator.html': 'guide-prepay-loan-or-invest.html',
+    'rent-vs-buy-calculator.html': 'guide-home-loan-eligibility-factors.html',
+    'education-loan-calculator.html': 'guide-prepay-loan-or-invest.html',
+    'capital-gains-tax-calculator.html': 'guide-sip-vs-lumpsum.html',
     'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
   },
 
   // Related calculators shown in each calculator's sidebar (3–5 each, most useful first). Names omit "-calculator.html".
   related: {
     'emi': ['loan-prepayment', 'loan-comparison', 'home-loan-eligibility', 'car-loan', 'credit-card-interest'],
-    'home-loan-eligibility': ['emi', 'loan-prepayment', 'loan-comparison', 'salary-in-hand'],
+    'home-loan-eligibility': ['emi', 'rent-vs-buy', 'loan-prepayment', 'loan-comparison', 'salary-in-hand'],
     'car-loan': ['emi', 'loan-comparison', 'loan-prepayment', 'simple-compound-interest'],
     'loan-prepayment': ['emi', 'loan-comparison', 'home-loan-eligibility', 'sip'],
     'loan-comparison': ['emi', 'car-loan', 'loan-prepayment', 'home-loan-eligibility'],
-    'income-tax': ['salary-in-hand', 'hra', 'senior-citizen-tax', 'nps'],
+    'income-tax': ['salary-in-hand', 'hra', 'capital-gains-tax', 'senior-citizen-tax', 'nps'],
     'senior-citizen-tax': ['income-tax', 'scss', 'fd', 'rd', 'retirement-planner'],
     'salary-in-hand': ['income-tax', 'hra', 'epf', 'gratuity'],
     'hra': ['income-tax', 'salary-in-hand', 'gratuity'],
@@ -182,14 +188,17 @@ module.exports = {
     'cagr': ['xirr', 'mutual-fund-returns', 'lumpsum', 'sip', 'simple-compound-interest'],
     'simple-compound-interest': ['fd', 'rd', 'cagr', 'lumpsum'],
     'goal-sip': ['sip', 'step-up-sip', 'inflation', 'lumpsum', 'retirement-planner'],
-    'swp': ['retirement-planner', 'lumpsum', 'scss', 'mutual-fund-returns'],
+    'swp': ['retirement-planner', 'lumpsum', 'scss', 'mutual-fund-returns', 'capital-gains-tax'],
     'scss': ['senior-citizen-tax', 'post-office-mis', 'fd', 'swp', 'ppf'],
     'post-office-mis': ['scss', 'nsc', 'fd', 'rd', 'swp'],
     'inflation': ['retirement-planner', 'goal-sip', 'cagr', 'simple-compound-interest'],
     'xirr': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum'],
     'nsc': ['ppf', 'kvp', 'fd', 'post-office-mis'],
     'kvp': ['nsc', 'fd', 'ppf', 'inflation'],
-    'credit-card-interest': ['emi', 'loan-prepayment', 'loan-comparison', 'simple-compound-interest']
+    'credit-card-interest': ['emi', 'loan-prepayment', 'loan-comparison', 'simple-compound-interest'],
+    'capital-gains-tax': ['mutual-fund-returns', 'income-tax', 'swp', 'xirr'],
+    'rent-vs-buy': ['home-loan-eligibility', 'emi', 'loan-prepayment', 'inflation'],
+    'education-loan': ['emi', 'loan-prepayment', 'loan-comparison', 'goal-sip']
   },
 
   // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
@@ -243,6 +252,8 @@ module.exports = {
     'nsc-calculator.html': ['post', 'itd'],
     'kvp-calculator.html': ['post', 'itd'],
     'credit-card-interest-calculator.html': ['rbi'],
+    'capital-gains-tax-calculator.html': ['itd'],
+    'education-loan-calculator.html': ['itd', 'rbi'],
     'guide-old-vs-new-tax-regime.html': ['itd'],
     'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
     'guide-hra-exemption-explained.html': ['itd'],

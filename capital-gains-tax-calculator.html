@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
+<title>Capital Gains Tax Calculator for Shares &amp; Funds | PaisaTools</title>
+<meta name="description" content="Free capital gains tax calculator for listed shares and equity mutual funds. See short- or long-term tax for FY 2026-27, with the ₹1.25 lakh exemption.">
+<link rel="canonical" href="https://paisatools.pages.dev/capital-gains-tax-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/capital-gains-tax-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/capital-gains-tax-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/capital-gains-tax-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Capital Gains Tax Calculator for Shares &amp; Funds | PaisaTools">
+<meta property="og:description" content="Free capital gains tax calculator for listed shares and equity mutual funds. See short- or long-term tax for FY 2026-27, with the ₹1.25 lakh exemption.">
+<meta property="og:url" content="https://paisatools.pages.dev/capital-gains-tax-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Capital Gains Tax Calculator","url":"https://paisatools.pages.dev/capital-gains-tax-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"en-IN","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"isPartOf":{"@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://paisatools.pages.dev/og/capital-gains-tax-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Capital Gains Tax Calculator for Shares &amp; Funds | PaisaTools">
+<meta name="twitter:description" content="Free capital gains tax calculator for listed shares and equity mutual funds. See short- or long-term tax for FY 2026-27, with the ₹1.25 lakh exemption.">
+<meta name="twitter:image" content="https://paisatools.pages.dev/og/capital-gains-tax-calculator.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the tax on long-term capital gains from shares?","acceptedAnswer":{"@type":"Answer","text":"For listed shares and equity mutual funds held for more than 12 months, gains above ₹1.25 lakh in a financial year are taxed at 12.5%, plus 4% cess. Gains up to ₹1.25 lakh a year are tax-free."}},{"@type":"Question","name":"What is the tax on short-term capital gains from shares?","acceptedAnswer":{"@type":"Answer","text":"If you sell within 12 months of buying, the whole gain is taxed at 20%, plus 4% cess. There is no exemption for short-term gains."}},{"@type":"Question","name":"Is the ₹1.25 lakh exemption per sale?","acceptedAnswer":{"@type":"Answer","text":"No. It is a yearly limit for all your long-term gains on listed shares and equity funds together. Enter gains you have already made this year so the calculator uses only what is left."}},{"@type":"Question","name":"Does SIP have a different holding period?","acceptedAnswer":{"@type":"Answer","text":"Yes, in effect. Each SIP instalment is treated as a separate purchase, so each one becomes long-term 12 months after its own date. When you sell, the oldest units are treated as sold first."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}.check{display:flex;gap:10px;align-items:center;font-weight:500;font-size:.95rem;cursor:pointer}.check input{width:18px;height:18px;accent-color:var(--accent)}.box input[type=date]{border:0;background:transparent;color:var(--ink);font:500 .95rem var(--mono);padding:8px 6px;width:auto}.fy{display:inline-block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="google-adsense-account" content="ca-pub-6071081432967277">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071081432967277" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"Capital Gains Tax Calculator","item":"https://paisatools.pages.dev/capital-gains-tax-calculator"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav><a class="coffee-btn coffee-sm" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer" title="Buy me a coffee"><span aria-hidden="true">☕</span><span class="coffee-text">Buy me a coffee</span></a>
+  </header>
+<main id="content">
+
+  <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">Capital Gains Tax Calculator</li></ol></nav><!--/crumbs-->
+    <span class="fy">For FY 2026-27 · Listed shares and equity funds</span>
+    <h1>Capital Gains Tax Calculator (Shares and Equity Funds)</h1>
+    <p>Enter what you paid, what you sold for and the two dates to see whether your gain is short-term or long-term and how much tax you owe on it.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field" id="f-buy">
+        <div class="field-top"><label for="buy">Amount you paid (cost)</label>
+          <div class="box"><span>₹</span><input id="buy" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="buyR" min="1000" max="10000000" step="1000" aria-label="Amount you paid (cost) slider">
+        <div class="scale"><span>₹1K</span><span>₹1 Cr</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="bd">Date you bought</label>
+          <div class="box"><input type="date" id="bd"></div></div>
+      </div>
+      <div class="field" id="f-sell">
+        <div class="field-top"><label for="sell">Amount you sold for</label>
+          <div class="box"><span>₹</span><input id="sell" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="sellR" min="1000" max="10000000" step="1000" aria-label="Amount you sold for slider">
+        <div class="scale"><span>₹1K</span><span>₹1 Cr</span></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="sd">Date you sold</label>
+          <div class="box"><input type="date" id="sd"></div></div>
+      </div>
+      <div class="field" id="f-used">
+        <div class="field-top"><label for="used">Long-term gains already made this year</label>
+          <div class="box"><span>₹</span><input id="used" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="usedR" min="0" max="500000" step="5000" aria-label="Long-term gains already made this year slider">
+        <div class="scale"><span>₹0</span><span>₹5 L</span></div>
+        <p class="note">Other long-term equity gains you have made this financial year. They use up part of the ₹1.25 lakh exemption.</p>
+      </div>
+      <div class="field"><label class="check"><input type="checkbox" id="cess" checked> Include 4% health and education cess</label></div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Tax on this sale</div>
+        <div class="emi" id="tax">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Tax as a share of the sale amount">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Tax</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span>Your gain</span><b id="gain">₹0</b></div>
+          <div><span>Type of gain</span><b id="kind">₹0</b></div>
+          <div><span>Held for</span><b id="held">₹0</b></div>
+          <div><span>Taxable gain</span><b id="taxable">₹0</b></div>
+          <div><span>Tax rate</span><b id="rate">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--principal)"></i>You keep after tax</span><b id="net">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="block" aria-labelledby="h-y">
+    <h2 id="h-y">How the tax is worked out</h2>
+    <div class="table-wrap"><table><thead><tr><th>Step</th><th>Amount</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="pt-banner" data-slot="mid"></div>
+  <div class="guide">
+    <article>
+      <h2>How is tax on shares and equity funds worked out?</h2>
+      <p>When you sell listed shares or units of an equity mutual fund for more than you paid, the profit is a capital gain. How it is taxed depends on how long you held the investment. These rates apply for FY 2026-27 under the Income-tax Act, 2025; Budget 2026 kept them unchanged.</p>
+      <div class="formula">Short-term (held 12 months or less): tax = gain × 20%<br>Long-term (held more than 12 months): tax = (gain − unused ₹1.25 lakh exemption) × 12.5%
+        <small>4% health and education cess is added to the tax. The ₹1.25 lakh exemption is shared by all your long-term equity gains in the financial year. The calculator does not add surcharge, which applies only at high incomes.</small></div>
+      <h3>Worked example</h3>
+      <p id="example">Say you bought equity fund units for ₹5,00,000 in April 2023 and sold them for ₹8,00,000 in November 2026. You held them for more than 12 months, so the ₹3,00,000 gain is long-term. The first ₹1,25,000 is exempt, and 12.5% tax plus 4% cess on the remaining ₹1,75,000 comes to ₹22,750. You keep ₹7,77,250.</p>
+      <h3>Points to note</h3>
+      <ul>
+        <li><strong>Old investments:</strong> for shares or equity funds bought before 1 February 2018, the cost can be taken as the higher of what you paid and the price on 31 January 2018 (but not more than the sale price).</li>
+        <li><strong>Losses:</strong> a capital loss is not taxed. It can be set off against other capital gains under the rules, and unused losses can be carried forward if you file your return on time.</li>
+        <li><strong>Low total income:</strong> if your other income is below the basic exemption limit, residents can use the unused limit to reduce taxable capital gains.</li>
+        <li><strong>Other assets:</strong> property, gold, debt funds and unlisted shares follow different rules, so this calculator does not cover them.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="article"></div>
+
+      <div class="pt-banner" data-slot="box"></div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is the tax on long-term capital gains from shares?</summary>
+        <p>For listed shares and equity mutual funds held for more than 12 months, gains above ₹1.25 lakh in a financial year are taxed at 12.5%, plus 4% cess. Gains up to ₹1.25 lakh a year are tax-free.</p></details>
+      <details><summary>What is the tax on short-term capital gains from shares?</summary>
+        <p>If you sell within 12 months of buying, the whole gain is taxed at 20%, plus 4% cess. There is no exemption for short-term gains.</p></details>
+      <details><summary>Is the ₹1.25 lakh exemption per sale?</summary>
+        <p>No. It is a yearly limit for all your long-term gains on listed shares and equity funds together. Enter gains you have already made this year so the calculator uses only what is left.</p></details>
+      <details><summary>Does SIP have a different holding period?</summary>
+        <p>Yes, in effect. Each SIP instalment is treated as a separate purchase, so each one becomes long-term 12 months after its own date. When you sell, the oldest units are treated as sold first.</p></details>
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.incometax.gov.in/iec/foportal/">Income Tax Department</a>: tax slabs, deductions, rebates and TDS rules</li></ul></section><!--/sources-->
+    </article>
+
+    <aside>
+      <div class="ad-slot" role="complementary" aria-label="Advertisement">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="8670690217" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="related">
+        <a class="rel-guide" href="guide-sip-vs-lumpsum">Read the guide: SIP vs Lumpsum: Which Way Should You Invest?</a>
+        <h3>Related calculators</h3>
+        <a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a>
+        <a href="income-tax-calculator">Income Tax Calculator</a>
+        <a href="swp-calculator">SWP Calculator</a>
+        <a href="xirr-calculator">XIRR Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+      <div class="pt-banner" data-slot="side"></div>
+      <div class="pt-banner" data-slot="box"></div>
+    </aside>
+  </div>
+  <div class="pt-banner" data-slot="bottom"></div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> Buy me a coffee</a></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a><a href="credit-card-interest-calculator">Credit Card Interest Calculator</a><a href="education-loan-calculator">Education Loan EMI Calculator</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a><a href="capital-gains-tax-calculator">Capital Gains Tax Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="goal-sip-calculator">Goal SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a><a href="scss-calculator">SCSS Calculator</a><a href="post-office-mis-calculator">Post Office MIS Calculator</a><a href="nsc-calculator">NSC Calculator</a><a href="kvp-calculator">KVP Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="swp-calculator">SWP Calculator</a><a href="cagr-calculator">CAGR Calculator</a><a href="xirr-calculator">XIRR Calculator</a><a href="inflation-calculator">Inflation Calculator</a><a href="rent-vs-buy-calculator">Rent vs Buy Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Estimates for FY 2026-27. Tax rules change; confirm with the Income Tax Department or a tax adviser before filing.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,num,bind}=PT;
+  const L={"lt":"Long-term","st":"Short-term","yr":"yr","yrs":"yrs","mo":"mo","eBuy":"Enter the amount you paid.","eSell":"Enter the amount you sold for.","eBd":"Enter the date you bought.","eSd":"Enter the date you sold.","eOrder":"The sale date must be on or after the purchase date.","eUsed":"Enter gains already made this year (0 or more).","loss":"You made a loss of {g}, so there is no tax on this sale. You can set the loss off against other capital gains under the rules.","ltIns":"This is a long-term gain. {ex} of it is covered by the ₹1.25 lakh yearly exemption, and the tax on the rest is {t}.","stIns":"This is a short-term gain because you held it for 12 months or less, so the whole gain is taxed at 20%. Your tax is {t}. Holding for more than 12 months would make it long-term.","r1":"Sale amount","r2":"Cost","r3":"Gain","r4lt":"Covered by the ₹1.25 lakh exemption","r4st":"Exemption (not for short-term gains)","r5":"Taxable gain","r6":"Tax at {r}%","r7":"Cess at 4%","r8":"Total tax","ex":"Say you bought equity fund units for ₹5,00,000 in April 2023 and sold them for ₹8,00,000 in November 2026. You held them for more than 12 months, so the ₹3,00,000 gain is long-term. The first ₹1,25,000 is exempt, and 12.5% tax plus 4% cess on the remaining ₹1,75,000 comes to {t}. You keep {n}."};
+  const day=s=>{const t=Date.parse(String(s)+'T00:00:00Z');return isNaN(t)?NaN:t;};
+  /* Listed shares and equity mutual funds: held more than 12 months = long-term, taxed at 12.5% on gains above the yearly
+     ₹1.25 lakh exemption; otherwise short-term, taxed at 20%. Rates for FY 2026-27. */
+  function calc(){
+    const B=num($('buy').value),S=num($('sell').value),U=num($('used').value)||0,bd=$('bd').value,sd=$('sd').value,cess=$('cess').checked!==false;
+    const bt=day(bd),st=day(sd);let e='';
+    if(!(B>0)) e=L.eBuy; else if(!(S>=0)) e=L.eSell; else if(isNaN(bt)) e=L.eBd; else if(isNaN(st)) e=L.eSd; else if(st<bt) e=L.eOrder; else if(!(U>=0)) e=L.eUsed;
+    $('err').textContent=e; if(e) return;
+    const b=new Date(bt),lim=Date.UTC(b.getUTCFullYear()+1,b.getUTCMonth(),b.getUTCDate()),LT=st>lim;
+    const gain=S-B,left=Math.max(0,125000-U),taxable=gain<=0?0:(LT?Math.max(0,gain-left):gain),rate=LT?12.5:20,base=taxable*rate/100,tax=base*(cess?1.04:1);
+    const months=Math.floor((st-bt)/864e5/30.4375),y=Math.floor(months/12),mo=months%12;
+    $('tax').textContent=inr(tax); $('gain').textContent=inr(gain); $('kind').textContent=LT?L.lt:L.st; $('held').textContent=(y?y+' '+(y===1?L.yr:L.yrs)+' ':'')+mo+' '+L.mo;
+    $('taxable').textContent=inr(taxable); $('rate').textContent=rate+'%'; $('net').textContent=inr(S-tax);
+    $('insight').textContent=gain<=0?L.loss.replace('{g}',inr(-gain)):LT?L.ltIns.replace('{ex}',inr(Math.min(left,gain))).replace('{t}',inr(tax)):L.stIns.replace('{t}',inr(tax));
+    const rows=[[L.r1,inr(S)],[L.r2,inr(B)],[L.r3,inr(gain)],[LT?L.r4lt:L.r4st,LT?inr(Math.min(left,Math.max(0,gain))):'–'],[L.r5,inr(taxable)],[L.r6.replace('{r}',rate),inr(base)],[L.r7,cess?inr(base*0.04):'–'],[L.r8,inr(tax)]];
+    $('rows').innerHTML=rows.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('');
+  }
+  $('bd').value='2023-04-10'; $('sd').value='2026-11-02';
+  (function(){const t=(300000-125000)*0.125*1.04;$('example').textContent=L.ex.replace('{t}',inr(t)).replace('{n}',inr(800000-t));})();
+  ['bd','sd'].forEach(id=>{$(id).addEventListener('input',calc);$(id).addEventListener('change',calc);});
+  $('cess').addEventListener('change',calc);
+  bind([{id:'buy',val:500000},{id:'sell',val:800000},{id:'used',val:0}],calc);
+  calc();
+})();
+</script>
+
+<script>PT.donut(["net","tax"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>
