@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
+<title>XIRR कैलकुलेटर: SIP और टॉप-अप पर रिटर्न | PaisaTools</title>
+<meta name="description" content="मुफ़्त XIRR कैलकुलेटर। अपने निवेश और निकासी की तारीख़ और रकम डालकर असली सालाना रिटर्न, कुल लाभ और एब्सोल्यूट रिटर्न जानें।">
+<link rel="canonical" href="https://paisatools.pages.dev/hi/xirr-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/xirr-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/xirr-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/xirr-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="XIRR कैलकुलेटर: SIP और टॉप-अप पर रिटर्न | PaisaTools">
+<meta property="og:description" content="मुफ़्त XIRR कैलकुलेटर। अपने निवेश और निकासी की तारीख़ और रकम डालकर असली सालाना रिटर्न, कुल लाभ और एब्सोल्यूट रिटर्न जानें।">
+<meta property="og:url" content="https://paisatools.pages.dev/hi/xirr-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"XIRR कैलकुलेटर","url":"https://paisatools.pages.dev/hi/xirr-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"hi-IN","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"isPartOf":{"@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://paisatools.pages.dev/og/xirr-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="hi_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XIRR कैलकुलेटर: SIP और टॉप-अप पर रिटर्न | PaisaTools">
+<meta name="twitter:description" content="मुफ़्त XIRR कैलकुलेटर। अपने निवेश और निकासी की तारीख़ और रकम डालकर असली सालाना रिटर्न, कुल लाभ और एब्सोल्यूट रिटर्न जानें।">
+<meta name="twitter:image" content="https://paisatools.pages.dev/og/xirr-calculator.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"XIRR क्या है?","acceptedAnswer":{"@type":"Answer","text":"यह अलग-अलग तारीख़ों और रकम पर किए गए निवेश, जैसे SIP, टॉप-अप और निकासी, पर सालाना रिटर्न है। यह वह दर है जिस पर आपके सभी लेन-देन, आज के मूल्य समेत, हर एक को उसकी तारीख़ के हिसाब से समायोजित करने के बाद जोड़ने पर शून्य हो जाते हैं।"}},{"@type":"Question","name":"XIRR और CAGR में क्या अंतर है?","acceptedAnswer":{"@type":"Answer","text":"CAGR एक अवधि तक रखे गए एक निवेश के लिए सही है। XIRR अलग-अलग समय पर किए गए कई निवेश और निकासी को संभालता है। आज तक रखे गए एक ही निवेश के लिए दोनों एक ही जवाब देते हैं।"}},{"@type":"Question","name":"मेरा XIRR फंड के बताए रिटर्न से अलग क्यों है?","acceptedAnswer":{"@type":"Answer","text":"फंड का बताया रिटर्न अवधि की शुरुआत में एक बार निवेश मानता है। आपका XIRR इस पर निर्भर करता है कि आपने असल में कब पैसा लगाया और कब निकाला।"}},{"@type":"Question","name":"क्या XIRR नकारात्मक हो सकता है?","acceptedAnswer":{"@type":"Answer","text":"हां। अगर आज का मूल्य और अब तक की निकासी मिलाकर आपके निवेश से कम है, तो XIRR नकारात्मक होता है।"}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}.cf{display:grid;gap:8px}.cf-head,.cf-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1.3fr);gap:8px;align-items:center}.cf-head{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.cf-row input[type=date],.cf-row select,.box input[type=date]{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 .88rem var(--body);padding:8px 6px;width:100%;min-width:0}.box input[type=date]{border:0;width:auto}.cf-row .box input{width:100%;min-width:0}#cv{width:11ch}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../theme.css">
+<style>:root{--display:"DM Sans","Noto Sans Devanagari",system-ui,sans-serif;--body:"DM Sans","Noto Sans Devanagari",system-ui,sans-serif}h1,h2,h3{letter-spacing:0!important}</style>
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../icon-192.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://paisatools.pages.dev/hi/"},{"@type":"ListItem","position":2,"name":"XIRR कैलकुलेटर","item":"https://paisatools.pages.dev/hi/xirr-calculator"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">मुख्य सामग्री पर जाएं</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="मुख्य"><a href="./">होम</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">इनकम टैक्स</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">गाइड</a><a href="../xirr-calculator" lang="en" hreflang="en-IN">English</a></nav><a class="coffee-btn coffee-sm" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer" title="मुझे एक कॉफ़ी पिलाएं"><span aria-hidden="true">☕</span><span class="coffee-text">मुझे एक कॉफ़ी पिलाएं</span></a>
+  </header>
+<main id="content">
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="top"></div>
+
+  <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="ब्रेडक्रंब"><ol><li><a href="./">होम</a></li><li aria-current="page">XIRR कैलकुलेटर</li></ol></nav><!--/crumbs-->
+    <h1>XIRR कैलकुलेटर</h1>
+    <p>अलग-अलग समय पर किए गए निवेश, जैसे SIP, टॉप-अप और आंशिक निकासी, पर असली सालाना रिटर्न जानें। हर लेन-देन उसकी तारीख़ के साथ डालें, फिर आज का मूल्य।</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field">
+        <div class="cf" id="cf">
+          <div class="cf-head"><span>तारीख़</span><span>प्रकार</span><span>राशि</span></div>
+          <div class="cf-row"><input type="date" id="d1" aria-label="तारीख़ 1"><select id="t1" aria-label="प्रकार 1"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a1" inputmode="decimal" autocomplete="off" aria-label="राशि 1"></div></div>
+          <div class="cf-row"><input type="date" id="d2" aria-label="तारीख़ 2"><select id="t2" aria-label="प्रकार 2"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a2" inputmode="decimal" autocomplete="off" aria-label="राशि 2"></div></div>
+          <div class="cf-row"><input type="date" id="d3" aria-label="तारीख़ 3"><select id="t3" aria-label="प्रकार 3"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a3" inputmode="decimal" autocomplete="off" aria-label="राशि 3"></div></div>
+          <div class="cf-row"><input type="date" id="d4" aria-label="तारीख़ 4"><select id="t4" aria-label="प्रकार 4"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a4" inputmode="decimal" autocomplete="off" aria-label="राशि 4"></div></div>
+          <div class="cf-row"><input type="date" id="d5" aria-label="तारीख़ 5"><select id="t5" aria-label="प्रकार 5"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a5" inputmode="decimal" autocomplete="off" aria-label="राशि 5"></div></div>
+          <div class="cf-row"><input type="date" id="d6" aria-label="तारीख़ 6"><select id="t6" aria-label="प्रकार 6"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a6" inputmode="decimal" autocomplete="off" aria-label="राशि 6"></div></div>
+          <div class="cf-row"><input type="date" id="d7" aria-label="तारीख़ 7"><select id="t7" aria-label="प्रकार 7"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a7" inputmode="decimal" autocomplete="off" aria-label="राशि 7"></div></div>
+          <div class="cf-row"><input type="date" id="d8" aria-label="तारीख़ 8"><select id="t8" aria-label="प्रकार 8"><option value="in">निवेश</option><option value="out">निकासी</option></select><div class="box"><span>₹</span><input id="a8" inputmode="decimal" autocomplete="off" aria-label="राशि 8"></div></div>
+        </div>
+        <p class="note">हर निवेश या निकासी के लिए एक पंक्ति भरें। बची पंक्तियां ख़ाली छोड़ दें।</p>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="cv">आज का मूल्य</label>
+          <div class="box"><span>₹</span><input id="cv" inputmode="decimal" autocomplete="off"></div></div>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="vd">मूल्य की तारीख़</label>
+          <div class="box"><input type="date" id="vd" aria-label="मूल्य की तारीख़"></div></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">आपका XIRR (सालाना रिटर्न)</div>
+        <div class="emi" id="x">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="मूल्य में लाभ का हिस्सा">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">लाभ</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>कुल निवेश</span><b id="inv">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>कुल लाभ</span><b id="gain">₹0</b></div>
+          <div><span>कुल निकासी</span><b id="wdr">₹0</b></div>
+          <div><span>आज का मूल्य</span><b id="val">₹0</b></div>
+          <div><span>एब्सोल्यूट रिटर्न</span><b id="abs">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="mid"></div>
+
+  <section class="block" aria-labelledby="h-y">
+    <h2 id="h-y">आपके लेन-देन</h2>
+    <div class="table-wrap"><table><thead><tr><th>तारीख़</th><th>प्रकार</th><th>राशि</th><th>मूल्य की तारीख़ तक वर्ष</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="pt-banner" data-slot="box"></div>
+
+  <div class="pt-banner" data-slot="mid"></div>
+  <div class="guide">
+    <article>
+      <h2>XIRR क्या है और यह कैसे निकाला जाता है?</h2>
+      <p>XIRR (एक्सटेंडेड इंटरनल रेट ऑफ़ रिटर्न) अलग-अलग तारीख़ों पर किए गए निवेश और निकासी पर सालाना रिटर्न है। साधारण प्रतिशत लाभ के उलट, यह ध्यान रखता है कि हर रुपया कितने समय निवेशित रहा, इसलिए हाल में जोड़ा गया पैसा सालों पहले निवेश किए गए पैसे से कम गिना जाता है।</p>
+      <div class="formula">Σ लेन-देन ÷ (1 + XIRR)<sup>दिन ÷ 365</sup> = 0
+        <small>निवेश को नकारात्मक, और निकासी व आज के मूल्य को सकारात्मक लेन-देन माना जाता है। दिन आपके पहले लेन-देन से गिने जाते हैं। कैलकुलेटर वह दर निकालता है जिस पर कुल योग शून्य हो।</small></div>
+      <h3>उदाहरण से समझें</h3>
+      <p id="example">मान लीजिए आपने जनवरी 2022 में ₹50,000, जुलाई 2022 में ₹25,000, मार्च 2023 में ₹40,000 और जनवरी 2024 में ₹30,000 निवेश किए, और सितंबर 2024 में ₹20,000 निकाले। अगर 1 नवंबर 2026 को निवेश का मूल्य ₹1,60,000 है, तो आपका XIRR 5.93% सालाना है।</p>
+      <h3>अपना XIRR कैसे समझें</h3>
+      <ul>
+        <li><strong>दूसरे विकल्पों से तुलना करें।</strong> XIRR सालाना दर है, इसलिए आप इसे FD की दर या किसी फंड के CAGR से बराबरी पर रखकर तुलना कर सकते हैं।</li>
+        <li><strong>कम अवधि भ्रम पैदा कर सकती है।</strong> कुछ महीनों में छोटा-सा लाभ भी बहुत ज़्यादा या बहुत कम सालाना दर के रूप में दिख सकता है।</li>
+        <li><strong>सही तारीख़ें डालें।</strong> SIP के लिए हर किस्त की तारीख़ डालें, या नियमित मासिक योजना के लिए SIP कैलकुलेटर इस्तेमाल करें।</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="article"></div>
+
+      <div class="pt-banner" data-slot="box"></div>
+      <h2>अक्सर पूछे जाने वाले सवाल</h2>
+      <details><summary>XIRR क्या है?</summary>
+        <p>यह अलग-अलग तारीख़ों और रकम पर किए गए निवेश, जैसे SIP, टॉप-अप और निकासी, पर सालाना रिटर्न है। यह वह दर है जिस पर आपके सभी लेन-देन, आज के मूल्य समेत, हर एक को उसकी तारीख़ के हिसाब से समायोजित करने के बाद जोड़ने पर शून्य हो जाते हैं।</p></details>
+      <details><summary>XIRR और CAGR में क्या अंतर है?</summary>
+        <p>CAGR एक अवधि तक रखे गए एक निवेश के लिए सही है। XIRR अलग-अलग समय पर किए गए कई निवेश और निकासी को संभालता है। आज तक रखे गए एक ही निवेश के लिए दोनों एक ही जवाब देते हैं।</p></details>
+      <details><summary>मेरा XIRR फंड के बताए रिटर्न से अलग क्यों है?</summary>
+        <p>फंड का बताया रिटर्न अवधि की शुरुआत में एक बार निवेश मानता है। आपका XIRR इस पर निर्भर करता है कि आपने असल में कब पैसा लगाया और कब निकाला।</p></details>
+      <details><summary>क्या XIRR नकारात्मक हो सकता है?</summary>
+        <p>हां। अगर आज का मूल्य और अब तक की निकासी मिलाकर आपके निवेश से कम है, तो XIRR नकारात्मक होता है।</p></details>
+    </article>
+
+    <aside>
+      <div class="related">
+        <a class="rel-guide" href="guide-what-is-cagr-and-xirr">गाइड पढ़ें: CAGR और XIRR क्या हैं? कौन सा इस्तेमाल करें?</a>
+        <h3>संबंधित कैलकुलेटर</h3>
+        <a href="cagr-calculator">CAGR कैलकुलेटर</a>
+        <a href="mutual-fund-returns-calculator">म्यूचुअल फंड रिटर्न</a>
+        <a href="sip-calculator">SIP कैलकुलेटर</a>
+        <a href="lumpsum-calculator">एकमुश्त निवेश</a>
+        <a href="./">सभी कैलकुलेटर</a>
+      </div>
+      <div class="pt-banner" data-slot="side"></div>
+      <div class="pt-banner" data-slot="box"></div>
+    </aside>
+  </div>
+  <div class="pt-banner" data-slot="bottom"></div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>भारत के लिए मुफ़्त कैलकुलेटर। साइन-अप नहीं, और आपके आंकड़े आपके डिवाइस से बाहर नहीं जाते।</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> मुझे एक कॉफ़ी पिलाएं</a></div>
+      <div class="f-cols">
+      <nav aria-label="लोन"><h2 class="f-h">लोन</h2><a href="emi-calculator">EMI कैलकुलेटर</a><a href="home-loan-eligibility-calculator">होम लोन एलिजिबिलिटी</a><a href="car-loan-calculator">कार लोन EMI</a><a href="loan-prepayment-calculator">लोन प्रीपेमेंट</a><a href="loan-comparison-calculator">दो लोन की तुलना</a></nav>
+      <nav aria-label="टैक्स और सैलरी"><h2 class="f-h">टैक्स और सैलरी</h2><a href="income-tax-calculator">इनकम टैक्स कैलकुलेटर</a><a href="senior-citizen-tax-calculator">सीनियर सिटिज़न टैक्स</a><a href="salary-in-hand-calculator">सैलरी इन-हैंड</a><a href="hra-calculator">HRA छूट</a><a href="gst-calculator">GST कैलकुलेटर</a><a href="gratuity-calculator">ग्रेच्युटी</a></nav>
+      <nav aria-label="बचत और निवेश"><h2 class="f-h">बचत और निवेश</h2><a href="sip-calculator">SIP कैलकुलेटर</a><a href="step-up-sip-calculator">स्टेप-अप SIP</a><a href="goal-sip-calculator">लक्ष्य SIP</a><a href="lumpsum-calculator">एकमुश्त निवेश</a><a href="mutual-fund-returns-calculator">म्यूचुअल फंड रिटर्न</a><a href="fd-calculator">FD कैलकुलेटर</a><a href="rd-calculator">RD कैलकुलेटर</a><a href="ppf-calculator">PPF कैलकुलेटर</a><a href="scss-calculator">SCSS कैलकुलेटर</a><a href="post-office-mis-calculator">पोस्ट ऑफ़िस MIS</a></nav>
+      <nav aria-label="योजना और तुलना"><h2 class="f-h">योजना और तुलना</h2><a href="sukanya-samriddhi-calculator">सुकन्या समृद्धि</a><a href="nps-calculator">NPS कैलकुलेटर</a><a href="epf-calculator">EPF कैलकुलेटर</a><a href="retirement-planner">रिटायरमेंट प्लानर</a><a href="swp-calculator">SWP कैलकुलेटर</a><a href="cagr-calculator">CAGR कैलकुलेटर</a><a href="xirr-calculator">XIRR कैलकुलेटर</a><a href="inflation-calculator">महंगाई कैलकुलेटर</a><a href="simple-compound-interest-calculator">सिंपल और कंपाउंड ब्याज</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>दिखाए गए रिटर्न आपके डाले गए आंकड़ों पर हैं। पिछला रिटर्न भविष्य के रिटर्न की गारंटी नहीं है।</p>
+      <nav aria-label="साइट"><a href="guides">गाइड</a><a href="about">हमारे बारे में</a><a href="contact">संपर्क</a><a href="privacy-policy">गोपनीयता नीति</a><a href="disclaimer">अस्वीकरण</a><a href="../" lang="en">English</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="../calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,num,fInt}=PT;
+  const L={"loc":"hi-IN","tIn":"निवेश","tOut":"निकासी","tVal":"आज का मूल्य","eAmt":"पंक्ति {i}: राशि डालें, या तारीख़ हटा दें।","eDate":"पंक्ति {i}: सही तारीख़ डालें, या राशि हटा दें।","eNone":"कम से कम एक निवेश डालें।","eVal":"आज का मूल्य डालें (0 या ज़्यादा)।","eVd":"आज के मूल्य की तारीख़ डालें।","eOrder":"मूल्य की तारीख़ हर लेन-देन की तारीख़ के बराबर या उसके बाद होनी चाहिए।","eSolve":"इन आंकड़ों के लिए XIRR नहीं निकल सका। रकम और तारीख़ें जांचें।","ins":"आपके पैसे ने लगभग {y} वर्ष में {x}% सालाना कमाया। समय को छोड़कर, आपका एब्सोल्यूट रिटर्न {abs}% है।","ex":"मान लीजिए आपने जनवरी 2022 में ₹50,000, जुलाई 2022 में ₹25,000, मार्च 2023 में ₹40,000 और जनवरी 2024 में ₹30,000 निवेश किए, और सितंबर 2024 में ₹20,000 निकाले। अगर 1 नवंबर 2026 को निवेश का मूल्य ₹1,60,000 है, तो आपका XIRR {x}% सालाना है।"};
+  const N=8;
+  const DEF=[['2022-01-10','in',50000],['2022-07-15','in',25000],['2023-03-01','in',40000],['2024-01-20','in',30000],['2024-09-05','out',20000]];
+  const day=s=>{const t=Date.parse(String(s)+'T00:00:00Z');return isNaN(t)?NaN:t/864e5;};
+  const fmtD=s=>new Date(s+'T00:00:00Z').toLocaleDateString(L.loc,{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+  /* XIRR: the yearly rate r at which all cash flows, each discounted by (1 + r)^(days/365), add up to zero. Found by bisection. */
+  function xirr(cf){
+    const t0=Math.min(...cf.map(c=>c.t)),f=r=>cf.reduce((s,c)=>s+c.v/Math.pow(1+r,(c.t-t0)/365),0);
+    let lo=-0.9999,hi=1,flo=f(lo),fhi=f(hi),k=0;
+    while(flo*fhi>0&&k<40){hi*=2;fhi=f(hi);k++;}
+    if(flo*fhi>0)return NaN;
+    for(let i=0;i<300;i++){const m=(lo+hi)/2,fm=f(m);if(Math.abs(fm)<1e-9||hi-lo<1e-12)return m;if(flo*fm<0){hi=m;}else{lo=m;flo=fm;}}
+    return (lo+hi)/2;
+  }
+  function read(){
+    const cf=[];let e='';
+    for(let i=1;i<=N;i++){
+      const a=num($('a'+i).value),d=$('d'+i).value;
+      if(!(a>0)&&!d)continue;
+      if(!(a>0)){e=L.eAmt.replace('{i}',i);break;}
+      const t=day(d);if(isNaN(t)){e=L.eDate.replace('{i}',i);break;}
+      const out=$('t'+i).value==='out';cf.push({t,d,a,out,v:out?a:-a});
+    }
+    return {cf,e};
+  }
+  function calc(){
+    let {cf,e}=read();
+    const V=num($('cv').value),vd=$('vd').value,vt=day(vd);
+    if(!e&&!cf.some(c=>!c.out))e=L.eNone;
+    if(!e&&!(V>=0))e=L.eVal;
+    if(!e&&isNaN(vt))e=L.eVd;
+    if(!e&&cf.some(c=>c.t>vt))e=L.eOrder;
+    let r=NaN;if(!e){r=xirr(cf.concat([{t:vt,v:V}]));if(!isFinite(r))e=L.eSolve;}
+    $('err').textContent=e;if(e)return;
+    const inv=cf.filter(c=>!c.out).reduce((s,c)=>s+c.a,0),wd=cf.filter(c=>c.out).reduce((s,c)=>s+c.a,0),gain=V+wd-inv;
+    $('x').textContent=(r*100).toFixed(2)+'%';
+    $('inv').textContent=inr(inv);$('wdr').textContent=inr(wd);$('val').textContent=inr(V);$('gain').textContent=inr(gain);$('abs').textContent=(gain/inv*100).toFixed(2)+'%';
+    const t0=Math.min(...cf.map(c=>c.t));
+    $('insight').textContent=L.ins.replace('{x}',(r*100).toFixed(2)).replace('{y}',((vt-t0)/365).toFixed(1)).replace('{abs}',(gain/inv*100).toFixed(2));
+    const rows=cf.slice().sort((a,b)=>a.t-b.t).map(c=>'<tr><td>'+fmtD(c.d)+'</td><td>'+(c.out?L.tOut:L.tIn)+'</td><td>'+inr(c.a)+'</td><td>'+((vt-c.t)/365).toFixed(2)+'</td></tr>');
+    rows.push('<tr><td>'+fmtD(vd)+'</td><td>'+L.tVal+'</td><td>'+inr(V)+'</td><td>0.00</td></tr>');
+    $('rows').innerHTML=rows.join('');
+  }
+  DEF.forEach((x,k)=>{$('d'+(k+1)).value=x[0];$('t'+(k+1)).value=x[1];$('a'+(k+1)).value=fInt(x[2]);});
+  $('cv').value=fInt(160000);$('vd').value='2026-11-01';
+  (function(){const cf=DEF.map(x=>({t:day(x[0]),v:x[1]==='out'?x[2]:-x[2]})).concat([{t:day('2026-11-01'),v:160000}]);
+    $('example').textContent=L.ex.replace('{x}',(xirr(cf)*100).toFixed(2));})();
+  const ids=['cv','vd'];for(let i=1;i<=N;i++)ids.push('d'+i,'t'+i,'a'+i);
+  ids.forEach(id=>{const el=$(id);el.addEventListener('input',calc);el.addEventListener('change',calc);
+    if(/^(a\d|cv)$/.test(id))el.addEventListener('blur',()=>{const v=num(el.value);if(!isNaN(v))el.value=fInt(v);});});
+  calc();
+})();
+</script>
+
+<script>PT.donut(["inv","gain"],v=>{const g=Math.max(0,v[1]);return g/(v[0]+g);});</script>
+<script src="../site.js" defer></script>
+</body>
+</html>

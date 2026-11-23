@@ -54,12 +54,15 @@ module.exports = {
     ['rd-calculator.html', 'RD Calculator', 'RD कैलकुलेटर', 'save'],
     ['ppf-calculator.html', 'PPF Calculator', 'PPF कैलकुलेटर', 'save'],
     ['scss-calculator.html', 'SCSS Calculator', 'SCSS कैलकुलेटर', 'save'],
+    ['post-office-mis-calculator.html', 'Post Office MIS Calculator', 'पोस्ट ऑफ़िस MIS', 'save'],
     ['sukanya-samriddhi-calculator.html', 'Sukanya Samriddhi Calculator', 'सुकन्या समृद्धि', 'plan'],
     ['nps-calculator.html', 'NPS Calculator', 'NPS कैलकुलेटर', 'plan'],
     ['epf-calculator.html', 'EPF Calculator', 'EPF कैलकुलेटर', 'plan'],
     ['retirement-planner.html', 'Retirement Planner', 'रिटायरमेंट प्लानर', 'plan'],
     ['swp-calculator.html', 'SWP Calculator', 'SWP कैलकुलेटर', 'plan'],
     ['cagr-calculator.html', 'CAGR Calculator', 'CAGR कैलकुलेटर', 'plan'],
+    ['xirr-calculator.html', 'XIRR Calculator', 'XIRR कैलकुलेटर', 'plan'],
+    ['inflation-calculator.html', 'Inflation Calculator', 'महंगाई कैलकुलेटर', 'plan'],
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
@@ -140,6 +143,9 @@ module.exports = {
     'goal-sip-calculator.html': 'guide-sip-vs-lumpsum.html',
     'scss-calculator.html': 'guide-senior-citizen-tax-saving.html',
     'swp-calculator.html': 'guide-retirement-planning-basics.html',
+    'post-office-mis-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
+    'inflation-calculator.html': 'guide-retirement-planning-basics.html',
+    'xirr-calculator.html': 'guide-what-is-cagr-and-xirr.html',
     'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
   },
 
@@ -159,7 +165,7 @@ module.exports = {
     'sip': ['goal-sip', 'step-up-sip', 'lumpsum', 'mutual-fund-returns', 'cagr'],
     'step-up-sip': ['sip', 'goal-sip', 'lumpsum', 'retirement-planner', 'mutual-fund-returns'],
     'lumpsum': ['sip', 'swp', 'mutual-fund-returns', 'cagr', 'fd'],
-    'mutual-fund-returns': ['sip', 'lumpsum', 'cagr', 'step-up-sip'],
+    'mutual-fund-returns': ['sip', 'lumpsum', 'xirr', 'cagr', 'step-up-sip'],
     'fd': ['rd', 'ppf', 'scss', 'simple-compound-interest', 'senior-citizen-tax'],
     'rd': ['fd', 'ppf', 'sip', 'simple-compound-interest'],
     'ppf': ['sukanya-samriddhi', 'nps', 'epf', 'fd'],
@@ -167,11 +173,14 @@ module.exports = {
     'nps': ['retirement-planner', 'epf', 'ppf', 'income-tax'],
     'epf': ['ppf', 'nps', 'retirement-planner', 'salary-in-hand'],
     'retirement-planner': ['swp', 'nps', 'epf', 'sip', 'step-up-sip'],
-    'cagr': ['mutual-fund-returns', 'lumpsum', 'sip', 'simple-compound-interest'],
+    'cagr': ['xirr', 'mutual-fund-returns', 'lumpsum', 'sip', 'simple-compound-interest'],
     'simple-compound-interest': ['fd', 'rd', 'cagr', 'lumpsum'],
-    'goal-sip': ['sip', 'step-up-sip', 'lumpsum', 'retirement-planner'],
+    'goal-sip': ['sip', 'step-up-sip', 'inflation', 'lumpsum', 'retirement-planner'],
     'swp': ['retirement-planner', 'lumpsum', 'scss', 'mutual-fund-returns'],
-    'scss': ['senior-citizen-tax', 'fd', 'swp', 'ppf']
+    'scss': ['senior-citizen-tax', 'post-office-mis', 'fd', 'swp', 'ppf'],
+    'post-office-mis': ['scss', 'fd', 'rd', 'swp'],
+    'inflation': ['retirement-planner', 'goal-sip', 'cagr', 'simple-compound-interest'],
+    'xirr': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum']
   },
 
   // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
@@ -187,10 +196,10 @@ module.exports = {
     'guide-how-to-choose-a-car-loan.html': ['car-loan', 'emi', 'loan-comparison', 'loan-prepayment'],
     'guide-prepay-loan-or-invest.html': ['loan-prepayment', 'emi', 'sip', 'lumpsum', 'step-up-sip'],
     'guide-sip-vs-lumpsum.html': ['sip', 'lumpsum', 'step-up-sip', 'goal-sip', 'mutual-fund-returns'],
-    'guide-what-is-cagr-and-xirr.html': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum'],
+    'guide-what-is-cagr-and-xirr.html': ['cagr', 'xirr', 'mutual-fund-returns', 'sip', 'lumpsum'],
     'guide-fd-vs-ppf-vs-nps.html': ['fd', 'rd', 'ppf', 'sukanya-samriddhi', 'nps', 'retirement-planner'],
     'guide-epf-and-vpf-explained.html': ['epf', 'retirement-planner'],
-    'guide-retirement-planning-basics.html': ['retirement-planner', 'swp', 'sip', 'nps', 'epf', 'ppf']
+    'guide-retirement-planning-basics.html': ['retirement-planner', 'swp', 'inflation', 'sip', 'nps', 'epf', 'ppf']
   },
 
   // Official sources: key, English label, Hindi label, url, English note, Hindi note
@@ -220,6 +229,8 @@ module.exports = {
     'retirement-planner.html': ['pfrda', 'epfo'],
     'scss-calculator.html': ['post', 'itd'],
     'swp-calculator.html': ['itd'],
+    'post-office-mis-calculator.html': ['post', 'itd'],
+    'inflation-calculator.html': ['rbi'],
     'guide-old-vs-new-tax-regime.html': ['itd'],
     'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
     'guide-hra-exemption-explained.html': ['itd'],

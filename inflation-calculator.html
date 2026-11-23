@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="T1dNXvtThxvTgmWFJE4icMGjDgDVOwD4Bbev0BXxCqU" />
+<title>Inflation Calculator: Future Cost of Money | PaisaTools</title>
+<meta name="description" content="Free inflation calculator for India. See what something that costs ₹1 lakh today will cost in future, and what your money will really be worth.">
+<link rel="canonical" href="https://paisatools.pages.dev/inflation-calculator">
+<link rel="alternate" hreflang="en-IN" href="https://paisatools.pages.dev/inflation-calculator">
+<link rel="alternate" hreflang="hi-IN" href="https://paisatools.pages.dev/hi/inflation-calculator">
+<link rel="alternate" hreflang="x-default" href="https://paisatools.pages.dev/inflation-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaisaTools">
+<meta property="og:title" content="Inflation Calculator: Future Cost of Money | PaisaTools">
+<meta property="og:description" content="Free inflation calculator for India. See what something that costs ₹1 lakh today will cost in future, and what your money will really be worth.">
+<meta property="og:url" content="https://paisatools.pages.dev/inflation-calculator">
+<meta name="theme-color" content="#14121a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2314121a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' text-anchor='middle' fill='white'%3E%E2%82%B9%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Inflation Calculator","url":"https://paisatools.pages.dev/inflation-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"en-IN","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"isPartOf":{"@type":"WebSite","name":"PaisaTools","url":"https://paisatools.pages.dev/"}}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:image" content="https://paisatools.pages.dev/og/inflation-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inflation Calculator: Future Cost of Money | PaisaTools">
+<meta name="twitter:description" content="Free inflation calculator for India. See what something that costs ₹1 lakh today will cost in future, and what your money will really be worth.">
+<meta name="twitter:image" content="https://paisatools.pages.dev/og/inflation-calculator.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What inflation rate should I use?","acceptedAnswer":{"@type":"Answer","text":"For general living costs, many people use 5% to 6% a year. Costs such as education and healthcare often rise faster than general inflation. The RBI’s target for consumer price inflation is 4%, within a band of 2% to 6%."}},{"@type":"Question","name":"What does buying power mean?","acceptedAnswer":{"@type":"Answer","text":"It is what a sum of money can actually buy. At 6% inflation, ₹1 lakh in 10 years will buy only about as much as ₹55,839 does today."}},{"@type":"Question","name":"How long do prices take to double?","acceptedAnswer":{"@type":"Answer","text":"For a quick estimate, divide 72 by the inflation rate. At 6%, prices double in about 12 years; the exact figure the calculator shows is 11.9 years."}},{"@type":"Question","name":"How can my savings keep up with inflation?","acceptedAnswer":{"@type":"Answer","text":"They need to earn more than inflation after tax. A deposit that earns less than inflation loses buying power each year, even though the rupee amount grows."}}]}</script>
+<!-- AdSense: after approval, paste the AdSense <script> tag Google gives you here, on every page. -->
+<style>:root{color-scheme:light}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="calc-base.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="theme.css">
+<script>try{var t=localStorage.getItem("pt-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="google-adsense-account" content="ca-pub-6071081432967277">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071081432967277" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paisatools.pages.dev/"},{"@type":"ListItem","position":2,"name":"Inflation Calculator","item":"https://paisatools.pages.dev/inflation-calculator"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">paisa<span>tools</span></a>
+    <nav class="site" aria-label="Main"><a href="./">Home</a><a href="emi-calculator">EMI</a><a href="income-tax-calculator">Income Tax</a><a href="gst-calculator">GST</a><a href="sip-calculator">SIP</a><a href="fd-calculator">FD</a><a href="ppf-calculator">PPF</a><a href="guides">Guides</a></nav><a class="coffee-btn coffee-sm" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer" title="Buy me a coffee"><span aria-hidden="true">☕</span><span class="coffee-text">Buy me a coffee</span></a>
+  </header>
+<main id="content">
+
+  <div class="intro">
+    <!--crumbs--><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="./">Home</a></li><li aria-current="page">Inflation Calculator</li></ol></nav><!--/crumbs-->
+    <h1>Inflation Calculator</h1>
+    <p>See how rising prices change the value of money. Enter an amount, an inflation rate and a number of years to find the future cost and the buying power of today’s rupees.</p>
+  </div>
+
+  <div class="tool">
+    <div class="inputs">
+      <div class="field" id="f-amt">
+        <div class="field-top"><label for="amt">Amount today</label>
+          <div class="box"><span>₹</span><input id="amt" inputmode="decimal" autocomplete="off"></div></div>
+        <input type="range" id="amtR" min="1000" max="10000000" step="1000" aria-label="Amount today slider">
+        <div class="scale"><span>₹1K</span><span>₹1 Cr</span></div>
+      </div>
+      <div class="field" id="f-inf">
+        <div class="field-top"><label for="inf">Inflation (per year)</label>
+          <div class="box"><input id="inf" inputmode="decimal" autocomplete="off"><span>%</span></div></div>
+        <input type="range" id="infR" min="0" max="15" step="0.1" aria-label="Inflation (per year) slider">
+        <div class="scale"><span>0%</span><span>15%</span></div>
+      </div>
+      <div class="field" id="f-yrs">
+        <div class="field-top"><label for="yrs">Number of years</label>
+          <div class="box"><input id="yrs" inputmode="decimal" autocomplete="off"><span>yrs</span></div></div>
+        <input type="range" id="yrsR" min="1" max="50" step="1" aria-label="Number of years slider">
+        <div class="scale"><span>1 yr</span><span>50 yrs</span></div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+    </div>
+    <div class="results" aria-live="polite">
+      <div>
+        <div class="emi-label">Future cost</div>
+        <div class="emi" id="fut">₹0</div>
+      </div>
+      <div class="split">
+        <svg class="donut" viewBox="0 0 132 132" role="img" aria-label="Share of the future cost that is price rise">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="var(--interest)" stroke-width="20"></circle>
+          <circle id="arc" cx="66" cy="66" r="52" fill="none" stroke="var(--principal)" stroke-width="20" transform="rotate(-90 66 66)" stroke-dasharray="0 327"></circle>
+          <text x="66" y="62" text-anchor="middle" fill="currentColor" font-size="10" font-family="DM Sans, sans-serif">Rise</text>
+          <text id="pct" x="66" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-weight="600" font-family="IBM Plex Mono, monospace">0%</text>
+        </svg>
+        <div class="legend">
+          <div><span><i class="dot" style="background:var(--principal)"></i>Cost today</span><b id="now">₹0</b></div>
+          <div><span><i class="dot" style="background:var(--interest)"></i>Increase in cost</span><b id="inc">₹0</b></div>
+          <div><span>Today’s amount will be worth</span><b id="pp">₹0</b></div>
+          <div><span>Prices double in</span><b id="dbl">₹0</b></div>
+        </div>
+      </div>
+      <p class="note" id="insight"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="block" aria-labelledby="h-y">
+    <h2 id="h-y">Year by year</h2>
+    <div class="table-wrap"><table><thead><tr><th>Year</th><th>Cost of the same thing</th><th>Buying power of today’s amount</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="7565171300" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="pt-banner" data-slot="mid"></div>
+  <div class="guide">
+    <article>
+      <h2>How does inflation change the value of money?</h2>
+      <p>Inflation is the rate at which prices rise. When prices go up, the same rupee buys less. So something that costs ₹1 lakh today will cost more in future, and ₹1 lakh kept aside will buy less than it does now. This calculator shows both sides.</p>
+      <div class="formula">Future cost = Amount × (1 + inflation)<sup>years</sup>
+        <small>Buying power of today’s amount in future = Amount ÷ (1 + inflation)<sup>years</sup>. Years for prices to double = log 2 ÷ log (1 + inflation). The inflation rate is entered as a decimal, so 6% is 0.06.</small></div>
+      <h3>Worked example</h3>
+      <p id="example">At 6% inflation, something that costs ₹1,00,000 today will cost about ₹1,79,085 in 10 years. Put the other way, ₹1,00,000 then will buy only about as much as ₹55,839 does today.</p>
+      <h3>Using inflation in your plans</h3>
+      <ul>
+        <li><strong>Inflate your goals.</strong> A goal 10 or 20 years away will cost much more than it does today. Use the future cost when you plan savings for it.</li>
+        <li><strong>Judge returns after inflation.</strong> An investment only grows your wealth if it earns more than inflation after tax.</li>
+        <li><strong>Some costs rise faster.</strong> Education and healthcare often go up faster than general prices, so use a higher rate for those goals.</li>
+      </ul>
+
+      <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
+  <div class="pt-banner" data-slot="article"></div>
+
+      <div class="pt-banner" data-slot="box"></div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>What inflation rate should I use?</summary>
+        <p>For general living costs, many people use 5% to 6% a year. Costs such as education and healthcare often rise faster than general inflation. The RBI’s target for consumer price inflation is 4%, within a band of 2% to 6%.</p></details>
+      <details><summary>What does buying power mean?</summary>
+        <p>It is what a sum of money can actually buy. At 6% inflation, ₹1 lakh in 10 years will buy only about as much as ₹55,839 does today.</p></details>
+      <details><summary>How long do prices take to double?</summary>
+        <p>For a quick estimate, divide 72 by the inflation rate. At 6%, prices double in about 12 years; the exact figure the calculator shows is 11.9 years.</p></details>
+      <details><summary>How can my savings keep up with inflation?</summary>
+        <p>They need to earn more than inflation after tax. A deposit that earns less than inflation loses buying power each year, even though the rupee amount grows.</p></details>
+      <!--sources--><section class="sources" aria-labelledby="h-sources"><h2 id="h-sources">Sources</h2><p>The rules and rates on this page are based on these official sources. Check them for the latest notifications before you decide.</p><ul><li><a href="https://www.rbi.org.in/">Reserve Bank of India (RBI)</a>: policy rates and rules for bank deposits</li></ul></section><!--/sources-->
+    </article>
+
+    <aside>
+      <div class="ad-slot" role="complementary" aria-label="Advertisement">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6071081432967277" data-ad-slot="8670690217" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="related">
+        <a class="rel-guide" href="guide-retirement-planning-basics">Read the guide: Retirement Planning Basics: How Much Do You Need?</a>
+        <h3>Related calculators</h3>
+        <a href="retirement-planner">Retirement Planner</a>
+        <a href="goal-sip-calculator">Goal SIP Calculator</a>
+        <a href="cagr-calculator">CAGR Calculator</a>
+        <a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a>
+        <a href="./#all">All calculators</a>
+      </div>
+      <div class="pt-banner" data-slot="side"></div>
+      <div class="pt-banner" data-slot="box"></div>
+    </aside>
+  </div>
+  <div class="pt-banner" data-slot="bottom"></div>
+</main>
+
+  <footer class="site-footer">
+    <div class="f-top">
+      <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> Buy me a coffee</a></div>
+      <div class="f-cols">
+      <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a></nav>
+      <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="goal-sip-calculator">Goal SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a><a href="scss-calculator">SCSS Calculator</a><a href="post-office-mis-calculator">Post Office MIS Calculator</a></nav>
+      <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="swp-calculator">SWP Calculator</a><a href="cagr-calculator">CAGR Calculator</a><a href="xirr-calculator">XIRR Calculator</a><a href="inflation-calculator">Inflation Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>Inflation is an assumption. Actual price rises vary from year to year and between goods.</p>
+      <nav aria-label="Site"><a href="guides">Guides</a><a href="about">About</a><a href="contact">Contact</a><a href="privacy-policy">Privacy policy</a><a href="disclaimer">Disclaimer</a><a href="hi/" lang="hi" hreflang="hi-IN">हिन्दी</a></nav>
+    </div>
+  </footer>
+</div>
+
+<script src="calc-common.js"></script>
+<script>
+(function(){
+  const {$,inr,num,bind}=PT;
+  const L={"yrs":"yrs","eAmt":"Enter an amount of at least ₹1.","eInf":"Enter inflation between 0% and 30%.","eYrs":"Enter between 1 and 60 years.","ins":"Something that costs {A} today will cost about {fut} in {Y} years. And {A} kept aside will buy only about as much as {pp} does today.","ex":"At 6% inflation, something that costs ₹1,00,000 today will cost about {fut} in 10 years. Put the other way, ₹1,00,000 then will buy only about as much as {pp} does today."};
+  function calc(){
+    const A=num($('amt').value),I=num($('inf').value),Y=Math.round(num($('yrs').value));
+    let e='';
+    if(!(A>=1)) e=L.eAmt;
+    else if(!(I>=0&&I<=30)) e=L.eInf;
+    else if(!(Y>=1&&Y<=60)) e=L.eYrs;
+    $('err').textContent=e; if(e) return;
+    const f=Math.pow(1+I/100,Y),fut=A*f,pp=A/f;
+    $('fut').textContent=inr(fut); $('now').textContent=inr(A); $('inc').textContent=inr(fut-A); $('pp').textContent=inr(pp);
+    $('dbl').textContent=I>0?(Math.log(2)/Math.log(1+I/100)).toFixed(1)+' '+L.yrs:'–';
+    $('insight').textContent=L.ins.replace(/\{A\}/g,inr(A)).replace('{fut}',inr(fut)).replace(/\{Y\}/g,Y).replace('{pp}',inr(pp));
+    const rows=[];for(let y=1;y<=Y;y++){const k=Math.pow(1+I/100,y);rows.push('<tr><td>'+y+'</td><td>'+inr(A*k)+'</td><td>'+inr(A/k)+'</td></tr>');}
+    $('rows').innerHTML=rows.join('');
+  }
+  (function(){const f=Math.pow(1.06,10);
+    $('example').textContent=L.ex.replace('{fut}',inr(100000*f)).replace('{pp}',inr(100000/f));})();
+  bind([{id:'amt',val:100000},{id:'inf',val:6,fmt:PT.fDec},{id:'yrs',val:10,fmt:v=>String(v)}],calc);
+  calc();
+})();
+</script>
+
+<script>PT.donut(["now","inc"],v=>v[1]/(v[0]+v[1]));</script>
+<script src="site.js" defer></script>
+</body>
+</html>
