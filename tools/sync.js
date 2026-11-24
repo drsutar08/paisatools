@@ -280,6 +280,23 @@ for (const rel of list) {
     h = h.replace(/<div class="tools" style="margin-top:8px">[\s\S]*?\n  <\/div>/, `<div class="tools" style="margin-top:8px">\n${cards}\n  </div>`);
   }
 
+  // 3g. Fonts: one Google Fonts request per page, for just the fonts the site uses (DM Sans for text, IBM Plex Mono for
+  // figures, Noto Sans Devanagari on Hindi pages). Older pages also asked for Bricolage Grotesque and IBM Plex Sans,
+  // which theme.css overrides, so they only slowed the first paint. The first font tag's position is kept.
+  {
+    const fontTag = /[ \t]*<link rel="(?:preconnect|stylesheet)" href="https:\/\/fonts\.(?:googleapis|gstatic)\.com[^"]*"[^>]*>\r?\n?/g;
+    const head = h.split('</head>')[0];
+    const first = head.search(fontTag);
+    if (first >= 0) {
+      const css = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700'
+        + (isHi ? '&family=Noto+Sans+Devanagari:wght@400;500;600;700' : '') + '&family=IBM+Plex+Mono:wght@500&display=swap';
+      const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="${css}">\n`;
+      const rest = h.slice(head.length);
+      const cleaned = head.slice(0, first) + '\u0000' + head.slice(first).replace(fontTag, '');
+      h = cleaned.replace('\u0000', fonts) + rest;
+    }
+  }
+
   // 4. Skip link and main landmark
   if (!h.includes('class="skip-link"')) {
     h = h.replace(/<body([^>]*)>/, `<body$1>\n<a class="skip-link" href="#content">${isHi ? 'मुख्य सामग्री पर जाएं' : 'Skip to main content'}</a>`);
