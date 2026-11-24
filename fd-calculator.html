@@ -255,7 +255,7 @@ footer a{color:var(--muted)}
       <ul>
         <li>FD interest is added to your income and taxed at your slab rate.</li>
         <li>Your bank deducts 10% TDS if your total interest from that bank goes over ₹50,000 in a year, or ₹1,00,000 for senior citizens. Under the Income-tax Act, 2025, this rule sits in Section 393(1), which replaced the old Section 194A.</li>
-        <li>If your total income is below the taxable limit, you can submit Form 15G (or 15H if you are a senior citizen) to stop TDS.</li>
+        <li>If your total income is below the taxable limit, you can submit Form 121 (which replaced Forms 15G and 15H from 1 April 2026) to stop TDS.</li>
         <li>A 5-year tax-saver FD qualifies for the 80C deduction in the old regime, up to ₹1.5 lakh.</li>
       </ul>
       <!-- AdSense: replace this placeholder div with an ad unit from your AdSense account. -->
@@ -281,7 +281,7 @@ footer a{color:var(--muted)}
         <a href="rd-calculator">RD Calculator</a>
         <a href="ppf-calculator">PPF Calculator</a>
         <a href="scss-calculator">SCSS Calculator</a>
-        <a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a>
+        <a href="tds-on-fd-calculator">TDS on FD Calculator</a>
         <a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a>
         <a href="./#all">All calculators</a>
       </div>
@@ -297,7 +297,7 @@ footer a{color:var(--muted)}
       <div class="f-brand"><a class="brand" href="./">paisa<span>tools</span></a><p>Free money calculators for India. No sign-up, and your numbers never leave your device.</p><a class="coffee-btn" href="https://buymeacoffee.com/drsutar08" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☕</span> Buy me a coffee</a></div>
       <div class="f-cols">
       <nav aria-label="Loans"><h2 class="f-h">Loans</h2><a href="emi-calculator">EMI Calculator</a><a href="home-loan-eligibility-calculator">Home Loan Eligibility Calculator</a><a href="car-loan-calculator">Car Loan Calculator</a><a href="loan-prepayment-calculator">Loan Prepayment Calculator</a><a href="loan-comparison-calculator">Compare Two Loans</a><a href="credit-card-interest-calculator">Credit Card Interest Calculator</a><a href="education-loan-calculator">Education Loan EMI Calculator</a></nav>
-      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a><a href="capital-gains-tax-calculator">Capital Gains Tax Calculator</a></nav>
+      <nav aria-label="Tax and salary"><h2 class="f-h">Tax and salary</h2><a href="income-tax-calculator">Income Tax Calculator</a><a href="senior-citizen-tax-calculator">Senior Citizen Income Tax Calculator</a><a href="salary-in-hand-calculator">Salary In-Hand Calculator</a><a href="hra-calculator">HRA Exemption Calculator</a><a href="gst-calculator">GST Calculator</a><a href="gratuity-calculator">Gratuity Calculator</a><a href="capital-gains-tax-calculator">Capital Gains Tax Calculator</a><a href="home-loan-tax-benefit-calculator">Home Loan Tax Benefit Calculator</a><a href="tds-on-fd-calculator">TDS on FD Calculator</a></nav>
       <nav aria-label="Save and invest"><h2 class="f-h">Save and invest</h2><a href="sip-calculator">SIP Calculator</a><a href="step-up-sip-calculator">Step-up SIP Calculator</a><a href="goal-sip-calculator">Goal SIP Calculator</a><a href="lumpsum-calculator">Lumpsum Calculator</a><a href="mutual-fund-returns-calculator">Mutual Fund Returns Calculator</a><a href="fd-calculator">FD Calculator</a><a href="rd-calculator">RD Calculator</a><a href="ppf-calculator">PPF Calculator</a><a href="scss-calculator">SCSS Calculator</a><a href="post-office-mis-calculator">Post Office MIS Calculator</a><a href="nsc-calculator">NSC Calculator</a><a href="kvp-calculator">KVP Calculator</a></nav>
       <nav aria-label="Plan and compare"><h2 class="f-h">Plan and compare</h2><a href="sukanya-samriddhi-calculator">Sukanya Samriddhi Calculator</a><a href="nps-calculator">NPS Calculator</a><a href="epf-calculator">EPF Calculator</a><a href="retirement-planner">Retirement Planner</a><a href="swp-calculator">SWP Calculator</a><a href="cagr-calculator">CAGR Calculator</a><a href="xirr-calculator">XIRR Calculator</a><a href="inflation-calculator">Inflation Calculator</a><a href="rent-vs-buy-calculator">Rent vs Buy Calculator</a><a href="term-insurance-calculator">Term Insurance Calculator</a><a href="emergency-fund-calculator">Emergency Fund Calculator</a><a href="net-worth-calculator">Net Worth Calculator</a><a href="simple-compound-interest-calculator">Simple and Compound Interest Calculator</a></nav>
       </div>
@@ -367,7 +367,7 @@ function calc(){
   donut(P/A);$('ctr').textContent=Math.round(I/A*100)+'%';
   const yr1=fdValue(P,R,Math.min(12,m),n)-P, lim=$('sr').checked?100000:50000;
   $('tdsL').textContent='Interest in the first year';$('tdsV').textContent=inr(yr1);
-  $('insight').textContent=(yr1>lim?'This is above the ₹'+lim.toLocaleString('en-IN')+' TDS limit, so your bank will deduct 10% TDS unless you submit Form 15G or 15H. ':'This is below the ₹'+lim.toLocaleString('en-IN')+' TDS limit for one bank. ')+'Effective yearly return: '+((Math.pow(A/P,12/m)-1)*100).toFixed(2)+'%.';
+  $('insight').textContent=(yr1>lim?'This is above the ₹'+lim.toLocaleString('en-IN')+' TDS limit, so your bank will deduct 10% TDS unless you submit Form 121. ':'This is below the ₹'+lim.toLocaleString('en-IN')+' TDS limit for one bank. ')+'Effective yearly return: '+((Math.pow(A/P,12/m)-1)*100).toFixed(2)+'%.';
   const years=Math.ceil(m/12),rows=[],pts=[{label:'Start',lo:P,hi:P}];let prev=P;
   for(let y=1;y<=years;y++){const mm=Math.min(y*12,m),v=fdValue(P,R,mm,n);rows.push(`<tr><td>${mm<y*12?'Month '+mm:'Year '+y}</td><td>${inr(prev)}</td><td>${inr(v-prev)}</td><td>${inr(v)}</td></tr>`);pts.push({label:'Y'+y,lo:P,hi:v});prev=v;}
   $('rows').innerHTML=rows.join('');area('growth',pts,['Deposit','Interest']);
