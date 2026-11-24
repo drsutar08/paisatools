@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://paisatools.pages.dev/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority></url>
+  <url><loc>https://paisatools.pages.dev/</loc><lastmod>2026-11-25</lastmod><priority>1.0</priority></url>
   <url><loc>https://paisatools.pages.dev/emi-calculator</loc><lastmod>2026-11-23</lastmod><priority>0.9</priority></url>
   <url><loc>https://paisatools.pages.dev/home-loan-eligibility-calculator</loc><lastmod>2026-11-23</lastmod><priority>0.9</priority></url>
   <url><loc>https://paisatools.pages.dev/car-loan-calculator</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority></url>
@@ -46,8 +46,10 @@
   <url><loc>https://paisatools.pages.dev/discount-calculator</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority></url>
   <url><loc>https://paisatools.pages.dev/simple-compound-interest-calculator</loc><lastmod>2026-11-23</lastmod><priority>0.9</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-ctc-to-in-hand-salary</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/guide-emergency-fund-and-term-insurance</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-epf-and-vpf-explained</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-fd-vs-ppf-vs-nps</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/guide-get-out-of-credit-card-debt</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-gst-cgst-sgst-igst-explained</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-home-loan-eligibility-factors</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-how-gratuity-is-calculated</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
@@ -55,15 +57,19 @@
   <url><loc>https://paisatools.pages.dev/guide-hra-exemption-explained</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-lower-home-loan-emi</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-old-vs-new-tax-regime</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/guide-post-office-savings-schemes</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-prepay-loan-or-invest</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-retirement-planning-basics</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/guide-section-80c-tax-saving-options</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-senior-citizen-tax-saving</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-sip-vs-lumpsum</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/guide-what-is-cagr-and-xirr</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
-  <url><loc>https://paisatools.pages.dev/guides</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/guides</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-ctc-to-in-hand-salary</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/guide-emergency-fund-and-term-insurance</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-epf-and-vpf-explained</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-fd-vs-ppf-vs-nps</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/guide-get-out-of-credit-card-debt</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-gst-cgst-sgst-igst-explained</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-home-loan-eligibility-factors</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-how-gratuity-is-calculated</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
@@ -71,13 +77,15 @@
   <url><loc>https://paisatools.pages.dev/hi/guide-hra-exemption-explained</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-lower-home-loan-emi</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-old-vs-new-tax-regime</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/guide-post-office-savings-schemes</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-prepay-loan-or-invest</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-retirement-planning-basics</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/guide-section-80c-tax-saving-options</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-senior-citizen-tax-saving</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-sip-vs-lumpsum</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/guide-what-is-cagr-and-xirr</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
-  <url><loc>https://paisatools.pages.dev/hi/guides</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
-  <url><loc>https://paisatools.pages.dev/hi/</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/guides</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://paisatools.pages.dev/hi/</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/emi-calculator</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/home-loan-eligibility-calculator</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://paisatools.pages.dev/hi/car-loan-calculator</loc><lastmod>2026-11-24</lastmod><priority>0.7</priority></url>
