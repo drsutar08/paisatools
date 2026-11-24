@@ -69,6 +69,9 @@ module.exports = {
     ['xirr-calculator.html', 'XIRR Calculator', 'XIRR कैलकुलेटर', 'plan'],
     ['inflation-calculator.html', 'Inflation Calculator', 'महंगाई कैलकुलेटर', 'plan'],
     ['rent-vs-buy-calculator.html', 'Rent vs Buy Calculator', 'किराया या ख़रीदें', 'plan'],
+    ['term-insurance-calculator.html', 'Term Insurance Calculator', 'टर्म इंश्योरेंस कवर', 'plan'],
+    ['emergency-fund-calculator.html', 'Emergency Fund Calculator', 'इमरजेंसी फंड', 'plan'],
+    ['net-worth-calculator.html', 'Net Worth Calculator', 'नेट वर्थ', 'plan'],
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
@@ -158,6 +161,9 @@ module.exports = {
     'rent-vs-buy-calculator.html': 'guide-home-loan-eligibility-factors.html',
     'education-loan-calculator.html': 'guide-prepay-loan-or-invest.html',
     'capital-gains-tax-calculator.html': 'guide-sip-vs-lumpsum.html',
+    'term-insurance-calculator.html': 'guide-retirement-planning-basics.html',
+    'emergency-fund-calculator.html': 'guide-prepay-loan-or-invest.html',
+    'net-worth-calculator.html': 'guide-retirement-planning-basics.html',
     'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
   },
 
@@ -191,14 +197,17 @@ module.exports = {
     'swp': ['retirement-planner', 'lumpsum', 'scss', 'mutual-fund-returns', 'capital-gains-tax'],
     'scss': ['senior-citizen-tax', 'post-office-mis', 'fd', 'swp', 'ppf'],
     'post-office-mis': ['scss', 'nsc', 'fd', 'rd', 'swp'],
-    'inflation': ['retirement-planner', 'goal-sip', 'cagr', 'simple-compound-interest'],
+    'inflation': ['retirement-planner', 'goal-sip', 'term-insurance', 'cagr', 'simple-compound-interest'],
     'xirr': ['cagr', 'mutual-fund-returns', 'sip', 'lumpsum'],
     'nsc': ['ppf', 'kvp', 'fd', 'post-office-mis'],
     'kvp': ['nsc', 'fd', 'ppf', 'inflation'],
     'credit-card-interest': ['emi', 'loan-prepayment', 'loan-comparison', 'simple-compound-interest'],
     'capital-gains-tax': ['mutual-fund-returns', 'income-tax', 'swp', 'xirr'],
     'rent-vs-buy': ['home-loan-eligibility', 'emi', 'loan-prepayment', 'inflation'],
-    'education-loan': ['emi', 'loan-prepayment', 'loan-comparison', 'goal-sip']
+    'education-loan': ['emi', 'loan-prepayment', 'loan-comparison', 'goal-sip'],
+    'term-insurance': ['retirement-planner', 'emergency-fund', 'net-worth', 'inflation'],
+    'emergency-fund': ['net-worth', 'fd', 'rd', 'term-insurance'],
+    'net-worth': ['retirement-planner', 'emergency-fund', 'goal-sip', 'term-insurance']
   },
 
   // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
@@ -228,6 +237,7 @@ module.exports = {
     epfo: ['Employees\' Provident Fund Organisation (EPFO)', 'कर्मचारी भविष्य निधि संगठन (EPFO)', 'https://www.epfo.gov.in/', 'EPF interest rate, contributions and withdrawals', 'EPF ब्याज दर, योगदान और निकासी'],
     pfrda: ['Pension Fund Regulatory and Development Authority (PFRDA)', 'पेंशन फंड नियामक और विकास प्राधिकरण (PFRDA)', 'https://www.pfrda.org.in/', 'NPS rules, withdrawals and annuity', 'NPS नियम, निकासी और एन्युटी'],
     gst: ['CBIC GST portal', 'CBIC GST पोर्टल', 'https://cbic-gst.gov.in/', 'GST rates and notifications', 'GST दरें और अधिसूचनाएं'],
+    irdai: ['Insurance Regulatory and Development Authority of India (IRDAI)', 'भारतीय बीमा विनियामक और विकास प्राधिकरण (IRDAI)', 'https://irdai.gov.in/', 'rules for insurers, policyholder protection and claims', 'बीमा कंपनियों के नियम, पॉलिसीधारकों की सुरक्षा और क्लेम'],
     labour: ['Ministry of Labour and Employment', 'श्रम और रोज़गार मंत्रालय', 'https://www.labour.gov.in/', 'Payment of Gratuity Act and Labour Codes', 'ग्रेच्युटी भुगतान अधिनियम और लेबर कोड']
   },
   // Which official sources each page lists in its "Sources" section (Hindi twins get the same list).
@@ -254,6 +264,7 @@ module.exports = {
     'credit-card-interest-calculator.html': ['rbi'],
     'capital-gains-tax-calculator.html': ['itd'],
     'education-loan-calculator.html': ['itd', 'rbi'],
+    'term-insurance-calculator.html': ['irdai', 'itd'],
     'guide-old-vs-new-tax-regime.html': ['itd'],
     'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
     'guide-hra-exemption-explained.html': ['itd'],
