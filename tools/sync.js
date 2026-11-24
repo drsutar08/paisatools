@@ -16,7 +16,14 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const urlOf = rel => D + rel.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '');
 const calcName = (file, hi) => { const c = cfg.calculators.find(x => x[0] === file); return c ? (hi ? c[2] : c[1]) : file; };
 const short2file = s => s + (s === 'retirement-planner' ? '.html' : '-calculator.html');
-const dateFor = name => (cfg.updatedFor || {})[name] || cfg.lastmod;
+/* Each page's last-modified date (sitemap lastmod, Article dateModified) comes from tools/page-dates.json, which keeps a
+   fingerprint of the page's own content (tools/fingerprint.js). When the fingerprint changes, the date becomes today.
+   updatedFor in the config can still pin a date by hand; cfg.lastmod is the fallback for a page with no entry. */
+const fingerprint = require('./fingerprint.js');
+const DATES = path.join(__dirname, 'page-dates.json');
+const pageDates = fs.existsSync(DATES) ? JSON.parse(fs.readFileSync(DATES, 'utf8')) : {};
+const today = new Date().toLocaleDateString('en-CA');   // YYYY-MM-DD, local time
+const dateFor = rel => (cfg.updatedFor || {})[rel] || (cfg.updatedFor || {})[path.basename(rel)] || (pageDates[rel] || {}).date || cfg.lastmod;
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const MONTHS_HI = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
 const fmtDate = (iso, hi) => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${(hi ? MONTHS_HI : MONTHS_EN)[m - 1]} ${y}`; };
@@ -56,7 +63,7 @@ function cleanUrls(h) {
 const readPage = f =>fs.readFileSync(path.join(root, f), 'utf8');
 const guideTitle = f => ((readPage(f).match(/<h1[^>]*>([^<]*)<\/h1>/) || [])[1] || f).trim();
 const guideDesc = f => ((readPage(f).match(/name="description" content="([^"]*)"/) || [])[1] || '').trim();
-let changed = 0;
+let changed = 0, datesChanged = 0;
 for (const rel of list) {
   const file = path.join(root, rel);
   const isHi = rel.startsWith('hi/');
@@ -126,7 +133,7 @@ for (const rel of list) {
   const indexable = !/<meta name="robots" content="[^"]*noindex/.test(head);
   const isGuide = /^guide-/.test(name);
   const isHome = name === 'index.html';
-  const date = dateFor(name);
+  const date = dateFor(rel);
 
   // 3a. hreflang: English and Hindi twins point at each other; x-default is the English page.
   if (indexable && /<link rel="canonical"[^>]*>/.test(h)) {
@@ -290,12 +297,24 @@ for (const rel of list) {
       return `${a}="${r.pathname}${r.hash}"`;
     });
   }
+  // Real last-modified date: if the page's own content changed since the last run, it was updated today.
+  const fp = fingerprint(h);
+  if (!pageDates[rel] || pageDates[rel].hash !== fp) {
+    const nd = (cfg.updatedFor || {})[rel] || today;
+    if (nd !== date) h = h.split(`"dateModified":"${date}"`).join(`"dateModified":"${nd}"`).split(`datetime="${date}"`).join(`datetime="${nd}"`);
+    pageDates[rel] = { date: nd, hash: fp };
+    datesChanged++;
+  }
   if (h !== before) { fs.writeFileSync(file, h); changed++; }
 }
 
+// Save the page dates (sorted, so the file only changes when a date or fingerprint does).
+for (const k of Object.keys(pageDates)) if (!list.includes(k)) { delete pageDates[k]; datesChanged++; }
+if (datesChanged) fs.writeFileSync(DATES, JSON.stringify(Object.fromEntries(Object.keys(pageDates).sort().map(k => [k, pageDates[k]])), null, 1) + '\n');
+
 // 5. Sitemap
 const rows = [];
-const add = (loc, pr) => rows.push(`  <url><loc>${urlOf(loc)}</loc><lastmod>${dateFor(path.basename(loc) || 'index.html')}</lastmod><priority>${pr}</priority></url>`);
+const add = (loc, pr) => rows.push(`  <url><loc>${urlOf(loc)}</loc><lastmod>${dateFor(loc || 'index.html')}</lastmod><priority>${pr}</priority></url>`);
 add('', '1.0');
 cfg.calculators.forEach(c => add(c[0], '0.9'));
 list.filter(f => !f.startsWith('hi/') && /^guide/.test(f)).forEach(f => add(f, '0.8'));
@@ -306,6 +325,6 @@ cfg.legalPages.forEach(f => add(f, '0.3'));
 cfg.legalPages.forEach(f => { if (fs.existsSync(path.join(root, 'hi', f))) add('hi/' + f, '0.3'); });
 fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${rows.join('\n')}\n</urlset>\n`);
 
-console.log(`synced ${list.length} pages (${changed} changed), sitemap has ${rows.length} URLs`);
+console.log(`synced ${list.length} pages (${changed} changed, ${datesChanged} new dates), sitemap has ${rows.length} URLs`);
 const ph = Object.entries(cfg.author).filter(([k, v]) => /^AUTHOR_/.test(v)).map(([k]) => k);
 if (ph.length) console.warn(`WARNING: author ${ph.join(', ')} still a placeholder in tools/site.config.js; fill it in before you publish.`);

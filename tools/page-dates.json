@@ -1,0 +1,530 @@
+{
+ "404.html": {
+  "date": "2026-11-23",
+  "hash": "e37a8a5173ed2435"
+ },
+ "about.html": {
+  "date": "2026-11-23",
+  "hash": "0b892c891f83eef6"
+ },
+ "cagr-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "8fc1a7e6fc6e2018"
+ },
+ "capital-gains-tax-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "26b4ca1ee129339a"
+ },
+ "car-loan-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "1e1b387785cd213c"
+ },
+ "contact.html": {
+  "date": "2026-11-11",
+  "hash": "ae1e4be0acf6895f"
+ },
+ "credit-card-interest-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "d580484457ddf4d2"
+ },
+ "disclaimer.html": {
+  "date": "2026-11-11",
+  "hash": "8dde40c347f1e065"
+ },
+ "discount-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "d85050ef650b5bc8"
+ },
+ "education-loan-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "1a473f619744778d"
+ },
+ "emergency-fund-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "d113e112392002ff"
+ },
+ "emi-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "ac38c2fae9a427d5"
+ },
+ "epf-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "3be114eba7fb7ffc"
+ },
+ "fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "db051d85f6e72f02"
+ },
+ "goal-sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "37f959aa962b8494"
+ },
+ "gratuity-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "5b655d488b7b308d"
+ },
+ "gst-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "3baae01de7de4d34"
+ },
+ "guide-ctc-to-in-hand-salary.html": {
+  "date": "2026-11-24",
+  "hash": "c90e9fa88b60f3c2"
+ },
+ "guide-epf-and-vpf-explained.html": {
+  "date": "2026-11-23",
+  "hash": "e95e140fe2674e79"
+ },
+ "guide-fd-vs-ppf-vs-nps.html": {
+  "date": "2026-11-24",
+  "hash": "cf350a175610b037"
+ },
+ "guide-gst-cgst-sgst-igst-explained.html": {
+  "date": "2026-11-23",
+  "hash": "8214c38139ebb228"
+ },
+ "guide-home-loan-eligibility-factors.html": {
+  "date": "2026-11-23",
+  "hash": "d941455e2e2d9ab0"
+ },
+ "guide-how-gratuity-is-calculated.html": {
+  "date": "2026-11-23",
+  "hash": "613c8bae42fdbf48"
+ },
+ "guide-how-to-choose-a-car-loan.html": {
+  "date": "2026-11-23",
+  "hash": "61f42a21e4600767"
+ },
+ "guide-hra-exemption-explained.html": {
+  "date": "2026-11-23",
+  "hash": "bb7f7275fdb61afe"
+ },
+ "guide-lower-home-loan-emi.html": {
+  "date": "2026-11-23",
+  "hash": "f908f5bc4e7f32df"
+ },
+ "guide-old-vs-new-tax-regime.html": {
+  "date": "2026-11-24",
+  "hash": "4f1e9d64ba44e965"
+ },
+ "guide-prepay-loan-or-invest.html": {
+  "date": "2026-11-24",
+  "hash": "7bb951ebc631d713"
+ },
+ "guide-retirement-planning-basics.html": {
+  "date": "2026-11-23",
+  "hash": "dcf3d7f69c438ac8"
+ },
+ "guide-senior-citizen-tax-saving.html": {
+  "date": "2026-11-24",
+  "hash": "d6b7a9a70b02c7e4"
+ },
+ "guide-sip-vs-lumpsum.html": {
+  "date": "2026-11-23",
+  "hash": "6a185fc26b517666"
+ },
+ "guide-what-is-cagr-and-xirr.html": {
+  "date": "2026-11-23",
+  "hash": "e15995a61fdd04ca"
+ },
+ "guides.html": {
+  "date": "2026-11-24",
+  "hash": "84cc899c7b80bcda"
+ },
+ "hi/404.html": {
+  "date": "2026-11-23",
+  "hash": "cb04ccb1b9f3e2b3"
+ },
+ "hi/about.html": {
+  "date": "2026-11-23",
+  "hash": "6c0ad4fc07d261a0"
+ },
+ "hi/cagr-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "52adce66e6d65b2c"
+ },
+ "hi/capital-gains-tax-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "df30af1dd064bc1a"
+ },
+ "hi/car-loan-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "52ac00b7d7b8d79b"
+ },
+ "hi/contact.html": {
+  "date": "2026-11-23",
+  "hash": "1c843d40e719980f"
+ },
+ "hi/credit-card-interest-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "bc7f82d3fe6ba12c"
+ },
+ "hi/disclaimer.html": {
+  "date": "2026-11-23",
+  "hash": "509f774b1be906d1"
+ },
+ "hi/discount-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "563551e473e59803"
+ },
+ "hi/education-loan-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "41d533db093e18b2"
+ },
+ "hi/emergency-fund-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "34063c19e4eb34fd"
+ },
+ "hi/emi-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "c1a589331b54876c"
+ },
+ "hi/epf-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "71c58c9dd9e5b99d"
+ },
+ "hi/fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "96095a89c4bf5431"
+ },
+ "hi/goal-sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "e6707c01301afd17"
+ },
+ "hi/gratuity-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "7810c50a17856992"
+ },
+ "hi/gst-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "b143a88b0564c8be"
+ },
+ "hi/guide-ctc-to-in-hand-salary.html": {
+  "date": "2026-11-24",
+  "hash": "20dc4c87cc59d9da"
+ },
+ "hi/guide-epf-and-vpf-explained.html": {
+  "date": "2026-11-23",
+  "hash": "d0ba3c183911f3b5"
+ },
+ "hi/guide-fd-vs-ppf-vs-nps.html": {
+  "date": "2026-11-24",
+  "hash": "3587114ba7d38836"
+ },
+ "hi/guide-gst-cgst-sgst-igst-explained.html": {
+  "date": "2026-11-23",
+  "hash": "74a2657368467caf"
+ },
+ "hi/guide-home-loan-eligibility-factors.html": {
+  "date": "2026-11-23",
+  "hash": "5c428cf72e42b66b"
+ },
+ "hi/guide-how-gratuity-is-calculated.html": {
+  "date": "2026-11-23",
+  "hash": "45fdf8d68b8b4d1c"
+ },
+ "hi/guide-how-to-choose-a-car-loan.html": {
+  "date": "2026-11-23",
+  "hash": "8e43da96e83c152b"
+ },
+ "hi/guide-hra-exemption-explained.html": {
+  "date": "2026-11-23",
+  "hash": "3a7ff4a7a8441d1d"
+ },
+ "hi/guide-lower-home-loan-emi.html": {
+  "date": "2026-11-23",
+  "hash": "b8bf5765ae6446d5"
+ },
+ "hi/guide-old-vs-new-tax-regime.html": {
+  "date": "2026-11-24",
+  "hash": "eb8e77a8774440fc"
+ },
+ "hi/guide-prepay-loan-or-invest.html": {
+  "date": "2026-11-24",
+  "hash": "1648bcd9122cecb1"
+ },
+ "hi/guide-retirement-planning-basics.html": {
+  "date": "2026-11-23",
+  "hash": "10106f99c6b1dc15"
+ },
+ "hi/guide-senior-citizen-tax-saving.html": {
+  "date": "2026-11-24",
+  "hash": "ed7a576a03da4c72"
+ },
+ "hi/guide-sip-vs-lumpsum.html": {
+  "date": "2026-11-23",
+  "hash": "c6abdaf36353ed3d"
+ },
+ "hi/guide-what-is-cagr-and-xirr.html": {
+  "date": "2026-11-23",
+  "hash": "0eabe40325146d8c"
+ },
+ "hi/guides.html": {
+  "date": "2026-11-24",
+  "hash": "0fec24f51b92037f"
+ },
+ "hi/home-loan-eligibility-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "04946eed70d272da"
+ },
+ "hi/home-loan-tax-benefit-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "8781bf7f96c9a83f"
+ },
+ "hi/hra-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "411afd3c245697db"
+ },
+ "hi/income-tax-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "06046083523174df"
+ },
+ "hi/index.html": {
+  "date": "2026-11-24",
+  "hash": "b4f5e340d9bdbd20"
+ },
+ "hi/inflation-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "9dfb870cda3aa9a2"
+ },
+ "hi/kvp-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "5910c29809630447"
+ },
+ "hi/loan-against-fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "2341ab90d0895ffa"
+ },
+ "hi/loan-comparison-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "28bdfdbc97c6955c"
+ },
+ "hi/loan-prepayment-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "2b6b138b0f02b78a"
+ },
+ "hi/lumpsum-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "b1430156c858afbd"
+ },
+ "hi/mutual-fund-returns-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "eb1cbca0c0809245"
+ },
+ "hi/net-worth-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "741e9971ffbf8b88"
+ },
+ "hi/nps-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "79a888fb315f45ad"
+ },
+ "hi/nsc-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "2bb1355379a87cd0"
+ },
+ "hi/post-office-mis-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "b792c47488b00a29"
+ },
+ "hi/ppf-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "b02b3941179444ed"
+ },
+ "hi/privacy-policy.html": {
+  "date": "2026-11-23",
+  "hash": "2256134262c3e76e"
+ },
+ "hi/rd-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "34ddf25bf7c066b1"
+ },
+ "hi/rent-vs-buy-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "52a0a03bafa543c0"
+ },
+ "hi/retirement-planner.html": {
+  "date": "2026-11-23",
+  "hash": "ec01f393bcdb7a11"
+ },
+ "hi/salary-hike-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "1721039e5238979b"
+ },
+ "hi/salary-in-hand-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "dce723a5d18f7b6d"
+ },
+ "hi/scss-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "8a2818ea1e025a03"
+ },
+ "hi/senior-citizen-tax-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "766f6a07ea2fb85b"
+ },
+ "hi/simple-compound-interest-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "ab4b29476ca6b7a8"
+ },
+ "hi/sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "2a3e75b014d0fc8d"
+ },
+ "hi/step-up-sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "4952943f69b64462"
+ },
+ "hi/sukanya-samriddhi-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "9582518741e0e63d"
+ },
+ "hi/swp-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "dce0b6e601c86403"
+ },
+ "hi/tds-on-fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "6c24cccdcb9962cd"
+ },
+ "hi/term-insurance-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "b518b30be0b8b335"
+ },
+ "hi/xirr-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "dea86c59593b7457"
+ },
+ "home-loan-eligibility-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "b95967be0d607644"
+ },
+ "home-loan-tax-benefit-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "75302260a729c2b6"
+ },
+ "hra-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "b0bcf9d7e7280403"
+ },
+ "income-tax-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "8bb7ce1650535990"
+ },
+ "index.html": {
+  "date": "2026-11-24",
+  "hash": "8d1096764b5849e6"
+ },
+ "inflation-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "1572e5ec60777c1a"
+ },
+ "kvp-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "2ce5351420c84857"
+ },
+ "loan-against-fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "d5dd114210fba8af"
+ },
+ "loan-comparison-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "308f3af8fa89dda4"
+ },
+ "loan-prepayment-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "b99899f77dd19408"
+ },
+ "lumpsum-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "8cbfca0c89eb8910"
+ },
+ "mutual-fund-returns-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "2eee944281480d90"
+ },
+ "net-worth-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "ae4d2be01c976982"
+ },
+ "nps-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "caef849e0aff4d6b"
+ },
+ "nsc-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "21cd3ecd06d25c71"
+ },
+ "post-office-mis-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "dca4833990475e6e"
+ },
+ "ppf-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "6cebb090a640194f"
+ },
+ "privacy-policy.html": {
+  "date": "2026-11-23",
+  "hash": "5f6d68b9070045bf"
+ },
+ "rd-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "ae9e909f55aa20bb"
+ },
+ "rent-vs-buy-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "501ae81b7acc8ed7"
+ },
+ "retirement-planner.html": {
+  "date": "2026-11-23",
+  "hash": "81ab1a7a62cd3db8"
+ },
+ "salary-hike-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "dfaeb326155b24c2"
+ },
+ "salary-in-hand-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "38ba45ff88c26afe"
+ },
+ "scss-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "fcc0f5482b76e2a0"
+ },
+ "senior-citizen-tax-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "c9151e9cf565f39f"
+ },
+ "simple-compound-interest-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "584e42252b3ae75c"
+ },
+ "sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "24f9cbee64362681"
+ },
+ "step-up-sip-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "cf1ec47c4fc1156c"
+ },
+ "sukanya-samriddhi-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "0a6dfb06f5adeb0d"
+ },
+ "swp-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "859ade426774c6d6"
+ },
+ "tds-on-fd-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "2944401006947805"
+ },
+ "term-insurance-calculator.html": {
+  "date": "2026-11-24",
+  "hash": "2f08c02e7455476e"
+ },
+ "xirr-calculator.html": {
+  "date": "2026-11-23",
+  "hash": "24912b372242d74c"
+ }
+}
