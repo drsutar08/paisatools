@@ -41,9 +41,11 @@ module.exports = {
     ['loan-comparison-calculator.html', 'Compare Two Loans', 'दो लोन की तुलना', 'loans'],
     ['credit-card-interest-calculator.html', 'Credit Card Interest Calculator', 'क्रेडिट कार्ड ब्याज', 'loans'],
     ['education-loan-calculator.html', 'Education Loan EMI Calculator', 'एजुकेशन लोन EMI', 'loans'],
+    ['loan-against-fd-calculator.html', 'Loan Against FD Calculator', 'FD पर लोन', 'loans'],
     ['income-tax-calculator.html', 'Income Tax Calculator', 'इनकम टैक्स कैलकुलेटर', 'tax'],
     ['senior-citizen-tax-calculator.html', 'Senior Citizen Income Tax Calculator', 'सीनियर सिटिज़न टैक्स', 'tax'],
     ['salary-in-hand-calculator.html', 'Salary In-Hand Calculator', 'सैलरी इन-हैंड', 'tax'],
+    ['salary-hike-calculator.html', 'Salary Hike Calculator', 'सैलरी हाइक', 'tax'],
     ['hra-calculator.html', 'HRA Exemption Calculator', 'HRA छूट', 'tax'],
     ['gst-calculator.html', 'GST Calculator', 'GST कैलकुलेटर', 'tax'],
     ['gratuity-calculator.html', 'Gratuity Calculator', 'ग्रेच्युटी', 'tax'],
@@ -74,6 +76,7 @@ module.exports = {
     ['term-insurance-calculator.html', 'Term Insurance Calculator', 'टर्म इंश्योरेंस कवर', 'plan'],
     ['emergency-fund-calculator.html', 'Emergency Fund Calculator', 'इमरजेंसी फंड', 'plan'],
     ['net-worth-calculator.html', 'Net Worth Calculator', 'नेट वर्थ', 'plan'],
+    ['discount-calculator.html', 'Discount Calculator', 'डिस्काउंट', 'plan'],
     ['simple-compound-interest-calculator.html', 'Simple and Compound Interest Calculator', 'सिंपल और कंपाउंड ब्याज', 'plan']
   ],
 
@@ -168,6 +171,8 @@ module.exports = {
     'tds-on-fd-calculator.html': 'guide-senior-citizen-tax-saving.html',
     'emergency-fund-calculator.html': 'guide-prepay-loan-or-invest.html',
     'net-worth-calculator.html': 'guide-retirement-planning-basics.html',
+    'salary-hike-calculator.html': 'guide-ctc-to-in-hand-salary.html',
+    'loan-against-fd-calculator.html': 'guide-fd-vs-ppf-vs-nps.html',
     'simple-compound-interest-calculator.html': 'guide-what-is-cagr-and-xirr.html'
   },
 
@@ -180,15 +185,15 @@ module.exports = {
     'loan-comparison': ['emi', 'car-loan', 'loan-prepayment', 'home-loan-eligibility'],
     'income-tax': ['salary-in-hand', 'hra', 'capital-gains-tax', 'senior-citizen-tax', 'nps'],
     'senior-citizen-tax': ['income-tax', 'scss', 'tds-on-fd', 'fd', 'retirement-planner'],
-    'salary-in-hand': ['income-tax', 'hra', 'epf', 'gratuity'],
+    'salary-in-hand': ['income-tax', 'salary-hike', 'hra', 'epf', 'gratuity'],
     'hra': ['income-tax', 'salary-in-hand', 'gratuity'],
-    'gst': ['income-tax', 'salary-in-hand', 'simple-compound-interest'],
+    'gst': ['income-tax', 'discount', 'salary-in-hand', 'simple-compound-interest'],
     'gratuity': ['salary-in-hand', 'epf', 'retirement-planner', 'income-tax'],
     'sip': ['goal-sip', 'step-up-sip', 'lumpsum', 'mutual-fund-returns', 'cagr'],
     'step-up-sip': ['sip', 'goal-sip', 'lumpsum', 'retirement-planner', 'mutual-fund-returns'],
     'lumpsum': ['sip', 'swp', 'mutual-fund-returns', 'cagr', 'fd'],
     'mutual-fund-returns': ['sip', 'lumpsum', 'xirr', 'cagr', 'step-up-sip'],
-    'fd': ['rd', 'ppf', 'scss', 'tds-on-fd', 'senior-citizen-tax'],
+    'fd': ['rd', 'ppf', 'tds-on-fd', 'loan-against-fd', 'senior-citizen-tax'],
     'rd': ['fd', 'ppf', 'sip', 'simple-compound-interest'],
     'ppf': ['sukanya-samriddhi', 'nsc', 'nps', 'epf', 'fd'],
     'sukanya-samriddhi': ['ppf', 'fd', 'sip', 'rd'],
@@ -213,13 +218,16 @@ module.exports = {
     'emergency-fund': ['net-worth', 'fd', 'rd', 'term-insurance'],
     'net-worth': ['retirement-planner', 'emergency-fund', 'goal-sip', 'term-insurance'],
     'home-loan-tax-benefit': ['emi', 'home-loan-eligibility', 'income-tax', 'rent-vs-buy'],
-    'tds-on-fd': ['fd', 'senior-citizen-tax', 'income-tax', 'scss']
+    'tds-on-fd': ['fd', 'senior-citizen-tax', 'income-tax', 'scss'],
+    'salary-hike': ['salary-in-hand', 'income-tax', 'inflation', 'epf'],
+    'discount': ['gst', 'simple-compound-interest', 'credit-card-interest', 'inflation'],
+    'loan-against-fd': ['fd', 'tds-on-fd', 'emi', 'loan-comparison', 'credit-card-interest']
   },
 
   // Calculators linked from each guide's "Try the calculator" section (the ones the guide talks about).
   guideCalcs: {
     'guide-old-vs-new-tax-regime.html': ['income-tax', 'hra', 'home-loan-tax-benefit', 'salary-in-hand'],
-    'guide-ctc-to-in-hand-salary.html': ['salary-in-hand', 'income-tax', 'hra', 'gratuity'],
+    'guide-ctc-to-in-hand-salary.html': ['salary-in-hand', 'salary-hike', 'income-tax', 'hra', 'gratuity'],
     'guide-hra-exemption-explained.html': ['hra', 'income-tax'],
     'guide-senior-citizen-tax-saving.html': ['senior-citizen-tax', 'scss', 'tds-on-fd', 'income-tax', 'fd'],
     'guide-gst-cgst-sgst-igst-explained.html': ['gst'],
@@ -273,6 +281,7 @@ module.exports = {
     'term-insurance-calculator.html': ['irdai', 'itd'],
     'home-loan-tax-benefit-calculator.html': ['itd'],
     'tds-on-fd-calculator.html': ['itd', 'rbi'],
+    'loan-against-fd-calculator.html': ['rbi'],
     'guide-old-vs-new-tax-regime.html': ['itd'],
     'guide-ctc-to-in-hand-salary.html': ['itd', 'epfo'],
     'guide-hra-exemption-explained.html': ['itd'],
